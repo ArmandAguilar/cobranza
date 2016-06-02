@@ -2,7 +2,7 @@
 include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/scripts/CDatos.php");
-//$obj =  new panel();
+$obj =  new panel();
 
 switch ($_GET[v]) {
   case 'enbudo':
