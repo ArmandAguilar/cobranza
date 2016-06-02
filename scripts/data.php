@@ -6,7 +6,7 @@ $obj =  new panel();
 
 switch ($_GET[v]) {
   case 'enbudo':
-            //echo $obj->enbudo();
+            echo $obj->enbudo();
     break;
   default:
     # code...
