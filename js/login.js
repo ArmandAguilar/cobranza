@@ -1,7 +1,6 @@
 function login()
 {
-
-      var losdatos = {txtUser:txtUser,txtPassword:txtPassword};
+      var losdatos = {txtUser:$("txtUser").val(),txtPassword:$("txtPassword").val()};
       $.ajax({
                 url:'./scripts/login.php?o=1',
                 type:'POST',

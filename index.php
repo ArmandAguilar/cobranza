@@ -22,7 +22,7 @@
 	<!--Page Load Progress Bar [ OPTIONAL ]-->
 	<link href="plugins/pace/pace.min.css" rel="stylesheet">
 	<script src="plugins/pace/pace.min.js"></script>
-	<script src="js/login.js"></script>
+
 </head>
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
@@ -43,7 +43,7 @@
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Iniciar sesión en su cuenta</p>
-					<form action="panel.html">
+					<form action="" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -74,7 +74,8 @@
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/login.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
 	<!--Fast Click [ OPTIONAL ]-->
