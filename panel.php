@@ -108,7 +108,7 @@ include("../sis.php");
 								<span class="pull-right">
 									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
 								</span>
-								<div class="username hidden-xs">Armando Aguilar</div>
+								<div class="username hidden-xs"><?php echo $_SESSION["Usuario"]; ?></div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
 								<div class="pad-all text-right">
