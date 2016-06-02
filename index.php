@@ -46,19 +46,19 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								<input type="text" class="form-control" placeholder="Usuario">
+								<input type="text" id="txtUser" name="txtUser" class="form-control" placeholder="Usuario">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-								<input type="password" class="form-control" placeholder="Contraseña">
+								<input type="password" id="txtPwd" name="txtPwd" class="form-control" placeholder="Contraseña">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-4">
 								<div class="form-group text-right">
-								<button class="btn btn-success text-uppercase" type="submit">Entrar</button>
+								<button class="btn btn-success text-uppercase" type="button">Entrar</button>
 								</div>
 							</div>
 						</div>
