@@ -1,10 +1,9 @@
 <?php
-include("../sis.php");
-include("$path/libs/conexion.php");
+
 class panel extends poolConnecion
 {
 
-    public function enbudo()
+  function enbudo()
     {
             $row = "<div class=\"row\">
                 <div class=\"col-sm-2\">
