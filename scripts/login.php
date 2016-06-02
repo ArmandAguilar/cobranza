@@ -7,7 +7,7 @@ if($_GET[o]=='1')
 {
         $Redirecionar=0;
         $objLogin = new poolConnecion();
-        $Sql="Select Id,Nombre,Apellidos,Idinternet From Usuarios Where Nombre='$_POST[txtUser]' And Pwd='$_POST[txtPwd]'";
+        $Sql="Select Id,Nombre,Apellidos,Idinternet From Usuarios Where Nombre='$_POST[txtUser]' And Pwd='$_POST[txtPassword]'";
         $con=$objLogin->ConexionSQLNorthwind();
         $RSet=$objLogin->QuerySQLNorthwind($Sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
