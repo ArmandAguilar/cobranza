@@ -42,7 +42,7 @@
 		<div class="cls-content">
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
-					<p class="pad-btm">Iniciar sesión en su cuenta (SAP)</p>
+					<p class="pad-btm">Iniciar sesión en su cuenta</p>
 					<form action="panel.html">
 						<div class="form-group">
 							<div class="input-group">
