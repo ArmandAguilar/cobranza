@@ -1,10 +1,4 @@
-function load_enbudo()
-{
-  $('#DEnvudo').show();
-  $("#DLista").hide();
-  $("#DCronograma").hide();
 
-}
 
 function load_lista()
 {

@@ -1,13 +1,12 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
-include("../sis.php");
-
+include("sis.php");
+include("$path/libs/conexion.php");
+include("$path/scripts/data.php");
  ?>
 <!DOCTYPE html>
 <html lang="en">
-
-
 <!-- Mirrored from www.themeon.net/nifty/v2.2/layouts-offcanvas-navigation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Apr 2015 10:44:28 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
@@ -147,181 +146,11 @@ include("../sis.php");
 						<div class="panel-heading">
 							<h3 class="panel-title">Enbudo</h3>
 						</div>
-						<div class="panel-body">
-							<div class="row">
-									<div class="col-sm-2">
-										<div class="panel panel-dark panel-colorful media pad-all">
-														<div class="media-body">
-															<p class="text-2x mar-no text-thin">Paso 1</p>
-														</div>
-											</div>
-									</div>
-									<div class="col-sm-2">
-										<div class="panel panel-dark panel-colorful media pad-all">
-														<div class="media-body">
-															<p class="text-2x mar-no text-thin">Paso 2</p>
-														</div>
-											</div>
-									</div>
-									<div class="col-sm-2">
-										<div class="panel panel-dark panel-colorful media pad-all">
-														<div class="media-body">
-															<p class="text-2x mar-no text-thin">Paso 3</p>
-														</div>
-											</div>
-									</div>
-									<div class="col-sm-2">
-										<div class="panel panel-dark panel-colorful media pad-all">
-														<div class="media-body">
-															<p class="text-2x mar-no text-thin">Paso 4</p>
-														</div>
-											</div>
-									</div>
-									<div class="col-sm-2">
-										<div class="panel panel-dark panel-colorful media pad-all">
-														<div class="media-body">
-															<p class="text-2x mar-no text-thin">Paso 5</p>
-														</div>
-											</div>
-									</div>
-									<div class="col-sm-2">
-										<div class="panel panel-dark panel-colorful media pad-all">
-														<div class="media-body">
-															<p class="text-2x mar-no text-thin">Paso 6</p>
-														</div>
-											</div>
-									</div>
-							</div>
-							<!-- fila Contenido -->
-							<div class="row">
-								<div class="col-sm-2">
-											 <div class="panel panel-pink panel-colorful">
-															<div class="pad-all media">
-																<div class="media-left">
-																	<span class="icon-wrap icon-wrap-xs">
-																		<i class="fa fa-dollar fa-fw fa-2x"></i>
-																	</span>
-																</div>
-																<div class="media-body">
-																	<a href="detail_view.html"><p class="h3 text-thin media-heading">7,428</p></a>
-																	<small class="text-uppercase">Earning</small>
-																</div>
-															</div>
-															<div class="progress progress-xs progress-dark-base mar-no">
-																<div style="width: 37.4%" class="progress-bar progress-bar-light" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37.4" role="progressbar"></div>
-															</div>
-															<div class="pad-all text-right">
-																<small><span class="text-semibold"><i class="fa fa-dollar fa-fw"></i> 22,675</span> Total Earning</small>
-															</div>
-											  </div>
-									</div>
-									<div class="col-sm-2">
-												 <div class="panel panel-pink panel-colorful">
-																<div class="pad-all media">
-																	<div class="media-left">
-																		<span class="icon-wrap icon-wrap-xs">
-																			<i class="fa fa-dollar fa-fw fa-2x"></i>
-																		</span>
-																	</div>
-																	<div class="media-body">
-																		<p class="h3 text-thin media-heading">7,428</p>
-																		<small class="text-uppercase">Earning</small>
-																	</div>
-																</div>
-																<div class="progress progress-xs progress-dark-base mar-no">
-																	<div style="width: 37.4%" class="progress-bar progress-bar-light" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37.4" role="progressbar"></div>
-																</div>
-																<div class="pad-all text-right">
-																	<small><span class="text-semibold"><i class="fa fa-dollar fa-fw"></i> 22,675</span> Total Earning</small>
-																</div>
-												  </div>
-										</div>
-										<div class="col-sm-2">
-													 <div class="panel panel-pink panel-colorful">
-																	<div class="pad-all media">
-																		<div class="media-left">
-																			<span class="icon-wrap icon-wrap-xs">
-																				<i class="fa fa-dollar fa-fw fa-2x"></i>
-																			</span>
-																		</div>
-																		<div class="media-body">
-																			<p class="h3 text-thin media-heading">7,428</p>
-																			<small class="text-uppercase">Earning</small>
-																		</div>
-																	</div>
-																	<div class="progress progress-xs progress-dark-base mar-no">
-																		<div style="width: 37.4%" class="progress-bar progress-bar-light" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37.4" role="progressbar"></div>
-																	</div>
-																	<div class="pad-all text-right">
-																		<small><span class="text-semibold"><i class="fa fa-dollar fa-fw"></i> 22,675</span> Total Earning</small>
-																	</div>
-													  </div>
-											</div>
-											<div class="col-sm-2">
-														 <div class="panel panel-pink panel-colorful">
-																		<div class="pad-all media">
-																			<div class="media-left">
-																				<span class="icon-wrap icon-wrap-xs">
-																					<i class="fa fa-dollar fa-fw fa-2x"></i>
-																				</span>
-																			</div>
-																			<div class="media-body">
-																				<p class="h3 text-thin media-heading">7,428</p>
-																				<small class="text-uppercase">Earning</small>
-																			</div>
-																		</div>
-																		<div class="progress progress-xs progress-dark-base mar-no">
-																			<div style="width: 37.4%" class="progress-bar progress-bar-light" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37.4" role="progressbar"></div>
-																		</div>
-																		<div class="pad-all text-right">
-																			<small><span class="text-semibold"><i class="fa fa-dollar fa-fw"></i> 22,675</span> Total Earning</small>
-																		</div>
-														  </div>
-												</div>
-												<div class="col-sm-2">
-															 <div class="panel panel-pink panel-colorful">
-																			<div class="pad-all media">
-																				<div class="media-left">
-																					<span class="icon-wrap icon-wrap-xs">
-																						<i class="fa fa-dollar fa-fw fa-2x"></i>
-																					</span>
-																				</div>
-																				<div class="media-body">
-																					<p class="h3 text-thin media-heading">7,428</p>
-																					<small class="text-uppercase">Earning</small>
-																				</div>
-																			</div>
-																			<div class="progress progress-xs progress-dark-base mar-no">
-																				<div style="width: 37.4%" class="progress-bar progress-bar-light" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37.4" role="progressbar"></div>
-																			</div>
-																			<div class="pad-all text-right">
-																				<small><span class="text-semibold"><i class="fa fa-dollar fa-fw"></i> 22,675</span> Total Earning</small>
-																			</div>
-															  </div>
-													</div>
-													<div class="col-sm-2">
-																 <div class="panel panel-pink panel-colorful">
-																				<div class="pad-all media">
-																					<div class="media-left">
-																						<span class="icon-wrap icon-wrap-xs">
-																							<i class="fa fa-dollar fa-fw fa-2x"></i>
-																						</span>
-																					</div>
-																					<div class="media-body">
-																						<p class="h3 text-thin media-heading">7,428</p>
-																						<small class="text-uppercase">Earning</small>
-																					</div>
-																				</div>
-																				<div class="progress progress-xs progress-dark-base mar-no">
-																					<div style="width: 37.4%" class="progress-bar progress-bar-light" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37.4" role="progressbar"></div>
-																				</div>
-																				<div class="pad-all text-right">
-																					<small><span class="text-semibold"><i class="fa fa-dollar fa-fw"></i> 22,675</span> Total Earning</small>
-																				</div>
-																  </div>
-														</div>
-							</div>
-							<!-- end fila Contenido -->
+						<div class="panel-body" id="rows-enbudo">
+
+							<!-- fila Contenido rows -->
+
+							<!-- end fila Contenido rows-->
 							<!-- fila Contenido -->
 							<div class="row">
 								<div class="col-sm-2">
@@ -607,7 +436,7 @@ include("../sis.php");
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-2.2.4.min.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
 	<!--Fast Click [ OPTIONAL ]-->
@@ -630,6 +459,7 @@ include("../sis.php");
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
  <script src="js/scripts.js"></script>
+ <script src="js/data.js"></script>
 
 </body>
 </html>
