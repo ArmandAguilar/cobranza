@@ -2,7 +2,7 @@
 ini_set('session.auto_start()','On');
 session_start();
 include("../sis.php");
-include("$path/libs/poolConnecion.php");
+include("$path/libs/conexion.php");
 if($_GET[o]=='1')
 {
         $Redirecionar=0;
@@ -15,7 +15,7 @@ if($_GET[o]=='1')
                   $Redirecionar=1;
                   $_SESSION["Usuario"]="$fila[Nombre] $fila[Apellidos]";
                   $_SESSION["IdUsuario"]="$fila[Id]";
-                  $_SESSION["IdInternet"]="$fila[Idinternet]";
+                  
                 }
          $objLogin->CerrarSQLNorthwind($RSet,$con);
 }

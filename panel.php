@@ -1,3 +1,9 @@
+<?php
+ini_set('session.auto_start()','On');
+session_start();
+include("../sis.php");
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +37,14 @@
 	<link href="plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
 	<!--X-editable [ OPTIONAL ]-->
 	<link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet">
-
-
+<?php
+	if(empty($_SESSION[IdUsuario]))
+	{
+		 echo "<script>
+		 						window.location.href='logout.php'
+					</script>		";
+	}
+ ?>
 </head>
 <!--TIPS-->
 
