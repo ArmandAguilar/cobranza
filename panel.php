@@ -1,9 +1,6 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
-include("sis.php");
-include("$path/libs/conexion.php");
-include("$path/scripts/data.php");
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +144,7 @@ include("$path/scripts/data.php");
 							<h3 class="panel-title">Enbudo</h3>
 						</div>
 						<div class="panel-body" id="rows-enbudo">
-							
+
 
 						</div>
 					</div>
