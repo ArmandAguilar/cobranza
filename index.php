@@ -59,7 +59,7 @@
 						<div class="row">
 							<div class="col-xs-4">
 								<div class="form-group text-right">
-								<button class="btn btn-success text-uppercase" type="button">Entrar</button>
+								<button class="btn btn-success text-uppercase" type="button" onclick="login();">Entrar</button>
 								</div>
 							</div>
 						</div>
