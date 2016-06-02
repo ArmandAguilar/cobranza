@@ -10,6 +10,7 @@ function load_enbudo()
             success:function(data)
             {
                  $("#rows-enbudo").append(data);
+                 alert(data)
             },
             error:function(req,e,er) {
               alert(er);
