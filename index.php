@@ -22,6 +22,7 @@
 	<!--Page Load Progress Bar [ OPTIONAL ]-->
 	<link href="plugins/pace/pace.min.css" rel="stylesheet">
 	<script src="plugins/pace/pace.min.js"></script>
+	<script src="js/login.js"></script>
 </head>
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
@@ -52,7 +53,7 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-								<input type="password" id="txtPwd" name="txtPwd" class="form-control" placeholder="Contraseña">
+								<input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="Contraseña">
 							</div>
 						</div>
 						<div class="row">

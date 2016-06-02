@@ -3,7 +3,8 @@ ini_set('session.auto_start()','On');
 session_start();
 include("../sis.php");
 include("$path/libs/poolConnecion.php");
-
+if($_GET[o]=='1')
+{
         $Redirecionar=0;
         $objLogin = new poolConnecion();
         $Sql="Select Id,Nombre,Apellidos,Idinternet From Usuarios Where Nombre='$_POST[txtUser]' And Pwd='$_POST[txtPwd]'";
@@ -17,5 +18,6 @@ include("$path/libs/poolConnecion.php");
                   $_SESSION["IdInternet"]="$fila[Idinternet]";
                 }
          $objLogin->CerrarSQLNorthwind($RSet,$con);
+}
  echo $Redirecionar;
 ?>
