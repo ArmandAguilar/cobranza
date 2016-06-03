@@ -158,7 +158,7 @@ session_start();
 						</div>
 						<div class="panel-body">
 							<table data-toggle="table"
-								   data-url="js/tabla.json"
+								   data-url="scripts/datajson.php"
 								   data-show-columns="true"
 								   data-page-list="[5, 10, 20]"
 								   data-page-size="5"

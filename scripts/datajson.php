@@ -2,17 +2,6 @@
 include("../sis.php");
 include("$path/libs/conexion.php");
 
-/*[
-  {
-    "id": "1",
-    "noproyecto": "1000",
-    "proyecto": "Disco",
-    "estado": "super",
-    "vendedor": "Armando",
-    "empresa": "forta"
-  },
-]*/
-echo "1";
 $strJson = "[";
 $contador = 0;
 $objPaso2 = new poolConnecion();
@@ -36,6 +25,5 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           }
         }
 $strJson .= "]";
-echo $strJson;
-echo "2";
+echo json_encode($strJson);
 ?>
