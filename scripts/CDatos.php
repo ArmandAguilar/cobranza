@@ -41,7 +41,7 @@ class panel extends poolConnecion
        $objPaso1->CerrarSQLSAP($RSet,$con);
        #Paso 2
        $objPaso2 = new poolConnecion();
-       $Sql="SSELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provicionada'";
+       $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provicionada'";
        $con=$objPaso2->ConexionSQLSAP();
        $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -103,7 +103,7 @@ class panel extends poolConnecion
          $objPaso3->CerrarSQLSAP($RSet,$con);
          #Paso 4
          $objPaso4 = new poolConnecion();
-         $Sql="SSELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Resivida'";
+         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Resivida'";
          $con=$objPaso4->ConexionSQLSAP();
          $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -214,10 +214,7 @@ class panel extends poolConnecion
       </div>";
                   return  $row;
     }
-  function lista()
-  {
-    
-  }
+
 
 }
  ?>
