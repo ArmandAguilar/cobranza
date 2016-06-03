@@ -13,25 +13,29 @@ class panel extends poolConnecion
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-               $ImporteFinal = number_format($fila[ImporteFinal], 2, ',', '.');
-               $row_col1.= "<div class=\"row\">
-                               <div class=\"col-lg-*\">
-                                 <div class=\"panel panel-pink panel-colorful\">
-                                        <div class=\"pad-all media\">
-                                          <div class=\"media-left\">
-                                            <span class=\"icon-wrap icon-wrap-xs\">
-                                              <i class=\"fa fa-dollar fa-fw fa-3x\"></i>
-                                            </span>
+               $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
+               if(!empty($fila[NumProyecto]))
+               {
+                 $row_col1.= "<div class=\"row\">
+                                 <div class=\"col-lg-*\">
+                                   <div class=\"panel panel-pink panel-colorful\">
+                                          <div class=\"pad-all media\">
+                                            <div class=\"media-left\">
+                                              <span class=\"icon-wrap icon-wrap-xs\">
+                                                <i class=\"fa fa-dollar fa-fw fa-0x\"></i>
+                                              </span>
+                                            </div>
+                                            <div class=\"media-body\">
+                                              <a href=\"detail_view.html\"><p class=\"h4 text-thin media-heading\">$ImporteFinal</p></a>
+                                              <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                            </div>
                                           </div>
-                                          <div class=\"media-body\">
-                                            <a href=\"detail_view.html\"><p class=\"h4 text-thin media-heading\">$ImporteFinal</p></a>
-                                            <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                          </div>
-                                        </div>
 
-                                  </div>
-                               </div>
-                           </div>";
+                                    </div>
+                                 </div>
+                             </div>";
+               }
+
 
               }
        $objPaso1->CerrarSQLSAP($RSet,$con);
