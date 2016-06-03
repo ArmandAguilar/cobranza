@@ -18,11 +18,11 @@ class panel extends poolConnecion
                {
                  $row_col1.= "<div class=\"row\">
                                  <div class=\"col-lg-*\">
-                                   <div class=\"panel panel-pink panel-colorful\">
+                                   <div class=\"panel panel-gray panel-colorful\">
                                           <div class=\"pad-all media\">
                                             <div class=\"media-left\">
                                               <span class=\"icon-wrap icon-wrap-xs\">
-                                                <i class=\"fa fa-dollar fa-fw fa-0x\"></i>
+                                                <i class=\"fa fa-dollar fa-fw fa-1x\"></i>
                                               </span>
                                             </div>
                                             <div class=\"media-body\">
