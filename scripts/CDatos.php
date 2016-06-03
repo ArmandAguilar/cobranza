@@ -43,7 +43,7 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Proyectos</p>
+                      <p class=\"text-1x mar-no text-thin\">Proyectos</p>
                     </div>
               </div>
               $row_col1
@@ -51,35 +51,35 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Provisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">Provisionada</p>
                     </div>
               </div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Elaborada</p>
+                      <p class=\"text-1x mar-no text-thin\">Elaborada</p>
                     </div>
               </div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Recibida</p>
+                      <p class=\"text-1x mar-no text-thin\">Recibida</p>
                     </div>
               </div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Aprovada</p>
+                      <p class=\"text-1x mar-no text-thin\">Aprovada</p>
                     </div>
               </div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-0x mar-no text-thin\">Espera de pago</p>
+                      <p class=\"text-1x mar-no text-thin\">Espera de pago</p>
                     </div>
               </div>
           </div>
