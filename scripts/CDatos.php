@@ -39,7 +39,7 @@ class panel extends poolConnecion
 
 
               }
-       $objPaso1->CerrarSQLNorthwind($RSet,$con);
+       $objPaso1->CerrarSQLSAP($RSet,$con);
       $row = "<div class=\"row\">
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
