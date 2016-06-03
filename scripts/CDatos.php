@@ -79,7 +79,7 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Espera de pago</p>
+                      <p class=\"text-1x mar-no text-thin\">Espera de pago</p>
                     </div>
               </div>
           </div>
