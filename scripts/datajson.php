@@ -25,5 +25,5 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           }
         }
 $strJson .= "]";
-echo json_encode($strJson);
+echo $strJson;
 ?>
