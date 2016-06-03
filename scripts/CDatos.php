@@ -26,7 +26,7 @@ class panel extends poolConnecion
                                               </span>
                                             </div>
                                             <div class=\"media-body\">
-                                              <a href=\"detail_view.html\"><p class=\"h4 text-thin media-heading\">$ImporteFinal</p></a>
+                                              <p class=\"h4 text-thin media-heading\">$ImporteFinal</p>
                                               <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                             </div>
                                           </div>
