@@ -4,6 +4,7 @@ include("$path/libs/conexion.php");
 
 $strJson = "[";
 $contador = 0;
+$arr = array();
 $objPaso2 = new poolConnecion();
 $Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
 $con=$objPaso2->ConexionSQLSAP();
@@ -14,16 +15,23 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           if(!empty($fila[NumProyecto]))
           {
               $contador++;
-             $strJson .= "{
+              $arr[] = array('id' => $contador,
+                                'noproyecto' => $fila[NumProyecto],
+                                'proyecto' => $fila[NomProyecto],
+                                'estado' =>$fila[Estatus],
+                                'vendedor' =>$fila[Vendedor],
+                                'empresa' =>$fila[Empresa],
+                    );
+             /*$strJson .= "{
                         \"id\": \"$contador\",
                         \"noproyecto\": \"$fila[NumProyecto]\",
                         \"proyecto\": \"$fila[NomProyecto]\",
                         \"estado\": \"$fila[Estatus]\",
                         \"vendedor\": \"$fila[Vendedor]\",
                         \"empresa\": \"$fila[Empresa]\"
-                      },";
+                      },";*/
           }
         }
 $strJson .= "]";
-echo $strJson;
+echo json_encode($arr);
 ?>
