@@ -14,10 +14,11 @@ include("$path/libs/conexion.php");
     "empresa": "forta"
   },
 ]*/
+echo "1";
 $strJson = "[";
 $contador = 0;
 $objPaso2 = new poolConnecion();
-$Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
+$Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
 $con=$objPaso2->ConexionSQLSAP();
 $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -38,4 +39,5 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         }
 $strJson = "]";
 echo $strJson;
+echo "2";
 ?>
