@@ -13,7 +13,7 @@ include("$path/libs/conexion.php");
   },
 ]*/
 echo "1";
-$strJson = "[";
+/*$strJson = "[";
 $contador = 0;
 $objPaso2 = new poolConnecion();
 $Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
@@ -36,6 +36,6 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           }
         }
 $strJson .= "]";
-echo $strJson;
+echo $strJson;*/
 echo "2";
 ?>
