@@ -26,12 +26,12 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           {
               $contador++;
              $strJson .= "{
-                        "id": "$contador",
-                        "noproyecto": "$fila[NumProyecto]",
-                        "proyecto": "$fila[NomProyecto]",
-                        "estado": "$fila[Estatus]",
-                        "vendedor": "$fila[Vendedor]",
-                        "empresa": "$fila[Empresa]"
+                        \"id\": \"$contador\",
+                        \"noproyecto\": \"$fila[NumProyecto]\",
+                        \"proyecto\": \"$fila[NomProyecto]\",
+                        \"estado\": \"$fila[Estatus]\",
+                        \"vendedor\": \"$fila[Vendedor]\",
+                        \"empresa\": \"$fila[Empresa]\"
                       },";
           }
         }
