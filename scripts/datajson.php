@@ -1,6 +1,4 @@
 <?php
-ini_set('session.auto_start()','On');
-session_start();
 include("../sis.php");
 include("$path/libs/conexion.php");
 
@@ -37,7 +35,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                       },
           }
         }
-$strJson = "]";
+$strJson .= "]";
 echo $strJson;
 echo "2";
 ?>
