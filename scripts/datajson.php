@@ -13,13 +13,13 @@ include("$path/libs/conexion.php");
   },
 ]*/
 echo "1";
-/*$strJson = "[";
+$strJson = "[";
 $contador = 0;
 $objPaso2 = new poolConnecion();
 $Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
 $con=$objPaso2->ConexionSQLSAP();
 $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
- while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+ /*while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
        {
 
           if(!empty($fila[NumProyecto]))
@@ -34,8 +34,8 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                         "empresa": "$fila[Empresa]"
                       },
           }
-        }
+        }*/
 $strJson .= "]";
-echo $strJson;*/
+echo $strJson;
 echo "2";
 ?>
