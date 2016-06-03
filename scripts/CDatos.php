@@ -22,7 +22,7 @@ class panel extends poolConnecion
                                           <div class=\"pad-all media\">
                                             <div class=\"media-left\">
                                               <span class=\"icon-wrap icon-wrap-xs\">
-                                                <i class=\"fa fa-dollar fa-fw fa-1x\"></i>
+                                                <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
                                               </span>
                                             </div>
                                             <div class=\"media-body\">
