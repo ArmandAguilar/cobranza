@@ -214,6 +214,10 @@ class panel extends poolConnecion
       </div>";
                   return  $row;
     }
+  function lista()
+  {
+    
+  }
 
 }
  ?>

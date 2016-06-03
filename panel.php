@@ -158,7 +158,7 @@ session_start();
 						</div>
 						<div class="panel-body">
 							<table data-toggle="table"
-								   data-url="data/bs-table.json"
+								   data-url="js/tabla.json"
 								   data-show-columns="true"
 								   data-page-list="[5, 10, 20]"
 								   data-page-size="5"
@@ -167,37 +167,15 @@ session_start();
 
 									<tr>
 										<th data-field="id" data-switchable="false">ID</th>
-										<th data-field="name">No. Proyecto</th>
-										<th data-field="name">Proyecto</th>
-										<th data-field="name">Estado</th>
-										<th data-field="name">Vendedor</th>
-										<th data-field="name">Empresa</th>
-										<th data-field="name">Importe Final</th>
-										<th data-field="number" data-visible="false">Contribucion Bruta</th>
-									  <th data-field="number" data-visible="false">Monto Facturado A IVA</th>
-										<th data-field="numeber" data-visible="false">Cuentas por facturar AIVA</th>
-										<th data-field="number" data-visible="false">Monto Facturado IVA</th>
-										<th data-field="number" data-visible="false">Monto Facturado CIVA</th>
-										<th data-field="number" data-visible="false">Cuentas por cobrar</th>
-										<th data-field="number" data-visible="false">Producto</th>
+										<th data-field="noproyecto">No. Proyecto</th>
+										<th data-field="proyecto">Proyecto</th>
+										<th data-field="estado">Estado</th>
+										<th data-field="vendedor">Vendedor</th>
+										<th data-field="empresa">Empresa</th>
+
 									</tr>
 								</thead>
-                <tr>
-                  <td>1</td>
-                  <td>1815</td>
-                  <td>Proyecto</td>
-                  <td>Estado</td>
-                  <td>Vendedor</td>
-                  <td>Empresa</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                  <td>0.0</td>
-                </tr>
+
 							</table>
 						</div>
 					</div>
