@@ -8,7 +8,7 @@ class panel extends poolConnecion
 
 
       $objPaso1 = new poolConnecion();
-      $Sql="SELECT [ImporteFinal]   FROM [SAP].[dbo].[RVEdoCtaGeneral]";
+      $Sql="SELECT [NumProyecto],[NomProyecto],[ImporteFinal]  FROM [SAP].[dbo].[RVEdoCtaGeneral]";
       $con=$objPaso1->ConexionSQLSAP();
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -20,20 +20,15 @@ class panel extends poolConnecion
                                         <div class=\"pad-all media\">
                                           <div class=\"media-left\">
                                             <span class=\"icon-wrap icon-wrap-xs\">
-                                              <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                              <i class=\"fa fa-dollar fa-fw fa-3x\"></i>
                                             </span>
                                           </div>
                                           <div class=\"media-body\">
-                                            <a href=\"detail_view.html\"><p class=\"h5 text-thin media-heading\">$ImporteFinal</p></a>
-                                            <small class=\"text-uppercase\">Earning</small>
+                                            <a href=\"detail_view.html\"><p class=\"h4 text-thin media-heading\">$ImporteFinal</p></a>
+                                            <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                           </div>
                                         </div>
-                                        <div class=\"progress progress-xs progress-dark-base mar-no\">
-                                          <div style=\"width: 37.4%\" class=\"progress-bar progress-bar-light\" aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"37.4\" role=\"progressbar\"></div>
-                                        </div>
-                                        <div class=\"pad-all text-right\">
-                                          <small><span class=\"text-semibold\"><i class=\"fa fa-dollar fa-fw\"></i> 22,675</span> Total Earning</small>
-                                        </div>
+
                                   </div>
                                </div>
                            </div>";
