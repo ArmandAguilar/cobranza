@@ -182,6 +182,22 @@ session_start();
 										<th data-field="number" data-visible="false">Producto</th>
 									</tr>
 								</thead>
+                <tr>
+                  <td>1</td>
+                  <td>1815</td>
+                  <td>Proyecto</td>
+                  <td>Estado</td>
+                  <td>Vendedor</td>
+                  <td>Empresa</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                </tr>
 							</table>
 						</div>
 					</div>
@@ -326,6 +342,5 @@ session_start();
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
  <script src="js/scripts.js"></script>
  <script src="js/data.js"></script>
-
 </body>
 </html>
