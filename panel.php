@@ -143,7 +143,7 @@ session_start();
 						<div class="panel-heading">
 							<h3 class="panel-title">Enbudo</h3>
 						</div>
-            <div id="load_enbudo" ><img src="img/pageloader.gif"/></div>
+            <div id="load_enbudo" style="display:none" ><img src="img/pageloader.gif"/></div>
 						<div class="panel-body" id="rows-enbudo">
 
 
