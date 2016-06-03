@@ -8,12 +8,12 @@ class panel extends poolConnecion
 
 
       $objPaso1 = new poolConnecion();
-      $Sql="SELECT [Cuentas por cobrar] As cuentasXcobrar  FROM [SAP].[dbo].[RVEdoCtaGeneral]";
+      $Sql="SELECT [ImporteFinal]   FROM [SAP].[dbo].[RVEdoCtaGeneral]";
       $con=$objPaso1->ConexionSQLSAP();
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-               $CuentasXcobrar=number_format($fila[cuentasXcobrar],'.','2');
+               $ImporteFinal = number_format($fila[ImporteFinal], 2, ',', '.');
                $row_col1.= "<div class=\"row\">
                                <div class=\"col-lg-*\">
                                  <div class=\"panel panel-pink panel-colorful\">
@@ -24,7 +24,7 @@ class panel extends poolConnecion
                                             </span>
                                           </div>
                                           <div class=\"media-body\">
-                                            <a href=\"detail_view.html\"><p class=\"h3 text-thin media-heading\">$CuentasXcobrar</p></a>
+                                            <a href=\"detail_view.html\"><p class=\"h3 text-thin media-heading\">$ImporteFinal</p></a>
                                             <small class=\"text-uppercase\">Earning</small>
                                           </div>
                                         </div>
