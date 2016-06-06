@@ -43,7 +43,7 @@ class panel extends poolConnecion
               }
        $objPaso1->CerrarSQLSAP($RSet,$con);
        #Paso 2
-       $MontoCIVA = 0;
+       $Importe = 0;
        $objPaso2 = new poolConnecion();
        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
        $con=$objPaso2->ConexionSQLSAP();
@@ -77,7 +77,7 @@ class panel extends poolConnecion
                }
         $objPaso2->CerrarSQLSAP($RSet,$con);
         #Paso 3
-        $MontoCIVA = 0;
+        $Importe = 0;
         $objPaso3 = new poolConnecion();
         $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
         $con=$objPaso3->ConexionSQLSAP();
@@ -111,7 +111,7 @@ class panel extends poolConnecion
                 }
          $objPaso3->CerrarSQLSAP($RSet,$con);
          #Paso 4
-         $MontoCIVA = 0;
+         $Importe = 0;
          $objPaso4 = new poolConnecion();
          $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
          $con=$objPaso4->ConexionSQLSAP();
@@ -145,7 +145,7 @@ class panel extends poolConnecion
                  }
           $objPaso4->CerrarSQLSAP($RSet,$con);
           #Paso 5
-          $MontoCIVA = 0;
+          $Importe = 0;
           $objPaso5 = new poolConnecion();
           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
           $con=$objPaso5->ConexionSQLSAP();
@@ -179,7 +179,7 @@ class panel extends poolConnecion
                   }
            $objPaso5->CerrarSQLSAP($RSet,$con);
            #Paso 6
-           $MontoCIVA = 0;
+           $Importe = 0;
            $objPaso6 = new poolConnecion();
            $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
            $con=$objPaso6->ConexionSQLSAP();
