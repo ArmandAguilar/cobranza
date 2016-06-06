@@ -79,7 +79,7 @@ class panel extends poolConnecion
         #Paso 3
         $Importe = 0;
         $objPaso3 = new poolConnecion();
-        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
+        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
         $con=$objPaso3->ConexionSQLSAP();
         $RSet=$objPaso3->QuerySQLSAP($Sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -88,7 +88,7 @@ class panel extends poolConnecion
                       if(!empty($fila[NumProyecto]))
                       {
                         $Importe = number_format($fila[Importe], 2, '.', ',');
-                        $TotalElaborada += $Importe;
+                        $TotalElaborada += $fila[Importe];
                          $row_col3.= "<div class=\"row\">
                                          <div class=\"col-lg-*\">
                                            <div class=\"panel panel-purple panel-colorful\">
@@ -113,7 +113,7 @@ class panel extends poolConnecion
          #Paso 4
          $Importe = 0;
          $objPaso4 = new poolConnecion();
-         $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
+         $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
          $con=$objPaso4->ConexionSQLSAP();
          $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -122,7 +122,7 @@ class panel extends poolConnecion
                          if(!empty($fila[NumProyecto]))
                          {
                            $Importe = number_format($fila[Importe], 2, '.', ',');
-                           $TotalRecibida += $Importe;
+                           $TotalRecibida += $fila[Importe];
                             $row_col4.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
                                               <div class=\"panel panel-purple panel-colorful\">
@@ -147,7 +147,7 @@ class panel extends poolConnecion
           #Paso 5
           $Importe = 0;
           $objPaso5 = new poolConnecion();
-          $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
+          $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
           $con=$objPaso5->ConexionSQLSAP();
           $RSet=$objPaso5->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -156,7 +156,7 @@ class panel extends poolConnecion
                         if(!empty($fila[NumProyecto]))
                         {
                           $Importe = number_format($fila[Importe], 2, '.', ',');
-                          $TotalAprobada += $Importe;
+                          $TotalAprobada += $fila[Importe]e;
                            $row_col5.= "<div class=\"row\">
                                            <div class=\"col-lg-*\">
                                              <div class=\"panel panel-purple panel-colorful\">
@@ -181,7 +181,7 @@ class panel extends poolConnecion
            #Paso 6
            $Importe = 0;
            $objPaso6 = new poolConnecion();
-           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
+           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
            $con=$objPaso6->ConexionSQLSAP();
            $RSet=$objPaso6->QuerySQLSAP($Sql,$con);
             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -190,7 +190,7 @@ class panel extends poolConnecion
                          if(!empty($fila[NumProyecto]))
                          {
                            $Importe = number_format($fila[Importe], 2, '.', ',');
-                           $TotalEnEsperaDePago += $Importe;
+                           $TotalEnEsperaDePago += $fila[Importe];
                             $row_col6.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
                                               <div class=\"panel panel-purple panel-colorful\">
@@ -222,8 +222,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Proyectos </p>
-                      <p class=\"text-2x mar-no text-thin\">$ $TotalGral </p>
+                      <p class=\"text-1x mar-no text-thin\">Proyectos </p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
                     </div>
               </div>
               $row_col1
@@ -231,8 +231,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Provisionada</p>
-                      <p class=\"text-2x mar-no text-thin\">$ $TotalProvisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">Provisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
                     </div>
               </div>
               $row_col2
@@ -240,8 +240,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-2x mar-no text-thin\">Elaborada</p>
-                      <p class=\"text-2x mar-no text-thin\">$ $TotalElaborada</p>
+                      <p class=\"text-1x mar-no text-thin\">Elaborada</p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalElaborada</p>
                     </div>
               </div>
               $row_col3
