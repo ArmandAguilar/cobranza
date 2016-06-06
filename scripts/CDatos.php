@@ -103,7 +103,7 @@ class panel extends poolConnecion
          $objPaso3->CerrarSQLSAP($RSet,$con);
          #Paso 4
          $objPaso4 = new poolConnecion();
-         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recivida'";
+         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
          $con=$objPaso4->ConexionSQLSAP();
          $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -134,7 +134,7 @@ class panel extends poolConnecion
           $objPaso4->CerrarSQLSAP($RSet,$con);
           #Paso 5
           $objPaso5 = new poolConnecion();
-          $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
+          $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
           $con=$objPaso5->ConexionSQLSAP();
           $RSet=$objPaso5->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -163,6 +163,37 @@ class panel extends poolConnecion
                    }
                   }
            $objPaso5->CerrarSQLSAP($RSet,$con);
+           #Paso 6
+           $objPaso6 = new poolConnecion();
+           $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
+           $con=$objPaso6->ConexionSQLSAP();
+           $RSet=$objPaso6->QuerySQLSAP($Sql,$con);
+            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                  {
+                     $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+                     if(!empty($fila[NumProyecto]))
+                     {
+                        $row_col6.= "<div class=\"row\">
+                                        <div class=\"col-lg-*\">
+                                          <div class=\"panel panel-purple panel-colorful\">
+                                                 <div class=\"pad-all media\">
+                                                   <div class=\"media-left\">
+                                                     <span class=\"icon-wrap icon-wrap-xs\">
+                                                       <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                     </span>
+                                                   </div>
+                                                   <div class=\"media-body\">
+                                                     <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                     <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                   </div>
+                                                 </div>
+
+                                           </div>
+                                        </div>
+                                    </div>";
+                    }
+                   }
+            $objPaso6->CerrarSQLSAP($RSet,$con);
       $row = "<div class=\"row\">
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -186,6 +217,7 @@ class panel extends poolConnecion
                       <p class=\"text-1x mar-no text-thin\">Elaborada</p>
                     </div>
               </div>
+              $row_col3
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -193,7 +225,7 @@ class panel extends poolConnecion
                       <p class=\"text-1x mar-no text-thin\">Recibida</p>
                     </div>
               </div>
-              $row_col3
+              $row_col4
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -201,7 +233,7 @@ class panel extends poolConnecion
                       <p class=\"text-1x mar-no text-thin\">Aprovada</p>
                     </div>
               </div>
-              $row_col4
+              $row_col5
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -209,8 +241,9 @@ class panel extends poolConnecion
                       <p class=\"text-1x mar-no text-thin\">Espera de pago</p>
                     </div>
               </div>
-              $row_col5
+              $row_col6
           </div>
+
       </div>";
                   return  $row;
     }
