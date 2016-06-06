@@ -8,35 +8,35 @@ class panel extends poolConnecion
 
       #Paso 1
       $objPaso1 = new poolConnecion();
-      $Sql="SELECT [NumProyecto],[NomProyecto],[ImporteFinal],[MontoCIVA]  FROM [SAP].[dbo].[RVEdoCtaGeneral]";
+      $Sql="SELECT [NumProyecto],[NomProyecto],[ImporteFinal]  FROM [SAP].[dbo].[RVEdoCtaGeneral]";
       $con=$objPaso1->ConexionSQLSAP();
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-               $ImporteFinal = number_format($fila[MontoCIVA], 2, '.', ',');
-               if(!empty($fila[NumProyecto]))
-               {
-                 $TotalGral += $fila[MontoCIVA];
+                   $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
+                   if(!empty($fila[NumProyecto]))
+                   {
+                     $TotalGral += $fila[MontoCIVA];
 
-                 $row_col1.= "<div class=\"row\">
-                                 <div class=\"col-lg-*\">
-                                   <div class=\"panel panel-purple panel-colorful\">
-                                          <div class=\"pad-all media\">
-                                            <div class=\"media-left\">
-                                              <span class=\"icon-wrap icon-wrap-xs\">
-                                                <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
-                                              </span>
-                                            </div>
-                                            <div class=\"media-body\">
-                                              <p class=\"h4 text-thin media-heading\">$ImporteFinal</p>
-                                              <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                            </div>
-                                          </div>
+                     $row_col1.= "<div class=\"row\">
+                                     <div class=\"col-lg-*\">
+                                       <div class=\"panel panel-purple panel-colorful\">
+                                              <div class=\"pad-all media\">
+                                                <div class=\"media-left\">
+                                                  <span class=\"icon-wrap icon-wrap-xs\">
+                                                    <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                  </span>
+                                                </div>
+                                                <div class=\"media-body\">
+                                                  <p class=\"h4 text-thin media-heading\">$ImporteFinal</p>
+                                                  <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                </div>
+                                              </div>
 
-                                    </div>
-                                 </div>
-                             </div>";
-               }
+                                        </div>
+                                     </div>
+                                 </div>";
+                   }
 
 
               }
@@ -48,139 +48,11 @@ class panel extends poolConnecion
        $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
               {
-                 $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                 if(!empty($fila[NumProyecto]))
-                 {
-                   $TotalProvisionada += $MontoCIVA;
-                    $row_col2.= "<div class=\"row\">
-                                    <div class=\"col-lg-*\">
-                                      <div class=\"panel panel-purple panel-colorful\">
-                                             <div class=\"pad-all media\">
-                                               <div class=\"media-left\">
-                                                 <span class=\"icon-wrap icon-wrap-xs\">
-                                                   <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
-                                                 </span>
-                                               </div>
-                                               <div class=\"media-body\">
-                                                 <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
-                                                 <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                               </div>
-                                             </div>
-
-                                       </div>
-                                    </div>
-                                </div>";
-                }
-               }
-        $objPaso2->CerrarSQLSAP($RSet,$con);
-        #Paso 3
-        $objPaso3 = new poolConnecion();
-        $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
-        $con=$objPaso3->ConexionSQLSAP();
-        $RSet=$objPaso3->QuerySQLSAP($Sql,$con);
-         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-               {
-                  $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                  if(!empty($fila[NumProyecto]))
-                  {
-                    $TotalElaborada += $MontoCIVA;
-                     $row_col3.= "<div class=\"row\">
-                                     <div class=\"col-lg-*\">
-                                       <div class=\"panel panel-purple panel-colorful\">
-                                              <div class=\"pad-all media\">
-                                                <div class=\"media-left\">
-                                                  <span class=\"icon-wrap icon-wrap-xs\">
-                                                    <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
-                                                  </span>
-                                                </div>
-                                                <div class=\"media-body\">
-                                                  <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
-                                                  <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                                </div>
-                                              </div>
-
-                                        </div>
-                                     </div>
-                                 </div>";
-                 }
-                }
-         $objPaso3->CerrarSQLSAP($RSet,$con);
-         #Paso 4
-         $objPaso4 = new poolConnecion();
-         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
-         $con=$objPaso4->ConexionSQLSAP();
-         $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
-          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                {
-                   $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                   if(!empty($fila[NumProyecto]))
-                   {
-                     $TotalRecibida += $MontoCIVA;
-                      $row_col4.= "<div class=\"row\">
-                                      <div class=\"col-lg-*\">
-                                        <div class=\"panel panel-purple panel-colorful\">
-                                               <div class=\"pad-all media\">
-                                                 <div class=\"media-left\">
-                                                   <span class=\"icon-wrap icon-wrap-xs\">
-                                                     <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
-                                                   </span>
-                                                 </div>
-                                                 <div class=\"media-body\">
-                                                   <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
-                                                   <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                                 </div>
-                                               </div>
-
-                                         </div>
-                                      </div>
-                                  </div>";
-                  }
-                 }
-          $objPaso4->CerrarSQLSAP($RSet,$con);
-          #Paso 5
-          $objPaso5 = new poolConnecion();
-          $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
-          $con=$objPaso5->ConexionSQLSAP();
-          $RSet=$objPaso5->QuerySQLSAP($Sql,$con);
-           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                 {
-                    $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                    if(!empty($fila[NumProyecto]))
-                    {
-                      $TotalAprobada += $MontoCIVA;
-                       $row_col5.= "<div class=\"row\">
-                                       <div class=\"col-lg-*\">
-                                         <div class=\"panel panel-purple panel-colorful\">
-                                                <div class=\"pad-all media\">
-                                                  <div class=\"media-left\">
-                                                    <span class=\"icon-wrap icon-wrap-xs\">
-                                                      <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
-                                                    </span>
-                                                  </div>
-                                                  <div class=\"media-body\">
-                                                    <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
-                                                    <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                                  </div>
-                                                </div>
-
-                                          </div>
-                                       </div>
-                                   </div>";
-                   }
-                  }
-           $objPaso5->CerrarSQLSAP($RSet,$con);
-           #Paso 6
-           $objPaso6 = new poolConnecion();
-           $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
-           $con=$objPaso6->ConexionSQLSAP();
-           $RSet=$objPaso6->QuerySQLSAP($Sql,$con);
-            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                  {
                      $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
                      if(!empty($fila[NumProyecto]))
                      {
-                       $TotalEnEsperaDePago += $MontoCIVA;
-                        $row_col6.= "<div class=\"row\">
+                       $TotalProvisionada += $MontoCIVA;
+                        $row_col2.= "<div class=\"row\">
                                         <div class=\"col-lg-*\">
                                           <div class=\"panel panel-purple panel-colorful\">
                                                  <div class=\"pad-all media\">
@@ -199,14 +71,142 @@ class panel extends poolConnecion
                                         </div>
                                     </div>";
                     }
+               }
+        $objPaso2->CerrarSQLSAP($RSet,$con);
+        #Paso 3
+        $objPaso3 = new poolConnecion();
+        $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
+        $con=$objPaso3->ConexionSQLSAP();
+        $RSet=$objPaso3->QuerySQLSAP($Sql,$con);
+         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+               {
+                      $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+                      if(!empty($fila[NumProyecto]))
+                      {
+                        $TotalElaborada += $MontoCIVA;
+                         $row_col3.= "<div class=\"row\">
+                                         <div class=\"col-lg-*\">
+                                           <div class=\"panel panel-purple panel-colorful\">
+                                                  <div class=\"pad-all media\">
+                                                    <div class=\"media-left\">
+                                                      <span class=\"icon-wrap icon-wrap-xs\">
+                                                        <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                      </span>
+                                                    </div>
+                                                    <div class=\"media-body\">
+                                                      <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                      <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                    </div>
+                                                  </div>
+
+                                            </div>
+                                         </div>
+                                     </div>";
+                     }
+                }
+         $objPaso3->CerrarSQLSAP($RSet,$con);
+         #Paso 4
+         $objPaso4 = new poolConnecion();
+         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
+         $con=$objPaso4->ConexionSQLSAP();
+         $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
+          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                {
+                         $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+                         if(!empty($fila[NumProyecto]))
+                         {
+                           $TotalRecibida += $MontoCIVA;
+                            $row_col4.= "<div class=\"row\">
+                                            <div class=\"col-lg-*\">
+                                              <div class=\"panel panel-purple panel-colorful\">
+                                                     <div class=\"pad-all media\">
+                                                       <div class=\"media-left\">
+                                                         <span class=\"icon-wrap icon-wrap-xs\">
+                                                           <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                         </span>
+                                                       </div>
+                                                       <div class=\"media-body\">
+                                                         <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                         <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                       </div>
+                                                     </div>
+
+                                               </div>
+                                            </div>
+                                        </div>";
+                        }
+                 }
+          $objPaso4->CerrarSQLSAP($RSet,$con);
+          #Paso 5
+          $objPaso5 = new poolConnecion();
+          $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
+          $con=$objPaso5->ConexionSQLSAP();
+          $RSet=$objPaso5->QuerySQLSAP($Sql,$con);
+           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                 {
+                        $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+                        if(!empty($fila[NumProyecto]))
+                        {
+                          $TotalAprobada += $MontoCIVA;
+                           $row_col5.= "<div class=\"row\">
+                                           <div class=\"col-lg-*\">
+                                             <div class=\"panel panel-purple panel-colorful\">
+                                                    <div class=\"pad-all media\">
+                                                      <div class=\"media-left\">
+                                                        <span class=\"icon-wrap icon-wrap-xs\">
+                                                          <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                        </span>
+                                                      </div>
+                                                      <div class=\"media-body\">
+                                                        <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                        <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                      </div>
+                                                    </div>
+
+                                              </div>
+                                           </div>
+                                       </div>";
+                       }
+                  }
+           $objPaso5->CerrarSQLSAP($RSet,$con);
+           #Paso 6
+           $objPaso6 = new poolConnecion();
+           $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
+           $con=$objPaso6->ConexionSQLSAP();
+           $RSet=$objPaso6->QuerySQLSAP($Sql,$con);
+            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                  {
+                         $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+                         if(!empty($fila[NumProyecto]))
+                         {
+                           $TotalEnEsperaDePago += $MontoCIVA;
+                            $row_col6.= "<div class=\"row\">
+                                            <div class=\"col-lg-*\">
+                                              <div class=\"panel panel-purple panel-colorful\">
+                                                     <div class=\"pad-all media\">
+                                                       <div class=\"media-left\">
+                                                         <span class=\"icon-wrap icon-wrap-xs\">
+                                                           <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                         </span>
+                                                       </div>
+                                                       <div class=\"media-body\">
+                                                         <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                         <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                       </div>
+                                                     </div>
+
+                                               </div>
+                                            </div>
+                                        </div>";
+                        }
                    }
             $objPaso6->CerrarSQLSAP($RSet,$con);
-            $TotalGral = number_format($TotalGral, 2, '.', ',');
+        $TotalGral = number_format($TotalGral, 2, '.', ',');
         $TotalProvisionada  = number_format($TotalProvisionada, 2, '.', ',');
         $TotalElaborada  = number_format($TotalElaborada, 2, '.', ',');
         $TotalRecibida  = number_format($TotalRecibida, 2, '.', ',');
         $TotalAprobada  = number_format($TotalAprobada, 2, '.', ',');
-        $TotalEnEsperaDePago  = number_format($TotalEnEsperaDePago, 2, '.', ',');        
+        $TotalEnEsperaDePago  = number_format($TotalEnEsperaDePago, 2, '.', ',');
       $row = "<div class=\"row\">
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
