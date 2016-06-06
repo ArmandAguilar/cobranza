@@ -45,7 +45,7 @@ class panel extends poolConnecion
        #Paso 2
        $Importe = 0;
        $objPaso2 = new poolConnecion();
-       $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
+       $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
        $con=$objPaso2->ConexionSQLSAP();
        $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -53,8 +53,8 @@ class panel extends poolConnecion
 
                      if(!empty($fila[NumProyecto]))
                      {
-                       $Importe = number_format($fila[Importe], 2, '.', ',');
-                       $TotalProvisionada += $fila[Importe];
+                       $Importe = number_format($fila[MontoCIVA], 2, '.', ',');
+                       $TotalProvisionada += $fila[MontoCIVA];
                         $row_col2.= "<div class=\"row\">
                                         <div class=\"col-lg-*\">
                                           <div class=\"panel panel-purple panel-colorful\">
