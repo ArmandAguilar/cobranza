@@ -65,7 +65,7 @@ class panel extends poolConnecion
                                                      </span>
                                                    </div>
                                                    <div class=\"media-body\">
-                                                     <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                     <p class=\"h4 text-thin media-heading\">$Importe</p>
                                                      <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                                    </div>
                                                  </div>
@@ -99,7 +99,7 @@ class panel extends poolConnecion
                                                       </span>
                                                     </div>
                                                     <div class=\"media-body\">
-                                                      <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                      <p class=\"h4 text-thin media-heading\">$Importe</p>
                                                       <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                                     </div>
                                                   </div>
@@ -133,7 +133,7 @@ class panel extends poolConnecion
                                                          </span>
                                                        </div>
                                                        <div class=\"media-body\">
-                                                         <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                         <p class=\"h4 text-thin media-heading\">$Importe</p>
                                                          <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                                        </div>
                                                      </div>
@@ -167,7 +167,7 @@ class panel extends poolConnecion
                                                         </span>
                                                       </div>
                                                       <div class=\"media-body\">
-                                                        <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                        <p class=\"h4 text-thin media-heading\">$Importe</p>
                                                         <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                                       </div>
                                                     </div>
@@ -201,7 +201,7 @@ class panel extends poolConnecion
                                                          </span>
                                                        </div>
                                                        <div class=\"media-body\">
-                                                         <p class=\"h4 text-thin media-heading\">$MontoCIVA</p>
+                                                         <p class=\"h4 text-thin media-heading\">$Importe</p>
                                                          <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
                                                        </div>
                                                      </div>
