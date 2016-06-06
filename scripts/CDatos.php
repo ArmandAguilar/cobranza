@@ -222,7 +222,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Proyectos $ $TotalGral </p>
+                      <p class=\"text-1x mar-no text-thin\">Proyectos </p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
                     </div>
               </div>
               $row_col1
@@ -230,7 +231,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Provisionada $ $TotalProvisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">Provisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
                     </div>
               </div>
               $row_col2
