@@ -72,7 +72,7 @@ class panel extends poolConnecion
         $objPaso2->CerrarSQLSAP($RSet,$con);
         #Paso 3
         $objPaso3 = new poolConnecion();
-        $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elavorada'";
+        $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
         $con=$objPaso3->ConexionSQLSAP();
         $RSet=$objPaso3->QuerySQLSAP($Sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -103,7 +103,7 @@ class panel extends poolConnecion
          $objPaso3->CerrarSQLSAP($RSet,$con);
          #Paso 4
          $objPaso4 = new poolConnecion();
-         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Resivida'";
+         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recivida'";
          $con=$objPaso4->ConexionSQLSAP();
          $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
