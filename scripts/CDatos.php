@@ -13,10 +13,11 @@ class panel extends poolConnecion
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-                   $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
+
                    if(!empty($fila[NumProyecto]))
                    {
-                     $TotalGral += $fila[MontoCIVA];
+                     $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
+                     $TotalGral += $fila[ImporteFinal];
 
                      $row_col1.= "<div class=\"row\">
                                      <div class=\"col-lg-*\">
@@ -42,15 +43,17 @@ class panel extends poolConnecion
               }
        $objPaso1->CerrarSQLSAP($RSet,$con);
        #Paso 2
+       $MontoCIVA = 0;
        $objPaso2 = new poolConnecion();
        $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
        $con=$objPaso2->ConexionSQLSAP();
        $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
               {
-                     $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+
                      if(!empty($fila[NumProyecto]))
                      {
+                       $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
                        $TotalProvisionada += $MontoCIVA;
                         $row_col2.= "<div class=\"row\">
                                         <div class=\"col-lg-*\">
@@ -74,15 +77,17 @@ class panel extends poolConnecion
                }
         $objPaso2->CerrarSQLSAP($RSet,$con);
         #Paso 3
+        $MontoCIVA = 0;
         $objPaso3 = new poolConnecion();
         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
         $con=$objPaso3->ConexionSQLSAP();
         $RSet=$objPaso3->QuerySQLSAP($Sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                {
-                      $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+
                       if(!empty($fila[NumProyecto]))
                       {
+                        $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
                         $TotalElaborada += $MontoCIVA;
                          $row_col3.= "<div class=\"row\">
                                          <div class=\"col-lg-*\">
@@ -106,15 +111,17 @@ class panel extends poolConnecion
                 }
          $objPaso3->CerrarSQLSAP($RSet,$con);
          #Paso 4
+         $MontoCIVA = 0;
          $objPaso4 = new poolConnecion();
          $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
          $con=$objPaso4->ConexionSQLSAP();
          $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                         $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+
                          if(!empty($fila[NumProyecto]))
                          {
+                           $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
                            $TotalRecibida += $MontoCIVA;
                             $row_col4.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
@@ -138,15 +145,17 @@ class panel extends poolConnecion
                  }
           $objPaso4->CerrarSQLSAP($RSet,$con);
           #Paso 5
+          $MontoCIVA = 0;
           $objPaso5 = new poolConnecion();
           $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
           $con=$objPaso5->ConexionSQLSAP();
           $RSet=$objPaso5->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                  {
-                        $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+
                         if(!empty($fila[NumProyecto]))
                         {
+                          $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
                           $TotalAprobada += $MontoCIVA;
                            $row_col5.= "<div class=\"row\">
                                            <div class=\"col-lg-*\">
@@ -170,15 +179,17 @@ class panel extends poolConnecion
                   }
            $objPaso5->CerrarSQLSAP($RSet,$con);
            #Paso 6
+           $MontoCIVA = 0;
            $objPaso6 = new poolConnecion();
            $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
            $con=$objPaso6->ConexionSQLSAP();
            $RSet=$objPaso6->QuerySQLSAP($Sql,$con);
             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                   {
-                         $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
+
                          if(!empty($fila[NumProyecto]))
                          {
+                           $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
                            $TotalEnEsperaDePago += $MontoCIVA;
                             $row_col6.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
