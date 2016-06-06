@@ -41,7 +41,7 @@ class panel extends poolConnecion
        $objPaso1->CerrarSQLSAP($RSet,$con);
        #Paso 2
        $objPaso2 = new poolConnecion();
-       $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provicionada'";
+       $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
        $con=$objPaso2->ConexionSQLSAP();
        $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))

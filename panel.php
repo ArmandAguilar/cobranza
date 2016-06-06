@@ -172,7 +172,8 @@ session_start();
 										<th data-field="estado">Estado</th>
 										<th data-field="vendedor">Vendedor</th>
 										<th data-field="empresa">Empresa</th>
-
+                    <th data-field="montoantesdeiva">Monto Antes de IVA</th>
+                    <th data-field="iva" data-visible="false">IVA</th>
 									</tr>
 								</thead>
 

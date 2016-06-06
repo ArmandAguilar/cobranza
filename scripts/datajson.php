@@ -21,6 +21,8 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                                 'estado' =>$fila[Estatus],
                                 'vendedor' =>$fila[Vendedor],
                                 'empresa' =>$fila[Empresa],
+                                'montoantesdeiva' =>$fila[Monto Antes de IVA],
+                                'iva' =>$fila[IVA]
                     );
              /*$strJson .= "{
                         \"id\": \"$contador\",
@@ -29,7 +31,10 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                         \"estado\": \"$fila[Estatus]\",
                         \"vendedor\": \"$fila[Vendedor]\",
                         \"empresa\": \"$fila[Empresa]\"
-                      },";*/
+                      },";
+                      <th data-field="contribucionbruta" data-visible="false">Contribucion Bruta</th>
+                      <th data-field="montofacturadoaiva" data-visible="false">Monto Facturado A IVA</th>
+                      <th data-field="cuentasporfacturaraiva" data-visible="false">Cuentas por facturar AIVA</th>*/
           }
         }
 $strJson .= "]";
