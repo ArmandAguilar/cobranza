@@ -45,7 +45,7 @@ class panel extends poolConnecion
        #Paso 2
        $MontoCIVA = 0;
        $objPaso2 = new poolConnecion();
-       $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
+       $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
        $con=$objPaso2->ConexionSQLSAP();
        $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -53,8 +53,8 @@ class panel extends poolConnecion
 
                      if(!empty($fila[NumProyecto]))
                      {
-                       $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                       $TotalProvisionada += $MontoCIVA;
+                       $Importe = number_format($fila[Importe], 2, '.', ',');
+                       $TotalProvisionada += $Importe;
                         $row_col2.= "<div class=\"row\">
                                         <div class=\"col-lg-*\">
                                           <div class=\"panel panel-purple panel-colorful\">
@@ -79,7 +79,7 @@ class panel extends poolConnecion
         #Paso 3
         $MontoCIVA = 0;
         $objPaso3 = new poolConnecion();
-        $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
+        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
         $con=$objPaso3->ConexionSQLSAP();
         $RSet=$objPaso3->QuerySQLSAP($Sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -87,8 +87,8 @@ class panel extends poolConnecion
 
                       if(!empty($fila[NumProyecto]))
                       {
-                        $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                        $TotalElaborada += $MontoCIVA;
+                        $Importe = number_format($fila[Importe], 2, '.', ',');
+                        $TotalElaborada += $Importe;
                          $row_col3.= "<div class=\"row\">
                                          <div class=\"col-lg-*\">
                                            <div class=\"panel panel-purple panel-colorful\">
@@ -113,7 +113,7 @@ class panel extends poolConnecion
          #Paso 4
          $MontoCIVA = 0;
          $objPaso4 = new poolConnecion();
-         $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
+         $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
          $con=$objPaso4->ConexionSQLSAP();
          $RSet=$objPaso4->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -121,8 +121,8 @@ class panel extends poolConnecion
 
                          if(!empty($fila[NumProyecto]))
                          {
-                           $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                           $TotalRecibida += $MontoCIVA;
+                           $Importe = number_format($fila[Importe], 2, '.', ',');
+                           $TotalRecibida += $Importe;
                             $row_col4.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
                                               <div class=\"panel panel-purple panel-colorful\">
@@ -147,7 +147,7 @@ class panel extends poolConnecion
           #Paso 5
           $MontoCIVA = 0;
           $objPaso5 = new poolConnecion();
-          $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
+          $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
           $con=$objPaso5->ConexionSQLSAP();
           $RSet=$objPaso5->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -155,8 +155,8 @@ class panel extends poolConnecion
 
                         if(!empty($fila[NumProyecto]))
                         {
-                          $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                          $TotalAprobada += $MontoCIVA;
+                          $Importe = number_format($fila[Importe], 2, '.', ',');
+                          $TotalAprobada += $Importe;
                            $row_col5.= "<div class=\"row\">
                                            <div class=\"col-lg-*\">
                                              <div class=\"panel panel-purple panel-colorful\">
@@ -181,7 +181,7 @@ class panel extends poolConnecion
            #Paso 6
            $MontoCIVA = 0;
            $objPaso6 = new poolConnecion();
-           $Sql="SELECT [NumProyecto],[NomProyecto],[MontoCIVA] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
+           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[Monto Antes de IVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
            $con=$objPaso6->ConexionSQLSAP();
            $RSet=$objPaso6->QuerySQLSAP($Sql,$con);
             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -189,8 +189,8 @@ class panel extends poolConnecion
 
                          if(!empty($fila[NumProyecto]))
                          {
-                           $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
-                           $TotalEnEsperaDePago += $MontoCIVA;
+                           $Importe = number_format($fila[Importe], 2, '.', ',');
+                           $TotalEnEsperaDePago += $Importe;
                             $row_col6.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
                                               <div class=\"panel panel-purple panel-colorful\">
