@@ -222,8 +222,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Proyectos </p>
-                      <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
+                      <p class=\"text-2x mar-no text-thin\">Proyectos </p>
+                      <p class=\"text-2x mar-no text-thin\">$ $TotalGral </p>
                     </div>
               </div>
               $row_col1
@@ -231,8 +231,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Provisionada</p>
-                      <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
+                      <p class=\"text-2x mar-no text-thin\">Provisionada</p>
+                      <p class=\"text-2x mar-no text-thin\">$ $TotalProvisionada</p>
                     </div>
               </div>
               $row_col2
@@ -240,7 +240,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Elaborada $ $TotalElaborada</p>
+                      <p class=\"text-2x mar-no text-thin\">Elaborada</p>
+                      <p class=\"text-2x mar-no text-thin\">$ $TotalElaborada</p>
                     </div>
               </div>
               $row_col3
@@ -248,7 +249,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Recibida $ $TotalRecibida</p>
+                      <p class=\"text-1x mar-no text-thin\">Recibida</p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalRecibida</p>
                     </div>
               </div>
               $row_col4
@@ -256,7 +258,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Aprovada $ $TotalAprobada</p>
+                      <p class=\"text-1x mar-no text-thin\">Aprovada</p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalAprobada</p>
                     </div>
               </div>
               $row_col5
@@ -264,7 +267,8 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Espera de pago $ $TotalEnEsperaDePago</p>
+                      <p class=\"text-1x mar-no text-thin\">Es. de pago</p>
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalEnEsperaDePago</p>
                     </div>
               </div>
               $row_col6
