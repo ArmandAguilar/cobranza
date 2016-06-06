@@ -156,7 +156,7 @@ class panel extends poolConnecion
                         if(!empty($fila[NumProyecto]))
                         {
                           $Importe = number_format($fila[Importe], 2, '.', ',');
-                          $TotalAprobada += $fila[Importe]e;
+                          $TotalAprobada += $fila[Importe];
                            $row_col5.= "<div class=\"row\">
                                            <div class=\"col-lg-*\">
                                              <div class=\"panel panel-purple panel-colorful\">
