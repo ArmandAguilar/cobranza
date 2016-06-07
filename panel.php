@@ -46,6 +46,8 @@ session_start();
 
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
+  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
+    <input type="hidden" name='txtFactura' id="txtFactura" value="">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -321,5 +323,6 @@ session_start();
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
  <script src="js/scripts.js"></script>
  <script src="js/data.js"></script>
+ </form>
 </body>
 </html>

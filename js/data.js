@@ -26,3 +26,9 @@ function load_lista()
   $("#DCronograma").hide();
 
 }
+
+function load_view(Factura)
+{
+  $("#txtFactura").val(Factura);
+  document.forms["frmDetalle"].submit();
+}
