@@ -107,7 +107,7 @@
 										<div class="row">
 
 												<div class="col-lg-3">
-														<p class="text-2x mar-no text-thin">Factura : F-234-CeI</p><p class="text-2x mar-no text-thin">Monto : $6,540</p>
+														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $6,540</p>
 												</div>
 												<div class="col-lg-3">
 																<div class="btn-group">
