@@ -47,7 +47,9 @@ session_start();
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
   <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
-    <input type="hidden" name='txtFactura' id="txtFactura" value="">
+    <input type="hidden" name="txtFactura" id="txtFactura" value="">
+    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="">
+    <input type="hidden" name="txtProyecto" id="txtProyecto" value="">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
