@@ -19,3 +19,10 @@ function load_enbudo()
           });
 
 }
+function load_lista()
+{
+  $('#DEnvudo').hide();
+  $("#DLista").show();
+  $("#DCronograma").hide();
+
+}

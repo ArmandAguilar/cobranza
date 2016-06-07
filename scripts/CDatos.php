@@ -55,6 +55,7 @@ class panel extends poolConnecion
                      {
                        $Importe = number_format($fila[Importe], 2, '.', ',');
                        $TotalProvisionada += $fila[Importe];
+                       $Proyecto =  substr($fila[NomProyecto], 0, 15);
                         $row_col2.= "<div class=\"row\">
                                         <div class=\"col-lg-*\">
                                           <div class=\"panel panel-purple panel-colorful\">
@@ -66,7 +67,7 @@ class panel extends poolConnecion
                                                    </div>
                                                    <div class=\"media-body\">
                                                      <p class=\"h4 text-thin media-heading\">$Importe</p>
-                                                     <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                     <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
                                                    </div>
                                                  </div>
 
@@ -89,6 +90,7 @@ class panel extends poolConnecion
                       {
                         $Importe = number_format($fila[Importe], 2, '.', ',');
                         $TotalElaborada += $fila[Importe];
+                        $Proyecto =  substr($fila[NomProyecto], 0, 15);
                          $row_col3.= "<div class=\"row\">
                                          <div class=\"col-lg-*\">
                                            <div class=\"panel panel-purple panel-colorful\">
@@ -100,7 +102,7 @@ class panel extends poolConnecion
                                                     </div>
                                                     <div class=\"media-body\">
                                                       <p class=\"h4 text-thin media-heading\">$Importe</p>
-                                                      <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                      <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
                                                     </div>
                                                   </div>
 
@@ -123,6 +125,7 @@ class panel extends poolConnecion
                          {
                            $Importe = number_format($fila[Importe], 2, '.', ',');
                            $TotalRecibida += $fila[Importe];
+                           $Proyecto =  substr($fila[NomProyecto], 0, 15);
                             $row_col4.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
                                               <div class=\"panel panel-purple panel-colorful\">
@@ -134,7 +137,7 @@ class panel extends poolConnecion
                                                        </div>
                                                        <div class=\"media-body\">
                                                          <p class=\"h4 text-thin media-heading\">$Importe</p>
-                                                         <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                         <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
                                                        </div>
                                                      </div>
 
@@ -157,6 +160,7 @@ class panel extends poolConnecion
                         {
                           $Importe = number_format($fila[Importe], 2, '.', ',');
                           $TotalAprobada += $fila[Importe];
+                          $Proyecto =  substr($fila[NomProyecto], 0, 15);
                            $row_col5.= "<div class=\"row\">
                                            <div class=\"col-lg-*\">
                                              <div class=\"panel panel-purple panel-colorful\">
@@ -191,6 +195,7 @@ class panel extends poolConnecion
                          {
                            $Importe = number_format($fila[Importe], 2, '.', ',');
                            $TotalEnEsperaDePago += $fila[Importe];
+                           $Proyecto =  substr($fila[NomProyecto], 0, 15);
                             $row_col6.= "<div class=\"row\">
                                             <div class=\"col-lg-*\">
                                               <div class=\"panel panel-purple panel-colorful\">
