@@ -103,7 +103,7 @@
 				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="panel">
 									<div class="panel-body">
-										<h2>1782 .- Servicios Promotores y Constructores. Analisis y Diseño de Cubiertas  Averanda.</h2>
+										<h2><?php echo $_POST[txtNoProyecto]; ?> .- <?php echo $_POST[txtProyecto]; ?></h2>
 										<div class="row">
 
 												<div class="col-lg-3">
