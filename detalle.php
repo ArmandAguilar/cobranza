@@ -54,7 +54,7 @@
 				<!--Brand logo & name-->
 				<!--================================-->
 				<div class="navbar-header">
-					<a href="panel.html" class="navbar-brand">
+					<a href="panel.php" class="navbar-brand">
 						<!--<img src="img/logo.png" alt="Nifty Logo" class="brand-icon">-->
 						<div class="brand-title">
 							<span class="brand-text">Cobranza</span>
@@ -115,7 +115,7 @@
 																							Estado <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-																							<li><a href="#">Action</a></li>
+																							<li>Provisionada</li>
 																							<li><a href="#">Another action</a></li>
 																							<li><a href="#">Something else here</a></li>
 
@@ -305,7 +305,7 @@
 								<ul id="mainnav-menu" class="list-group">
 									<!--Menu list item-->
 									<li>
-										<a href="panel.html">
+										<a href="panel.php">
 											<i class="fa fa-dashboard"></i>
 											<span class="menu-title">
 												<strong>Dashboard</strong>
