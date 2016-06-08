@@ -20,7 +20,7 @@ class cliente extends poolConnecion
          $arr = array();
          #Detalle Clientes
          $objCliente = new poolConnecion();
-         $Sql="SELECT [Nombre],[Telefono],[Celular],[Email],[Puesto],[Tratamiento] FROM [SAP].[dbo].[Clientes] Where Id='$IdCliente'";
+         $Sql="SELECT Nombre,Telefono,Celular,Email,Puesto,Tratamiento FROM [SAP].[dbo].[Clientes] Where Id='$IdCliente'";
          $con=$objCliente->ConexionSQLSAP();
          $RSet=$objCliente->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -36,7 +36,7 @@ class cliente extends poolConnecion
                     $arr[] = array('Nombre' => $Cliente,
                                    'Telefono' => $Telefono,
                                    'Celular' => $RFC,
-                                   'Email' => $Giro
+                                   'Email' => $Giro,
                                    'Puesto' => $Puesto
                                  );
                 }
