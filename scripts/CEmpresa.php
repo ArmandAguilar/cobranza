@@ -7,7 +7,7 @@ class empresa extends poolConnecion
   {
             #Obtenemos el IdEmpresa de presupuestos
             $objPresupuestos = new poolConnecion();
-            $Sql="SELECT [IdEmpresa]  FROM [SAP].[dbo].[presupuestos] Where NoProyecto='$id'";
+            $Sql="SELECT [IdEmpresa] FROM [SAP].[dbo].[presupuestos] Where NoProyecto='$id'";
             $con=$objPresupuestos->ConexionSQLSAP();
             $RSet=$objPresupuestos->QuerySQLSAP($Sql,$con);
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -20,7 +20,7 @@ class empresa extends poolConnecion
             $arr = array();
             #Detalle Empresa
             $objEmpresa = new poolConnecion();
-            $Sql="SELECT [Empresa]  FROM [SAP].[dbo].[empresa] Where Id='$IdEmpresa'";
+            $Sql="SELECT [Empresa],[RazonSocial],[RFC] FROM [SAP].[dbo].[empresa] Where Id='$IdEmpresa'";
             $con=$objEmpresa->ConexionSQLSAP();
             $RSet=$objEmpresa->QuerySQLSAP($Sql,$con);
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -32,6 +32,7 @@ class empresa extends poolConnecion
                                     );
                    }
              $objEmpresa->CerrarSQLSAP($RSet,$con);
+             return json_encode($arr);
   }
 }
 
