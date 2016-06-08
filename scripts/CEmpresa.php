@@ -13,7 +13,7 @@ class empresa extends poolConnecion
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                    {
 
-                       $IdEmpresa = $fila[IdEmpresa];
+                       $IdEmpresa = $fila[Empresa];
                    }
              $objPresupuestos->CerrarSQLSAP($RSet,$con);
 
