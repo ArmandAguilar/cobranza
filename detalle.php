@@ -164,7 +164,7 @@ session_start();
 															<p class="text-bold">Tamano cliente</p>
 														</div>
 														<div class="col-sm-9">
-															<p class="text-thin"><div id="lblEmpresa" name="lblEmpresa" class="text-thin"></div></p>
+															<p class="text-thin" id="lblEmpresa" name="lblEmpresa"></p>
 															<p class="text-thin"><div id="lblRasonSocial" name="lblRasonSocial" class="text-thin"></div></p>
 															<p class="text-thin"><div id="lblRFC" name="lblRFC" class="text-thin"></div></p>
 															<p class="text-thin">Construccion</p>
