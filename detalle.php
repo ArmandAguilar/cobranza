@@ -111,7 +111,7 @@
 												</div>
 												<div class="col-lg-3">
 																<div class="btn-group">
-																						<button class="btn btn-primary dropdown-toggle" data-toggle="Estado" type="button" aria-expanded="false">
+																						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
 																							Estado <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
