@@ -6,7 +6,7 @@ class empresa extends poolConnecion
   function detalle($id)
   {
             #Obtenemos el IdEmpresa de presupuestos
-            $objPresupuestos = new poolConnecion();
+            /*$objPresupuestos = new poolConnecion();
             $Sql1="SELECT [IdEmpresa] FROM [SAP].[dbo].[presupuestos] Where NoProyecto='$id'";
             $con=$objPresupuestos->ConexionSQLSAP();
             $RSet=$objPresupuestos->QuerySQLSAP($Sql1,$con);
@@ -15,7 +15,7 @@ class empresa extends poolConnecion
 
                        $IdEmpresa = $fila[IdEmpresa];
                    }
-             $objPresupuestos->CerrarSQLSAP($RSet,$con);
+             $objPresupuestos->CerrarSQLSAP($RSet,$con);*/
 
             $arr = array();
             #Detalle Empresa
