@@ -1,6 +1,6 @@
 function detalles_empresa(id)
 {
-  alert(id);
+
   var losdatos = {id:id};
     $.ajax({
            		url:'./scripts/oper_detalles.php?o=1',
@@ -8,6 +8,7 @@ function detalles_empresa(id)
           		data:losdatos,
           		success:function(data)
           	         {
+                       alert(data);
           	             var dataJson = eval(data);
                         $("#lblEmpresa").val(dataJson[0].Empresa);
                         alert(dataJson[0].Empresa);
