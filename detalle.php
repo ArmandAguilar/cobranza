@@ -107,7 +107,7 @@
 										<div class="row">
 
 												<div class="col-lg-3">
-														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $6,540</p>
+														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
 												</div>
 												<div class="col-lg-3">
 																<div class="btn-group">
@@ -115,7 +115,7 @@
 																							Dropdown <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-																							<li class="dropdown-header">Dropdown header</li>
+																							<li class="dropdown-header">Estado</li>
 																							<li><a href="#">Action</a>
 																							</li>
 																							<li><a href="#">Another action</a>
