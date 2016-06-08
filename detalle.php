@@ -177,7 +177,7 @@ session_start();
 											</div>
 											<address>
 												<strong>Dirección</strong><br>
-												Calz.Tlalpan 2340 Col. Avante Despacho10-1 CP 04460<br>
+												<div id="lblDir"></div><br>
 											</address>
                   </div>
                 </div>

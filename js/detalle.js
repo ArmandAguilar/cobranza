@@ -18,6 +18,7 @@ function detalles_empresa(id)
                         $("#lblOrigenCliente").append(dataJson[0].OrigenCliente);
                         $("#lblRevenue").append(dataJson[0].Revenue);
                         $("#lblTamanoCliente").append(dataJson[0].TamanoCliente);
+                        $("#lblDir").append(dataJson[0].DireccionFiscal);
           		       },
           		error:function(req,e,er) {
           			alert('error!' + er);
