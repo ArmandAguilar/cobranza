@@ -2,7 +2,7 @@
 include("../sis.php");
 include("$path/libs/conexion.php");
 
-$strJson = "[";
+
 $contador = 0;
 $arr = array();
 $objPaso2 = new poolConnecion();
@@ -24,19 +24,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                                 'montoantesdeiva' =>$fila[Monto Antes de IVA],
                                 'iva' =>$fila[IVA]
                     );
-             /*$strJson .= "{
-                        \"id\": \"$contador\",
-                        \"noproyecto\": \"$fila[NumProyecto]\",
-                        \"proyecto\": \"$fila[NomProyecto]\",
-                        \"estado\": \"$fila[Estatus]\",
-                        \"vendedor\": \"$fila[Vendedor]\",
-                        \"empresa\": \"$fila[Empresa]\"
-                      },";
-                      <th data-field="contribucionbruta" data-visible="false">Contribucion Bruta</th>
-                      <th data-field="montofacturadoaiva" data-visible="false">Monto Facturado A IVA</th>
-                      <th data-field="cuentasporfacturaraiva" data-visible="false">Cuentas por facturar AIVA</th>*/
           }
         }
-$strJson .= "]";
 echo json_encode($arr);
 ?>
