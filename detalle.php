@@ -151,30 +151,96 @@ session_start();
                     <h3 class="panel-title">Empresa</h3>
                   </div>
                   <div class="panel-body">
-												<div class="row">
-														<div class="col-sm-2">
-															<p class="text-bold">Empresa</p>
-															<p class="text-bold">Rason Social</p>
-															<p class="text-bold">RFC</p>
-															<p class="text-bold">Giro</p>
-															<p class="text-bold">Web</p>
-															<p class="text-bold">Tipo Cuenta</p>
-															<p class="text-bold">Origen Cliente</p>
-															<p class="text-bold">Revenue</p>
-															<p class="text-bold">Tamaño cliente</p>
-														</div>
-														<div class="col-sm-9">
-															<p class="text-thin" id="lblEmpresa" name="lblEmpresa"></p>
-															<p class="text-thin" id="lblRasonSocial" name="lblRasonSocial" ></p>
-															<p class="text-thin" id="lblRFC" name="lblRFC"></p>
-															<p class="text-thin" id="lblGiro"></p>
-															<p class="text-thin" id="lblWeb"></p>
-															<p class="text-thin" id="lblTipoCuenta"></p>
-															<p class="text-thin" id="lblOrigenCliente"></p>
-															<p class="text-thin" id="lblRevenue"></p>
-															<p class="text-thin" id="lblTamanoCliente"></p>
-														</div>
-											</div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Empresa</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblEmpresa" name="lblEmpresa"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Rason Social</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblRasonSocial" name="lblRasonSocial" ></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">RFC</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblRFC" name="lblRFC"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Giro</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblGiro"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Web</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblWeb"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Tipo Cuenta</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblTipoCuenta"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Origen Cliente</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblOrigenCliente"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Revenue</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblRevenue"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-bold">Tamaño cliente</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-*">
+                                <p class="text-thin" id="lblTamanoCliente"></p>
+                            </div>
+                        </div>
 											<address>
 												<strong>Dirección</strong><br>
 												<div id="lblDir"></div><br>
