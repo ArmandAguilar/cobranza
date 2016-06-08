@@ -687,7 +687,7 @@ session_start();
 	<script src="js/demo/form-component.js"></script>
 	<script src="js/detalle.js"></script>
 	<script>
-			detalles_empresa(<?php echo $_POST[NumProyecto]; ?>);
+			detalles_empresa(<?php echo $_POST[txtNoProyecto]; ?>);
 	</script>
 </body>
 </html>
