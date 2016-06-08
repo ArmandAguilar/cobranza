@@ -1,18 +1,18 @@
 function detalles_empresa(id)
 {
-  var losdatos = {id:id}
+  var losdatos = {id:id};
     $.ajax({
- 		url:'./scripts/oper_detalles.php?o=1',
-		type:'POST',
-		data:losdatos,
-		success:function(data)
-	         {
-	             var dataJson = eval(data);
-              $("#lblEmpresa").val(dataJson[0].Empresa);
-              alert(dataJson[0].Empresa);
-		 },
-		error:function(req,e,er) {
-			alert('error!' + er);
-		}
+           		url:'./scripts/oper_detalles.php?o=1',
+          		type:'POST',
+          		data:losdatos,
+          		success:function(data)
+          	         {
+          	             var dataJson = eval(data);
+                        $("#lblEmpresa").val(dataJson[0].Empresa);
+                        alert(dataJson[0].Empresa);
+          		 },
+          		error:function(req,e,er) {
+          			alert('error!' + er);
+          		}
            });
 }
