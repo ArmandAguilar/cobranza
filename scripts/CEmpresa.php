@@ -20,7 +20,7 @@ class empresa extends poolConnecion
             $arr = array();
             #Detalle Empresa
             $objEmpresa = new poolConnecion();
-            $Sql="SELECT Empresa,RazonSocial,RFC FROM empresas Where IdEmpresa='$IdEmpresa'";
+            $Sql="SELECT Empresa,RazonSocial,RFC FROM empresas Where IdEmpresa='4144'";
             $con=$objEmpresa->ConexionSQLSAP();
             $RSet=$objEmpresa->QuerySQLSAP($Sql,$con);
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
