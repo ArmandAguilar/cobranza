@@ -33,7 +33,7 @@ class empresa extends poolConnecion
                    }
              $objEmpresa->CerrarSQLSAP($RSet,$con);
              //return json_encode($arr);
-             return $Sql;
+             return $fila[Empresa];
   }
 }
 
