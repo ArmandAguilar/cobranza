@@ -1,7 +1,7 @@
 <?php
 include("../sis.php");
 include("$path/libs/conexion.php");
-include("$path/scripts/CEmpresas.php");
+include("$path/scripts/CEmpresa.php");
 $obj =  new empresa();
 
 switch ($_GET[o]) {
