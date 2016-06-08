@@ -12,6 +12,12 @@ function detalles_empresa(id)
                         $("#lblEmpresa").append(dataJson[0].Empresa);
                         $("#lblRasonSocial").append(dataJson[0].RazonSocial);
                         $("#lblRFC").append(dataJson[0].RFC);
+                        $("#lblGiro").append(dataJson[0].Giro);
+                        $("#lblWeb").append(dataJson[0].Web);
+                        $("#lblTipoCuenta").append(dataJson[0].TipoCuenta);
+                        $("#lblOrigenCliente").append(dataJson[0].OrigenCliente);
+                        $("#lblRevenue").append(dataJson[0].Revenue);
+                        $("#lblTamanoCliente").append(dataJson[0].TamanoCliente);
           		       },
           		error:function(req,e,er) {
           			alert('error!' + er);

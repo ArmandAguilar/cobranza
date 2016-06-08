@@ -161,18 +161,18 @@ session_start();
 															<p class="text-bold">Tipo Cuenta</p>
 															<p class="text-bold">Origen Cliente</p>
 															<p class="text-bold">Revenue</p>
-															<p class="text-bold">Tamano cliente</p>
+															<p class="text-bold">Tamaño cliente</p>
 														</div>
 														<div class="col-sm-9">
 															<p class="text-thin" id="lblEmpresa" name="lblEmpresa"></p>
 															<p class="text-thin" id="lblRasonSocial" name="lblRasonSocial" ></p>
 															<p class="text-thin" id="lblRFC" name="lblRFC"></p>
-															<p class="text-thin">Construccion</p>
-															<p class="text-thin">http://www.dominio.com</p>
-															<p class="text-thin">Cuenta Clave</p>
-															<p class="text-thin">Nacional</p>
-															<p class="text-thin">$0.00</p>
-															<p class="text-thin">Nacional</p>
+															<p class="text-thin" id="lblGiro"></p>
+															<p class="text-thin" id="lblWeb"></p>
+															<p class="text-thin" id="lblTipoCuenta"></p>
+															<p class="text-thin" id="lblOrigenCliente"></p>
+															<p class="text-thin" id="lblRevenue"></p>
+															<p class="text-thin" id="lblTamanoCliente"></p>
 														</div>
 											</div>
 											<address>
