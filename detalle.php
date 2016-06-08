@@ -164,9 +164,9 @@ session_start();
 															<p class="text-bold">Tamano cliente</p>
 														</div>
 														<div class="col-sm-9">
-															<p class="text-thin"><div id="lblEmpresa" name="lblEmpresa"></div></p>
-															<p class="text-thin">Interpretaciones Creativas S.C. y Arquitectura Ramos</p>
-															<p class="text-thin">PEC-961211-822</p>
+															<p class="text-thin"><div id="lblEmpresa" name="lblEmpresa" class="text-thin"></div></p>
+															<p class="text-thin"><div id="lblRasonSocial" name="lblRasonSocial" class="text-thin"></div></p>
+															<p class="text-thin"><div id="lblRFC" name="lblRFC" class="text-thin"></div></p>
 															<p class="text-thin">Construccion</p>
 															<p class="text-thin">http://www.dominio.com</p>
 															<p class="text-thin">Cuenta Clave</p>

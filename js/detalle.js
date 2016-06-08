@@ -10,7 +10,8 @@ function detalles_empresa(id)
           	         {
           	             var dataJson = eval(data);
                         $("#lblEmpresa").append(dataJson[0].Empresa);
-
+                        $("#lblRasonSocial").append(dataJson[0].RazonSocial);
+                        $("#lblRFC").append(dataJson[0].RFC);
           		       },
           		error:function(req,e,er) {
           			alert('error!' + er);
