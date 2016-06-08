@@ -1,5 +1,6 @@
 function detalles_empresa(id)
 {
+  alert(id);
   var losdatos = {id:id};
     $.ajax({
            		url:'./scripts/oper_detalles.php?o=1',
