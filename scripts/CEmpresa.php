@@ -26,14 +26,14 @@ class empresa extends poolConnecion
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                    {
 
-                       $arr[] = array('Empresa' => $fila[Empresa],
+                       $arr[] = array('Empresa' => $fila['Empresa'],
                                       'RazonSocial' => $fila[RazonSocial],
                                       'RFC' => $fila[RFC]
                                     );
                    }
              $objEmpresa->CerrarSQLSAP($RSet,$con);
              //return json_encode($arr);
-             return "$fila[Empresa]-$Sql";
+             return "$fila['Empresa']-$Sql";
   }
 }
 
