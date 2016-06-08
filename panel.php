@@ -50,6 +50,7 @@ session_start();
     <input type="hidden" name="txtFactura" id="txtFactura" value="">
     <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="">
     <input type="hidden" name="txtProyecto" id="txtProyecto" value="">
+    <input type="hidden" name="txtImporte" id="txtImporte" value="">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->

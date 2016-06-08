@@ -27,10 +27,11 @@ function load_lista()
 
 }
 
-function load_view(Factura,NoProyecto,Proyecto)
+function load_view(Factura,NoProyecto,Proyecto,Importe)
 {
   $("#txtFactura").val(Factura);
   $("#txtNoProyecto").val(NoProyecto);
   $("#txtProyecto").val(Proyecto);
+  $("#txtImporte").val(Importe);
   document.forms["frmDetalle"].submit();
 }
