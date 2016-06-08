@@ -9,7 +9,7 @@ function detalles_empresa(id)
           		success:function(data)
           	         {
           	             var dataJson = eval(data);
-                        $("#lblEmpresa").val(dataJson[0].Empresa);
+                        $("#lblEmpresa").append(dataJson[0].Empresa);
 
           		       },
           		error:function(req,e,er) {
