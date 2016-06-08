@@ -8,7 +8,6 @@ function detalles_empresa(id)
           		data:losdatos,
           		success:function(data)
           	         {
-                       alert(data);
           	             var dataJson = eval(data);
                         $("#lblEmpresa").val(dataJson[0].Empresa);
 
