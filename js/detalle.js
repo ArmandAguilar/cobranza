@@ -36,6 +36,10 @@ function detalles_cliente(id)
                      {
                          var dataJson = eval(data);
                         $("#lblCliente").append(dataJson[0].Nombre);
+                        $("#lblTelefono").append(dataJson[0].Telefono);
+                        $("#lblCelular").append(dataJson[0].Celular);
+                        $("#lblEmail").append(dataJson[0].Email);
+                        $("#lblPuesto").append(dataJson[0].Puesto);
                      },
               error:function(req,e,er) {
                 alert('error!' + er);

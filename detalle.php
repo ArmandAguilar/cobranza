@@ -252,6 +252,16 @@ session_start();
                     <h3 class="panel-title">Clientes</h3>
                   </div>
                   <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                          <p class="text-bold">Puesto</p>
+                        </div>
+                   </div>
+                   <div class="row">
+                     <div class="col-sm-*">
+                       <p class="text-thin" id="lblPuesto" name="lblPuesto"></p>
+                     </div>
+                   </div>
 													<div class="row">
 															<div class="col-sm-2">
 																<p class="text-bold">Nombre</p>
@@ -262,6 +272,37 @@ session_start();
                              <p class="text-thin" id="lblCliente" name="lblCliente"></p>
                            </div>
                          </div>
+                         <div class="row">
+                             <div class="col-sm-2">
+                               <p class="text-bold">Teléfono</p>
+                             </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-*">
+                            <p class="text-thin" id="lblTelefono" name="lblTelefono"></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                              <p class="text-bold">Celular</p>
+                            </div>
+                       </div>
+                       <div class="row">
+                         <div class="col-sm-*">
+                           <p class="text-thin" id="lblCelular" name="lblCelular"></p>
+                         </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-sm-2">
+                             <p class="text-bold">Emial</p>
+                           </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-*">
+                          <p class="text-thin" id="lblEmail" name="lblEmail"></p>
+                        </div>
+                      </div>
+
 									</div>
                 </div>
 								<div class="panel">
