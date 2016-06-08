@@ -1,3 +1,7 @@
+<?php
+ini_set('session.auto_start()','On');
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from www.themeon.net/nifty/v2.2/layouts-offcanvas-navigation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Apr 2015 10:44:28 GMT -->
@@ -42,6 +46,14 @@
   <!--Page Load Progress Bar [ OPTIONAL ]-->
   <link href="plugins/pace/pace.min.css" rel="stylesheet">
   <script src="plugins/pace/pace.min.js"></script>
+	<?php
+		if(empty($_SESSION[IdUsuario]))
+		{
+			 echo "<script>
+			 						window.location.href='logout.php'
+						</script>		";
+		}
+	 ?>
 </head>
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
@@ -75,7 +87,7 @@
 								<span class="pull-right">
 									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
 								</span>
-								<div class="username hidden-xs">Armando Aguilar</div>
+								<div class="username hidden-xs"><?php echo $_SESSION["Usuario"]; ?></div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
 								<div class="pad-all text-right">
