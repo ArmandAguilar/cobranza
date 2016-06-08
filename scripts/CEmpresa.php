@@ -7,33 +7,35 @@ class empresa extends poolConnecion
   {
             #Obtenemos el IdEmpresa de presupuestos
             $objPresupuestos = new poolConnecion();
-            $Sql1="SELECT IdEmpresa,Empresa,RazonSocial,RFC FROM empresas Where IdEmpresa='4144'";
+            $Sql1="SELECT [IdEmpresa] FROM [SAP].[dbo].[presupuestos] Where NoProyecto='$id'";
             $con=$objPresupuestos->ConexionSQLSAP();
             $RSet=$objPresupuestos->QuerySQLSAP($Sql1,$con);
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                    {
 
-                       $IdEmpresa = $fila[Empresa];
+                       $IdEmpresa = $fila[IdEmpresa];
                    }
              $objPresupuestos->CerrarSQLSAP($RSet,$con);
 
-            //$arr = array();
+            $arr = array();
             #Detalle Empresa
-            /*$objEmpresa = new poolConnecion();
-            $Sql="SELECT IdEmpresa,Empresa,RazonSocial,RFC FROM empresas Where IdEmpresa='4144'";
+            $objEmpresa = new poolConnecion();
+            $Sql="SELECT IdEmpresa,Empresa,RazonSocial,RFC FROM empresas Where IdEmpresa='$IdEmpresa'";
             $con=$objEmpresa->ConexionSQLSAP();
             $RSet=$objEmpresa->QuerySQLSAP($Sql,$con);
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                    {
-
-                       $arr[] = array('Empresa' => $fila[IdEmpresa],
-                                      'RazonSocial' => $fila[RazonSocial],
-                                      'RFC' => $fila[RFC]
+                      $Empresa=$fila[Empresa];
+                      $RazonSocial=$fila[RazonSocial];
+                      $RFC=$fila[RFC];
+                       $arr[] = array('Empresa' => $Empresa,
+                                      'RazonSocial' => $RazonSocial,
+                                      'RFC' => $RFC
                                     );
                    }
              $objEmpresa->CerrarSQLSAP($RSet,$con);
-             //return json_encode($arr);*/
-             return "$IdEmpresa -  $Sql1";
+             return json_encode($arr);
+
   }
 }
 
