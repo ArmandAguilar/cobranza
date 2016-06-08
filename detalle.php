@@ -115,14 +115,10 @@
 																							Dropdown <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-																							<li class="dropdown-header">Estado</li>
-																							<li><a href="#">Action</a>
-																							</li>
-																							<li><a href="#">Another action</a>
-																							</li>
-																							<li><a href="#">Something else here</a>
-																							</li>
-																							<li class="divider"></li>
+																							<li><a href="#">Action</a></li>
+																							<li><a href="#">Another action</a></li>
+																							<li><a href="#">Something else here</a></li>
+
 																						</ul>
 																</div>
 												</div>
