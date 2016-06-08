@@ -165,8 +165,8 @@ session_start();
 														</div>
 														<div class="col-sm-9">
 															<p class="text-thin" id="lblEmpresa" name="lblEmpresa"></p>
-															<p class="text-thin"><div id="lblRasonSocial" name="lblRasonSocial" class="text-thin"></div></p>
-															<p class="text-thin"><div id="lblRFC" name="lblRFC" class="text-thin"></div></p>
+															<p class="text-thin" id="lblRasonSocial" name="lblRasonSocial" ></p>
+															<p class="text-thin" id="lblRFC" name="lblRFC"></p>
 															<p class="text-thin">Construccion</p>
 															<p class="text-thin">http://www.dominio.com</p>
 															<p class="text-thin">Cuenta Clave</p>
