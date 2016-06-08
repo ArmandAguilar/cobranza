@@ -115,10 +115,11 @@
 																							Estado <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-																							<li>Provisionada</li>
-																							<li><a href="#">Another action</a></li>
-																							<li><a href="#">Something else here</a></li>
-
+																							<li><a href="#">Provisionada</a></li>
+																							<li><a href="#">Elaborada</a></li>
+																							<li><a href="#">Recibida</a></li>
+																							<li><a href="#">Aprovada</a></li>
+																							<li><a href="#">Es. de pago</a></li>
 																						</ul>
 																</div>
 												</div>
