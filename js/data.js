@@ -30,7 +30,7 @@ function load_lista()
 function load_view(Factura,NoProyecto,Proyecto)
 {
   $("#txtFactura").val(Factura);
-  $("txtNoProyecto").val(NoProyecto);
-  $("txtProyecto").val(Proyecto);
+  $("#txtNoProyecto").val(NoProyecto);
+  $("#txtProyecto").val(Proyecto);
   document.forms["frmDetalle"].submit();
 }
