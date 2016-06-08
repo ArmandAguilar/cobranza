@@ -9,6 +9,7 @@ function detalles_empresa(id)
 	         {
 	             var dataJson = eval(data);
               $("#lblEmpresa").val(dataJson[0].Empresa);
+              alert(dataJson[0].Empresa);
 		 },
 		error:function(req,e,er) {
 			alert('error!' + er);
