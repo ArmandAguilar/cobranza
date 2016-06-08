@@ -189,18 +189,13 @@ session_start();
 													<div class="row">
 															<div class="col-sm-2">
 																<p class="text-bold">Nombre</p>
-																<p class="text-bold">Telefono</p>
-																<p class="text-bold">Movil</p>
-																<p class="text-bold">Email</p>
-															</div>
-															<div class="col-sm-9">
-																<p class="text-thin">Armando Aguilar Lopez</p>
-																<p class="text-thin">5555-5555</p>
-																<p class="text-thin">044-55-4444-4444</p>
-																<p class="text-thin">a.aguilar@fortaingenieria.com</p>
 															</div>
 												 </div>
-
+                         <div class="row">
+                           <div class="col-sm-*">
+                             <p class="text-thin" id="lblCliente" name="lblCliente"></p>
+                           </div>
+                         </div>
 									</div>
                 </div>
 								<div class="panel">
@@ -688,6 +683,7 @@ session_start();
 	<script src="js/detalle.js"></script>
 	<script>
 			detalles_empresa(<?php echo $_POST[txtNoProyecto]; ?>);
+      detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
 	</script>
 </body>
 </html>

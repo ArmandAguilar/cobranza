@@ -25,3 +25,20 @@ function detalles_empresa(id)
           		}
            });
 }
+function detalles_cliente(id)
+{
+  var losdatos = {id:id};
+    $.ajax({
+              url:'./scripts/oper_detalles.php?o=2',
+              type:'POST',
+              data:losdatos,
+              success:function(data)
+                     {
+                         var dataJson = eval(data);
+                        $("#lblCliente").append(dataJson[0].Nombre);
+                     },
+              error:function(req,e,er) {
+                alert('error!' + er);
+              }
+           });
+}
