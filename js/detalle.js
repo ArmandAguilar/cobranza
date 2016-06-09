@@ -66,3 +66,17 @@ function agregar_comentario()
               }
            });
 }
+function timeline()
+{
+  $.ajax({
+            url:'./scripts/oper_detalles.php?o=4',
+            type:'POST',
+            success:function(data)
+                   {
+                      $("#lblTimeline").append(data);
+                   },
+            error:function(req,e,er) {
+              alert('error!' + er);
+            }
+         });
+}

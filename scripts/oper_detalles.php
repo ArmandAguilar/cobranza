@@ -23,6 +23,9 @@ switch ($_GET[o]) {
             $info->Estado=$_POST[txtEstado];
             echo $objB->insert_blog($info);
     break;
+    case '4':
+              echo $objB->linea_tiempo();
+    break;
   default:
     # code...
     break;
