@@ -27,20 +27,23 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos el IdEmpresa de presupuestos
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT * FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
+                      $Sql="SELECT Mensaje FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                              {
 
+                                $Mensaje = $fila[Mensaje];
+                                $Usuario = $fila[Usuarios];
+                                $Fecha = $fila[Fecha];
                                  $TimeLine .= "<div class=\"timeline-entry\">
                                                    <div class=\"timeline-stat\">
-                                                     <div class=\"timeline-icon\"><img src=\"https://lh3.googleusercontent.com/H5-LYU_c351B_sG6gZD4v6kGzsgBMkeN9xTMuOW2QO5oujgvi3ir8zDNTJX13oE-5XpKvx7aTw=w5120-h3200-rw-no\" alt=\"\">
+                                                     <div class=\"timeline-icon\"><img src=\"https://lh3.googleusercontent.com/H5-LYU_c351B_sG6gZD4v6kGzsgBMkeN9xTMuOW2QO5oujgvi3ir8zDNTJX13oE-5XpKvx7aTw=w5120-h3200-rw-no\" alt=\"$Usuario\">
                                                      </div>
-                                                     <div class=\"timeline-time\"></div>
+                                                     <div class=\"timeline-time\">$Fecha</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p> $Sql</p>
+                                                     <p>$Mensaje</p>
                                                    </div>
                                                  </div>";
                              }
