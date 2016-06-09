@@ -379,26 +379,8 @@ session_start();
                                     <blockquote class="bq-sm bq-open">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</blockquote>
                                   </div>
                                 </div>
-                                <div class="timeline-entry">
-                                  <div class="timeline-stat">
-                                    <div class="timeline-icon bg-purple"><i class="fa fa-check fa-lg"></i>
-                                    </div>
-                                    <div class="timeline-time">5 Hours ago</div>
-                                  </div>
-                                  <div class="timeline-label">
-                                    <img class="img-xs img-circle" src="img/av3.png" alt="Profile picture">
-                                    <a href="#" class="btn-link text-semibold">Bobby Marz</a> followed you.
-                                  </div>
-                                </div>
-                                <div class="timeline-entry">
-                                  <div class="timeline-stat">
-                                    <div class="timeline-icon"></div>
-                                    <div class="timeline-time">11:27</div>
-                                  </div>
-                                  <div class="timeline-label">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-                                  </div>
-                                </div>
+                                
+
                               </div>
                               <!--===================================================-->
                               <!-- End Timeline -->
