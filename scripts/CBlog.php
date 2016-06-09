@@ -10,7 +10,7 @@ class blog extends poolConnecion
       $d=date(d);
       $m=date(m);
       $y=date(Y);
-      $Fecha="$d/$m/$y"
+      $Fecha="$d/$m/$y";
       $Comentario=$info->Comentario;
       #Obtenemos el IdEmpresa de presupuestos
       $objBlog = new poolConnecion();
