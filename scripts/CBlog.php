@@ -35,12 +35,12 @@ class blog extends poolConnecion
 
                                  $TimeLine .= "<div class=\"timeline-entry\">
                                                    <div class=\"timeline-stat\">
-                                                     <div class=\"timeline-icon\"><img src=\"https://lh3.googleusercontent.com/H5-LYU_c351B_sG6gZD4v6kGzsgBMkeN9xTMuOW2QO5oujgvi3ir8zDNTJX13oE-5XpKvx7aTw=w5120-h3200-rw-no\" alt=\"$fila[Usuario]\">
+                                                     <div class=\"timeline-icon\"><img src=\"https://lh3.googleusercontent.com/H5-LYU_c351B_sG6gZD4v6kGzsgBMkeN9xTMuOW2QO5oujgvi3ir8zDNTJX13oE-5XpKvx7aTw=w5120-h3200-rw-no\" alt=\"\">
                                                      </div>
-                                                     <div class=\"timeline-time\">$fila[Fecha]</div>
+                                                     <div class=\"timeline-time\"></div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$fila[Mensaje] $Sql</p>
+                                                     <p> $Sql</p>
                                                    </div>
                                                  </div>";
                              }
