@@ -358,7 +358,7 @@ session_start();
 
                                 <div class="timeline-entry">
                                   <div class="timeline-stat">
-                                    <div class="timeline-icon bg-danger"><i class="fa fa-building fa-lg"></i>
+                                    <div class="timeline-icon"><img src="img/av4.png" alt="Profile picture">
                                     </div>
                                     <div class="timeline-time">2 Hours ago</div>
                                   </div>
