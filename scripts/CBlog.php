@@ -27,7 +27,7 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos el IdEmpresa de presupuestos
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT * FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
+                      $Sql="SELECT * FROM [SAP].[dbo].[AACobranzaBlog]";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -40,7 +40,7 @@ class blog extends poolConnecion
                                                      <div class=\"timeline-time\">$fila[Fecha]</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$fila[Mensaje]-$Sql</p>
+                                                     <p>$fila[Mensaje] $Sql</p>
                                                    </div>
                                                  </div>";
                              }
