@@ -68,9 +68,11 @@ function agregar_comentario()
 }
 function timeline()
 {
+  var losdatos = {Factura:$("#txtFactura").val()};
   $.ajax({
             url:'./scripts/oper_detalles.php?o=4',
             type:'POST',
+            data:losdatos,
             success:function(data)
                    {
                       $("#lblTimeline").append(data);

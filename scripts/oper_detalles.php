@@ -24,7 +24,7 @@ switch ($_GET[o]) {
             echo $objB->insert_blog($info);
     break;
     case '4':
-              echo $objB->linea_tiempo();
+              echo $objB->linea_tiempo($_POST[Factura]);
     break;
   default:
     # code...
