@@ -17,9 +17,9 @@ switch ($_GET[o]) {
   case '3':
 
             $info->Factura=$_POST[txtFactura];
-            $info->NoProyecto=$_POST[txtNoProyecto];
+            $info->NoProyecto=$_POST[txtProyecto];
             $info->Usuario=$_POST[txtUsuario];
-            $info->Comentario=$_POST[txtComentario];
+            $info->Comentario=$_POST[txtMensaje];
             $info->Estado=$_POST[txtEstado];
             echo $objB->insert_blog($info);
     break;

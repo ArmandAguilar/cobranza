@@ -334,7 +334,7 @@ session_start();
                     <div class="panel-body">
                       <!--Summernote-->
                       <!--===================================================-->
-                      <textarea placeholder="Message" rows="13" class="form-control"></textarea>
+                      <textarea placeholder="Message" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
 											<div class="panel-footer text-right">
 										<button class="btn btn-primary" onclick="agregar_comentario();">Comentar</button>
 									</div>
