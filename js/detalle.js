@@ -46,9 +46,13 @@ function detalles_cliente(id)
               }
            });
 }
+function cambiaEstado(Estado)
+{
+  $("#txtEstado").val(Estado);
+}
 function agregar_comentario()
 {
-  var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val()};
+  var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val(),txtEstado:$("#txtEstado").val()};
     $.ajax({
               url:'./scripts/oper_detalles.php?o=3',
               type:'POST',

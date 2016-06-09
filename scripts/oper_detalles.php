@@ -20,6 +20,7 @@ switch ($_GET[o]) {
             $info->NoProyecto=$_POST[txtNoProyecto];
             $info->Usuario=$_POST[txtUsuario];
             $info->Comentario=$_POST[txtComentario];
+            $info->Estado=$_POST[txtEstado];
             echo $objB->insert_blog($info);
     break;
   default:

@@ -61,6 +61,7 @@ session_start();
   <input type="hidden" name="txtFactura" id="txtFactura" value="<?php echo $_POST[txtFactura]; ?>"/>
   <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
   <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
+  <input type="hidden" name="txtEstado" id="txtEstado" value="<?php echo $_POST[Estado]; ?>">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -125,18 +126,16 @@ session_start();
 														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
 												</div>
 												<div class="col-lg-3">
-                          <?php echo $_POST[txtEstado]; ?>
 																<div class="btn-group">
 																						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
 																							<?php echo $_POST[txtEstado]; ?> <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-
-																							<li><a href="javascript:void(0)">Provisionada</a></li>
-																							<li><a href="javascript:void(0)">Elaborada</a></li>
-																							<li><a href="javascript:void(0)">Recibida</a></li>
-																							<li><a href="javascript:void(0)">Aprovada</a></li>
-																							<li><a href="javascript:void(0)">Es. de pago</a></li>
+																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Provisionada');">Provisionada</a></li>
+																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Elaborada');">Elaborada</a></li>
+																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Recibida');">Recibida</a></li>
+																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Aprovada');">Aprovada</a></li>
+																							<li><a href="javascript:void(0);" onclick="cambiaEstado('EnEsperaDePago');">EnEsperaDePago</a></li>
 																						</ul>
 																</div>
 												</div>
