@@ -46,3 +46,19 @@ function detalles_cliente(id)
               }
            });
 }
+function agregar_comentario()
+{
+  var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val()};
+    $.ajax({
+              url:'./scripts/oper_detalles.php?o=3',
+              type:'POST',
+              data:losdatos,
+              success:function(data)
+                     {
+                        alert(data);
+                     },
+              error:function(req,e,er) {
+                alert('error!' + er);
+              }
+           });
+}

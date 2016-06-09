@@ -58,6 +58,9 @@ session_start();
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
+  <input type="hidden" name="txtFactura" id="txtFactura" value="<?php echo $_POST[txtFactura]; ?>"/>
+  <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
+  <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -127,11 +130,11 @@ session_start();
 																							Estado <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-																							<li><a href="#">Provisionada</a></li>
-																							<li><a href="#">Elaborada</a></li>
-																							<li><a href="#">Recibida</a></li>
-																							<li><a href="#">Aprovada</a></li>
-																							<li><a href="#">Es. de pago</a></li>
+																							<li><a href="javascript:void(0)">Provisionada</a></li>
+																							<li><a href="javascript:void(0)">Elaborada</a></li>
+																							<li><a href="javascript:void(0)">Recibida</a></li>
+																							<li><a href="javascript:void(0)">Aprovada</a></li>
+																							<li><a href="javascript:void(0)">Es. de pago</a></li>
 																						</ul>
 																</div>
 												</div>
@@ -332,7 +335,7 @@ session_start();
                       <!--===================================================-->
                       <textarea placeholder="Message" rows="13" class="form-control"></textarea>
 											<div class="panel-footer text-right">
-										<button class="btn btn-primary">Comentar</button>
+										<button class="btn btn-primary" onclick="agregar_comentario();">Comentar</button>
 									</div>
                       <!--===================================================-->
                       <!-- End Summernote -->
