@@ -358,7 +358,7 @@ session_start();
 
                                 <div class="timeline-entry">
                                   <div class="timeline-stat">
-                                    <div class="timeline-icon"><img src="img/av4.png" alt="Profile picture">
+                                    <div class="timeline-icon"><img src="https://lh3.googleusercontent.com/H5-LYU_c351B_sG6gZD4v6kGzsgBMkeN9xTMuOW2QO5oujgvi3ir8zDNTJX13oE-5XpKvx7aTw=w5120-h3200-rw-no" alt="Profile picture">
                                     </div>
                                     <div class="timeline-time">2 Hours ago</div>
                                   </div>
@@ -367,18 +367,7 @@ session_start();
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
                                   </div>
                                 </div>
-                                <div class="timeline-entry">
-                                  <div class="timeline-stat">
-                                    <div class="timeline-icon"><img src="img/av4.png" alt="Profile picture">
-                                    </div>
-                                    <div class="timeline-time">3 Hours ago</div>
-                                  </div>
-                                  <div class="timeline-label">
-                                    <p class="mar-no pad-btm"><a href="#" class="btn-link text-semibold">Lisa D.</a> commented on <a href="#">The Article</a>
-                                    </p>
-                                    <blockquote class="bq-sm bq-open">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</blockquote>
-                                  </div>
-                                </div>
+
 
 
                               </div>
