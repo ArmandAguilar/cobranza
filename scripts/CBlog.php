@@ -14,7 +14,7 @@ class blog extends poolConnecion
       $Comentario=$info->Comentario;
       #Obtenemos el IdEmpresa de presupuestos
       $objBlog = new poolConnecion();
-      $Sql="INSERT INTO [SAP].[dbo].[AABlogCobranza] VALUES ('$Factura','$NoProyecto','$Usuario','$Fecha','$Comentario')";
+      $Sql="INSERT INTO [SAP].[dbo].[AACobranzaBlog] VALUES ('$Factura','$NoProyecto','$Usuario','$Fecha','$Comentario')";
       $con=$objBlog->ConexionSQLSAP();
       $RSet=$objBlog->QuerySQLSAP($Sql,$con);
        $objBlog->CerrarSQLSAP($RSet,$con);
