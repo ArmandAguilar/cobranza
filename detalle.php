@@ -125,9 +125,10 @@ session_start();
 														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
 												</div>
 												<div class="col-lg-3">
+                          <?php echo $_POST[txtEstado]; ?>
 																<div class="btn-group">
 																						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
-																							<?php $_POST[txtEstado]; ?> <i class="dropdown-caret fa fa-caret-down"></i>
+																							<?php echo $_POST[txtEstado]; ?> <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
 
