@@ -27,7 +27,7 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos el IdEmpresa de presupuestos
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT * FROM [SAP].[dbo].[AACobranzaBlog]";
+                      $Sql="SELECT * FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
