@@ -40,7 +40,7 @@ class blog extends poolConnecion
                                                      <div class=\"timeline-time\">$fila[Fecha]</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$fila[Mensaje]</p>
+                                                     <p>$fila[Mensaje]-$Sql</p>
                                                    </div>
                                                  </div>";
                              }
