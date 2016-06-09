@@ -127,10 +127,10 @@ session_start();
 												<div class="col-lg-3">
 																<div class="btn-group">
 																						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
-																							Estado <i class="dropdown-caret fa fa-caret-down"></i>
+																							<?php $_POST[txtEstado]; ?> <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
-                                              <li><a href="javascript:void(0)"><?php $_POST[Estado]; ?></a></li>
+
 																							<li><a href="javascript:void(0)">Provisionada</a></li>
 																							<li><a href="javascript:void(0)">Elaborada</a></li>
 																							<li><a href="javascript:void(0)">Recibida</a></li>
