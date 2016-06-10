@@ -159,12 +159,16 @@ session_start();
 					<!--Basic Lista-->
 					<!--===================================================-->
 					<div id="DLista" class="panel" style="display:none">
+
 						<div class="panel-heading">
 							<h3 class="panel-title">Lista</h3>
 						</div>
 						<div class="panel-body">
 							<table data-toggle="table"
 								   data-url="scripts/datajson.php"
+                   data-search="true"
+								   data-show-refresh="true"
+								   data-show-toggle="true"
 								   data-show-columns="true"
 								   data-page-list="[5, 10, 20]"
 								   data-page-size="5"
