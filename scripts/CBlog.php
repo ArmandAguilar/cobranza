@@ -44,7 +44,7 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos los blogs
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT * FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
+                      $Sql="SELECT Mensaje,Usuarios,Fecha,IdUsuario FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
