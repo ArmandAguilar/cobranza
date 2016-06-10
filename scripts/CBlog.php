@@ -26,16 +26,14 @@ class blog extends poolConnecion
     {
           #Obtenemos el avatar
           $objAvatar = new poolConnecion();
-          $Sql="SELECT Avatar FROM [SAP].[dbo].[Usuarios] Where Id='$Id'";
+          $Sql="SELECT [Avatar] FROM [Northwind].[dbo].[Usuarios] Where Id='$Id'";
           $con=$objAvatar->ConexionSQLNorthwind();
           $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
            while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                  {
                     $Av = $filaA[Avatar];
                  }
-          return $Sql;
-
-
+          return $Av;
     }
     function linea_tiempo($Factura)
     {
@@ -62,7 +60,7 @@ class blog extends poolConnecion
                                                      <div class=\"timeline-time\">$Fecha</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$Mensaje  $IdUsuario  $Avatar</p>
+                                                     <p>$Mensaje</p>
                                                    </div>
                                                  </div>";
                              }
