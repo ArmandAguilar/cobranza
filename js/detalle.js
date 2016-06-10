@@ -49,7 +49,7 @@ function detalles_cliente(id)
 function cambiaEstado(Estado)
 {
   $("#txtEstado").val(Estado);
-  $("#btnEstado").prop('value', 'Save');
+  $("#btnEstado").val(Estado);
 
 }
 function agregar_comentario()
