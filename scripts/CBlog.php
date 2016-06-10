@@ -25,7 +25,7 @@ class blog extends poolConnecion
     function avatar($Id)
     {
           #Obtenemos el avatar
-          /*$objAvatar = new poolConnecion();
+          $objAvatar = new poolConnecion();
           $Sql="SELECT Avatar FROM [SAP].[dbo].[Usuarios] Where Id='$Id'";
           $con=$objAvatar->ConexionSQLNorthwind();
           $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
@@ -33,7 +33,7 @@ class blog extends poolConnecion
                  {
                     $Av = $filaA[Avatar];
                  }
-          return $Av;*/
+          return $Av;
 
 
     }
@@ -54,7 +54,7 @@ class blog extends poolConnecion
                                 $Usuario = $fila[Usuarios];
                                 $Fecha = $fila[Fecha];
                                 $IdUsuario = $fila[IdUsuario];
-                                $Avatar = $this->avatar($IdUsuario);
+                                $Avatar = this->avatar($IdUsuario);
                                  $TimeLine .= "<div class=\"timeline-entry\">
                                                    <div class=\"timeline-stat\">
                                                      <div class=\"timeline-icon\"><img src=\"$Avatar\" alt=\"$Usuario\">
