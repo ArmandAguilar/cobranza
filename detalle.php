@@ -127,7 +127,7 @@ session_start();
 												</div>
 												<div class="col-lg-3">
 																<div class="btn-group">
-																						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
+																						<button id="btnEstado" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
 																							<?php echo $_POST[txtEstado]; ?> <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">

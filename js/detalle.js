@@ -49,13 +49,14 @@ function detalles_cliente(id)
 function cambiaEstado(Estado)
 {
   $("#txtEstado").val(Estado);
+  $("#btnEstado").val(Estado);
 }
 function agregar_comentario()
 {
 
   if($("#txtMensaje").val() ==  "")
   {
-    $("#lblErroMensaje").show();
+    $("#lblErroMensaje").show(1000);
   }
   else{
         $("#lblErroMensaje").hide();
