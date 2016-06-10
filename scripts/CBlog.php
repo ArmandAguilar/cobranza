@@ -51,10 +51,10 @@ class blog extends poolConnecion
                              {
 
                                 $Mensaje = $fila[Mensaje];
-                                //$Usuario = $fila[Usuario];
+                                $Usuario = $fila[Usuario];
                                 //$Fecha = $fila[Fecha];
                                 //$IdUsuario = $fila[IdUsuario];
-                              //  $Avatar = $this->avatar($IdUsuario);
+                                $Avatar = $this->avatar($IdUsuario);
                                  $TimeLine .= "<div class=\"timeline-entry\">
                                                    <div class=\"timeline-stat\">
                                                      <div class=\"timeline-icon\"><img src=\"$Avatar\" alt=\"$Usuario\">
