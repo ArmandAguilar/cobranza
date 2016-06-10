@@ -58,7 +58,7 @@ class panel extends poolConnecion
                        $Proyecto =  substr($fila[NomProyecto], 0, 15);
                         $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
                                         <div class=\"col-lg-*\">
-                                          <div class=\"panel panel-purple panel-colorful\">
+                                          <div class=\"panel panel-warning panel-colorful\">
                                                  <div class=\"pad-all media\">
                                                    <div class=\"media-left\">
                                                      <span class=\"icon-wrap icon-wrap-xs\">
@@ -225,7 +225,7 @@ class panel extends poolConnecion
         $TotalEnEsperaDePago  = number_format($TotalEnEsperaDePago, 2, '.', ',');
       $row = "<div class=\"row\">
           <div class=\"col-sm-2\">
-            <div class=\"panel panel-yellow panel-colorful media pad-all\">
+            <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Proyectos </p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
