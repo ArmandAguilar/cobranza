@@ -332,6 +332,10 @@ session_start();
                       <h3 class="panel-title">Comentar</h3>
                     </div>
                     <div class="panel-body">
+                      <div class="alert alert-danger fade in">
+										<button class="close" data-dismiss="alert"><span>×</span></button>
+										<strong>Oh snap!</strong> Change a few things up and try submitting again.
+									</div>
                       <!--Summernote-->
                       <!--===================================================-->
                       <textarea placeholder="Message" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
