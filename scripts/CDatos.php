@@ -21,7 +21,7 @@ class panel extends poolConnecion
 
                      $row_col1.= "<div class=\"row\">
                                      <div class=\"col-lg-*\">
-                                       <div class=\"panel panel-purple panel-colorful\">
+                                       <div class=\"panel panel-warning panel-colorful\">
                                               <div class=\"pad-all media\">
                                                 <div class=\"media-left\">
                                                   <span class=\"icon-wrap icon-wrap-xs\">
@@ -58,7 +58,7 @@ class panel extends poolConnecion
                        $Proyecto =  substr($fila[NomProyecto], 0, 15);
                         $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
                                         <div class=\"col-lg-*\">
-                                          <div class=\"panel panel-warning panel-colorful\">
+                                          <div class=\"panel panel-purple panel-colorful\">
                                                  <div class=\"pad-all media\">
                                                    <div class=\"media-left\">
                                                      <span class=\"icon-wrap icon-wrap-xs\">
