@@ -44,7 +44,7 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos los blogs
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT Mensaje,Usuarios,Fecha,IdUsuario FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
+                      $Sql="SELECT Mensaje,Usuario,Fecha,IdUsuario FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura'";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -62,12 +62,11 @@ class blog extends poolConnecion
                                                      <div class=\"timeline-time\">$Fecha</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$Mensaje   $Sql</p>
+                                                     <p>$Mensaje</p>
                                                    </div>
                                                  </div>";
                              }
                        $objTimeLine->CerrarSQLSAP($RSet,$con);
-
         return $TimeLine;
     }
 }
