@@ -8,7 +8,7 @@ class blog extends poolConnecion
       $Factura=$info->Factura;
       $NoProyecto=$info->NoProyecto;
       $Usuario=$info->Usuario;
-      $IdUsuario=$_SESSION["IdUsuario"];
+      $IdUsuario=$_SESSION[IdUsuario];
       $d=date(d);
       $m=date(m);
       $y=date(Y);
