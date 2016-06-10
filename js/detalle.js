@@ -58,7 +58,7 @@ function agregar_comentario()
     $("#lblErroMensaje").show();
   }
   else{
-        $("#lblErroMensaje").show();
+        $("#lblErroMensaje").hide();
         var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val(),txtEstado:$("#txtEstado").val(),txtMensaje:$("#txtMensaje").val()};
           $.ajax({
                     url:'./scripts/oper_detalles.php?o=3',
@@ -66,7 +66,7 @@ function agregar_comentario()
                     data:losdatos,
                     success:function(data)
                            {
-                              alert(data);
+                              timeline();
                            },
                     error:function(req,e,er) {
                       alert('error!' + er);

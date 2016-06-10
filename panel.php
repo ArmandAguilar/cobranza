@@ -114,7 +114,7 @@ session_start();
 							</a>
 							<div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
 								<div class="pad-all text-right">
-									<a href="login.php" class="btn btn-primary">
+									<a href="logout.php" class="btn btn-primary">
 										<i class="fa fa-sign-out fa-fw"></i> Logout
 									</a>
 								</div>
