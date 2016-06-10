@@ -170,7 +170,7 @@ session_start();
 								   data-show-refresh="true"
 								   data-show-toggle="true"
 								   data-show-columns="true"
-								   data-page-list="[5, 10, 20]"
+								   data-page-list="[20, 20, 30]"
 								   data-page-size="5"
 								   data-pagination="true" data-show-pagination-switch="true">
 								<thead>
