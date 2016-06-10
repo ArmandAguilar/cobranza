@@ -60,7 +60,7 @@ class blog extends poolConnecion
                                                      <div class=\"timeline-time\">$Fecha</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$Mensaje</p>
+                                                     <p> $Mensaje </p>
                                                    </div>
                                                  </div>";
                              }
