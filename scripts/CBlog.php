@@ -33,7 +33,7 @@ class blog extends poolConnecion
                  {
                     $Av = $filaA[Avatar];
                  }
-          return $Av;
+          return $Sql;
 
 
     }
@@ -62,7 +62,7 @@ class blog extends poolConnecion
                                                      <div class=\"timeline-time\">$Fecha</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
-                                                     <p>$Mensaje    $IdUsuario  $Avatar</p>
+                                                     <p>$Mensaje  $IdUsuario  $Avatar</p>
                                                    </div>
                                                  </div>";
                              }
