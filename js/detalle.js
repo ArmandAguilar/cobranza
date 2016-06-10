@@ -78,6 +78,7 @@ function agregar_comentario()
 }
 function timeline()
 {
+  $("#lblTimeline").empty();
   var losdatos = {Factura:$("#txtFactura").val()};
   $.ajax({
             url:'./scripts/oper_detalles.php?o=4',
