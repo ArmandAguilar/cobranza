@@ -263,7 +263,7 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Aprovada</p>
+                      <p class=\"text-1x mar-no text-thin\">Aprobada</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalAprobada</p>
                     </div>
               </div>
