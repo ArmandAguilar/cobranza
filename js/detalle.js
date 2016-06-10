@@ -50,6 +50,7 @@ function cambiaEstado(Estado)
 {
   $("#txtEstado").val(Estado);
   $("#btnEstado").val(Estado);
+  alert(Estado);
 }
 function agregar_comentario()
 {
