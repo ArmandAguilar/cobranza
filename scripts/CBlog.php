@@ -51,7 +51,7 @@ class blog extends poolConnecion
                              {
 
                                 $Mensaje = $fila[Mensaje];
-                                $Usuario = $fila[Usuarios];
+                                $Usuario = $fila[Usuario];
                                 $Fecha = $fila[Fecha];
                                 $IdUsuario = $fila[IdUsuario];
                                 $Avatar = $this->avatar($IdUsuario);
