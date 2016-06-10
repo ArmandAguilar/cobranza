@@ -108,7 +108,7 @@ session_start();
 						<li id="dropdown-user" class="dropdown">
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
 								<span class="pull-right">
-									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
+									<img class="img-circle img-user media-object" src="<?php echo $_SESSION["Avatar"]; ?>" alt="<?php echo $_SESSION["Usuario"]; ?>">
 								</span>
 								<div class="username hidden-xs"><?php echo $_SESSION["Usuario"]; ?></div>
 							</a>

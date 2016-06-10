@@ -52,19 +52,27 @@ function cambiaEstado(Estado)
 }
 function agregar_comentario()
 {
-  var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val(),txtEstado:$("#txtEstado").val(),txtMensaje:$("#txtMensaje").val()};
-    $.ajax({
-              url:'./scripts/oper_detalles.php?o=3',
-              type:'POST',
-              data:losdatos,
-              success:function(data)
-                     {
-                        alert(data);
-                     },
-              error:function(req,e,er) {
-                alert('error!' + er);
-              }
-           });
+
+  if($("#txtMensaje").val() ==  "")
+  {
+    $("#lblErroMensaje").show();
+  }
+  else{
+        $("#lblErroMensaje").show();
+        var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val(),txtEstado:$("#txtEstado").val(),txtMensaje:$("#txtMensaje").val()};
+          $.ajax({
+                    url:'./scripts/oper_detalles.php?o=3',
+                    type:'POST',
+                    data:losdatos,
+                    success:function(data)
+                           {
+                              alert(data);
+                           },
+                    error:function(req,e,er) {
+                      alert('error!' + er);
+                    }
+                 });
+      }
 }
 function timeline()
 {

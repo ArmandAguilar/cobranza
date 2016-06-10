@@ -89,7 +89,7 @@ session_start();
 						<li id="dropdown-user" class="dropdown">
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
 								<span class="pull-right">
-									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
+									<img class="img-circle img-user media-object" src="<?php echo $_SESSION["Avatar"]; ?>" alt="<?php echo $_SESSION["Usuario"]; ?>">
 								</span>
 								<div class="username hidden-xs"><?php echo $_SESSION["Usuario"]; ?></div>
 							</a>
@@ -332,10 +332,9 @@ session_start();
                       <h3 class="panel-title">Comentar</h3>
                     </div>
                     <div class="panel-body">
-                      <div class="alert alert-danger fade in">
-										<button class="close" data-dismiss="alert"><span>×</span></button>
-										<strong>Oh snap!</strong> Change a few things up and try submitting again.
-									</div>
+                          <div class="alert alert-danger fade in" id="lblErroMensaje" style="display:none">
+										                  <strong>Error:</strong> Comentario Vacio.
+									        </div>
                       <!--Summernote-->
                       <!--===================================================-->
                       <textarea placeholder="Message" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
