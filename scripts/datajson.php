@@ -3,7 +3,7 @@ include("../sis.php");
 include("$path/libs/conexion.php");
 
 
-$contador = 0;
+/*$contador = 0;
 $arr = array();
 $objPaso2 = new poolConnecion();
 $Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
@@ -26,5 +26,6 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                     );
           }
         }
-echo json_encode($arr);
+echo json_encode($arr);*/
+echo "Goog";
 ?>
