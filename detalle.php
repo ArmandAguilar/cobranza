@@ -128,7 +128,7 @@ session_start();
 												<div class="col-lg-3">
 																<div class="btn-group">
 																						<button id="btnEstado" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false" >
-																							 <span id="xbtnEstado"><?php echo $_POST[txtEstado]; ?></span> <i class="dropdown-caret fa fa-caret-down"></i>
+																							 <div id="xbtnEstado"><?php echo $_POST[txtEstado]; ?></span> <i class="dropdown-caret fa fa-caret-down"></i>
 																						</button>
 																						<ul class="dropdown-menu dropdown-menu-right">
 																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Provisionada');">Provisionada</a></li>
