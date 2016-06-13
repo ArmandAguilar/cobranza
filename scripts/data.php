@@ -9,7 +9,7 @@ switch ($_GET[v]) {
             echo $obj->enbudo();
     break;
   case 'Provisionada':
-                    echo $obj->filtro_estado($_GET[v]);
+                    echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
     break;
   case 'OrdenZ':
 
