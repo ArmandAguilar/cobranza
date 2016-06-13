@@ -11,9 +11,18 @@ switch ($_GET[v]) {
   case 'Provisionada':
                     echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
     break;
-  case 'OrdenZ':
-
-      beak;
+  case 'Elaborada':
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
+      break;
+  case 'Recibida':
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
+        break;
+  case 'Aprobada':
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
+        break;
+  case 'EnEsperaDePago':
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
+              break;
   default:
     # code...
     break;
