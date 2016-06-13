@@ -71,6 +71,7 @@ class panel extends poolConnecion
                                                    <div class=\"media-body\">
                                                      <p class=\"h4 text-thin media-heading\">$Importe</p>
                                                      <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                     <small class=\"text-thin\">$fila[FechaPago]</small>
                                                    </div>
                                                  </div>
 
@@ -238,9 +239,9 @@ class panel extends poolConnecion
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
-                      <p class=\"text-1x mar-no text-thin\">Proyectos </p>
+                      <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectos)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
-                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
+
                     </div>
               </div>
               $row_col1
