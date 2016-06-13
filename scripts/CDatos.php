@@ -269,43 +269,47 @@ class panel extends poolConnecion
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
-                    <div class=\"media-body\">
+                    <div class=\"media-body\"  onclick=\"order('Elaborada');\" style=\"cursor:pointer\">
                       <p class=\"text-1x mar-no text-thin\">Elaborada ($ContadorElaborada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalElaborada</p>
                       <input type=\"hidden\" name=\"txthElaboradaOrder\" id=\"txthElaboradaOrder\" value=\"asc\">
                     </div>
               </div>
-              $row_col3
+              <div id=\"divcol3L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
+              <div id=\"divcolElaborada\">$row_col3</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
-                    <div class=\"media-body\">
+                    <div class=\"media-body\"  onclick=\"order('Recibida');\" style=\"cursor:pointer\">
                       <p class=\"text-1x mar-no text-thin\">Recibida ($ContadorRecibida)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalRecibida</p>
                       <input type=\"hidden\" name=\"txthRecibidaOrder\" id=\"txthRecibidaOrder\" value=\"asc\">
                     </div>
               </div>
-              $row_col4
+              <div id=\"divcol4L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
+              <div id=\"divcolRecibida\">$row_col4</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
-                    <div class=\"media-body\">
+                    <div class=\"media-body\"  onclick=\"order('Aprobada');\" style=\"cursor:pointer\">
                       <p class=\"text-1x mar-no text-thin\">Aprobada ($ContadorAprobada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalAprobada</p>
                       <input type=\"hidden\" name=\"txthAprobadaOrder\" id=\"txthAprobadaOrder\" value=\"asc\">
                     </div>
               </div>
-              $row_col5
+              <div id=\"divcol5L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
+              <div id=\"divcolAprobada\">$row_col5</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
-                    <div class=\"media-body\">
+                    <div class=\"media-body\"  onclick=\"order('EnEsperaDePago');\" style=\"cursor:pointer\">
                       <p class=\"text-1x mar-no text-thin\">Es. de pago ($ContadorEnEsperaDePago)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalEnEsperaDePago</p>
                       <input type=\"hidden\" name=\"txthEsdepagoOrder\" id=\"txthEsdepagoOrder\" value=\"asc\">
                     </div>
               </div>
-              $row_col6
+              <div id=\"divcol6L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
+              <div id=\"divcolEnEsperaDePago\">$row_col6</div>
           </div>
 
       </div>";

@@ -70,7 +70,126 @@ function order(col)
                                           }
                                         });
            break;
+           case 'Elaborada':
+                                 $("#divcolElaborada").empty();
+                                 $("#divcol3L").show();
+                                 var losdatos = {Orden:$("#txthElaboradaOrder").val()};
+                                 var filtroOrden = $("#txthElaboradaOrder").val();
+                                 $.ajax({
+                                           url:'./scripts/data.php?v=Elaborada',
+                                           type:'POST',
+                                           data:losdatos,
+                                           success:function(data)
+                                           {
+                                              $("#divcol3L").hide();
+                                               $("#divcolElaborada").append(data);
+                                               if(filtroOrden == "asc")
+                                               {
+                                                 $("#txthElaboradaOrder").val('desc')
+                                               }
+                                               else{
+                                                 if(filtroOrden == "desc")
+                                                 {
+                                                   $("#txthElaboradaOrder").val('asc')
+                                                 }
+                                               }
 
+                                           },
+                                           error:function(req,e,er) {
+                                             alert(er);
+                                           }
+                                         });
+            break;
+            case 'Recibida':
+                                  $("#divcolRecibida").empty();
+                                  $("#divcol4L").show();
+                                  var losdatos = {Orden:$("#txthRecibidaOrder").val()};
+                                  var filtroOrden = $("#txthRecibidaOrder").val();
+                                  $.ajax({
+                                            url:'./scripts/data.php?v=Recibida',
+                                            type:'POST',
+                                            data:losdatos,
+                                            success:function(data)
+                                            {
+                                               $("#divcol4L").hide();
+                                                $("#divcolRecibida").append(data);
+                                                if(filtroOrden == "asc")
+                                                {
+                                                  $("#txthRecibidaOrder").val('desc')
+                                                }
+                                                else{
+                                                  if(filtroOrden == "desc")
+                                                  {
+                                                    $("#txthRecibidaOrder").val('asc')
+                                                  }
+                                                }
+
+                                            },
+                                            error:function(req,e,er) {
+                                              alert(er);
+                                            }
+                                          });
+             break;
+             case 'Aprobada':
+                                   $("#divcolAprobada").empty();
+                                   $("#divcol5L").show();
+                                   var losdatos = {Orden:$("#txthAprobadaOrder").val()};
+                                   var filtroOrden = $("#txthAprobadaOrder").val();
+                                   $.ajax({
+                                             url:'./scripts/data.php?v=Aprobada',
+                                             type:'POST',
+                                             data:losdatos,
+                                             success:function(data)
+                                             {
+                                                $("#divcol5L").hide();
+                                                 $("#divcolAprobada").append(data);
+                                                 if(filtroOrden == "asc")
+                                                 {
+                                                   $("#txthAprobadaOrder").val('desc')
+                                                 }
+                                                 else{
+                                                   if(filtroOrden == "desc")
+                                                   {
+                                                     $("#txthAprobadaOrder").val('asc')
+                                                   }
+                                                 }
+
+                                             },
+                                             error:function(req,e,er) {
+                                               alert(er);
+                                             }
+                                           });
+              break;
+              case 'EnEsperaDePago':
+                                    $("#divcolEnEsperaDePago").empty();
+                                    $("#divcol6L").show();
+                                    var losdatos = {Orden:$("#txthEnEsperaDePagoOrder").val()};
+                                    var filtroOrden = $("#txthEnEsperaDePagoOrder").val();
+                                    $.ajax({
+                                              url:'./scripts/data.php?v=EnEsperaDePago',
+                                              type:'POST',
+                                              data:losdatos,
+                                              success:function(data)
+                                              {
+                                                 $("#divcol6L").hide();
+                                                  $("#divcolEnEsperaDePago").append(data);
+                                                  if(filtroOrden == "asc")
+                                                  {
+                                                    $("#txthEnEsperaDePagoOrder").val('desc')
+                                                  }
+                                                  else{
+                                                    if(filtroOrden == "desc")
+                                                    {
+                                                      $("#txthEnEsperaDePagoOrder").val('asc')
+                                                    }
+                                                  }
+
+                                              },
+                                              error:function(req,e,er) {
+                                                alert(er);
+                                              }
+                                            });
+               break;
     }
 
 }
