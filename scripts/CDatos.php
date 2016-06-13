@@ -19,7 +19,7 @@ class panel extends poolConnecion
                    {
                      $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
                      $TotalGral += $fila[ImporteFinal];
-                     
+                     $contadorPoyectos ++;
                      $row_col1.= "<div class=\"row\">
                                      <div class=\"col-lg-*\">
                                        <div class=\"panel panel-warning panel-colorful\">
@@ -45,6 +45,7 @@ class panel extends poolConnecion
        $objPaso1->CerrarSQLSAP($RSet,$con);
        #Paso 2
        $Importe = 0;
+       $ContadorProvisionada = 0;
        $objPaso2 = new poolConnecion();
        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,[Fecha TENTATIVA de pago] As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
        $con=$objPaso2->ConexionSQLSAP();
@@ -57,6 +58,7 @@ class panel extends poolConnecion
                        $Importe = number_format($fila[Importe], 2, '.', ',');
                        $TotalProvisionada += $fila[Importe];
                        $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                       $ContadorProvisionada ++;
                         $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
                                         <div class=\"col-lg-*\">
                                           <div class=\"panel panel-purple panel-colorful\">
