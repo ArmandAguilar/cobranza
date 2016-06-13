@@ -47,6 +47,7 @@ function order(col)
                                 $.ajax({
                                           url:'./scripts/data.php?v=Provisionada',
                                           type:'POST',
+                                          data:losdatos,
                                           success:function(data)
                                           {
                                               $("#divcolProvisionada").append(data);
