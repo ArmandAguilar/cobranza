@@ -256,9 +256,9 @@ class panel extends poolConnecion
               </div>
               $row_col1
           </div>
-          <div class=\"col-sm-2\" style=\"cursor:point\" onclick=\"order('Provisionada')\">
+          <div class=\"col-sm-2\" >
             <div class=\"panel panel-dark panel-colorful media pad-all\">
-                    <div class=\"media-body\">
+                    <div class=\"media-body\" style=\"cursor:point\" onclick=\"order('Provisionada')\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada ($ContadorProvisionada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
                       <input type=\"hidden\" name=\"txthProvisionadaOrder\" id=\"txthProvisionadaOrder\" value=\"asc\">
@@ -271,7 +271,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Elaborada ($ContadorElaborada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalElaborada</p>
-
+                      <input type=\"hidden\" name=\"txthElaboradaOrder\" id=\"txthElaboradaOrder\" value=\"asc\">
                     </div>
               </div>
               $row_col3
@@ -281,7 +281,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Recibida ($ContadorRecibida)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalRecibida</p>
-
+                      <input type=\"hidden\" name=\"txthRecibidaOrder\" id=\"txthRecibidaOrder\" value=\"asc\">
                     </div>
               </div>
               $row_col4
@@ -291,7 +291,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Aprobada ($ContadorAprobada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalAprobada</p>
-
+                      <input type=\"hidden\" name=\"txthAprobadaOrder\" id=\"txthAprobadaOrder\" value=\"asc\">
                     </div>
               </div>
               $row_col5
@@ -301,7 +301,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Es. de pago ($ContadorEnEsperaDePago)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalEnEsperaDePago</p>
-
+                      <input type=\"hidden\" name=\"txthEsdepagoOrder\" id=\"txthEsdepagoOrder\" value=\"asc\">
                     </div>
               </div>
               $row_col6
@@ -310,13 +310,13 @@ class panel extends poolConnecion
       </div>";
                   return  $row;
     }
-  function filtro_estado($Edo)
+  function filtro_estado($Edo,$Orden)
       {
                   #Paso Filtro
                   $Importe = 0;
                   $ContadorProvisionada = 0;
                   $objPasoEdo = new poolConnecion();
-                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo'";
+                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' order by  FechaPago $Orden";
                   $con=$objPasoEdo->ConexionSQLSAP();
                   $RSet=$objPasoEdo->QuerySQLSAP($Sql,$con);
                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))

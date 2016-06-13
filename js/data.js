@@ -42,12 +42,25 @@ function order(col)
     {
           case 'Provisionada':
                                 $("#divcolProvisionada").empty();
+                                var losdatos = {Orden:$("#txthProvisionadaOrder").val()};
+                                var filtroOrden = $("#txthProvisionadaOrder").val();
                                 $.ajax({
                                           url:'./scripts/data.php?v=Provisionada',
                                           type:'POST',
                                           success:function(data)
                                           {
                                               $("#divcolProvisionada").append(data);
+                                              if(filtroOrden == "asc")
+                                              {
+                                                $("#txthProvisionadaOrder").val('desc')
+                                              }
+                                              else{
+                                                if(filtroOrden == "desc")
+                                                {
+                                                  $("#txthProvisionadaOrder").val('asc')
+                                                }
+                                              }
+
                                           },
                                           error:function(req,e,er) {
                                             alert(er);
