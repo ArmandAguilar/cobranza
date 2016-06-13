@@ -8,8 +8,8 @@ switch ($_GET[v]) {
   case 'enbudo':
             echo $obj->enbudo();
     break;
-  case 'orderA':
-
+  case 'Provisionada':
+                    echo $obj->filtro_estado($_GET[v]);
     break;
   case 'OrdenZ':
 

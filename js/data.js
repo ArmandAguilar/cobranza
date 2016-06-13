@@ -36,9 +36,25 @@ function load_view(Factura,NoProyecto,Proyecto,Importe,Estado)
   $("#txtEstado").val(Estado);
   document.forms["frmDetalle"].submit();
 }
-function order(col,orden)
+function order(col)
 {
-    alert(col);
-    alert(orden);
-    $("#divcolProvisionada").empty();
+    switch (col)
+    {
+          case 'Provisionada':
+                                $("#divcolProvisionada").empty();
+                                $.ajax({
+                                          url:'./scripts/data.php?v=Provisionada',
+                                          type:'POST',
+                                          success:function(data)
+                                          {
+                                              $("#divcolProvisionada").append(data);
+                                          },
+                                          error:function(req,e,er) {
+                                            alert(er);
+                                          }
+                                        });
+           break;
+
+    }
+
 }

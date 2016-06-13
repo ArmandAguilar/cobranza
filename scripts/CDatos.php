@@ -256,11 +256,12 @@ class panel extends poolConnecion
               </div>
               $row_col1
           </div>
-          <div class=\"col-sm-2\" style=\"cursor:point\" onclick=\"order(2,'Up')\">
+          <div class=\"col-sm-2\" style=\"cursor:point\" onclick=\"order('Provisionada')\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada ($ContadorProvisionada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
+                      <input type=\"hidden\" name=\"txthProvisionadaOrder\" id=\"txthProvisionadaOrder\" value=\"asc\">
                     </div>
               </div>
               <div id=\"divcolProvisionada\">$row_col2</div>
@@ -309,7 +310,49 @@ class panel extends poolConnecion
       </div>";
                   return  $row;
     }
+  function filtro_estado($Edo)
+      {
+                  #Paso Filtro
+                  $Importe = 0;
+                  $ContadorProvisionada = 0;
+                  $objPasoEdo = new poolConnecion();
+                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo'";
+                  $con=$objPasoEdo->ConexionSQLSAP();
+                  $RSet=$objPasoEdo->QuerySQLSAP($Sql,$con);
+                   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                         {
 
+                                if(!empty($fila[NumProyecto]))
+                                {
+                                  $Importe = number_format($fila[Importe], 2, '.', ',');
+                                  $TotalProvisionada += $fila[Importe];
+                                  $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                  $ContadorProvisionada ++;
+                                  $Fecha = $fila[FechaPago];
+                                   $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
+                                                   <div class=\"col-lg-*\">
+                                                     <div class=\"panel panel-purple panel-colorful\">
+                                                            <div class=\"pad-all media\">
+                                                              <div class=\"media-left\">
+                                                                <span class=\"icon-wrap icon-wrap-xs\">
+                                                                  <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                </span>
+                                                              </div>
+                                                              <div class=\"media-body\">
+                                                                <p class=\"h4 text-thin media-heading\">$Importe</p>
+                                                                <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                                <small class=\"text-thin\">$Fecha</small>
+                                                              </div>
+                                                            </div>
+
+                                                      </div>
+                                                   </div>
+                                               </div>";
+                               }
+                          }
+                   $objPasoEdo->CerrarSQLSAP($RSet,$con);
+                   return $row_col2;
+      }
 
 }
  ?>
