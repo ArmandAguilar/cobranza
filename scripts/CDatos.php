@@ -258,7 +258,7 @@ class panel extends poolConnecion
           </div>
           <div class=\"col-sm-2\" >
             <div class=\"panel panel-dark panel-colorful media pad-all\">
-                    <div class=\"media-body\" style=\"cursor:point\" onclick=\"order('Provisionada')\">
+                    <div class=\"media-body\"  onclick=\"order('Provisionada');\" style=\"cursor:pointer\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada ($ContadorProvisionada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
                       <input type=\"hidden\" name=\"txthProvisionadaOrder\" id=\"txthProvisionadaOrder\" value=\"asc\">
