@@ -10,7 +10,7 @@ switch ($_GET[v]) {
     break;
   case 'orderA':
 
-    break
+    break;
   case 'OrdenZ':
 
       beak;
