@@ -19,7 +19,7 @@ class panel extends poolConnecion
                    {
                      $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
                      $TotalGral += $fila[ImporteFinal];
-                     $contadorPoyectos ++;
+                     $contadorPoyectos++;
                      $row_col1.= "<div class=\"row\">
                                      <div class=\"col-lg-*\">
                                        <div class=\"panel panel-warning panel-colorful\">
