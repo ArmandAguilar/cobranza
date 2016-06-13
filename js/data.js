@@ -42,6 +42,7 @@ function order(col)
     {
           case 'Provisionada':
                                 $("#divcolProvisionada").empty();
+                                $("#divcol2L").show();
                                 var losdatos = {Orden:$("#txthProvisionadaOrder").val()};
                                 var filtroOrden = $("#txthProvisionadaOrder").val();
                                 $.ajax({
@@ -50,6 +51,7 @@ function order(col)
                                           data:losdatos,
                                           success:function(data)
                                           {
+                                             $("#divcol2L").hide();
                                               $("#divcolProvisionada").append(data);
                                               if(filtroOrden == "asc")
                                               {

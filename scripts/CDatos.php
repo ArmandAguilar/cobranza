@@ -264,6 +264,7 @@ class panel extends poolConnecion
                       <input type=\"hidden\" name=\"txthProvisionadaOrder\" id=\"txthProvisionadaOrder\" value=\"asc\">
                     </div>
               </div>
+              <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
               <div id=\"divcolProvisionada\">$row_col2</div>
           </div>
           <div class=\"col-sm-2\">
