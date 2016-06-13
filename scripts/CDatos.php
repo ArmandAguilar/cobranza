@@ -7,6 +7,7 @@ class panel extends poolConnecion
     {
 
       #Paso 1
+      $contadorPoyectos = 0;
       $objPaso1 = new poolConnecion();
       $Sql="SELECT [NumProyecto],[NomProyecto],[ImporteFinal]  FROM [SAP].[dbo].[RVEdoCtaGeneral]";
       $con=$objPaso1->ConexionSQLSAP();
@@ -18,7 +19,7 @@ class panel extends poolConnecion
                    {
                      $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
                      $TotalGral += $fila[ImporteFinal];
-
+                     $contadorPoyectos ++;
                      $row_col1.= "<div class=\"row\">
                                      <div class=\"col-lg-*\">
                                        <div class=\"panel panel-warning panel-colorful\">
@@ -229,6 +230,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Proyectos </p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
+                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
                     </div>
               </div>
               $row_col1
@@ -238,15 +240,17 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
                     </div>
               </div>
-              $row_col2
+              <div id=\"divProvisionada\">$row_col2</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Elaborada</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalElaborada</p>
+                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
                     </div>
               </div>
               $row_col3
@@ -256,6 +260,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Recibida</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalRecibida</p>
+                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
                     </div>
               </div>
               $row_col4
@@ -265,6 +270,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Aprobada</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalAprobada</p>
+                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
                     </div>
               </div>
               $row_col5
@@ -274,6 +280,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Es. de pago</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalEnEsperaDePago</p>
+                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
                     </div>
               </div>
               $row_col6

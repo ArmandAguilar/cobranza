@@ -8,6 +8,12 @@ switch ($_GET[v]) {
   case 'enbudo':
             echo $obj->enbudo();
     break;
+  case 'orderA':
+
+    break
+  case 'OrdenZ':
+
+      beak;
   default:
     # code...
     break;
