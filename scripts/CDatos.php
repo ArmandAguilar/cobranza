@@ -242,7 +242,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
-                      <p class=\"text-1x mar-no text-thin\">$contadorPoyectos</p>
+                      <p class=\"text-1x mar-no text-thin\">$ContadorProvisionada</p>
                     </div>
               </div>
               <div id=\"divProvisionada\">$row_col2</div>
