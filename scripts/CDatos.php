@@ -351,7 +351,7 @@ class panel extends poolConnecion
                                }
                           }
                    $objPasoEdo->CerrarSQLSAP($RSet,$con);
-                   return $row_col2;
+                   return $Sql;
       }
 
 }
