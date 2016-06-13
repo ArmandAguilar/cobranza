@@ -38,10 +38,7 @@ function load_view(Factura,NoProyecto,Proyecto,Importe,Estado)
 }
 function order(col,orden)
 {
-
-    alert('col');
-    alert('orden');
-
-
-
+    alert(col);
+    alert(orden);
+    $("#divcolProvisionada").empty();
 }

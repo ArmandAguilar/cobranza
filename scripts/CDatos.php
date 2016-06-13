@@ -256,14 +256,14 @@ class panel extends poolConnecion
               </div>
               $row_col1
           </div>
-          <div class=\"col-sm-2\">
+          <div class=\"col-sm-2\" style=\"cursor:point\" onclick=\"order(2,'Up')\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada ($ContadorProvisionada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
                     </div>
               </div>
-              <div id=\"divProvisionada\">$row_col2</div>
+              <div id=\"divcolProvisionada\">$row_col2</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
