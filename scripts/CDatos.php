@@ -21,7 +21,7 @@ class panel extends poolConnecion
                      $TotalGral += $fila[ImporteFinal];
                      $contadorPoyectos ++;
 
-                     $row_col1.= "<div class=\"row\">
+                     $row_col1.= "<div class=\"row\" onclick="load_add_factura($fila[NumProyecto])">
                                      <div class=\"col-lg-*\">
                                        <div class=\"panel panel-warning panel-colorful\">
                                               <div class=\"pad-all media\">
