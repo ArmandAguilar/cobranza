@@ -41,6 +41,8 @@ session_start();
   <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+  <!--Animate.css [ OPTIONAL ]-->
+  <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
   <!--SCRIPT-->
   <!--=================================================-->
   <!--Page Load Progress Bar [ OPTIONAL ]-->
@@ -49,9 +51,9 @@ session_start();
 	<?php
 		if(empty($_SESSION[IdUsuario]))
 		{
-			 echo "<script>
+			 /*echo "<script>
 			 						window.location.href='logout.php'
-						</script>		";
+						</script>		";*/
 		}
 	 ?>
 </head>
@@ -125,20 +127,37 @@ session_start();
 												<div class="col-lg-3">
 														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
 												</div>
-												<div class="col-lg-3">
-																<div class="btn-group">
-																						<button id="btnEstado" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false" >
-																							 <div id="xbtnEstado"><?php echo $_POST[txtEstado]; ?></span> <i class="dropdown-caret fa fa-caret-down"></i>
-																						</button>
-																						<ul class="dropdown-menu dropdown-menu-right">
-																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Provisionada');">Provisionada</a></li>
-																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Elaborada');">Elaborada</a></li>
-																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Recibida');">Recibida</a></li>
-																							<li><a href="javascript:void(0);" onclick="cambiaEstado('Aprovada');">Aprovada</a></li>
-																							<li><a href="javascript:void(0);" onclick="cambiaEstado('EnEsperaDePago');">EnEsperaDePago</a></li>
-																						</ul>
-																</div>
-												</div>
+												<div class="col-lg-6">
+                              <div class="row">
+                                          <div class="col-lg-3">
+
+                                                    <button  data-target="#modal-relacionar" data-toggle="modal" class="btn btn-primary btn-md">Relacionar Factura</button>
+
+                                          </div>
+                                          <div class="col-lg-3">
+
+                                                    <button data-target="#modal-cancelar" data-toggle="modal" class="btn btn-danger btn-md">Cancelar Factura</button>
+
+                                          </div>
+                                          <div class="col-lg-3">
+                                                          <div class="btn-group">
+                                                                      <button id="btnEstado" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false" >
+                                                                         <div id="xbtnEstado"><?php echo $_POST[txtEstado]; ?></span> <i class="dropdown-caret fa fa-caret-down"></i>
+                                                                      </button>
+
+                                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Provisionada');">Provisionada</a></li>
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Elaborada');">Elaborada</a></li>
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Recibida');">Recibida</a></li>
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Aprovada');">Aprovada</a></li>
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('EnEsperaDePago');">EnEsperaDePago</a></li>
+                                                                            </ul>
+                                                                      </div>
+                                                          </div>
+                                          </div>
+                              </div>
+
+
 										</div>
 
 									</div>
@@ -457,6 +476,71 @@ session_start();
 	</div>
 	<!--===================================================-->
 	<!-- END OF CONTAINER -->
+
+  <!--Default Bootstrap Modal-->
+  <!--===================================================-->
+  <div class="modal bunce" id="modal-cancelar" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal header-->
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close" type="button">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Cancelar Fuctura</h4>
+        </div>
+
+        <!--Modal body-->
+        <div class="modal-body">
+          <h4 class="text-thin">¿Quieres cancelar esta factura?</h4>
+
+        </div>
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button class="btn btn-danger">Si</button>
+          <button data-dismiss="modal" class="btn btn-default" type="button">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===================================================-->
+  <!--End Default Bootstrap Modal-->
+
+
+
+
+  <!--Default Bootstrap Modal-->
+  <!--===================================================-->
+  <div class="modal fade" id="modal-relacionar" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal header-->
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close" type="button">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Relacionar Factura</h4>
+        </div>
+
+        <!--Modal body-->
+        <div class="modal-body">
+          <h4 class="text-thin">Relacionar Facturas</h4>
+
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+          <button class="btn btn-primary">Relacionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===================================================-->
+  <!--End Default Bootstrap Modal-->
+
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
@@ -496,5 +580,9 @@ session_start();
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
 	</script>
+  <!--Bootbox Modals [ OPTIONAL ]-->
+  <script src="plugins/bootbox/bootbox.min.js"></script>
+  <!--Modals [ SAMPLE ]-->
+  <script src="js/demo/ui-modals.js"></script>
 </body>
 </html>
