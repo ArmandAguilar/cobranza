@@ -39,7 +39,7 @@ function load_view(Factura,NoProyecto,Proyecto,Importe,Estado)
 function load_add_factura(NoProyecto)
 {
 
-    windows.location.href='add_factura.php?NoProyecto=' + NoProyecto
+    window.location.href='add_factura.php?NoProyecto=' + NoProyecto
 
 }
 function order(col)
