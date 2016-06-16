@@ -152,7 +152,7 @@
 						</div>
 						<div class="panel-body">
                         <div class="row">
-																	<div class="col-md-1">
+																	<div class="col-md-3">
 																			<input type="text" class="form-control" placeholder="Factura">
 																	</div>
 																	<div class="col-md-1">
@@ -169,7 +169,7 @@
                                         <p class="text-bold">Proyecto</p>
                                     </div>
                                     <div class="col-md-*">
-                                      		<p class="text-bold"><?php echo $_POST[NoProyecto]; ?></p>
+                                      		<p class="text-bold"><?php echo $_GET[NoProyecto]; ?></p>
                                     </div>
                         </div>
                         <hr>
