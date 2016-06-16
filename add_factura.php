@@ -228,7 +228,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               <div class="col-md-2">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control">
+                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
                                       </div>
                               </div>
                         </div>
