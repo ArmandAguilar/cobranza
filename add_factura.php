@@ -152,15 +152,12 @@
 						</div>
 						<div class="panel-body">
                         <div class="row">
-																	<div class="col-md-1">
+																	<div class="col-md-2">
 																			<input type="text" class="form-control" placeholder="Factura"> -
 																	</div>
-																	<div class="col-md-1">
+																	<div class="col-md-2">
 																			<input type="text" class="form-control" placeholder="Numero"> -
 																	</div>
-                                    <div class="col-md-1">
-                                        <p class="text-bold">¿Quien Factura?</p>
-                                    </div>
                                     <div class="col-md-2">
                                       <select class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                                         <option value="0">------</option>
