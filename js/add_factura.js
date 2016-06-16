@@ -6,7 +6,7 @@ function sumar_iva()
 }
 function datos_empresa()
 {
-  var {idEmpresa = $("#cboEmpresa").val();
+  var idEmpresa = $("#cboEmpresa").val();
   var losdatos = {idEmpresa:idEmpresa};
     $.ajax({
            		url:'./scripts/oper_add_factura.php?o=1',
