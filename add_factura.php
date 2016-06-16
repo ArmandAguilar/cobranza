@@ -19,28 +19,13 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 
 #Datos del Proyecto
 
-$objCboEmpresas = new poolConnecion();
-$SqlEmpreas="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
-$con=$objCboEmpresas->ConexionSQLSAP();
-$RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
- while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-			{
-					$IdEmpresa = $fila[IdEmpresa];
-					$Empresa = $fila[Empresa];
-					$cbo .= "<option value=\"$IdEmpresa\">$Empresa</option>";
-			}
- $objCboEmpresas->CerrarSQLSAP($RSet,$con);
-
-
  $objProyecto = new poolConnecion();
- $SqlProyecto="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
+ $SqlProyecto="SELECT [Proyecto] FROM [SAP].[dbo].[presupuestos] Where NoProyecto = '$_GET[NoProyecto]'";
  $con=$objProyecto->ConexionSQLSAP();
  $RSet=$objProyecto->QuerySQLSAP($SqlEmpreas,$con);
   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
  			{
-
- 					$Proyecto = $fila[Empresa];
- 					$cbo .= "<option value=\"$IdEmpresa\">$Empresa</option>";
+ 					$Proyecto = $fila[Proyecto];
  			}
   $objProyecto->CerrarSQLSAP($RSet,$con);
 
@@ -213,7 +198,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                         <p class="text-bold">Proyecto</p>
                                     </div>
                                     <div class="col-md-*">
-                                      		<p class="text-bold"><?php echo $_GET[NoProyecto]; ?></p>
+                                      		<p class="text-bold"><?php echo "$_GET[NoProyecto].- $Proyecto"; ?></p>
                                     </div>
                         </div>
                         <hr>
@@ -453,8 +438,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/scripts.js"></script>
- <script src="js/data.js"></script>
+ <script src="js/add_factura.js"></script>
  </form>
 </body>
 </html>
