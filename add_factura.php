@@ -250,7 +250,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-6">
                                   <div class="form-group">
-                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here...">
+                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here..." readonly="">
                                     </div>
                             </div>
                       </div>
@@ -260,7 +260,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-4">
                                   <div class="form-group">
-                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here...">
+                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here..." readonly="">
                                     </div>
                             </div>
                       </div>
