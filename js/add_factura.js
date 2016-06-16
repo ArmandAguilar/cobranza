@@ -2,12 +2,12 @@ function sumar_iva()
 {
   var iva = $("#cboIva").val()
   var newIva = iva * $("#txtCantidad").val()
-   $("#txtImporteTotal").val(newIva.toFixed(2))
+   $("#txtImporteTotal").val(newIva);
 
 }
 function datos_empresa()
 {
-  var {idEmpresa = $("#cboEmpresa").val()
+  var {idEmpresa = $("#cboEmpresa").val();
   var losdatos = {idEmpresa:idEmpresa};
     $.ajax({
            		url:'./scripts/oper_add_factura.php?o=1',

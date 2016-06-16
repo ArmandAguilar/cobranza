@@ -238,7 +238,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     <p class="text-bold">Empresa</p>
                                 </div>
                                 <div class="col-md-6">
-                                  <select class="selectpicker" id="cboEmpresa" name="cboEmpresa" title="Seleciona una empresa" data-width="100%">
+                                  <select class="selectpicker" id="cboEmpresa" name="txtImporteTotal" title="Seleciona una empresa" data-width="100%" onchange="datos_empresa();">
 																			 <option value="0">------</option>
                                     		<?php echo $cbo; ?>
                                   </select>
