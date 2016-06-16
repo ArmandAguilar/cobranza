@@ -22,7 +22,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
  $objProyecto = new poolConnecion();
  $SqlProyecto="SELECT [Proyecto] FROM [SAP].[dbo].[presupuestos] Where NoProyecto = '$_GET[NoProyecto]'";
  $con=$objProyecto->ConexionSQLSAP();
- $RSet=$objProyecto->QuerySQLSAP($SqlEmpreas,$con);
+ $RSet=$objProyecto->QuerySQLSAP($SqlProyecto,$con);
   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
  			{
  					$Proyecto = $fila[Proyecto];
@@ -103,7 +103,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 				<!--Brand logo & name-->
 				<!--================================-->
 				<div class="navbar-header">
-					<a href="panel.html" class="navbar-brand">
+					<a href="panel.php" class="navbar-brand">
 						<!--<img src="img/logo.png" alt="Nifty Logo" class="brand-icon">-->
 						<div class="brand-title">
 							<span class="brand-text">Cobranza</span>
@@ -228,7 +228,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               <div class="col-md-2">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control">
+                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
                                       </div>
                               </div>
                         </div>
@@ -238,7 +238,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     <p class="text-bold">Empresa</p>
                                 </div>
                                 <div class="col-md-6">
-                                  <select class="selectpicker"  title="Seleciona una empresa" data-width="100%">
+                                  <select class="selectpicker" id="cboEmpresa" name="cboEmpresa" title="Seleciona una empresa" data-width="100%">
 																			 <option value="0">------</option>
                                     		<?php echo $cbo; ?>
                                   </select>
@@ -250,7 +250,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-6">
                                   <div class="form-group">
-                                      <input type="text" id="demo-readonly-input" class="form-control" placeholder="Readonly input here..." readonly="">
+                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here..." readonly="">
                                     </div>
                             </div>
                       </div>
@@ -260,7 +260,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-4">
                                   <div class="form-group">
-                                      <input type="text" id="demo-readonly-input" class="form-control" placeholder="Readonly input here..." readonly="">
+                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here..." readonly="">
                                     </div>
                             </div>
                       </div>
@@ -269,7 +269,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             <p class="text-bold">Dirección Fiscal</p>
                         </div>
                         <div class="col-md-8">
-                          <textarea rows="9" class="form-control" placeholder="Your content here.." disabled=""></textarea>
+                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.." disabled=""></textarea>
                         </div>
                       </div>
 
@@ -324,7 +324,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 								<ul id="mainnav-menu" class="list-group">
 									<!--Menu list item-->
 									<li>
-										<a href="panel.html">
+										<a href="panel.php">
 											<i class="fa fa-dashboard"></i>
 											<span class="menu-title">
 												<strong>Dashboard</strong>

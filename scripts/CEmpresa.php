@@ -51,6 +51,29 @@ class empresa extends poolConnecion
              return json_encode($arr);
 
   }
+  function detalle_empresa_factura($IdEmpresa)
+  {
+          $arr = array();
+          #Detalle Empresa
+          $objEmpresa = new poolConnecion();
+          $Sql="SELECT Empresa,RazonSocial,RFC,DireccionFiscal FROM empresas Where IdEmpresa='$IdEmpresa'";
+          $con=$objEmpresa->ConexionSQLSAP();
+          $RSet=$objEmpresa->QuerySQLSAP($Sql,$con);
+           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                 {
+                    $Empresa = $fila[Empresa];
+                    $RazonSocial = $fila[RazonSocial];
+                    $RFC = $fila[RFC];
+                    $DireccionFiscal = $fila[DireccionFiscal];
+                     $arr[] = array('Empresa' => $Empresa,
+                                    'RazonSocial' => $RazonSocial,
+                                    'RFC' => $RFC,
+                                    'DireccionFiscal' => $DireccionFiscal
+                                  );
+                 }
+           $objEmpresa->CerrarSQLSAP($RSet,$con);
+           return json_encode($arr);
+  }
 }
 
 ?>

@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
 	<title>Login | Cobranza</title>
 	<!--STYLESHEET-->
 	<!--=================================================-->
