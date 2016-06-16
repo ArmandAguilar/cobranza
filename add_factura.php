@@ -4,6 +4,7 @@ session_start();
 include("sis.php");
 include("$path/libs/conexion.php");
 
+#Todas las Empresas
 $objCboEmpresas = new poolConnecion();
 $SqlEmpreas="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
 $con=$objCboEmpresas->ConexionSQLSAP();
@@ -16,14 +17,41 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 			 }
  $objCboEmpresas->CerrarSQLSAP($RSet,$con);
 
+#Datos del Proyecto
+
+$objCboEmpresas = new poolConnecion();
+$SqlEmpreas="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
+$con=$objCboEmpresas->ConexionSQLSAP();
+$RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+			{
+					$IdEmpresa = $fila[IdEmpresa];
+					$Empresa = $fila[Empresa];
+					$cbo .= "<option value=\"$IdEmpresa\">$Empresa</option>";
+			}
+ $objCboEmpresas->CerrarSQLSAP($RSet,$con);
+
+
+ $objProyecto = new poolConnecion();
+ $SqlProyecto="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
+ $con=$objProyecto->ConexionSQLSAP();
+ $RSet=$objProyecto->QuerySQLSAP($SqlEmpreas,$con);
+  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+ 			{
+
+ 					$Proyecto = $fila[Empresa];
+ 					$cbo .= "<option value=\"$IdEmpresa\">$Empresa</option>";
+ 			}
+  $objProyecto->CerrarSQLSAP($RSet,$con);
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from www.themeon.net/nifty/v2.2/layouts-offcanvas-navigation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Apr 2015 10:44:28 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
 	<title>Forta Ingenieria | Cobranza.</title>
   <!--STYLESHEET-->
   <!--=================================================-->
@@ -80,11 +108,8 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
   <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
-    <input type="hidden" name="txtFactura" id="txtFactura" value="">
-    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="">
-    <input type="hidden" name="txtProyecto" id="txtProyecto" value="">
-    <input type="hidden" name="txtImporte" id="txtImporte" value="">
-    <input type="hidden" name="txtEstado" id="txtEstado" value="">
+    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="<?php echo $_GET[NoProyecto]; ?>">
+
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -172,13 +197,13 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 						<div class="panel-body">
                         <div class="row">
 																	<div class="col-md-2">
-																			<input type="text" class="form-control" placeholder="Factura">
+																			<input type="text" id="txtFactura" name="txtFactura" class="form-control" placeholder="Factura">
 																	</div>
 																	<div class="col-md-1">
-																			<input type="text" class="form-control" placeholder="Numero">
+																			<input type="text" id="txtFacturaNo" name="txtFacturaNo" class="form-control" placeholder="Numero">
 																	</div>
                                     <div class="col-md-2">
-                                      <select class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                                      <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                                         <option value="0">------</option>
                                         <option value="C&I">C&I</option>
                                         <option value="CeI">CeI</option>
@@ -199,17 +224,17 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               <div class="col-md-2">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                                        <input type="text" class="form-control">
+                                        <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
                                       </div>
                               </div>
                               <div class="col-md-1">
                                   <p class="text-bold">Tipo IVA</p>
                               </div>
                               <div class="col-md-2">
-                                <select class="selectpicker" multiple title="Tipo Iva" data-width="100%">
+                                <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
 																		  <option value="0">----</option>
-		                                  <option value="11">11%</option>
-		                                  <option value="16">16%</option>
+		                                  <option value="1.11">11%</option>
+		                                  <option value="1.16">16%</option>
                                 </select>
                               </div>
                               <div class="col-md-1">
@@ -218,7 +243,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               <div class="col-md-2">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                                        <input type="text" class="form-control">
+                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control">
                                       </div>
                               </div>
                         </div>
@@ -229,6 +254,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                 </div>
                                 <div class="col-md-6">
                                   <select class="selectpicker"  title="Seleciona una empresa" data-width="100%">
+																			 <option value="0">------</option>
                                     		<?php echo $cbo; ?>
                                   </select>
                                 </div>
