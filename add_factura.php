@@ -1,3 +1,22 @@
+<?php
+ini_set('session.auto_start()','On');
+session_start();
+include("sis.php");
+include("$path/libs/conexion.php");
+
+$objCboEmpresas = new poolConnecion();
+$SqlEmpreas="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
+$con=$objCboEmpresas->ConexionSQLSAP();
+$RSet=$objCboEmpresas->QuerySQLSAP($Sql1,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+			 {
+					 $IdEmpresa = $fila[IdEmpresa];
+					 $Empresa = $fila[Empresa];
+					 $cbo .= "<option value="$IdEmpresa">$Empresa</option>";
+			 }
+ $objCboEmpresas->CerrarSQLSAP($RSet,$con);
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from www.themeon.net/nifty/v2.2/layouts-offcanvas-navigation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Apr 2015 10:44:28 GMT -->
@@ -51,9 +70,9 @@
 <?php
 	if(empty($_SESSION[IdUsuario]))
 	{
-		 /*echo "<script>
+		 echo "<script>
 		 						window.location.href='logout.php'
-					</script>		";*/
+					</script>		";
 	}
  ?>
 </head>
@@ -152,7 +171,7 @@
 						</div>
 						<div class="panel-body">
                         <div class="row">
-																	<div class="col-md-3">
+																	<div class="col-md-2">
 																			<input type="text" class="form-control" placeholder="Factura">
 																	</div>
 																	<div class="col-md-1">
@@ -188,9 +207,9 @@
                               </div>
                               <div class="col-md-2">
                                 <select class="selectpicker" multiple title="Tipo Iva" data-width="100%">
-                                  <option>Family</option>
-                                  <option>Friend</option>
-                                  <option>Partner</option>
+																		  <option value="0">----</option>
+		                                  <option value="11">11%</option>
+		                                  <option value="16">16%</option>
                                 </select>
                               </div>
                               <div class="col-md-1">
@@ -210,9 +229,7 @@
                                 </div>
                                 <div class="col-md-6">
                                   <select class="selectpicker"  title="Seleciona una empresa" data-width="100%">
-                                    <option>Family</option>
-                                    <option>Friend</option>
-                                    <option>Partner</option>
+                                    		<?php echo $cbo; ?>
                                   </select>
                                 </div>
                       </div>
