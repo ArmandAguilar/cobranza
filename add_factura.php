@@ -228,7 +228,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               <div class="col-md-2">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
+                                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control">
                                       </div>
                               </div>
                         </div>
@@ -250,7 +250,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-6">
                                   <div class="form-group">
-                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here..." readonly="">
+                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here...">
                                     </div>
                             </div>
                       </div>
@@ -260,7 +260,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-4">
                                   <div class="form-group">
-                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here..." readonly="">
+                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here...">
                                     </div>
                             </div>
                       </div>
@@ -269,7 +269,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             <p class="text-bold">Dirección Fiscal</p>
                         </div>
                         <div class="col-md-8">
-                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.." disabled=""></textarea>
+                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
                         </div>
                       </div>
 
