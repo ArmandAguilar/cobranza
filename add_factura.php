@@ -7,12 +7,12 @@ include("$path/libs/conexion.php");
 $objCboEmpresas = new poolConnecion();
 $SqlEmpreas="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
 $con=$objCboEmpresas->ConexionSQLSAP();
-$RSet=$objCboEmpresas->QuerySQLSAP($Sql1,$con);
+$RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
 			 {
 					 $IdEmpresa = $fila[IdEmpresa];
 					 $Empresa = $fila[Empresa];
-					 $cbo .= "<option value="$IdEmpresa">$Empresa</option>";
+					 $cbo .= "<option value=\"$IdEmpresa\">$Empresa</option>";
 			 }
  $objCboEmpresas->CerrarSQLSAP($RSet,$con);
 
