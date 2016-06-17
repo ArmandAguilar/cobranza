@@ -319,8 +319,18 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                         }
                                     }
                              $objUsuarios->CerrarSQLNorthwind($RSet,$con);
+                             if($contador == 1)
+                             {
+                               $row .="</div>";
+                             }
+                             else{
+                               if ($contador == 2) {
+                                  $row .="</div>";
+                               }
+                             }
                             echo $row;
-                   ?>
+                            echo $SqlUsuarios;                 
+                             ?>
                     <div class="row">
                           <div class="col-md-3 checkbox">
                               <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
