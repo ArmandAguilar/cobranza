@@ -527,8 +527,15 @@ session_start();
 
         <!--Modal body-->
         <div class="modal-body">
-          <h4 class="text-thin">Relacionar Facturas</h4>
-
+          <div class="row">
+                    <div class="col-md-2">
+                      <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                        <option value="0">Abono</option>
+                        <option value="C&I">C&I</option>
+                        <option value="CeI">CeI</option>
+                      </select>
+                    </div>
+          </div>
         </div>
 
         <!--Modal footer-->
