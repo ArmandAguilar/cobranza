@@ -289,48 +289,59 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                    {
 
-
-                                        switch ($contador)
+                                      $Nombre = $fila[Nombre];
+                                        switch ($contandor)
                                          {
                                               case 1:
                                                             $row .= "<div class=\"row\">
                                                                       <div class=\"col-md-3 checkbox\">
-                                                                          <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>a.aguilar@fortaingenieria.com</label>
+                                                                          <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>$Nombre</label>
                                                                       </div>";
                                                           $contandor = 2;
                                               break;
 
                                               case 2:
                                                           $row .= "<div class=\"col-md-3\">
-                                                                      <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>a.aguilar@fortaingenieria.com</label>
+                                                                      <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>$Nombre</label>
                                                                   </div>";
-                                                          $contador = 3;
+                                                          $contandor = 3;
                                               break;
 
                                               case 3:
                                                             $row .= "<div class=\"col-md-3\">
-                                                                                <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>a.aguilar@fortaingenieria.com</label>
+                                                                                <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>$Nombre</label>
                                                                             </div>
                                                                       </div>";
 
-                                                          $contador = 1;
+                                                          $contandor = 1;
                                               break;
 
                                         }
                                     }
                              $objUsuarios->CerrarSQLNorthwind($RSet,$con);
-                             if($contador == 1)
+                             if($contandor == 1)
                              {
                                $row .="</div>";
                              }
                              else{
-                               if ($contador == 2) {
+                               if ($contandor == 2) {
                                   $row .="</div>";
                                }
                              }
                             echo $row;
-                            echo $SqlUsuarios;
                              ?>
+                    <div class="row">
+                          <div class="col-md-3 checkbox">
+                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
+                          </div>
+                          <div class="col-md-3">
+                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
+                          </div>
+                          <div class="col-md-3">
+                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
+                          </div>
+
+                    </div>
                     <div class="row">
                           <div class="col-md-3 checkbox">
                               <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
