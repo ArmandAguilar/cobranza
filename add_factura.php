@@ -280,6 +280,47 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
     							<h3 class="panel-title">Notificar</h3>
     						</div>
     						<div class="panel-body">
+                  <?php
+                            $contandor = 1;
+                            $objUsuarios = new poolConnecion();
+                            $SqlUsuarios="Select Nombre,Apellidos,Email From Usuarios Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
+                            $con=$objUsuarios->ConexionSQLNorthwind();
+                            $RSet=$objUsuarios->QuerySQLNorthwind($Sql,$con);
+                             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                   {
+
+
+                                        switch ($contador)
+                                         {
+                                              case '1':
+                                                            $row .= "<div class=\"row\">
+                                                                      <div class=\"col-md-3 checkbox\">
+                                                                          <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>a.aguilar@fortaingenieria.com</label>
+                                                                      </div>";
+                                                          $contandor = 2;
+                                              break;
+
+                                              case '2':
+                                                          $row .= "<div class=\"col-md-3\">
+                                                                      <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>a.aguilar@fortaingenieria.com</label>
+                                                                  </div>";
+                                                          $contador = 3;
+                                              break;
+
+                                              case '3':
+                                                            $row .= "<div class="col-md-3">
+                                                                                <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
+                                                                            </div>
+                                                                      </div>";
+
+                                                          $contador = 1;
+                                              break;
+
+                                        }
+                                    }
+                             $objUsuarios->CerrarSQLNorthwind($RSet,$con);
+
+                   ?>
                     <div class="row">
                           <div class="col-md-3 checkbox">
                               <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
@@ -300,7 +341,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                   </div>
                   <div class="row">
                       <div class="col-md-8">
-                        <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Your content here.."></textarea>
+                        <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Your content here.." disabled></textarea>
                       </div>
                   </div>
               </div>
