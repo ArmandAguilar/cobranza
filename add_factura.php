@@ -350,7 +350,8 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                   </div>
               </div>
               <div class="panel-footer text-right">
-										<button class="btn btn-primary">Crear Factura</button>
+                    <div class="alert alert-success fade in">button class="close" data-dismiss="alert"><span>×</span></button><strong>Well done!</strong> You successfully read this important alert message.</div>
+										<button class="btn btn-primary" onclick="guardar_factura();">Crear Factura</button>
 									</div>
           </div>
 
