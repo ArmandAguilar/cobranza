@@ -4,7 +4,7 @@ include("$path/libs/conexion.php");
 include("$path/scripts/CEmpresa.php");
 include("$path/scripts/CFactura.php");
 $objE =  new empresa();
-$objF = new factura();
+$objF = new facturas();
 
 switch ($_GET[o]) {
   case '1':

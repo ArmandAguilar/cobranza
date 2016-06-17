@@ -27,7 +27,8 @@ function datos_empresa()
 
 function guardar_factura()
 {
-
+    $('#msjError').hidde();
+    $('#msjOk').hidde();
     var losdatos = {
         txtNoProyecto:$('#txtNoProyecto').val(),
         txtFactura:$('#txtFactura').val(),
