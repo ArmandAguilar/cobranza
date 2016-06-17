@@ -1,6 +1,8 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
+include("sis.php");
+include("$path/libs/conexion.php");
  ?>
 <!DOCTYPE html>
 <html lang="en">
