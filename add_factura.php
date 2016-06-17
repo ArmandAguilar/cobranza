@@ -285,7 +285,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             $objUsuarios = new poolConnecion();
                             $SqlUsuarios="Select Nombre,Apellidos,Email From Usuarios Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
                             $con=$objUsuarios->ConexionSQLNorthwind();
-                            $RSet=$objUsuarios->QuerySQLNorthwind($Sql,$con);
+                            $RSet=$objUsuarios->QuerySQLNorthwind($SqlUsuarios,$con);
                              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                    {
 
@@ -308,8 +308,8 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                               break;
 
                                               case '3':
-                                                            $row .= "<div class="col-md-3">
-                                                                                <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
+                                                            $row .= "<div class=\"col-md-3\">
+                                                                                <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>a.aguilar@fortaingenieria.com</label>
                                                                             </div>
                                                                       </div>";
 
