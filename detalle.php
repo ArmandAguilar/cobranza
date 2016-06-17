@@ -530,14 +530,25 @@ session_start();
                 <div class="row">
                           <div class="col-md-2">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
-                              <option value="0">Abono</option>
-                              <option value="C&I">C&I</option>
-                              <option value="CeI">CeI</option>
+                                  <?php
+                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco FROM [Abonos por descargar],CategoriaAbono,[Abono por relacionar] As AbonoxRelacionar where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
+                                        #Todas las Empresas
+                                        $objCboAbono = new poolConnecion();
+                                        $con=$objCboAbono->ConexionSQLSAP();
+                                        $RSet=$objCboAbono->QuerySQLSAP($sqlAbonos,$con);
+                                         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                        			 {
+                                        					 $OperacionAbono = $fila[OperacionAbono];
+                                        					 $cbo .= "<option value=\"\">$OperacionAbono</option>";
+
+                                        			 }
+                                         $objCboAbono->CerrarSQLSAP($RSet,$con);
+                                   ?>
                             </select>
                           </div>
                 </div>
                 <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                                 <div class="input-group mar-btm">
                                   <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
                                   <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
