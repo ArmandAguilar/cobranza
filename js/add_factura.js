@@ -48,6 +48,8 @@ function guardar_factura()
             		success:function(data)
             	         {
                           alert(data);
+                          $('#msjOk').show();
+                          $('#msjOk').hidde(2000);
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);

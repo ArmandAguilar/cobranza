@@ -351,13 +351,13 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
               </div>
               <div class="panel-footer text-right">
                     <div class="row">
-                          <div class="col-md-10">
-                                <div class="alert alert-success fade in">
+                          <div class="col-md-12">
+                                <div id="msjOk" class="alert alert-success fade in" style="display:none">
 										                      <button class="close" data-dismiss="alert"><span>×</span></button>
 										                      <strong>Well done!</strong> You successfully read this important alert message.
 									              </div>
                           </div>
-                          <div class="col-md-1">
+                          <div class="col-sm-2">
                                 <button class="btn btn-primary" onclick="guardar_factura();">Crear Factura</button>
                           </div>
                     </div>
