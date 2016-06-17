@@ -27,8 +27,8 @@ function datos_empresa()
 
 function guardar_factura()
 {
-    $('#msjError').hidde();
-    $('#msjOk').hidde();
+    $('#msjError').hide();
+    $('#msjOk').hide();
     var losdatos = {
         txtNoProyecto:$('#txtNoProyecto').val(),
         txtFactura:$('#txtFactura').val(),
@@ -50,12 +50,12 @@ function guardar_factura()
             	         {
                           alert(data);
                           $('#msjOk').show();
-                          $('#msjOk').hidde(2000);
+                          $('#msjOk').hide(2000);
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
                   $('#msjError').show();
-                  $('#msjError').hidde(2000);
+                  $('#msjError').hide(2000);
             		}
              });
 
