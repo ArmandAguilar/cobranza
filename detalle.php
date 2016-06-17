@@ -537,7 +537,7 @@ session_start();
                           </div>
                 </div>
                 <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-8">
                                 <div class="input-group mar-btm">
                                   <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
                                   <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
