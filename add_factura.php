@@ -269,7 +269,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             <p class="text-bold">Dirección Fiscal</p>
                         </div>
                         <div class="col-md-8">
-                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
+                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.." disabled></textarea>
                         </div>
                       </div>
 
@@ -330,30 +330,8 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                              }
                             echo $row;
                              ?>
-                    <div class="row">
-                          <div class="col-md-3 checkbox">
-                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
-                          </div>
-                          <div class="col-md-3">
-                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
-                          </div>
-                          <div class="col-md-3">
-                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
-                          </div>
 
-                    </div>
-                    <div class="row">
-                          <div class="col-md-3 checkbox">
-                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
-                          </div>
-                          <div class="col-md-3">
-                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
-                          </div>
-                          <div class="col-md-3">
-                              <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
-                          </div>
 
-                    </div>
                     <p>&nbsp;</p>
                   <div class="row">
                        <div class="col-md-2">
@@ -362,10 +340,13 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                   </div>
                   <div class="row">
                       <div class="col-md-8">
-                        <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Your content here.." disabled></textarea>
+                        <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Your content here.."></textarea>
                       </div>
                   </div>
               </div>
+              <div class="panel-footer text-right">
+										<button class="btn btn-primary">Send message</button>
+									</div>
           </div>
 
 				</div>
