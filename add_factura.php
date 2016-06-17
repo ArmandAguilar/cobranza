@@ -319,8 +319,9 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                         }
                                     }
                              $objUsuarios->CerrarSQLNorthwind($RSet,$con);
-
+                            echo $row;
                    ?>
+
                     <div class="row">
                           <div class="col-md-3 checkbox">
                               <label class="form-checkbox form-icon active form-text"><input type="checkbox"/>a.aguilar@fortaingenieria.com</label>
