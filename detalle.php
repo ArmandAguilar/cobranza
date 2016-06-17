@@ -542,7 +542,8 @@ include("$path/libs/conexion.php");
                                         			 {
                                         					 $OperacionAbono = $fila[OperacionAbono];
                                                    $Fecha = $fila[Fecha];
-                                                   $AbonoTotalBanco = $fila[AbonoTotalBanco]; 
+                                                   $AbonoTotalBanco = number_format($fila[AbonoTotalBanco], 2, '.', ','); ; 
+
                                         					 $cbo .= "<option value=\"\">$OperacionAbono|$Fecha|$AbonoTotalBanco</option>";
 
                                         			 }

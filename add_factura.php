@@ -218,7 +218,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               <div class="col-md-2">
                                 <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
 																		  <option value="0">----</option>
-		                                  <option value="1.11">11%</option>
+		                                  <option value="0">0%</option>
 		                                  <option value="1.16">16%</option>
                                 </select>
                               </div>
@@ -231,6 +231,11 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                         <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
                                       </div>
                               </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                              <textarea id="txtConcepto" name="txtConcepto" rows="9" class="form-control" placeholder="Concepto aqui.."></textarea>
+                            </div>
                         </div>
                         <hr>
                         <div class="row">
@@ -250,7 +255,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-6">
                                   <div class="form-group">
-                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here..." readonly="">
+                                      <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here...">
                                     </div>
                             </div>
                       </div>
@@ -260,7 +265,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                             <div class="col-md-4">
                                   <div class="form-group">
-                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here..." readonly="">
+                                      <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here...">
                                     </div>
                             </div>
                       </div>
@@ -269,7 +274,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             <p class="text-bold">Dirección Fiscal</p>
                         </div>
                         <div class="col-md-8">
-                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.." disabled></textarea>
+                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
                         </div>
                       </div>
 

@@ -24,3 +24,34 @@ function datos_empresa()
           		}
            });
 }
+
+function guardar_factura()
+{
+
+    var losdatos = {
+        txtNoProyecto:$('#txtNoProyecto').val(),
+        txtFactura:$('#txtFactura').val(),
+        txtFacturaNo:$('#txtFacturaNo').val(),
+        cboTipoFactura:$('#cboTipoFactura').val(),
+        txtCantidad:$('#txtCantidad').val(),
+        cboIva:$('#cboIva').val(),
+        txtImporteTotal:$('#txtImporteTotal').val(),
+        cboEmpresa:$('#cboEmpresa').val(),
+        txtRasonSocial:$('#txtRasonSocial').val(),
+        txtRFC:$('#txtRFC').val(),
+        txtDir:$('#txtDir').val()
+      };
+      $.ajax({
+             		url:'./scripts/oper_add_factura.php?o=2',
+            		type:'POST',
+            		data:losdatos,
+            		success:function(data)
+            	         {
+
+            		       },
+            		error:function(req,e,er) {
+            			alert('error!' + er);
+            		}
+             });
+
+}
