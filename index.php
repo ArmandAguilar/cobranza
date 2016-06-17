@@ -29,6 +29,7 @@
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
 	<div id="container" class="cls-container">
+		<div id="bg-overlay" class="bg-img img-balloon"></div>
 		<div class="cls-header cls-header-lg">
 			<div class="cls-brand">
 				<a class="box-inline" href="#">
