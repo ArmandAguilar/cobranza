@@ -545,6 +545,7 @@ include("$path/libs/conexion.php");
 
                                         			 }
                                          $objCboAbono->CerrarSQLSAP($RSet,$con);
+                                         echo $cbo;
                                    ?>
                             </select>
                           </div>
