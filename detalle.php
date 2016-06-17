@@ -541,7 +541,9 @@ include("$path/libs/conexion.php");
                                          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                         			 {
                                         					 $OperacionAbono = $fila[OperacionAbono];
-                                        					 $cbo .= "<option value=\"\">$OperacionAbono</option>";
+                                                   $Fecha = $fila[Fecha];
+                                                   $AbonoTotalBanco = $fila[AbonoTotalBanco]; 
+                                        					 $cbo .= "<option value=\"\">$OperacionAbono|$Fecha|$AbonoTotalBanco</option>";
 
                                         			 }
                                          $objCboAbono->CerrarSQLSAP($RSet,$con);
