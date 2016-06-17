@@ -53,6 +53,8 @@ function guardar_factura()
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
+                  $('#msjError').show();
+                  $('#msjError').hidde(2000);
             		}
              });
 
