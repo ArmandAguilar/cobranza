@@ -57,6 +57,7 @@ function ingresar_factura($info)
                      ,'$TelefonoEmpresa'
                      ,'$MotivoCancelacion'
                      ,'$CondicionesDePago')";
+    return $sql;                 
 }
 
 }

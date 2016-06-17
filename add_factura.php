@@ -358,7 +358,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 										              <button class="close" data-dismiss="alert"><span>×</span></button>
 										              <strong>Oh snap!</strong> Change a few things up and try submitting again.
 									        </div>
-                          <input type="button" value="Crear Factura" class="btn btn-primary" onclick="guardar_factura();">>
+                          <input type="button" value="Crear Factura" class="btn btn-primary" onclick="guardar_factura();"/>
 									</div>
           </div>
 

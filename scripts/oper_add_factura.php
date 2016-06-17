@@ -12,16 +12,6 @@ switch ($_GET[o]) {
     break;
 
   case '2':
-
-
-
-
-          txtImporteTotal
-          cboEmpresa
-
-
-
-
             $Factura = "$_POST[txtFactura] $_POST[txtFacturaNo] $_POST[cboTipoFactura]";
 
             $info->Factura = $Factura;
