@@ -283,7 +283,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                   <?php
                             $contandor = 1;
                             $objUsuarios = new poolConnecion();
-                            $SqlUsuarios="Select Nombre,Apellidos,Email From Usuarios Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
+                            $SqlUsuarios="Select Nombre,Apellidos,Email From [Northwind].[dbo].[Usuarios] Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
                             $con=$objUsuarios->ConexionSQLNorthwind();
                             $RSet=$objUsuarios->QuerySQLNorthwind($SqlUsuarios,$con);
                              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -329,7 +329,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                }
                              }
                             echo $row;
-                            echo $SqlUsuarios;                 
+                            echo $SqlUsuarios;
                              ?>
                     <div class="row">
                           <div class="col-md-3 checkbox">
