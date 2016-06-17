@@ -527,15 +527,21 @@ session_start();
 
         <!--Modal body-->
         <div class="modal-body">
-          <div class="row">
-                    <div class="col-md-2">
-                      <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
-                        <option value="0">Abono</option>
-                        <option value="C&I">C&I</option>
-                        <option value="CeI">CeI</option>
-                      </select>
-                    </div>
-          </div>
+                <div class="row">
+                          <div class="col-md-2">
+                            <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                              <option value="0">Abono</option>
+                              <option value="C&I">C&I</option>
+                              <option value="CeI">CeI</option>
+                            </select>
+                          </div>
+                </div>
+                <div class="row">
+                        <div class="input-group mar-btm">
+                          <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
+                          <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
+                        </div>
+                </div>
         </div>
 
         <!--Modal footer-->
