@@ -533,7 +533,7 @@ include("$path/libs/conexion.php");
                           <div class="col-md-2">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                                   <?php
-                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco FROM [Abonos por descargar],CategoriaAbono,[Abono por relacionar] As AbonoxRelacionar where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
+                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
                                         #Todas las Empresas
                                         $objCboAbono = new poolConnecion();
                                         $con=$objCboAbono->ConexionSQLSAP();
