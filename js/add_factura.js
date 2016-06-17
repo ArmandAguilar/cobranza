@@ -50,12 +50,12 @@ function guardar_factura()
             	         {
                           alert(data);
                           $('#msjOk').show();
-                          $('#msjOk').hide(2000);
+                          $('#msjOk').hide(4000);
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
                   $('#msjError').show();
-                  $('#msjError').hide(2000);
+                  $('#msjError').hide(4000);
             		}
              });
 
