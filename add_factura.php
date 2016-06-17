@@ -335,17 +335,17 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                     <p>&nbsp;</p>
                   <div class="row">
                        <div class="col-md-2">
-                            <label class="col-md-* control-label" for="demo-textarea-input">Textarea</label>
+                            <label class="col-md-* control-label" for="demo-textarea-input">Mensaje</label>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-8">
-                        <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Your content here.."></textarea>
+                        <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Tu mensaje aqui.."></textarea>
                       </div>
                   </div>
               </div>
               <div class="panel-footer text-right">
-										<button class="btn btn-primary">Send message</button>
+										<button class="btn btn-primary">Crear Factura</button>
 									</div>
           </div>
 
