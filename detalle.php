@@ -552,7 +552,7 @@ include("$path/libs/conexion.php");
               <div class="col-md-1">
                   <p class="text-bold">Cantidad</p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                   <div id="DivtxtCantidad" class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
@@ -563,7 +563,7 @@ include("$path/libs/conexion.php");
               <div class="col-md-1">
                   <p class="text-bold">Tipo IVA</p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
                       <option value="2" selected>----</option>
                       <option value="0">0%</option>
@@ -573,7 +573,7 @@ include("$path/libs/conexion.php");
               <div class="col-md-1">
                   <p class="text-bold">Importe Total</p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
