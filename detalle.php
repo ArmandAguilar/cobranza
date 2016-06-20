@@ -3,6 +3,12 @@ ini_set('session.auto_start()','On');
 session_start();
 include("sis.php");
 include("$path/libs/conexion.php");
+
+$Factura = $_POST[txtFactura];
+
+$ArryaFactura = split("-",$Factura);
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,9 +60,9 @@ include("$path/libs/conexion.php");
 	<?php
 		if(empty($_SESSION[IdUsuario]))
 		{
-			 /*echo "<script>
+			 echo "<script>
 			 						window.location.href='logout.php'
-						</script>		";*/
+						</script>		";
 		}
 	 ?>
 </head>
@@ -531,17 +537,17 @@ include("$path/libs/conexion.php");
         <div class="row">
                   <div class="col-md-3">
                       <div id="DivtxtFactura" class="form-group has-feedback">
-                          <input type="text" id="txtFactura" name="txtFactura" class="form-control" placeholder="Factura">
+                          <input type="text" id="txtFacturaModificar" name="txtFacturaModificar" class="form-control" placeholder="Factura" value="<?php echo $ArryaFactura[0]; ?>">
                     </div>
                   </div>
                   <div class="col-md-3">
                       <div id="DivtxtFacturaNo" class="form-group has-feedback">
-                          <input type="text" id="txtFacturaNo" name="txtFacturaNo" class="form-control" placeholder="Numero">
+                          <input type="text" id="txtFacturaNoModificar" name="txtFacturaNoModificar" class="form-control" placeholder="Numero" value="<?php echo $ArryaFactura[1]; ?>">
                      </div>
                   </div>
                     <div class="col-md-3">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
-                              <option value="0" selected>------</option>
+                              <option value="<?php echo $ArryaFactura[0]; ?>" selected><?php echo $ArryaFactura[0]; ?></option>
                               <option value="C&I">C&I</option>
                               <option value="CeI">CeI</option>
                             </select>
@@ -556,7 +562,7 @@ include("$path/libs/conexion.php");
                   <div id="DivtxtCantidad" class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                        <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
+                        <input type="text" id="txtCantidadModificar" name="txtCantidadModificar" class="form-control">
                       </div>
                   </div>
               </div>
@@ -564,7 +570,7 @@ include("$path/libs/conexion.php");
                   <p class="text-bold">IVA</p>
               </div>
               <div class="col-md-3">
-                <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
+                <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
                       <option value="2" selected>----</option>
                       <option value="0">0%</option>
                       <option value="1.16">16%</option>
@@ -577,7 +583,7 @@ include("$path/libs/conexion.php");
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
+                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" readonly="">
                       </div>
                     </div>
               </div>
