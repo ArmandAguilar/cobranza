@@ -529,17 +529,17 @@ include("$path/libs/conexion.php");
       <div class="modal-body">
 
         <div class="row">
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                       <div id="DivtxtFactura" class="form-group has-feedback">
                           <input type="text" id="txtFactura" name="txtFactura" class="form-control" placeholder="Factura">
                     </div>
                   </div>
-                  <div class="col-md-1">
+                  <div class="col-md-3">
                       <div id="DivtxtFacturaNo" class="form-group has-feedback">
                           <input type="text" id="txtFacturaNo" name="txtFacturaNo" class="form-control" placeholder="Numero">
                      </div>
                   </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                               <option value="0" selected>------</option>
                               <option value="C&I">C&I</option>
