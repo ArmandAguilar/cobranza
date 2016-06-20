@@ -567,9 +567,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <hr>
 
         <div class="row">
-              <div class="col-md-1">
-                  <p class="text-bold">Importe</p>
-              </div>
+              
               <div class="col-md-4">
                   <div id="DivtxtCantidad" class="form-group has-feedback">
                       <div class="input-group mar-btm">
@@ -586,9 +584,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                       <option value="1.16">16%</option>
                 </select>
               </div>
-              <div class="col-md-1">
-                  <p class="text-bold">Total</p>
-              </div>
+
               <div class="col-md-4">
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
