@@ -561,7 +561,7 @@ include("$path/libs/conexion.php");
                   </div>
               </div>
               <div class="col-md-1">
-                  <p class="text-bold">Tipo IVA</p>
+                  <p class="text-bold">IVA</p>
               </div>
               <div class="col-md-3">
                 <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
@@ -571,7 +571,7 @@ include("$path/libs/conexion.php");
                 </select>
               </div>
               <div class="col-md-1">
-                  <p class="text-bold">Importe Total</p>
+                  <p class="text-bold">Total</p>
               </div>
               <div class="col-md-3">
                   <div class="form-group has-feedback">
