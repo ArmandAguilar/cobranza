@@ -284,7 +284,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             <p class="text-bold">Dirección Fiscal</p>
                         </div>
                         <div class="col-md-8">
-                            <div id="DivtxtDir" class="form-group has-feedback has-error">
+                            <div id="DivtxtDir" class="form-group has-feedback">
                                 <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
                             </div>
                         </div>
