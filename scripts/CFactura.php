@@ -35,7 +35,7 @@ function ingresar_factura($info)
 
     $sql = "INSERT INTO [SAP].[dbo].[FacturacionConsulting]
                VALUES
-                     ('$Factura '
+                     ('$Factura'
                      ,'$NumProyecto'
                      ,'$CONCEPTO_FACTURA'
                      ,'$Fecha_Factura'
