@@ -9,7 +9,7 @@ $Factura = $_POST[txtFactura];
 $ArryaFactura = split("-",$Factura);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
-$Sql1="SELECT [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA] FROM [SAP].[dbo].[presupuestos] Where FacturaForta='$_POST[txtFactura]'";
+$Sql1="SELECT [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA] FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
 $con=$objFactura->ConexionSQLSAP();
 $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
