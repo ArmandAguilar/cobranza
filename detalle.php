@@ -128,7 +128,7 @@ include("$path/libs/conexion.php");
 										<div class="row">
 
 												<div class="col-lg-3">
-														<p class="text-2x mar-no text-thin" data-target="#modal-relacionar" data-toggle="modal">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
+														<p class="text-2x mar-no text-thin" data-target="#modal-mFactura" data-toggle="modal" style="cursor:pointer">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
 												</div>
 												<div class="col-lg-6">
                               <div class="row">
@@ -511,7 +511,53 @@ include("$path/libs/conexion.php");
   <!--End Default Bootstrap Modal-->
 
 
+<!--Default Bootstrap Modal modal-mFactura-->
+<!--===================================================-->
+<div class="modal bunce" id="modal-mFactura" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!--Modal header-->
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Modificar Fuctura</h4>
+      </div>
+
+      <!--Modal body-->
+      <div class="modal-body">
+
+        <div class="row">
+                  <div class="col-md-2">
+                      <div id="DivtxtFactura" class="form-group has-feedback">
+                          <input type="text" id="txtFactura" name="txtFactura" class="form-control" placeholder="Factura">
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                      <div id="DivtxtFacturaNo" class="form-group has-feedback">
+                          <input type="text" id="txtFacturaNo" name="txtFacturaNo" class="form-control" placeholder="Numero">
+                     </div>
+                  </div>
+                    <div class="col-md-2">
+                            <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                              <option value="0" selected>------</option>
+                              <option value="C&I">C&I</option>
+                              <option value="CeI">CeI</option>
+                            </select>
+                    </div>
+        </div>
+      </div>
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button class="btn btn-danger">Si</button>
+        <button data-dismiss="modal" class="btn btn-default" type="button">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===================================================-->
+<!--End Default Bootstrap Modal-->
 
   <!--Default Bootstrap Modal-->
   <!--===================================================-->
