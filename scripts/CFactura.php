@@ -38,7 +38,7 @@ function ingresar_factura($info)
     #Todas las Empresas
     $objGurdar = new poolConnecion();
     $con=$objGurdar->ConexionSQLSAP();
-    $RSet=$objGurdar->QuerySQLSAP($Sql,$con);
+    $RSet=$objGurdar->QuerySQLSAP($sql,$con);
     $objGurdar->CerrarSQLSAP($RSet,$con);
 
     return $sql;
