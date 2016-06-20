@@ -570,7 +570,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
               <div class="col-md-1">
                   <p class="text-bold">Importe</p>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                   <div id="DivtxtCantidad" class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
@@ -578,8 +578,8 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                       </div>
                   </div>
               </div>
-              
-              <div class="col-md-3">
+
+              <div class="col-md-2">
                 <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%">
                       <option value="<?php echo $Iva; ?>" selected><?php echo $Iva; ?></option>
                       <option value="0">0%</option>
@@ -589,7 +589,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
               <div class="col-md-1">
                   <p class="text-bold">Total</p>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
