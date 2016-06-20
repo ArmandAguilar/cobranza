@@ -549,8 +549,8 @@ include("$path/libs/conexion.php");
         </div>
         <hr>
         <div class="row">
-              <div class="col-md-1">
-                  <p class="text-bold">Cantidad</p>
+              <div class="col-md-1">   
+                  <p class="text-bold">Importe</p>
               </div>
               <div class="col-md-3">
                   <div id="DivtxtCantidad" class="form-group has-feedback">
