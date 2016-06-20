@@ -33,30 +33,8 @@ function ingresar_factura($info)
   $MotivoCancelacion = "";
   $CondicionesDePago = "";
 
-    $sql = "INSERT INTO [SAP].[dbo].[FacturacionConsulting]
-               VALUES
-                     ('$Factura'
-                     ,'$NumProyecto'
-                     ,'$CONCEPTO_FACTURA'
-                     ,'$Fecha_Factura'
-                     ,'Provisionada'
-                     ,'$MontoAntesdeIVA'
-                     ,'$IVA'
-                     ,'$Fecha_recepcion'
-                     ,'$Fecha_TENTATIVA_de_pago'
-                     ,'$Notas'
-                     ,'$Trimestre'
-                     ,'$Producto'
-                     ,'$Entrego_Factura'
-                     ,'$ImporteLetra'
-                     ,'$QuienFactura'
-                     ,'$EmpresaSolicitante'
-                     ,'$SeFacturaA'
-                     ,'$RFC'
-                     ,'$DirFiscal'
-                     ,'$TelefonoEmpresa'
-                     ,'$MotivoCancelacion'
-                     ,'$CondicionesDePago')";
+    $sql = "INSERT INTO [SAP].[dbo].[FacturacionConsulting] VALUES ('$Factura','$NumProyecto','$CONCEPTO_FACTURA','$Fecha_Factura' ,'Provisionada','$MontoAntesdeIVA','$IVA','$Fecha_recepcion','$Fecha_TENTATIVA_de_pago','$Notas','$Trimestre','$Producto','$Entrego_Factura','$ImporteLetra','$QuienFactura','$EmpresaSolicitante','$SeFacturaA','$RFC','$DirFiscal','$TelefonoEmpresa','$MotivoCancelacion','$CondicionesDePago')";
+
     return $sql;
 }
 
