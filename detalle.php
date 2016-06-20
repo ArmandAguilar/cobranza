@@ -549,7 +549,7 @@ include("$path/libs/conexion.php");
         </div>
         <hr>
         <div class="row">
-              <div class="col-md-1">   
+              <div class="col-md-1">
                   <p class="text-bold">Importe</p>
               </div>
               <div class="col-md-3">
@@ -581,6 +581,14 @@ include("$path/libs/conexion.php");
                       </div>
                     </div>
               </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+              <div id="DivtxtConcepto" class="form-group has-feedback">
+              <textarea id="txtConcepto" name="txtConcepto" rows="9" class="form-control" placeholder="Concepto aqui.."></textarea>
+            </div>
+            </div>
         </div>
       </div>
       <!--Modal footer-->
