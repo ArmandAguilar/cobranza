@@ -547,6 +547,41 @@ include("$path/libs/conexion.php");
                             </select>
                     </div>
         </div>
+        <hr>
+        <div class="row">
+              <div class="col-md-1">
+                  <p class="text-bold">Cantidad</p>
+              </div>
+              <div class="col-md-2">
+                  <div id="DivtxtCantidad" class="form-group has-feedback">
+                      <div class="input-group mar-btm">
+                        <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
+                        <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-1">
+                  <p class="text-bold">Tipo IVA</p>
+              </div>
+              <div class="col-md-2">
+                <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
+                      <option value="2" selected>----</option>
+                      <option value="0">0%</option>
+                      <option value="1.16">16%</option>
+                </select>
+              </div>
+              <div class="col-md-1">
+                  <p class="text-bold">Importe Total</p>
+              </div>
+              <div class="col-md-2">
+                  <div class="form-group has-feedback">
+                      <div class="input-group mar-btm">
+                        <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
+                        <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
+                      </div>
+                    </div>
+              </div>
+        </div>
       </div>
       <!--Modal footer-->
       <div class="modal-footer">
