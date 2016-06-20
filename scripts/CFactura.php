@@ -41,7 +41,7 @@ function ingresar_factura($info)
                      ,'$Fecha_Factura'
                      ,'Provisionada'
                      ,'$MontoAntesdeIVA'
-                     ,'$IVA
+                     ,'$IVA'
                      ,'$Fecha_recepcion'
                      ,'$Fecha_TENTATIVA_de_pago'
                      ,'$Notas'
@@ -57,7 +57,7 @@ function ingresar_factura($info)
                      ,'$TelefonoEmpresa'
                      ,'$MotivoCancelacion'
                      ,'$CondicionesDePago')";
-    return $sql;                 
+    return $sql;
 }
 
 }
