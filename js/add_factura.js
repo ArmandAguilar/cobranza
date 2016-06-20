@@ -153,7 +153,7 @@ function guardar_factura()
         txtCantidad:$('#txtCantidad').val(),
         cboIva:$('#cboIva').val(),
         txtImporteTotal:$('#txtImporteTotal').val(),
-        txtConcepto:$('#txtConcepto').val();
+        txtConcepto:$('#txtConcepto').val(),
         cboEmpresa:$('#cboEmpresa').val(),
         txtRasonSocial:$('#txtRasonSocial').val(),
         txtRFC:$('#txtRFC').val(),
