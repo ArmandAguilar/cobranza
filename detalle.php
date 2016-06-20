@@ -7,7 +7,18 @@ include("$path/libs/conexion.php");
 $Factura = $_POST[txtFactura];
 
 $ArryaFactura = split("-",$Factura);
-
+#Obtenemos el IdEmpresa de presupuestos
+$objFactura = new poolConnecion();
+$Sql1="SELECT  [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA] FROM [SAP].[dbo].[presupuestos] Where Factura='$_POST[FacturaForta]'";
+$con=$objFactura->ConexionSQLSAP();
+$RSet=$objFactura->QuerySQLSAP($Sql1,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+       {
+            $Concpeto =  $fila[Concpeto ];
+            $Monto = $fila[Monto];
+            $Iva = $fila[Iva]
+       }
+ $objFactura->CerrarSQLSAP($RSet,$con);
 
  ?>
 <!DOCTYPE html>
@@ -547,13 +558,14 @@ $ArryaFactura = split("-",$Factura);
                   </div>
                     <div class="col-md-3">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
-                              <option value="<?php echo $ArryaFactura[0]; ?>" selected><?php echo $ArryaFactura[0]; ?></option>
+                              <option value="<?php echo $ArryaFactura[0]; ?>" selected><?php echo $ArryaFactura[2]; ?></option>
                               <option value="C&I">C&I</option>
                               <option value="CeI">CeI</option>
                             </select>
                     </div>
         </div>
-        <hr>
+        <hr> =
+
         <div class="row">
               <div class="col-md-1">
                   <p class="text-bold">Importe</p>
@@ -562,7 +574,7 @@ $ArryaFactura = split("-",$Factura);
                   <div id="DivtxtCantidad" class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                        <input type="text" id="txtCantidadModificar" name="txtCantidadModificar" class="form-control">
+                        <input type="text" id="txtCantidadModificar" name="txtCantidadModificar" class="form-control" value="<?php echo $Monto; ?>">
                       </div>
                   </div>
               </div>
@@ -570,8 +582,8 @@ $ArryaFactura = split("-",$Factura);
                   <p class="text-bold">IVA</p>
               </div>
               <div class="col-md-3">
-                <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
-                      <option value="2" selected>----</option>
+                <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%">
+                      <option value="<?php echo $Iva; ?>" selected><?php echo $Iva; ?></option>
                       <option value="0">0%</option>
                       <option value="1.16">16%</option>
                 </select>
@@ -583,7 +595,7 @@ $ArryaFactura = split("-",$Factura);
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" readonly="">
+                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" value="<?php echo r= $Monto + $Iva; ?>" readonly="">
                       </div>
                     </div>
               </div>
