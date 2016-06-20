@@ -128,7 +128,7 @@ include("$path/libs/conexion.php");
 										<div class="row">
 
 												<div class="col-lg-3">
-														<p class="text-2x mar-no text-thin">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
+														<p class="text-2x mar-no text-thin" data-target="#modal-relacionar" data-toggle="modal">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
 												</div>
 												<div class="col-lg-6">
                               <div class="row">
@@ -542,7 +542,7 @@ include("$path/libs/conexion.php");
                                         			 {
                                         					 $OperacionAbono = $fila[OperacionAbono];
                                                    $Fecha = $fila[Fecha];
-                                                   $AbonoTotalBanco = number_format($fila[AbonoTotalBanco], 2, '.', ','); ; 
+                                                   $AbonoTotalBanco = number_format($fila[AbonoTotalBanco], 2, '.', ','); ;
 
                                         					 $cbo .= "<option value=\"\">$OperacionAbono|$Fecha|$AbonoTotalBanco</option>";
 
