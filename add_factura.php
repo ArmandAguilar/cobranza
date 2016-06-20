@@ -294,7 +294,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 					</div>
           <div class="panel">
     						<div class="panel-heading">
-    							<h3 class="panel-title">Notificar</h3>
+    							<h3 class="panel-title">Notificar (No Disponible)</h3>
     						</div>
     						<div class="panel-body">
                   <?php
@@ -357,7 +357,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                   </div>
                   <div class="row">
                       <div class="col-md-8">
-                        <textarea id="txtMensaje" name="txMensaje" rows="9" class="form-control" placeholder="Tu mensaje aqui.."></textarea>
+                        <textarea id="txtMensaje" name="txtMensaje" rows="9" class="form-control" placeholder="Tu mensaje aqui.."></textarea>
                       </div>
                   </div>
               </div>

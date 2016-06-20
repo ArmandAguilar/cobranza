@@ -165,7 +165,7 @@ function guardar_factura()
             		data:losdatos,
             		success:function(data)
             	         {
-                          $('#txtMensaje').append(data)
+                          
                           $('#msjOk').show();
                           $('#msjOk').hide(9000);
             		       },
