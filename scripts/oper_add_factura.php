@@ -12,7 +12,7 @@ switch ($_GET[o]) {
     break;
 
   case '2':
-            $Factura = "$_POST[txtFactura] $_POST[txtFacturaNo] $_POST[cboTipoFactura]";
+            $Factura = "$_POST[txtFactura]-$_POST[txtFacturaNo]-$_POST[cboTipoFactura]";
 
             $info->Factura = $Factura;
             $info->NumProyecto = $_POST[txtNoProyecto];

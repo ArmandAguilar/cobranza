@@ -182,17 +182,21 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 						<div class="panel-body">
                         <div class="row">
 																	<div class="col-md-2">
-																			<input type="text" id="txtFactura" name="txtFactura" class="form-control" placeholder="Factura">
+                                      <div id="DivtxtFactura" class="form-group has-feedback">
+																			    <input type="text" id="txtFactura" name="txtFactura" class="form-control" placeholder="Factura">
+                                    </div>
 																	</div>
 																	<div class="col-md-1">
-																			<input type="text" id="txtFacturaNo" name="txtFacturaNo" class="form-control" placeholder="Numero">
+                                      <div id="DivtxtFacturaNo" class="form-group has-feedback">
+																			    <input type="text" id="txtFacturaNo" name="txtFacturaNo" class="form-control" placeholder="Numero">
+                                     </div>
 																	</div>
                                     <div class="col-md-2">
-                                      <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
-                                        <option value="0">------</option>
-                                        <option value="C&I">C&I</option>
-                                        <option value="CeI">CeI</option>
-                                      </select>
+                                            <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                                              <option value="0" selected>------</option>
+                                              <option value="C&I">C&I</option>
+                                              <option value="CeI">CeI</option>
+                                            </select>
                                     </div>
                                     <div class="col-md-1">
                                         <p class="text-bold">Proyecto</p>
@@ -207,17 +211,19 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                   <p class="text-bold">Cantidad</p>
                               </div>
                               <div class="col-md-2">
+                                  <div id="DivtxtCantidad" class="form-group has-feedback">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
                                         <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
                                       </div>
+                                  </div>
                               </div>
                               <div class="col-md-1">
                                   <p class="text-bold">Tipo IVA</p>
                               </div>
                               <div class="col-md-2">
                                 <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
-																		  <option value="0">----</option>
+																		  <option value="2" selected>----</option>
 		                                  <option value="0">0%</option>
 		                                  <option value="1.16">16%</option>
                                 </select>
@@ -226,15 +232,19 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                   <p class="text-bold">Importe Total</p>
                               </div>
                               <div class="col-md-2">
+                                  <div class="form-group has-feedback">
                                       <div class="input-group mar-btm">
                                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
                                         <input type="text" id="txtImporteTotal" name="txtImporteTotal" class="form-control" readonly="">
                                       </div>
+                                    </div>
                               </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
+                              <div id="DivtxtConcepto" class="form-group has-feedback">
                               <textarea id="txtConcepto" name="txtConcepto" rows="9" class="form-control" placeholder="Concepto aqui.."></textarea>
+                            </div>
                             </div>
                         </div>
                         <hr>
@@ -244,7 +254,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                 </div>
                                 <div class="col-md-6">
                                   <select class="selectpicker" id="cboEmpresa" name="txtImporteTotal" title="Seleciona una empresa" data-width="100%" onchange="datos_empresa();">
-																			 <option value="0">------</option>
+																			 <option value="0" selected>------</option>
                                     		<?php echo $cbo; ?>
                                   </select>
                                 </div>
@@ -254,9 +264,9 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                 <p class="text-bold">R. Social:</p>
                             </div>
                             <div class="col-md-6">
-                                  <div class="form-group">
+                                  <div id="DivtxtRasonSocial" class="form-group has-feedback">
                                       <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here...">
-                                    </div>
+                                  </div>
                             </div>
                       </div>
                       <div class="row">
@@ -264,7 +274,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                 <p class="text-bold">RFC:</p>
                             </div>
                             <div class="col-md-4">
-                                  <div class="form-group">
+                                  <div id="DivtxtRFC" class="form-group has-feedback">
                                       <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here...">
                                     </div>
                             </div>
@@ -274,7 +284,9 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             <p class="text-bold">Dirección Fiscal</p>
                         </div>
                         <div class="col-md-8">
-                          <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
+                            <div id="DivtxtDir" class="form-group has-feedback has-error">
+                                <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
+                            </div>
                         </div>
                       </div>
 
@@ -352,13 +364,13 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
               <div class="panel-footer text-right">
                           <div id="msjOk" class="alert alert-success fade in" style="display:none">
                                     <button class="close" data-dismiss="alert"><span>×</span></button>
-                                    <strong>Well done!</strong> You successfully read this important alert message.
+                                    <strong>Oka</strong> Factura Creada con exito.
                           </div>
                           <div id="msjError" class="alert alert-danger fade in" style="display:none">
 										              <button class="close" data-dismiss="alert"><span>×</span></button>
-										              <strong>Oh snap!</strong> Change a few things up and try submitting again.
+										              <strong>Oh!</strong> Verifique los datos de su factura
 									        </div>
-                          <input type="button" value="Crear Factura" class="btn btn-primary" onclick="guardar_factura();"/>
+                          <input type="button" value="Crear Factura" class="btn btn-primary" onclick="validar_datos();"/>
 									</div>
           </div>
 
