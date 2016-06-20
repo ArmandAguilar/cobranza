@@ -9,12 +9,12 @@ $Factura = $_POST[txtFactura];
 $ArryaFactura = split("-",$Factura);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
-$Sql1="SELECT  [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA] FROM [SAP].[dbo].[presupuestos] Where Factura='$_POST[FacturaForta]'";
+$Sql1="SELECT [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA] FROM [SAP].[dbo].[presupuestos] Where Factura='$_POST[txtFactura]'";
 $con=$objFactura->ConexionSQLSAP();
 $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
        {
-            $Concpeto =  $fila[Concpeto ];
+            $Concpeto =  $fila[Concpeto];
             $Monto = $fila[Monto];
             $Iva = $fila[Iva];
        }
@@ -564,7 +564,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                             </select>
                     </div>
         </div>
-        <hr> =
+        <hr>
 
         <div class="row">
               <div class="col-md-1">
@@ -595,7 +595,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" value="<?php echo r= $Monto + $Iva; ?>" readonly="">
+                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" value="<?php echo $r = $Monto + $Iva; ?>" readonly="">
                       </div>
                     </div>
               </div>
