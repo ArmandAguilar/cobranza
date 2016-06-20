@@ -80,7 +80,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-  <?php echo $Sql1; ?>
   <input type="hidden" name="txtFactura" id="txtFactura" value="<?php echo $_POST[txtFactura]; ?>"/>
   <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
   <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
@@ -579,9 +578,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                       </div>
                   </div>
               </div>
-              <div class="col-md-1">
-                  <p class="text-bold">IVA</p>
-              </div>
+              
               <div class="col-md-3">
                 <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%">
                       <option value="<?php echo $Iva; ?>" selected><?php echo $Iva; ?></option>
