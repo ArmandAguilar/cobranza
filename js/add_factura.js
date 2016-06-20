@@ -165,9 +165,10 @@ function guardar_factura()
             		data:losdatos,
             		success:function(data)
             	         {
-                          
+
                           $('#msjOk').show();
                           $('#msjOk').hide(9000);
+                          window.location.href='panel.php';
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
