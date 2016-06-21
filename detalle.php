@@ -567,7 +567,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <hr>
 
         <div class="row">
-              
+
               <div class="col-md-4">
                   <div id="DivtxtCantidad" class="form-group has-feedback">
                       <div class="input-group mar-btm">
@@ -596,6 +596,36 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         </div>
         <hr>
         <div class="row">
+          <div class="col-md-2">
+                  Fecha
+          </div>
+          <div class="col-md-2">
+                  Fecha
+          </div>
+          <div class="col-md-2">
+                  Fecha
+          </div>
+            <div class="col-md-2">
+                    <div class="input-group date">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                    </div>
+            </div>
+            <div class="col-md-2">
+                    <div class="input-group date">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                    </div>
+            </div>
+            <div class="col-md-2">
+                    <div class="input-group date">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                    </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
             <div class="col-md-8">
               <div id="DivtxtConcepto" class="form-group has-feedback">
               <textarea id="txtConcepto" name="txtConcepto" rows="9" class="form-control" placeholder="Concepto aqui.."></textarea>
@@ -605,7 +635,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
       </div>
       <!--Modal footer-->
       <div class="modal-footer">
-        <button class="btn btn-danger">Si</button>
+        <button class="btn btn-primary">Si</button>
         <button data-dismiss="modal" class="btn btn-default" type="button">No</button>
       </div>
     </div>
