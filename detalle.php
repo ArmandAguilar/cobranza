@@ -721,7 +721,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
   <!--jQuery [ REQUIRED ]-->
-	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-2.2.4.min.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
 	<!--Fast Click [ OPTIONAL ]-->
