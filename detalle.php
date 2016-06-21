@@ -359,12 +359,13 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 																<p class="text-bold">Armando Aguilar</p>
 																<p class="text-bold">Armando Aguilar</p>
 																<p class="text-bold">Armando Aguilar</p>
-                                <div class="col-md-4">
-                                        <div class="input-group date">
-                                          <input type="text" class="form-control">
-                                          <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
-                                        </div>
-                                </div>
+                                <div id="demo-dp-component">
+													<div class="input-group date">
+														<input type="text" class="form-control">
+														<span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+													</div>
+													<small class="text-muted">Auto close on select</small>
+												</div>
 															</div>
 												 </div>
 
