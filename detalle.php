@@ -9,7 +9,7 @@ $Factura = $_POST[txtFactura];
 $ArryaFactura = split("-",$Factura);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
-$Sql1="SELECT [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
+$Sql1="SELECT [IdFacturacion],[CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
 $con=$objFactura->ConexionSQLSAP();
 $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -20,6 +20,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
             $FFactura = $fila[FFactura];
             $FTentativa = $fila[FTetativa];
             $FRecepcion = $fila[FRecepcion];
+            $IdFacturacion = $fila[IdFacturacion];
        }
  $objFactura->CerrarSQLSAP($RSet,$con);
 
@@ -94,6 +95,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
   <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
   <input type="hidden" name="txtEstado" id="txtEstado" value="<?php echo $_POST[Estado]; ?>">
+  <inpur type="hidden" name="txtIdFacturacion" id="txtIdFacturacion"  value = "<?php echo $IdFacturacion; ?>">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -677,14 +679,14 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <div class="row">
             <div class="col-md-8">
               <div id="DivtxtConcepto" class="form-group has-feedback">
-              <textarea id="txtConcepto" name="txtConcepto" rows="9" class="form-control" placeholder="Concepto aqui.."><?php echo $Concpeto; ?></textarea>
+              <textarea id="txtConceptoMofificar" name="txtConceptoModificar" rows="9" class="form-control" placeholder="Concepto aqui.."><?php echo $Concpeto; ?></textarea>
             </div>
             </div>
         </div>
       </div>
       <!--Modal footer-->
       <div class="modal-footer">
-        <button class="btn btn-primary">Modificar</button>
+        <button class="btn btn-primary" onclick="modificar_datos();">Modificar</button>
         <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
       </div>
     </div>

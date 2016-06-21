@@ -94,3 +94,28 @@ function timeline()
             }
          });
 }
+function modificar_datos()
+{
+
+  var Factura = $("#txtFacturaModificar").val() + '-' + $("#txtFacturaNoModificar").val() + '-' + $("#cboTipoFactura").val();
+  var losdatos = {
+                    IdFacturacion : $("#txtIdFacturacion").val(),
+                    Factura : Facturas,
+                    Monto : $("#txtCantidadModificar").val(),
+                    IVA : $("#txtImporteTotalModificar").val(),
+                    Trimestre : $("#cboTrimestre").val(),
+                    Concepto : $("#txtConceptoModificar").val()
+                };
+  $.ajax({
+            url:'./scripts/oper_detalles.php?o=5',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                      $("#lblTimeline").append(data);
+                   },
+            error:function(req,e,er) {
+              alert('error!' + er);
+            }
+         });
+}
