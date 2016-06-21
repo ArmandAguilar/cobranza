@@ -623,16 +623,10 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                     </div>
             </div>
             <div class="col-md-4">
-                    <div class="input-group date">
-                      <input type="text" class="form-control">
-                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
-                    </div>
+                    
             </div>
             <div class="col-md-4">
-                    <div class="input-group date">
-                      <input type="text" class="form-control">
-                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
-                    </div>
+
             </div>
         </div>
         <hr>
@@ -720,63 +714,35 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-  	<script src="js/jquery-2.1.1.min.js"></script>
-
-
-  	<!--BootstrapJS [ RECOMMENDED ]-->
-  	<script src="js/bootstrap.min.js"></script>
-
-
-  	<!--Fast Click [ OPTIONAL ]-->
-  	<script src="plugins/fast-click/fastclick.min.js"></script>
-
-
-  	<!--Nifty Admin [ RECOMMENDED ]-->
-  	<script src="js/nifty.min.js"></script>
-
-
-  	<!--Switchery [ OPTIONAL ]-->
-  	<script src="plugins/switchery/switchery.min.js"></script>
-
-
-  	<!--Bootstrap Select [ OPTIONAL ]-->
-  	<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
-
-
-  	<!--Bootstrap Tags Input [ OPTIONAL ]-->
-  	<script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-
-
-  	<!--Chosen [ OPTIONAL ]-->
-  	<script src="plugins/chosen/chosen.jquery.min.js"></script>
-
-
-  	<!--noUiSlider [ OPTIONAL ]-->
-  	<script src="plugins/noUiSlider/jquery.nouislider.all.min.js"></script>
-
-
-  	<!--Bootstrap Timepicker [ OPTIONAL ]-->
-  	<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-
-
-  	<!--Bootstrap Datepicker [ OPTIONAL ]-->
-  	<script src="plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-
-
-  	<!--Dropzone [ OPTIONAL ]-->
-  	<script src="plugins/dropzone/dropzone.min.js"></script>
-
-
-  	<!--Summernote [ OPTIONAL ]-->
-  	<script src="plugins/summernote/summernote.min.js"></script>
-
-
-  	<!--Demo script [ DEMONSTRATION ]-->
-  	<script src="js/demo/nifty-demo.min.js"></script>
-
-
-  	<!--Form Component [ SAMPLE ]-->
-  	<script src="js/demo/form-component.js"></script>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<!--BootstrapJS [ RECOMMENDED ]-->
+	<script src="js/bootstrap.min.js"></script>
+	<!--Fast Click [ OPTIONAL ]-->
+	<script src="plugins/fast-click/fastclick.min.js"></script>
+	<!--Nifty Admin [ RECOMMENDED ]-->
+	<script src="js/nifty.min.js"></script>
+	<!--Switchery [ OPTIONAL ]-->
+	<script src="plugins/switchery/switchery.min.js"></script>
+	<!--Bootstrap Select [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+	<!--Bootstrap Tags Input [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<!--Chosen [ OPTIONAL ]-->
+	<script src="plugins/chosen/chosen.jquery.min.js"></script>
+	<!--noUiSlider [ OPTIONAL ]-->
+	<script src="plugins/noUiSlider/jquery.nouislider.all.min.js"></script>
+	<!--Bootstrap Timepicker [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+	<!--Bootstrap Datepicker [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+	<!--Dropzone [ OPTIONAL ]-->
+	<script src="plugins/dropzone/dropzone.min.js"></script>
+	<!--Summernote [ OPTIONAL ]-->
+	<script src="plugins/summernote/summernote.min.js"></script>
+	<!--Demo script [ DEMONSTRATION ]-->
+	<script src="js/demo/nifty-demo.min.js"></script>
+	<!--Form Component [ SAMPLE ]-->
+	<script src="js/demo/form-component.js"></script>
   <!--Bootbox Modals [ OPTIONAL ]-->
   <script src="plugins/bootbox/bootbox.min.js"></script>
   <!--Modals [ SAMPLE ]-->
