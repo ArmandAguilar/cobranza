@@ -97,7 +97,8 @@ function timeline()
 function modificar_datos()
 {
 
-  var Factura = $("#txtFacturaModificar").val() + '-' + $("#txtFacturaNoModificar").val() + '-' + $("#cboTipoFactura").val();
+alert('motherFocker');
+  /*var Factura = $("#txtFacturaModificar").val() + '-' + $("#txtFacturaNoModificar").val() + '-' + $("#cboTipoFactura").val();
   var losdatos = {
                     IdFacturacion : $("#txtIdFacturacion").val(),
                     Factura : Facturas,
@@ -117,5 +118,5 @@ function modificar_datos()
             error:function(req,e,er) {
               alert('error!' + er);
             }
-         });
+         });*/
 }
