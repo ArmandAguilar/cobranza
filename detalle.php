@@ -359,6 +359,12 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 																<p class="text-bold">Armando Aguilar</p>
 																<p class="text-bold">Armando Aguilar</p>
 																<p class="text-bold">Armando Aguilar</p>
+                                <div class="col-md-4">
+                                        <div class="input-group date">
+                                          <input type="text" class="form-control">
+                                          <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                        </div>
+                                </div>
 															</div>
 												 </div>
 
@@ -741,15 +747,16 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<script src="js/demo/nifty-demo.min.js"></script>
 	<!--Form Component [ SAMPLE ]-->
 	<script src="js/demo/form-component.js"></script>
+  <!--Bootbox Modals [ OPTIONAL ]-->
+  <script src="plugins/bootbox/bootbox.min.js"></script>
+  <!--Modals [ SAMPLE ]-->
+  <script src="js/demo/ui-modals.js"></script>
 	<script src="js/detalle.js"></script>
 	<script>
 			detalles_empresa(<?php echo $_POST[txtNoProyecto]; ?>);
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
 	</script>
-  <!--Bootbox Modals [ OPTIONAL ]-->
-  <script src="plugins/bootbox/bootbox.min.js"></script>
-  <!--Modals [ SAMPLE ]-->
-  <script src="js/demo/ui-modals.js"></script>
+
 </body>
 </html>
