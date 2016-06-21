@@ -596,15 +596,17 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         </div>
         <hr>
         <div class="row">
-          <div class="col-md-2">
-                  Fecha
-          </div>
-          <div class="col-md-2">
-                  Fecha
-          </div>
-          <div class="col-md-2">
-                  Fecha
-          </div>
+              <div class="col-md-2">
+                      Fecha Facturacion
+              </div>
+              <div class="col-md-2">
+                      Fecha Tentativa
+              </div>
+              <div class="col-md-2">
+                      Fecha Recepción
+              </div>
+         </div>
+          <div class="row">
             <div class="col-md-2">
                     <div class="input-group date">
                       <input type="text" class="form-control">
