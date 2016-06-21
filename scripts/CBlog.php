@@ -42,7 +42,7 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos los blogs
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha]) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura' order by Id desc";
+                      $Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura' order by Id desc";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))

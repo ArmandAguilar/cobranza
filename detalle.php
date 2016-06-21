@@ -9,7 +9,7 @@ $Factura = $_POST[txtFactura];
 $ArryaFactura = split("-",$Factura);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
-$Sql1="SELECT [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],[Fecha de recepción] As FRecepcion ,[Fecha TENTATIVA de pago] As FTetativa,[Fecha Factura] as FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
+$Sql1="SELECT [CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
 $con=$objFactura->ConexionSQLSAP();
 $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -17,10 +17,9 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
             $Concpeto =  $fila[Concpeto];
             $Monto = $fila[Monto];
             $Iva = $fila[Iva];
-            $FFactura = $fila[FRecepcion];
-            $ArryaFF = split('/',$FFactura)
-            $FTentativa = $fila[];
-            $FRecepcion = $fila[];
+            $FFactura = $fila[FFactura];
+            $FTentativa = $fila[FTetativa];
+            $FRecepcion = $fila[FRecepcion];
        }
  $objFactura->CerrarSQLSAP($RSet,$con);
 
@@ -91,7 +90,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-  <?php echo echo "$ArryaFF[0]"; ?>
   <input type="hidden" name="txtFactura" id="txtFactura" value="<?php echo $_POST[txtFactura]; ?>"/>
   <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
   <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
