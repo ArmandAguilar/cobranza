@@ -63,6 +63,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
   <!--Animate.css [ OPTIONAL ]-->
   <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
+
   <!--SCRIPT-->
   <!--=================================================-->
   <!--Page Load Progress Bar [ OPTIONAL ]-->
@@ -359,16 +360,61 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 																<p class="text-bold">Armando Aguilar</p>
 																<p class="text-bold">Armando Aguilar</p>
 																<p class="text-bold">Armando Aguilar</p>
-                                <div id="demo-dp-component">
+
+															</div>
+												 </div>
+                         <!--Bootstrap Datepicker : Text Input-->
+												<!--===================================================-->
+												<div id="demo-dp-txtinput">
+													<input type="text" class="form-control">
+												</div>
+												<!--===================================================-->
+
+												<br>
+												<hr>
+												<br>
+
+												<p class="text-thin mar-btm">Component</p>
+
+												<!--Bootstrap Datepicker : Component-->
+												<!--===================================================-->
+												<div id="demo-dp-component">
 													<div class="input-group date">
 														<input type="text" class="form-control">
 														<span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
 													</div>
 													<small class="text-muted">Auto close on select</small>
 												</div>
-															</div>
-												 </div>
+												<!--===================================================-->
 
+												<br>
+												<hr>
+												<br>
+												<p class="text-thin mar-btm">Range</p>
+
+												<!--Bootstrap Datepicker : Range-->
+												<!--===================================================-->
+												<div id="demo-dp-range">
+													<div class="input-daterange input-group" id="datepicker">
+														<input type="text" class="form-control" name="start" />
+														<span class="input-group-addon">to</span>
+														<input type="text" class="form-control" name="end" />
+													</div>
+												</div>
+												<!--===================================================-->
+
+												<br>
+												<hr>
+												<br>
+												<p class="text-thin mar-btm">Inline</p>
+
+												<!--Bootstrap Datepicker : Inline-->
+												<!--===================================================-->
+												<div id="demo-dp-inline">
+													<div></div>
+												</div>
+												<!--===================================================-->
+					
 									</div>
                 </div>
               </div>
