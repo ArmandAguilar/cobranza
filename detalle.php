@@ -63,12 +63,18 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
   <!--Animate.css [ OPTIONAL ]-->
   <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
+  <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/uikit/js/uikit.min.js"></script>
+  <script src="js/uikit/js/components/datepicker.js"></script>
+   <script src="js/uikit/js/components/form-select.js"></script>
   <!--SCRIPT-->
   <!--=================================================-->
   <!--Page Load Progress Bar [ OPTIONAL ]-->
   <link href="plugins/pace/pace.min.css" rel="stylesheet">
   <script src="plugins/pace/pace.min.js"></script>
+
 	<?php
 		if(empty($_SESSION[IdUsuario]))
 		{
@@ -363,12 +369,57 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
 															</div>
 												 </div>
-                         
+
 
 									</div>
                 </div>
               </div>
+
                 <div class="col-lg-8">
+                  <div class="panel">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Fecha de Factura</h3>
+                          </div>
+                          <div class="panel-body">
+                              <form class="uk-form">
+                                <div cols="row">
+                                  <div class="col-lg-1">
+                                      Facturación
+                                  </div>
+                                  <div class="col-lg-3">
+                                      <div class="input-group date">
+                                          <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}">
+                                        </div>
+                                  </div>
+                                </div>
+                                <div cols="row">
+                                  <div class="col-lg-1">
+                                    Tentativa
+                                  </div>
+                                  <div class="col-lg-3">
+                                      <div class="input-group date">
+                                          <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}">
+                                        </div>
+                                  </div>
+                                </div>
+                                <div cols="row">
+                                  <div class="col-lg-1">
+                                      Recepción
+                                  </div>
+                                  <div class="col-lg-3">
+                                      <div class="input-group date">
+                                          <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}">
+                                        </div>
+                                  </div>
+                                </div>
+                              </form>
+
+      									 </div>
+                         <div class="panel-footer text-right">
+                       <button class="btn btn-primary">Actualizar</button>
+                     </div>
+                  </div>
+
                   <div class="panel">
                     <div class="panel-heading">
                       <h3 class="panel-title">Comentar</h3>
@@ -587,7 +638,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                       <option value="1.16">16%</option>
                 </select>
               </div>
-
               <div class="col-md-4">
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
@@ -598,30 +648,27 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
               </div>
         </div>
         <hr>
-        <div class="row">
-              <div class="col-md-4">
-                      Facturacion
-              </div>
-              <div class="col-md-4">
-                      Tentativa
-              </div>
-              <div class="col-md-4">
-                       Recepción
-              </div>
-         </div>
-          <div class="row">
-            <div class="col-md-4">
-                    <div class="input-group date">
-                      <input type="text" class="form-control">
-                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
-                    </div>
-            </div>
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
-
-            </div>
+        <div class ="row">
+                <div class="col-md-3">
+                        <select id="cboTrimestre" name="cboTrimestre" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                          <option value="<?php echo $TrimestreFactura; ?>" selected><?php echo $TrimestreFactura; ?></option>
+                          <option value="T1-2016"></option>
+                          <option value="T2-2016"></option>
+                          <option value="T3-2016"></option>
+                          <option value="T1-2015"></option>
+                          <option value="T2-2015"></option>
+                          <option value="T3-2015"></option>
+                          <option value="T1-2014"></option>
+                          <option value="T2-2014"></option>
+                          <option value="T3-2014"></option>
+                          <option value="T1-2013"></option>
+                          <option value="T2-2013"></option>
+                          <option value="T3-2013"></option>
+                          <option value="T1-2012"></option>
+                          <option value="T2-2012"></option>
+                          <option value="T3-2012"></option>
+                        </select>
+                </div>
         </div>
         <hr>
         <div class="row">
@@ -708,7 +755,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-	<script src="js/jquery-2.2.4.min.js"></script>
+
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
 	<!--Fast Click [ OPTIONAL ]-->
@@ -723,8 +770,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 	<!--Chosen [ OPTIONAL ]-->
 	<script src="plugins/chosen/chosen.jquery.min.js"></script>
-	<!--noUiSlider [ OPTIONAL ]-->
-	<script src="plugins/noUiSlider/jquery.nouislider.all.min.js"></script>
 	<!--Bootstrap Timepicker [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
 	<!--Bootstrap Datepicker [ OPTIONAL ]-->
@@ -735,8 +780,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<script src="plugins/summernote/summernote.min.js"></script>
 	<!--Demo script [ DEMONSTRATION ]-->
 	<script src="js/demo/nifty-demo.min.js"></script>
-	<!--Form Component [ SAMPLE ]-->
-	<script src="js/demo/form-component.js"></script>
+
   <!--Bootbox Modals [ OPTIONAL ]-->
   <script src="plugins/bootbox/bootbox.min.js"></script>
   <!--Modals [ SAMPLE ]-->
@@ -746,6 +790,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 			detalles_empresa(<?php echo $_POST[txtNoProyecto]; ?>);
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
+
 	</script>
 
 </body>
