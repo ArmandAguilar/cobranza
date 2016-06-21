@@ -112,7 +112,7 @@ function modificar_datos()
             data:losdatos,
             success:function(data)
                    {
-                      $("#lblTimeline").append(data);
+                      alert(data);
                    },
             error:function(req,e,er) {
               alert('error!' + er);
