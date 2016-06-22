@@ -97,6 +97,7 @@ function timeline()
 function modificar_datos()
 {
 
+  alert($("#txtIdFacturacion").val());
   var losdatos = {
                     IdFacturacion : $("#txtIdFacturacion").val(),
                     Factura : $("#txtFacturaModificar").val(),
