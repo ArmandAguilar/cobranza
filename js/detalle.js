@@ -98,7 +98,7 @@ function modificar_datos()
 {
 
   alert($("#txtIdFacturacion").val());
-  var losdatos = {
+  /*var losdatos = {
                     IdFacturacion : $("#txtIdFacturacion").val(),
                     Factura : $("#txtFacturaModificar").val(),
                     FacturaNoModificar : $("#txtFacturaNoModificar").val(),
@@ -119,5 +119,5 @@ function modificar_datos()
             error:function(req,e,er) {
               alert('error!' + er);
             }
-         });
+         });*/
 }
