@@ -120,6 +120,7 @@ function modificar_datos()
                    {
                      $("#msjModalModificarOk").show();
                      $("#msjModalModificarOk").hide(8000);
+                     window.location.href='detalle.php'
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
