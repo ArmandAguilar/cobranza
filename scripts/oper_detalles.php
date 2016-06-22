@@ -34,7 +34,7 @@ switch ($_GET[o]) {
     break;
     case '5':
               $info->IdFacturacion = $_POST[IdFacturacion];
-              $info->Factura = $_POST[Factura ];
+              $info->Factura = $_POST[Factura];
               $info->Monto = $_POST[Monto];
               $info->IVA = $_POST[IVA];
               $info->Trimestre = $_POST[Trimestre];
