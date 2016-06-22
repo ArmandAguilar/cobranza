@@ -92,7 +92,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
   <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
   <input type="hidden" name="txtEstado" id="txtEstado" value="<?php echo $_POST[Estado]; ?>"/>
-  <inpur type="hidden" name="txtIdFacturacion" id="txtIdFacturacion"  value = "<?php echo $IdFacturacion; ?>">
+  <input type="hidden" name="txtIdFacturacion" id="txtIdFacturacion"  value = "<?php echo $IdFacturacion; ?>">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
