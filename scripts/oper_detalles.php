@@ -17,12 +17,6 @@ switch ($_GET[o]) {
             echo $objC->detalle($_POST[id]);
       break;
   case '3':
-
-            $F=$_POST[Factura];
-            $FN=$_POST[FacturaNoModificar];
-            $FT=$_POST[cboTipoFactura];
-            $Factura = "$F-$FN-$FT";
-            $info->IdFacturacion=$_POST[IdFacturacion];
             $info->Factura=$Factura;
             $info->NoProyecto=$_POST[txtProyecto];
             $info->Usuario=$_POST[txtUsuario];
@@ -34,6 +28,10 @@ switch ($_GET[o]) {
               echo $objB->linea_tiempo($_POST[Factura]);
     break;
     case '5':
+              $F=$_POST[Factura];
+              $FN=$_POST[FacturaNoModificar];
+              $FT=$_POST[cboTipoFactura];
+              $Factura = "$F-$FN-$FT";
               $info->IdFacturacion = $_POST[IdFacturacion];
               $info->Factura = $_POST[Factura];
               $info->Monto = $_POST[Monto];
