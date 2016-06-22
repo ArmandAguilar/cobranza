@@ -94,7 +94,7 @@ function timeline()
             }
          });
 }
-function sumar_iva()
+function sumar_iva_modificar()
 {
   var iva = $("#cboIvaModificar").val();
   var newIva = iva * $("#txtCantidadModificar").val();

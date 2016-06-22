@@ -634,7 +634,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
               </div>
 
               <div class="col-md-2">
-                <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%">
+                <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%" onchange="sumar_iva_modificar();">
                       <option value="<?php echo $Iva; ?>" selected><?php echo $Iva; ?></option>
                       <option value="0">0%</option>
                       <option value="1.16">16%</option>
