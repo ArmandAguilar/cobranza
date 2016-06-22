@@ -136,7 +136,7 @@ function modificar_datos()
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
-                       message : '<strong>Well done!</strong> You successfully read this important alert message. ',
+                       message : '<strong>Oka</strong>modificacion realizada ',
                        container : 'floating',
                        timer : 3000
                      });
