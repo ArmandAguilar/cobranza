@@ -118,5 +118,5 @@ function modificar_datos()
             error:function(req,e,er) {
               alert('error!' + er);
             }
-         });*/
+         });
 }

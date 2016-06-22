@@ -8,7 +8,7 @@ include("$path/scripts/CFactura.php");
 $objE =  new empresa();
 $objC = new cliente();
 $objB = new blog();
-//$objF = new facturas();
+$objF = new facturas();
 switch ($_GET[o]) {
   case '1':
             echo $objE->detalle($_POST[id]);
@@ -33,13 +33,13 @@ switch ($_GET[o]) {
               echo $objB->linea_tiempo($_POST[Factura]);
     break;
     case '5':
-              /*$info->IdFacturacion = $_POST[IdFacturacion];
+              $info->IdFacturacion = $_POST[IdFacturacion];
               $info->Factura = $_POST[Factura];
               $info->Monto = $_POST[Monto];
               $info->IVA = $_POST[IVA];
               $info->Trimestre = $_POST[Trimestre];
               $info->Concepto = $_POST[Concepto];
-              echo $objF->modificar_datos($info);*/
+              echo $objF->modificar_datos($info);
       break;
 
   default:
