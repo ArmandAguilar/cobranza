@@ -69,10 +69,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
   <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
-  <script src="js/jquery-2.2.4.min.js"></script>
-  <script src="js/uikit/js/uikit.min.js"></script>
-  <script src="js/uikit/js/components/datepicker.js"></script>
-   <script src="js/uikit/js/components/form-select.js"></script>
+
   <!--SCRIPT-->
   <!--=================================================-->
   <!--Page Load Progress Bar [ OPTIONAL ]-->
@@ -760,7 +757,10 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/uikit/js/uikit.min.js"></script>
+  <script src="js/uikit/js/components/datepicker.js"></script>
+   <script src="js/uikit/js/components/form-select.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
 	<!--Fast Click [ OPTIONAL ]-->
@@ -795,7 +795,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 			detalles_empresa(<?php echo $_POST[txtNoProyecto]; ?>);
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
-
 	</script>
 
 </body>
