@@ -676,7 +676,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <div class="row">
             <div class="col-md-8">
               <div id="DivtxtConcepto" class="form-group has-feedback">
-              <textarea id="txtConceptoMofificar" name="txtConceptoModificar" rows="9" class="form-control" placeholder="Concepto aqui.."><?php echo $Concpeto; ?></textarea>
+              <textarea id="txtConceptoModificar" name="txtConceptoModificar" rows="9" class="form-control" placeholder="Concepto aqui.."><?php echo $Concpeto; ?></textarea>
             </div>
             </div>
         </div>

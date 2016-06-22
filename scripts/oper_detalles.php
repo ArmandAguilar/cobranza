@@ -22,6 +22,7 @@ switch ($_GET[o]) {
             $FN=$_POST[FacturaNoModificar];
             $FT=$_POST[cboTipoFactura];
             $Factura = "$F-$FN-$FT";
+            $info->IdFacturacion=$_POST[IdFacturacion];
             $info->Factura=$Factura;
             $info->NoProyecto=$_POST[txtProyecto];
             $info->Usuario=$_POST[txtUsuario];

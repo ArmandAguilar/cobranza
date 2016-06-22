@@ -53,8 +53,7 @@ function modificar_datos($info)
     $IVA = $info->IVA;
     $Trimestre = $info->Trimestre;
     $Concepto = $info->Concepto;
-    $sql="UPDATE Set [FacturaForta]='$Factura',[Monto Antes de IVA]='Monto',[IVA]='$IVA',[CONCEPTO FACTURA]='$Concepto',[Trimestre]='$Trimestre' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
-
+    $sql="UPDATE Set [FacturaForta]='$Factura',[Monto Antes de IVA]='$Monto',[IVA]='$IVA',[CONCEPTO FACTURA]='$Concepto',[Trimestre]='$Trimestre' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
     #Todas las Empresas
     /*$objGurdar = new poolConnecion();
     $con=$objGurdar->ConexionSQLSAP();
