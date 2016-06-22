@@ -94,6 +94,12 @@ function timeline()
             }
          });
 }
+function sumar_iva()
+{
+  var iva = $("#cboIvaModificar").val();
+  var newIva = iva * $("#txtCantidadModificar").val();
+   $("#txtImporteTotalModificar").val(newIva);
+}
 function modificar_datos()
 {
 
