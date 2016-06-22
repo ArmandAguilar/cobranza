@@ -97,11 +97,11 @@ function timeline()
 function modificar_datos()
 {
 
-alert('motherFocker');
-  /*var Factura = $("#txtFacturaModificar").val() + '-' + $("#txtFacturaNoModificar").val() + '-' + $("#cboTipoFactura").val();
   var losdatos = {
                     IdFacturacion : $("#txtIdFacturacion").val(),
-                    Factura : Facturas,
+                    Factura : $("#txtFacturaModificar").val(),
+                    FacturaNoModificar : $("#txtFacturaNoModificar").val(),
+                    cboTipoFactura : $("#cboTipoFactura").val(),
                     Monto : $("#txtCantidadModificar").val(),
                     IVA : $("#txtImporteTotalModificar").val(),
                     Trimestre : $("#cboTrimestre").val(),

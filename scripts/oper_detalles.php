@@ -18,7 +18,13 @@ switch ($_GET[o]) {
       break;
   case '3':
 
-            $info->Factura=$_POST[txtFactura];
+
+
+            $F=$_POST[Factura];
+            $FN=$_POST[FacturaNoModificar];
+            $FT=$_POST[cboTipoFactura];
+            $Factura = "$F-$FN-$FT";
+            $info->Factura=$Factura
             $info->NoProyecto=$_POST[txtProyecto];
             $info->Usuario=$_POST[txtUsuario];
             $info->Comentario=$_POST[txtMensaje];
