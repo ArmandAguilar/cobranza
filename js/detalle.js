@@ -51,6 +51,19 @@ function cambiaEstado(Estado)
   $("#txtEstado").val(Estado);
   $("#xbtnEstado").empty();
   $("#xbtnEstado").append(Estado);
+  var losdatos = {Estado:$("#txtEstado").val(),IdFacturacion:$("#txtIdFacturacion").val()};
+    $.ajax({
+              url:'./scripts/oper_detalles.php?o=5',
+              type:'POST',
+              data:losdatos,
+              success:function(data)
+                     {
+                        alert(data);
+                     },
+              error:function(req,e,er) {
+                alert('error!' + er);
+              }
+           });
 
 }
 function agregar_comentario()
@@ -120,7 +133,7 @@ function modificar_datos()
                    {
                      $("#msjModalModificarOk").show();
                      $("#msjModalModificarOk").hide(8000);
-                     window.location.href='detalle.php'
+
                    },
             error:function(req,e,er) {
               //alert('error!' + er);

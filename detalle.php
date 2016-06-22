@@ -691,7 +691,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                 <button class="close" data-dismiss="alert"><span>×</span></button>
                 <strong>Oh!</strong> Verifique los datos...
         </div>
-        <button class="btn btn-primary" onclick="modificar_datos();">Modificar</button>
+        <button data-bb-handler="success" class="btn btn-primary" onclick="modificar_datos();">Modificar</button>
         <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
       </div>
     </div>

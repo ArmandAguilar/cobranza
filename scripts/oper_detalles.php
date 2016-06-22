@@ -40,6 +40,11 @@ switch ($_GET[o]) {
               $info->Concepto = $_POST[Concepto];
               echo $objF->modificar_datos($info);
       break;
+      case '6':
+                $info->IdFacturacion=$_POST[IdFacturacion];
+                $info->Estado=$_POST[Estado];
+                echo $objF->modificar_estado($info);
+      break;
 
   default:
     # code...
