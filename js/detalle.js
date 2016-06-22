@@ -133,6 +133,13 @@ function modificar_datos()
                    {
                      $("#msjModalModificarOk").show();
                      $("#msjModalModificarOk").hide(8000);
+                     $.niftyNoty({
+                       type: 'success',
+                       icon : 'fa fa-check',
+                       message : '<strong>Well done!</strong> You successfully read this important alert message. ',
+                       container : 'floating',
+                       timer : 3000
+                     });
 
                    },
             error:function(req,e,er) {
