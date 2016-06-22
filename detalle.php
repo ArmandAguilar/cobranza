@@ -683,6 +683,14 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
       </div>
       <!--Modal footer-->
       <div class="modal-footer">
+        <div id="msjModalModificarOk" class="alert alert-success fade in" style="display:none">
+                  <button class="close" data-dismiss="alert"><span>×</span></button>
+                  <strong>Oka</strong> Factura Creada con exito.
+        </div>
+        <div id="msjModalModificarError" class="alert alert-danger fade in" style="display:none">
+                <button class="close" data-dismiss="alert"><span>×</span></button>
+                <strong>Oh!</strong> Verifique los datos de su factura
+        </div>
         <button class="btn btn-primary" onclick="modificar_datos();">Modificar</button>
         <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
       </div>

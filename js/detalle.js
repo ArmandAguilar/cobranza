@@ -102,8 +102,6 @@ function sumar_iva_modificar()
 }
 function modificar_datos()
 {
-
-
   var losdatos = {
                     IdFacturacion : $("#txtIdFacturacion").val(),
                     Factura : $("#txtFacturaModificar").val(),
@@ -120,10 +118,13 @@ function modificar_datos()
             data:losdatos,
             success:function(data)
                    {
-                      alert(data);
+                     $("#msjModalModificarOk").show();
+                     $("#msjModalModificarOk").hide(8000);
                    },
             error:function(req,e,er) {
-              alert('error!' + er);
+              //alert('error!' + er);
+              $("#msjModalModificarError").show();
+              $("#msjModalModificarError").hide(8000);
             }
          });
 }
