@@ -17,7 +17,7 @@ switch ($_GET[o]) {
             echo $objC->detalle($_POST[id]);
       break;
   case '3':
-            $info->Factura=$Factura;
+            $info->Factura=$_POST[Factura];
             $info->NoProyecto=$_POST[txtProyecto];
             $info->Usuario=$_POST[txtUsuario];
             $info->Comentario=$_POST[txtMensaje];
@@ -33,7 +33,7 @@ switch ($_GET[o]) {
               $FT=$_POST[cboTipoFactura];
               $Factura = "$F-$FN-$FT";
               $info->IdFacturacion = $_POST[IdFacturacion];
-              $info->Factura = $_POST[Factura];
+              $info->Factura = $Factura;
               $info->Monto = $_POST[Monto];
               $info->IVA = $_POST[IVA];
               $info->Trimestre = $_POST[Trimestre];
