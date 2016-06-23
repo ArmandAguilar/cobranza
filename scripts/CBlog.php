@@ -16,7 +16,7 @@ class blog extends poolConnecion
       $Comentario=$info->Comentario;
       #Obtenemos el IdEmpresa de presupuestos
       $objBlog = new poolConnecion();
-      $Sql="INSERT INTO [SAP].[dbo].[AACobranzaBlog] VALUES ('$NoProyecto','$Usuario','$Fecha','$Comentario','$IdUsuario','')";
+      $Sql="INSERT INTO [SAP].[dbo].[AACobranzaBlog] VALUES ('$NoProyecto','$Usuario','$Fecha','$Comentario','$IdUsuario','$IdFactura')";
       $con=$objBlog->ConexionSQLSAP();
       $RSet=$objBlog->QuerySQLSAP($Sql,$con);
        $objBlog->CerrarSQLSAP($RSet,$con);
@@ -42,7 +42,7 @@ class blog extends poolConnecion
                                     </div>";
                       #Obtenemos los blogs
                       $objTimeLine = new poolConnecion();
-                      $Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where Factura='$Factura' order by Id desc";
+                      $Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where IdFacturacion='$Factura' order by Id desc";
                       $con=$objTimeLine->ConexionSQLSAP();
                       $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))

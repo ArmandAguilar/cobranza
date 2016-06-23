@@ -97,6 +97,7 @@ function agregar_comentario()
                     data:losdatos,
                     success:function(data)
                            {
+                             $("#txtMensaje").val('');
                               timeline();
                            },
                     error:function(req,e,er) {
