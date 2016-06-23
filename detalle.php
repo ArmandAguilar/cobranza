@@ -720,7 +720,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                           <div class="col-md-*">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                                   <?php
-                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco,[Concepto bancario] As ConceptoB,CategoriaAbono,[Abonos hechos a facturas] as AHaFacturas,[Abonos por relacionar] As APRelacionar FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
+                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco,[Concepto bancario] As ConceptoB,CategoriaAbono,[Abonos hechos a facturas] as AHaFacturas,[Abono por relacionar] As APRelacionar FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
                                         #Todas las Empresas
                                         $objCboAbono = new poolConnecion();
                                         $con=$objCboAbono->ConexionSQLSAP();
@@ -744,7 +744,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                          echo $cbo;
                                    ?>
                             </select>
-                            <?php echo  $sqlAbonos; ?>
                           </div>
                 </div>
                 <div class="row">
