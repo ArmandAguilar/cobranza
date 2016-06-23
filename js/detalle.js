@@ -53,7 +53,7 @@ function cambiaEstado(Estado)
   $("#xbtnEstado").append(Estado);
   var losdatos = {Estado:$("#txtEstado").val(),IdFacturacion:$("#txtIdFacturacion").val()};
     $.ajax({
-              url:'./scripts/oper_detalles.php?o=5',
+              url:'./scripts/oper_detalles.php?o=6',
               type:'POST',
               data:losdatos,
               success:function(data)

@@ -65,7 +65,7 @@ function modificar_estado($info)
 {
   $IdFacturacion = $info->IdFacturacion;
   $Estado = $info->Estado;
-  $sql="UPDATE Set [FacturaForta]='$Estado' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
+  $sql="UPDATE Set [Estatus]='$Estado' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
 
   #Modificamos Factura
   /*$objGurdar = new poolConnecion();
