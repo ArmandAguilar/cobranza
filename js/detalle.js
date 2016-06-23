@@ -99,6 +99,13 @@ function agregar_comentario()
                            {
                              $("#txtMensaje").val('');
                               timeline();
+                              $.niftyNoty({
+                                type: 'success',
+                                icon : 'fa fa-check',
+                                message : '<strong>Oka</strong> comentario agregado ',
+                                container : 'floating',
+                                timer : 3000
+                              });
                            },
                     error:function(req,e,er) {
                       alert('error!' + er);
