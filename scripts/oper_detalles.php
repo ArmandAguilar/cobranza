@@ -17,7 +17,7 @@ switch ($_GET[o]) {
             echo $objC->detalle($_POST[id]);
       break;
   case '3':
-            $info->Factura=$_POST[Factura];
+            $info->IdFactura=$_POST[IdFactura];
             $info->NoProyecto=$_POST[txtProyecto];
             $info->Usuario=$_POST[txtUsuario];
             $info->Comentario=$_POST[txtMensaje];
@@ -25,7 +25,7 @@ switch ($_GET[o]) {
             echo $objB->insert_blog($info);
     break;
     case '4':
-              echo $objB->linea_tiempo($_POST[Factura]);
+              echo $objB->linea_tiempo($_POST[IdFactura]);
     break;
     case '5':
               $F=$_POST[Factura];

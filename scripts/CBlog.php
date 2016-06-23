@@ -5,7 +5,7 @@ class blog extends poolConnecion
 {
     function insert_blog($info)
     {
-      $Factura=$info->Factura;
+      $IdFactura=$info->IdFactura;
       $NoProyecto=$info->NoProyecto;
       $Usuario=$info->Usuario;
       $IdUsuario=$_SESSION[IdUsuario];
@@ -16,7 +16,7 @@ class blog extends poolConnecion
       $Comentario=$info->Comentario;
       #Obtenemos el IdEmpresa de presupuestos
       $objBlog = new poolConnecion();
-      $Sql="INSERT INTO [SAP].[dbo].[AACobranzaBlog] VALUES ('$Factura','$NoProyecto','$Usuario','$Fecha','$Comentario','$IdUsuario')";
+      $Sql="INSERT INTO [SAP].[dbo].[AACobranzaBlog] VALUES ('$NoProyecto','$Usuario','$Fecha','$Comentario','$IdUsuario','')";
       $con=$objBlog->ConexionSQLSAP();
       $RSet=$objBlog->QuerySQLSAP($Sql,$con);
        $objBlog->CerrarSQLSAP($RSet,$con);

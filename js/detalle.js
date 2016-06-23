@@ -90,7 +90,7 @@ function agregar_comentario()
   }
   else{
         $("#lblErroMensaje").hide();
-        var losdatos = {txtFactura:$("#txtFactura").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val(),txtEstado:$("#txtEstado").val(),txtMensaje:$("#txtMensaje").val()};
+        var losdatos = {IdFactura:$("#txtIdFacturacion").val(),txtProyecto:$("#txtProyecto").val(),txtUsuario:$("#txtUsuario").val(),txtEstado:$("#txtEstado").val(),txtMensaje:$("#txtMensaje").val()};
           $.ajax({
                     url:'./scripts/oper_detalles.php?o=3',
                     type:'POST',
@@ -108,7 +108,7 @@ function agregar_comentario()
 function timeline()
 {
   $("#lblTimeline").empty();
-  var losdatos = {Factura:$("#txtFactura").val()};
+  var losdatos = {IdFactura:$("#txtIdFacturacion").val()};
   $.ajax({
             url:'./scripts/oper_detalles.php?o=4',
             type:'POST',
