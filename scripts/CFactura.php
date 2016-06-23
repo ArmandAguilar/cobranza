@@ -72,6 +72,7 @@ function modificar_estado($info)
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sql,$con);
   $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  return $sql;
 }
 
 }
