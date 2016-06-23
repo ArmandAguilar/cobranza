@@ -178,7 +178,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('Provisionada');">Provisionada</a></li>
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('Elaborada');">Elaborada</a></li>
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('Recibida');">Recibida</a></li>
-                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Aprovada');">Aprovada</a></li>
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Aprovbada');">Aprobada</a></li>
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('EnEsperaDePago');">EnEsperaDePago</a></li>
                                                                             </ul>
                                                                       </div>
@@ -574,8 +574,8 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         </div>
         <!--Modal footer-->
         <div class="modal-footer">
-          <button class="btn btn-danger">Si</button>
-          <button data-dismiss="modal" class="btn btn-default" type="button">No</button>
+          <button  data-dismiss="modal" class="btn btn-danger" onclick="cancelar_factura();">Aceptar</button>
+          <button data-dismiss="modal" class="btn btn-default" type="button">Cerrar</button>
         </div>
       </div>
     </div>

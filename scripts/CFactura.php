@@ -74,6 +74,74 @@ function modificar_estado($info)
   $objGurdar->CerrarSQLSAP($RSet,$con);*/
   return $sql;
 }
+function cancelar_factura($IdFacturacion,$Factura)
+{
+
+  #Creamos la factura  con *
+   $SqlCrearCancelada="INSERT INTO [SAP].[dbo].[FacturacionConsulting]
+           ([FacturaForta]
+           ,[NumProyecto]
+           ,[CONCEPTO FACTURA]
+           ,[Fecha Factura]
+           ,[Estatus]
+           ,[Monto Antes de IVA]
+           ,[IVA]
+           ,[Fecha de recepción]
+           ,[Fecha TENTATIVA de pago]
+           ,[Notas adicionales]
+           ,[Trimestre]
+           ,[Producto]
+           ,[Entrego Factura]
+           ,[ImporteLetra]
+           ,[QuienFactura]
+           ,[EmpresaSolicitante]
+           ,[SeFacturaA]
+           ,[RFC]
+           ,[DirFiscal]
+           ,[TelefonoEmpresa]
+           ,[MotivoCancelacion]
+           ,[CondicionesDePago])
+           SELECT ( '*' + [FacturaForta])
+      ,[NumProyecto]
+      ,[CONCEPTO FACTURA]
+      ,[Fecha Factura]
+      ,[Estatus]
+      ,('-' + [Monto Antes de IVA])
+      ,('-' + [IVA])
+      ,[Fecha de recepción]
+      ,[Fecha TENTATIVA de pago]
+      ,[Notas adicionales]
+      ,[Trimestre]
+      ,[Producto]
+      ,[Entrego Factura]
+      ,('-' + [ImporteLetra])
+      ,[QuienFactura]
+      ,[EmpresaSolicitante]
+      ,[SeFacturaA]
+      ,[RFC]
+      ,[DirFiscal]
+      ,[TelefonoEmpresa]
+      ,[MotivoCancelacion]
+      ,[CondicionesDePago]
+  FROM [SAP].[dbo].[FacturacionConsulting]
+  Where IdFacturacion = '$IdFacturacion'";
+
+  /*$objGurdar = new poolConnecion();
+  $con=$objGurdar->ConexionSQLSAP();
+  $RSet=$objGurdar->QuerySQLSAP($SqlCrearCancelada,$con);
+  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+
+
+#Cancelamos el modlo original
+
+  $sqlCancelar="UPDATE Set [Estatus]='Cancelada',[FacturaForta] = '*$Factura' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
+
+  /*$objGurdar = new poolConnecion();
+  $con=$objGurdar->ConexionSQLSAP();
+  $RSet=$objGurdar->QuerySQLSAP($sql,$con);
+  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  return "$SqlCrearCancelada + $sqlCancelar";
+}
 
 }
  ?>

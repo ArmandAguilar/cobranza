@@ -45,6 +45,10 @@ switch ($_GET[o]) {
                 $info->Estado=$_POST[Estado];
                 echo $objF->modificar_estado($info);
       break;
+      case '7':
+
+            echo $objF->cancelar_factura($_POST[IdFacturacion],$_POST_[Factura]);
+      break;
 
   default:
     # code...

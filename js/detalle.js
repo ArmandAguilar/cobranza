@@ -59,9 +59,24 @@ function cambiaEstado(Estado)
               success:function(data)
                      {
                         alert(data);
+                        $.niftyNoty({
+                          type: 'success',
+                          icon : 'fa fa-check',
+                          message : '<strong>Oka</strong> modificacion realizada ',
+                          container : 'floating',
+                          timer : 3000
+                        });
+
                      },
               error:function(req,e,er) {
-                alert('error!' + er);
+
+                $.niftyNoty({
+        					type: 'danger',
+        					icon : 'fa fa-minus',
+        					message : 'oh! a ocurrido un error.',
+        					container : 'floating',
+        					timer : 3000
+        				});
               }
            });
 
@@ -136,7 +151,7 @@ function modificar_datos()
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
-                       message : '<strong>Oka</strong>modificacion realizada ',
+                       message : '<strong>Oka</strong> modificacion realizada ',
                        container : 'floating',
                        timer : 3000
                      });
@@ -146,6 +161,48 @@ function modificar_datos()
               //alert('error!' + er);
               $("#msjModalModificarError").show();
               $("#msjModalModificarError").hide(8000);
+              $.niftyNoty({
+      					type: 'danger',
+      					icon : 'fa fa-minus',
+      					message : 'oh! a ocurrido un error.',
+      					container : 'floating',
+      					timer : 3000
+      				});
+            }
+         });
+}
+function cancelar_factura()
+{
+  var losdatos = {
+                    IdFacturacion : $("#txtIdFacturacion").val(),
+                    Factura : $("#txtFactura").val(),
+                };
+  $.ajax({
+            url:'./scripts/oper_detalles.php?o=7',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                     alert(data);
+                     $.niftyNoty({
+                       type: 'success',
+                       icon : 'fa fa-check',
+                       message : '<strong>Oka</strong> modificacion realizada ',
+                       container : 'floating',
+                       timer : 3000
+                     });
+
+                   },
+            error:function(req,e,er) {
+              //alert('error!' + er);
+
+              $.niftyNoty({
+      					type: 'danger',
+      					icon : 'fa fa-minus',
+      					message : 'oh! a ocurrido un error.',
+      					container : 'floating',
+      					timer : 3000
+      				});
             }
          });
 }
