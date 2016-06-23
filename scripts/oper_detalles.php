@@ -47,7 +47,7 @@ switch ($_GET[o]) {
       break;
       case '7':
 
-            echo $objF->cancelar_factura($_POST[IdFacturacion],$_POST_[Factura]);
+            echo $objF->cancelar_factura($_POST[IdFacturacion],$_POST[Factura]);
       break;
 
   default:

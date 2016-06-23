@@ -58,7 +58,7 @@ function cambiaEstado(Estado)
               data:losdatos,
               success:function(data)
                      {
-                        alert(data);
+                        $("#txtMensaje").val(data);
                         $.niftyNoty({
                           type: 'success',
                           icon : 'fa fa-check',
@@ -148,6 +148,7 @@ function modificar_datos()
                    {
                      $("#msjModalModificarOk").show();
                      $("#msjModalModificarOk").hide(8000);
+                     $("#txtMensaje").val(data);
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
