@@ -717,7 +717,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <!--Modal body-->
         <div class="modal-body">
                 <div class="row">
-                          <div class="col-md-2">
+                          <div class="col-md-*">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                                   <?php
                                         $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
