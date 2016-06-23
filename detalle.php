@@ -720,7 +720,8 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                           <div class="col-md-*">
                             <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                                   <?php
-                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
+                                        $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco,[Concepto bancario] As ConceptoB,CategoriaAbono
+                                        ,[Abonos hechos a facturas] as AHaFacturas,[Abonos por relacionar] As APRelacionar FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
                                         #Todas las Empresas
                                         $objCboAbono = new poolConnecion();
                                         $con=$objCboAbono->ConexionSQLSAP();
@@ -729,9 +730,15 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                         			 {
                                         					 $OperacionAbono = $fila[OperacionAbono];
                                                    $Fecha = $fila[Fecha];
-                                                   $AbonoTotalBanco = number_format($fila[AbonoTotalBanco], 2, '.', ','); ;
+                                                   $AbonoTotalBanco = number_format($fila[AbonoTotalBanco], 2, '.', ',');
+                                                   $ConceptoB = $fila[ConceptoB];
+                                                   $CategoriaAbono = $fila[CategoriaAbono];
+                                                   $AHaFacturas = number_format($fila[AHaFacturas], 2, '.', ',');
+                                                   $APRelacionar = number_format($fila[APRelacionar], 2, '.', ',');
 
-                                        					 $cbo .= "<option value=\"\">$OperacionAbono|$Fecha|$AbonoTotalBanco</option>";
+
+
+                                        					 $cbo .= "<option value=\"$OperacionAbono\">$OperacionAbono|$Fecha| $ $AbonoTotalBanco|$ConceptoB|$CategoriaAbono|$AHaFacturas|$APRelacionar|</option>";
 
                                         			 }
                                          $objCboAbono->CerrarSQLSAP($RSet,$con);
