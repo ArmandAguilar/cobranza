@@ -55,10 +55,10 @@ function modificar_datos($info)
     $Concepto = $info->Concepto;
     $sql="UPDATE Set [FacturaForta]='$Factura',[Monto Antes de IVA]='$Monto',[IVA]='$IVA',[CONCEPTO FACTURA]='$Concepto',[Trimestre]='$Trimestre' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
     #Modificamos Factura
-    /*$objGurdar = new poolConnecion();
+    $objGurdar = new poolConnecion();
     $con=$objGurdar->ConexionSQLSAP();
     $RSet=$objGurdar->QuerySQLSAP($sql,$con);
-    $objGurdar->CerrarSQLSAP($RSet,$con);*/
+    $objGurdar->CerrarSQLSAP($RSet,$con);
     return $sql;
 }
 function modificar_estado($info)
