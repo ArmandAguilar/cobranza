@@ -55,6 +55,12 @@ class panel extends poolConnecion
       $ImporteRecibida = 0;
       $TotalRecibida = 0;
       $ContadorRecibida = 0;
+      $ImporteAprobada = 0;
+      $TotalAprobada = 0;
+      $ContadorAprobada = 0;
+      $ImporteEnEsperaDePago = 0;
+      $TotalEnEsperaDePago = 0;
+      $ContadorEnEsperaDePago = 0;
       $objPaso2 = new poolConnecion();
       $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
       $con=$objPaso2->ConexionSQLSAP();
@@ -146,10 +152,58 @@ class panel extends poolConnecion
                                                            </div>";
                                 break;
                               case 'Aprobada':
-                                # code...
+
+                                            $ImporteAprobada = number_format($fila[Importe], 2, '.', ',');
+                                            $TotalAprobada += $fila[Importe];
+                                            $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                            $ContadorAprobada ++;
+                                            $Fecha = $fila[FechaPago];
+                                             $row_col5New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteAprobada','Aprobada');\" style=\"cursor:pointer\">
+                                                             <div class=\"col-lg-*\">
+                                                               <div class=\"panel panel-purple panel-colorful\">
+                                                                      <div class=\"pad-all media\">
+                                                                        <div class=\"media-left\">
+                                                                          <span class=\"icon-wrap icon-wrap-xs\">
+                                                                            <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                          </span>
+                                                                        </div>
+                                                                        <div class=\"media-body\">
+                                                                          <p class=\"h4 text-thin media-heading\">$ImporteAprobada</p>
+                                                                          <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                                          <small class=\"text-thin\">$Fecha</small>
+                                                                        </div>
+                                                                      </div>
+
+                                                                </div>
+                                                             </div>
+                                                         </div>";
                                 break;
                               case 'EnEsperaDePago':
-                                # code...
+
+                                              $ImporteEnEsperaDePago = number_format($fila[Importe], 2, '.', ',');
+                                              $TotalEnEsperaDePago += $fila[Importe];
+                                              $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                              $ContadorEnEsperaDePago ++;
+                                              $Fecha = $fila[FechaPago];
+                                               $row_col6New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteEnEsperaDePago','EnEsperaDePago');\" style=\"cursor:pointer\">
+                                                               <div class=\"col-lg-*\">
+                                                                 <div class=\"panel panel-purple panel-colorful\">
+                                                                        <div class=\"pad-all media\">
+                                                                          <div class=\"media-left\">
+                                                                            <span class=\"icon-wrap icon-wrap-xs\">
+                                                                              <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                            </span>
+                                                                          </div>
+                                                                          <div class=\"media-body\">
+                                                                            <p class=\"h4 text-thin media-heading\">$ImporteEnEsperaDePago</p>
+                                                                            <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                                            <small class=\"text-thin\">$Fecha</small>
+                                                                          </div>
+                                                                        </div>
+
+                                                                  </div>
+                                                               </div>
+                                                           </div>";
                                 break;
 
                             default:
@@ -279,7 +333,7 @@ class panel extends poolConnecion
                  }
           $objPaso4->CerrarSQLSAP($RSet,$con);*/
           #Paso 5
-          $Importe = 0;
+          /*$Importe = 0;
           $ContadorAprobada = 0;
           $objPaso5 = new poolConnecion();
           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Aprobada'";
@@ -316,9 +370,9 @@ class panel extends poolConnecion
                                        </div>";
                        }
                   }
-           $objPaso5->CerrarSQLSAP($RSet,$con);
+           $objPaso5->CerrarSQLSAP($RSet,$con);*/
            #Paso 6
-           $Importe = 0;
+           /*$Importe = 0;
            $ContadorEnEsperaDePago = 0;
            $objPaso6 = new poolConnecion();
            $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='EnEsperaDePago'";
@@ -355,7 +409,7 @@ class panel extends poolConnecion
                                         </div>";
                         }
                    }
-            $objPaso6->CerrarSQLSAP($RSet,$con);
+            $objPaso6->CerrarSQLSAP($RSet,$con);*/
         $TotalGral = number_format($TotalGral, 2, '.', ',');
         $TotalProvisionada  = number_format($TotalProvisionada, 2, '.', ',');
         $TotalElaborada  = number_format($TotalElaborada, 2, '.', ',');
@@ -415,7 +469,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol5L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolAprobada\">$row_col5</div>
+              <div id=\"divcolAprobada\">$row_col5New</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -426,7 +480,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol6L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolEnEsperaDePago\">$row_col6</div>
+              <div id=\"divcolEnEsperaDePago\">$row_col6New</div>
           </div>
 
       </div>";
