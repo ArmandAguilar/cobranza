@@ -46,7 +46,7 @@ class panel extends poolConnecion
        $objPaso1->CerrarSQLSAP($RSet,$con);
 
       #Super modificacion
-      $Importe = 0;
+    /*  $Importe = 0;
       $ContadorProvisionada = 0;
       $objPaso2 = new poolConnecion();
       $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
@@ -104,10 +104,10 @@ class panel extends poolConnecion
                       }
 
               }
-       $objPaso2->CerrarSQLSAP($RSet,$con);
+       $objPaso2->CerrarSQLSAP($RSet,$con);*/
 
        #Paso 2
-      /* $Importe = 0;
+       $Importe = 0;
        $ContadorProvisionada = 0;
        $objPaso2 = new poolConnecion();
        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
@@ -144,7 +144,7 @@ class panel extends poolConnecion
                                     </div>";
                     }
                }
-        $objPaso2->CerrarSQLSAP($RSet,$con);*/
+        $objPaso2->CerrarSQLSAP($RSet,$con);
         #Paso 3
         $Importe = 0;
         $ContadorElaborada = 0;
