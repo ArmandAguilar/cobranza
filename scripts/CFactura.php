@@ -53,7 +53,7 @@ function modificar_datos($info)
     $IVA = $info->IVA;
     $Trimestre = $info->Trimestre;
     $Concepto = $info->Concepto;
-    $sql="UPDATE Set [FacturaForta]='$Factura',[Monto Antes de IVA]='$Monto',[IVA]='$IVA',[CONCEPTO FACTURA]='$Concepto',[Trimestre]='$Trimestre' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
+    $sql="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [FacturaForta]='$Factura',[Monto Antes de IVA]='$Monto',[IVA]='$IVA',[CONCEPTO FACTURA]='$Concepto',[Trimestre]='$Trimestre'  Where IdFacturacion='$IdFacturacion'";
     #Modificamos Factura
     $objGurdar = new poolConnecion();
     $con=$objGurdar->ConexionSQLSAP();
@@ -65,7 +65,7 @@ function modificar_estado($info)
 {
   $IdFacturacion = $info->IdFacturacion;
   $Estado = $info->Estado;
-  $sql="UPDATE Set [Estatus]='$Estado' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
+  $sql="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [Estatus]='$Estado'  Where IdFacturacion='$IdFacturacion'";
 
   #Modificamos Factura
   /*$objGurdar = new poolConnecion();
@@ -134,7 +134,7 @@ function cancelar_factura($IdFacturacion,$Factura)
 
 #Cancelamos el modlo original
 
-  $sqlCancelar="UPDATE Set [Estatus]='Cancelada',[FacturaForta] = '*$Factura' from [SAP].[dbo].[FacturacionConsulting] Where IdFacturacion='$IdFacturacion'";
+  $sqlCancelar="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [Estatus]='Cancelada',[FacturaForta] = '*$Factura'  Where IdFacturacion='$IdFacturacion'";
 
   /*$objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
