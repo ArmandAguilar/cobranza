@@ -151,10 +151,10 @@ function relacionar_factura($info)
   $ImporteOperacion=$info->ImporteOperacion;
   $sql = "INSERT INTO [SAP].[dbo].[CobrosConsulting] VALUES ('0','$FacturaForta','$OperacionAbono','$ImporteOperacion')";
 
-  /*$objGurdar = new poolConnecion();
+  $objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sql,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  $objGurdar->CerrarSQLSAP($RSet,$con);
 
   return $sql;
 }

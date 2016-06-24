@@ -180,7 +180,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('Provisionada');">Provisionada</a></li>
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('Elaborada');">Elaborada</a></li>
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('Recibida');">Recibida</a></li>
-                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Aprovbada');">Aprobada</a></li>
+                                                                              <li><a href="javascript:void(0);" onclick="cambiaEstado('Aprobada');">Aprobada</a></li>
                                                                               <li><a href="javascript:void(0);" onclick="cambiaEstado('EnEsperaDePago');">EnEsperaDePago</a></li>
                                                                             </ul>
                                                                       </div>

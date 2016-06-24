@@ -58,7 +58,7 @@ function cambiaEstado(Estado)
               data:losdatos,
               success:function(data)
                      {
-                        $("#txtMensaje").val(data);
+
                         $.niftyNoty({
                           type: 'success',
                           icon : 'fa fa-check',
@@ -233,7 +233,7 @@ function relacionar_factura()
                         $.niftyNoty({
                           type: 'success',
                           icon : 'fa fa-check',
-                          message : '<strong>Oka</strong> modificacion realizada ',
+                          message : '<strong>Oka</strong> relación creada ',
                           container : 'floating',
                           timer : 3000
                         });
