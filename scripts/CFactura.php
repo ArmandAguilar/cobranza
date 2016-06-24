@@ -106,8 +106,8 @@ function cancelar_factura($IdFacturacion,$Factura)
       ,[CONCEPTO FACTURA]
       ,[Fecha Factura]
       ,[Estatus]
-      ,('-' + [Monto Antes de IVA])
-      ,('-' + [IVA])
+      ,(-1 * [Monto Antes de IVA])
+      ,(-1 * [IVA])
       ,[Fecha de recepción]
       ,[Fecha TENTATIVA de pago]
       ,[Notas adicionales]
