@@ -215,3 +215,39 @@ function cancelar_factura()
             }
          });
 }
+function relacionar_factura()
+{
+     var losdatos = {
+       FacturaForta:$("#txtFactura").val(),
+       OperacionAbono:$("#cboOperacionAbono").val(),
+       ImporteOperacion:$("#txtCantidadRelacionar").val()
+     };
+     $.ajax({
+               url:'./scripts/oper_detalles.php?o=8',
+               type:'POST',
+               data:losdatos,
+               success:function(data)
+                      {
+                        $("#txtMensaje").val(data);
+                        $.niftyNoty({
+                          type: 'success',
+                          icon : 'fa fa-check',
+                          message : '<strong>Oka</strong> modificacion realizada ',
+                          container : 'floating',
+                          timer : 3000
+                        });
+
+                      },
+               error:function(req,e,er) {
+                 //alert('error!' + er);
+
+                 $.niftyNoty({
+         					type: 'danger',
+         					icon : 'fa fa-minus',
+         					message : 'oh! a ocurrido un error.',
+         					container : 'floating',
+         					timer : 3000
+         				});
+               }
+            });
+}

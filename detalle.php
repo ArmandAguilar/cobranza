@@ -718,7 +718,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <div class="modal-body">
                 <div class="row">
                           <div class="col-md-*">
-                            <select id="cboTipoFactura" name="cboTipoFctura" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
+                            <select id="cboOperacionAbono" name="cboOperacionAbono" class="selectpicker" title="Seleciona tipo de abono" data-width="100%">
                                   <?php
                                         $sqlAbonos = "SELECT OperacionAbono,Convert(varchar(11),[Fecha]) As Fecha,[Abono TOTAL en banco] As AbonoTotalBanco,[Concepto bancario] As ConceptoB,CategoriaAbono,[Abonos hechos a facturas] as AHaFacturas,[Abono por relacionar] As APRelacionar FROM [Abonos por descargar] where  Fecha>='01/01/2009' and [Abono por relacionar]>500 ORDER BY Fecha";
                                         #Todas las Empresas
@@ -750,7 +750,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                         <div class="col-md-4">
                                 <div class="input-group mar-btm">
                                   <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                                  <input type="text" id="txtCantidad" name="txtCantidad" class="form-control">
+                                  <input type="text" id="txtCantidadRelacionar" name="txtCantidadRelacionar" class="form-control">
                                 </div>
                         </div>
 
@@ -759,8 +759,9 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
         <!--Modal footer-->
         <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-primary" onclick="relacionar_factura();">Relacionar</button>
           <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-          <button class="btn btn-primary">Relacionar</button>
+
         </div>
       </div>
     </div>
