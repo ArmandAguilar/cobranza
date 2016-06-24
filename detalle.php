@@ -9,7 +9,7 @@ $Factura = $_POST[txtFactura];
 $ArryaFactura = split("-",$Factura);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
-$Sql1="SELECT [IdFacturacion],[CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
+$Sql1="SELECT [IdFacturacion],[CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtIdFacturacion]'";
 $con=$objFactura->ConexionSQLSAP();
 $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -636,16 +636,16 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
               <div class="col-md-2">
                 <select class="selectpicker"  id="cboIvaModificar" name="cboIvaModificar" title="Tipo Iva" data-width="100%" onchange="sumar_iva_modificar();">
-                      <option value="<?php echo $Iva; ?>" selected><?php echo $Iva; ?></option>
+
                       <option value="0">0%</option>
-                      <option value="1.16">16%</option>
+                      <option value="0.16">16%</option>
                 </select>
               </div>
               <div class="col-md-4">
                   <div class="form-group has-feedback">
                       <div class="input-group mar-btm">
                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
-                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" value="<?php echo $r = $Monto + $Iva; ?>" readonly="">
+                        <input type="text" id="txtImporteTotalModificar" name="txtImporteTotalModificar" class="form-control" value="<?php echo $Iva; ?>" readonly="">
                       </div>
                     </div>
               </div>
