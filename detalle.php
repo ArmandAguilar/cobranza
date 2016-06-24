@@ -418,7 +418,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
       									 </div>
                          <div class="panel-footer text-right">
-                       <button class="btn btn-primary">Actualizar</button>
+                       <button class="btn btn-primary" onclick="cambiar_fechas();">Actualizar</button>
                      </div>
                   </div>
 
