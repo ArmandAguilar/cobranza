@@ -46,8 +46,15 @@ class panel extends poolConnecion
        $objPaso1->CerrarSQLSAP($RSet,$con);
 
       #Super modificacion
-    /*  $Importe = 0;
+      $ImporteProvisionada = 0;
       $ContadorProvisionada = 0;
+      $TotalProvisionada = 0;
+      $ImporteElaborada = 0;
+      $TotalElaborada = 0;
+      $ContadorElaborada = 0;
+      $ImporteRecibida = 0;
+      $TotalRecibida = 0;
+      $ContadorRecibida = 0;
       $objPaso2 = new poolConnecion();
       $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
       $con=$objPaso2->ConexionSQLSAP();
@@ -85,10 +92,58 @@ class panel extends poolConnecion
                                                             </div>";
                               break;
                               case 'Elaborada':
-                                # code...
+
+                                                  $ImporteElaborada = number_format($fila[Importe], 2, '.', ',');
+                                                  $TotalElaborada += $fila[Importe];
+                                                  $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                                  $ContadorElaborada ++;
+                                                  $Fecha = $fila[FechaPago];
+                                                   $row_col3New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteElaborada','Elaborada');\" style=\"cursor:pointer\">
+                                                                   <div class=\"col-lg-*\">
+                                                                     <div class=\"panel panel-purple panel-colorful\">
+                                                                            <div class=\"pad-all media\">
+                                                                              <div class=\"media-left\">
+                                                                                <span class=\"icon-wrap icon-wrap-xs\">
+                                                                                  <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                                </span>
+                                                                              </div>
+                                                                              <div class=\"media-body\">
+                                                                                <p class=\"h4 text-thin media-heading\">$ImporteElaborada</p>
+                                                                                <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                                                <small class=\"text-thin\">$Fecha</small>
+                                                                              </div>
+                                                                            </div>
+
+                                                                      </div>
+                                                                   </div>
+                                                               </div>";
                                 break;
                               case 'Recibida':
-                                # code...
+
+                                              $ImporteRecibida = number_format($fila[Importe], 2, '.', ',');
+                                              $TotalRecibida += $fila[Importe];
+                                              $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                              $ContadorRecibida ++;
+                                              $Fecha = $fila[FechaPago];
+                                               $row_col4New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteRecibida','Recibida');\" style=\"cursor:pointer\">
+                                                               <div class=\"col-lg-*\">
+                                                                 <div class=\"panel panel-purple panel-colorful\">
+                                                                        <div class=\"pad-all media\">
+                                                                          <div class=\"media-left\">
+                                                                            <span class=\"icon-wrap icon-wrap-xs\">
+                                                                              <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                            </span>
+                                                                          </div>
+                                                                          <div class=\"media-body\">
+                                                                            <p class=\"h4 text-thin media-heading\">$ImporteRecibida</p>
+                                                                            <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                                            <small class=\"text-thin\">$Fecha</small>
+                                                                          </div>
+                                                                        </div>
+
+                                                                  </div>
+                                                               </div>
+                                                           </div>";
                                 break;
                               case 'Aprobada':
                                 # code...
@@ -104,10 +159,10 @@ class panel extends poolConnecion
                       }
 
               }
-       $objPaso2->CerrarSQLSAP($RSet,$con);*/
+       $objPaso2->CerrarSQLSAP($RSet,$con);
 
        #Paso 2
-       $Importe = 0;
+       /*$Importe = 0;
        $ContadorProvisionada = 0;
        $objPaso2 = new poolConnecion();
        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
@@ -144,9 +199,9 @@ class panel extends poolConnecion
                                     </div>";
                     }
                }
-        $objPaso2->CerrarSQLSAP($RSet,$con);
+        $objPaso2->CerrarSQLSAP($RSet,$con);*/
         #Paso 3
-        $Importe = 0;
+        /*$Importe = 0;
         $ContadorElaborada = 0;
         $objPaso3 = new poolConnecion();
         $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Elaborada'";
@@ -183,9 +238,9 @@ class panel extends poolConnecion
                                      </div>";
                      }
                 }
-         $objPaso3->CerrarSQLSAP($RSet,$con);
+         $objPaso3->CerrarSQLSAP($RSet,$con);*/
          #Paso 4
-         $Importe = 0;
+         /*$Importe = 0;
          $ContadorRecibida = 0;
          $objPaso4 = new poolConnecion();
          $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago  FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Recibida'";
@@ -222,7 +277,7 @@ class panel extends poolConnecion
                                         </div>";
                         }
                  }
-          $objPaso4->CerrarSQLSAP($RSet,$con);
+          $objPaso4->CerrarSQLSAP($RSet,$con);*/
           #Paso 5
           $Importe = 0;
           $ContadorAprobada = 0;
@@ -327,7 +382,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolProvisionada\">$row_col2</div>
+              <div id=\"divcolProvisionada\">$row_col2New</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -338,7 +393,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol3L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolElaborada\">$row_col3</div>
+              <div id=\"divcolElaborada\">$row_col3New</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
@@ -349,7 +404,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol4L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolRecibida\">$row_col4</div>
+              <div id=\"divcolRecibida\">$row_col4New</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
