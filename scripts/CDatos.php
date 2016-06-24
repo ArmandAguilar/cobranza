@@ -9,7 +9,7 @@ class panel extends poolConnecion
       #Paso 1
       $contadorPoyectos = 0;
       $objPaso1 = new poolConnecion();
-      $Sql="SELECT [NumProyecto],[NomProyecto],[ImporteFinal]  FROM [SAP].[dbo].[RVEdoCtaGeneral]";
+      $Sql="SELECT [NumProyecto],[NomProyecto],[Cuentas por facturar AIVA]  As ImporteFinal FROM [SAP].[dbo].[RVEdoCtaGeneral]";
       $con=$objPaso1->ConexionSQLSAP();
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
