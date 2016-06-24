@@ -193,7 +193,7 @@ function cancelar_factura()
             data:losdatos,
             success:function(data)
                    {
-                     $("#txtMensaje").val(data);
+                     
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
@@ -229,7 +229,7 @@ function relacionar_factura()
                data:losdatos,
                success:function(data)
                       {
-                        
+
                         $.niftyNoty({
                           type: 'success',
                           icon : 'fa fa-check',
