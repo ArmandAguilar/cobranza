@@ -44,8 +44,70 @@ class panel extends poolConnecion
 
               }
        $objPaso1->CerrarSQLSAP($RSet,$con);
+
+      #Super modificacion
+      $Importe = 0;
+      $ContadorProvisionada = 0;
+      $objPaso2 = new poolConnecion();
+      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
+      $con=$objPaso2->ConexionSQLSAP();
+      $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
+       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+             {
+                     if(!empty($fila[NumProyecto]))
+                     {
+                          $Estatus = $fila[Estatus];
+                          switch ($Estatus) {
+                            case 'Provisionada':
+                                                $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
+                                                $TotalProvisionada += $fila[Importe];
+                                                $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                                $ContadorProvisionada ++;
+                                                $Fecha = $fila[FechaPago];
+                                                $row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
+                                                                <div class=\"col-lg-*\">
+                                                                  <div class=\"panel panel-purple panel-colorful\">
+                                                                         <div class=\"pad-all media\">
+                                                                           <div class=\"media-left\">
+                                                                             <span class=\"icon-wrap icon-wrap-xs\">
+                                                                               <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                             </span>
+                                                                           </div>
+                                                                           <div class=\"media-body\">
+                                                                             <p class=\"h4 text-thin media-heading\">$ImporteProvisionada</p>
+                                                                             <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                                             <small class=\"text-thin\">$Fecha</small>
+                                                                           </div>
+                                                                         </div>
+
+                                                                   </div>
+                                                                </div>
+                                                            </div>";
+                              break;
+                              case 'Elaborada':
+                                # code...
+                                break;
+                              case 'Recibida':
+                                # code...
+                                break;
+                              case 'Aprobada':
+                                # code...
+                                break;
+                              case 'EnEsperaDePago':
+                                # code...
+                                break;
+
+                            default:
+                              # code...
+                              break;
+                          }
+                      }
+
+              }
+       $objPaso2->CerrarSQLSAP($RSet,$con);
+
        #Paso 2
-       $Importe = 0;
+      /* $Importe = 0;
        $ContadorProvisionada = 0;
        $objPaso2 = new poolConnecion();
        $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='Provisionada'";
@@ -82,7 +144,7 @@ class panel extends poolConnecion
                                     </div>";
                     }
                }
-        $objPaso2->CerrarSQLSAP($RSet,$con);
+        $objPaso2->CerrarSQLSAP($RSet,$con);*/
         #Paso 3
         $Importe = 0;
         $ContadorElaborada = 0;
@@ -265,7 +327,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolProvisionada\">$row_col2</div>
+              <div id=\"divcolProvisionada\">$row_col2New</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
