@@ -711,7 +711,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <button data-dismiss="modal" class="close" type="button">
           <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">Relacionar Factura</h4>
+          <h4 class="modal-title">Relacionar Factura : <?php echo $_POST[txtFactura]; ?></h4>
         </div>
 
         <!--Modal body-->
