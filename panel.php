@@ -156,9 +156,7 @@ session_start();
 
 						</div>
 					</div>
-          <script>
-              load_enbudo();
-          </script>
+
 					<!--===================================================-->
 					<!--Basic Lista-->
 					<!--===================================================-->
@@ -336,5 +334,8 @@ session_start();
  <script src="js/scripts.js"></script>
  <script src="js/data.js"></script>
  </form>
+ <script>
+     load_enbudo();
+ </script>
 </body>
 </html>
