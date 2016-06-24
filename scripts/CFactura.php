@@ -68,10 +68,10 @@ function modificar_estado($info)
   $sql="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [Estatus]='$Estado'  Where IdFacturacion='$IdFacturacion'";
 
   #Modificamos Factura
-  /*$objGurdar = new poolConnecion();
+  $objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sql,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  $objGurdar->CerrarSQLSAP($RSet,$con);
   return $sql;
 }
 function cancelar_factura($IdFacturacion,$Factura)
