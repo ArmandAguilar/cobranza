@@ -114,7 +114,7 @@ function cancelar_factura($IdFacturacion,$Factura)
       ,[Trimestre]
       ,[Producto]
       ,[Entrego Factura]
-      ,('-' + [ImporteLetra])
+      ,[ImporteLetra]
       ,[QuienFactura]
       ,[EmpresaSolicitante]
       ,[SeFacturaA]
