@@ -196,6 +196,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                               <option value="0" selected>------</option>
                                               <option value="C&I">C&I</option>
                                               <option value="CeI">CeI</option>
+                                              <option value="P">P</option>
                                             </select>
                                     </div>
                                     <div class="col-md-1">
