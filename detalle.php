@@ -9,18 +9,19 @@ $Factura = $_POST[txtFactura];
 $ArryaFactura = split("-",$Factura);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
-$Sql1="SELECT [IdFacturacion],[CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
+$Sql1="SELECT [IdFacturacion],[CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura FROM [SAP].[dbo].[FacturacionConsulting],[Trimestre] Where FacturaForta='$_POST[txtFactura]'";
 $con=$objFactura->ConexionSQLSAP();
 $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
        {
-            $Concpeto =  $fila[Concpeto];
+            $Concpeto =  $fila[Concepto];
             $Monto = $fila[Monto];
             $Iva = $fila[IVA];
             $FFactura = $fila[FFactura];
             $FTentativa = $fila[FTetativa];
             $FRecepcion = $fila[FRecepcion];
             $IdFacturacion = $fila[IdFacturacion];
+            $Trimestre = $fila[Trimestre];
        }
  $objFactura->CerrarSQLSAP($RSet,$con);
 
@@ -655,7 +656,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <div class ="row">
                 <div class="col-md-3">
                         <select id="cboTrimestre" name="cboTrimestre" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
-                          <option value="<?php echo $TrimestreFactura; ?>" selected><?php echo $TrimestreFactura; ?></option>
+                          <option value="<?php echo $Trimestre; ?>" selected><?php echo $Trimestre; ?></option>
                           <option value="T1-2016">T1-2016</option>
                           <option value="T2-2016">T2-2016</option>
                           <option value="T3-2016">T3-2016</option>
