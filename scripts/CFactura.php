@@ -174,5 +174,6 @@ function modificar_fecha($info)
   return $sqlUpdate;
 }
 
+
 }
  ?>

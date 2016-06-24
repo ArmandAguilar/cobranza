@@ -164,6 +164,7 @@ function modificar_datos()
                        container : 'floating',
                        timer : 3000
                      });
+                     redireccionar();
 
                    },
             error:function(req,e,er) {
@@ -288,4 +289,8 @@ function cambiar_fechas()
             }
          });
 
+}
+function redireccionar()
+{
+  setTimeout ("window.location.href='panel.php'", 10000);
 }
