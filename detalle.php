@@ -16,7 +16,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
        {
             $Concpeto =  $fila[Concpeto];
             $Monto = $fila[Monto];
-            $Iva = $fila[Iva];
+            $Iva = $fila[IVA];
             $FFactura = $fila[FFactura];
             $FTentativa = $fila[FTetativa];
             $FRecepcion = $fila[FRecepcion];
