@@ -193,7 +193,7 @@ function cancelar_factura()
             data:losdatos,
             success:function(data)
                    {
-                     
+
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
@@ -266,7 +266,7 @@ function cambiar_fechas()
             data:losdatos,
             success:function(data)
                    {
-                     $("#txtMensaje").val(data);
+                     
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
