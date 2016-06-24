@@ -126,20 +126,20 @@ function cancelar_factura($IdFacturacion,$Factura)
   FROM [SAP].[dbo].[FacturacionConsulting]
   Where IdFacturacion = '$IdFacturacion'";
 
-  $objGurdar = new poolConnecion();
-  $con=$objGurdar->ConexionSQLSAP();
-  $RSet=$objGurdar->QuerySQLSAP($SqlCrearCancelada,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);
+  $objGurdar1 = new poolConnecion();
+  $con=$objGurdar1->ConexionSQLSAP();
+  $RSet=$objGurdar1->QuerySQLSAP($SqlCrearCancelada,$con);
+  $objGurdar1->CerrarSQLSAP($RSet,$con);
 
 
 #Cancelamos el modlo original
 
   $sqlCancelar="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [Estatus]='Cancelada',[FacturaForta] = '*$Factura'  Where IdFacturacion='$IdFacturacion'";
 
-  $objGurdar = new poolConnecion();
-  $con=$objGurdar->ConexionSQLSAP();
-  $RSet=$objGurdar->QuerySQLSAP($sqlCancelar,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);
+  $objGurdar2 = new poolConnecion();
+  $con=$objGurdar2->ConexionSQLSAP();
+  $RSet=$objGurdar2->QuerySQLSAP($sqlCancelar,$con);
+  $objGurdar2->CerrarSQLSAP($RSet,$con);
   return "$SqlCrearCancelada + $sqlCancelar";
 }
 
