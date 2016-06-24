@@ -138,7 +138,7 @@ function cancelar_factura($IdFacturacion,$Factura)
 
   /*$objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
-  $RSet=$objGurdar->QuerySQLSAP($sql,$con);
+  $RSet=$objGurdar->QuerySQLSAP($sqlCancelar,$con);
   $objGurdar->CerrarSQLSAP($RSet,$con);*/
   return "$SqlCrearCancelada + $sqlCancelar";
 }
@@ -157,6 +157,21 @@ function relacionar_factura($info)
   $objGurdar->CerrarSQLSAP($RSet,$con);*/
 
   return $sql;
+}
+function modificar_fecha($info)
+{
+
+  $txtIdFacturacion = $info->txtIdFacturacion;
+  $txtDateFactura = $info->txtDateFactura;
+  $txtDateTentativa = $info->txtDateTentativa;
+  $txtDateRecepcion = $info->txtDateRecepcion;
+  $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [Fecha Factura] = '$txtDateFactura',[Fecha de recepción] = '$txtDateTentativa',[Fecha TENTATIVA de pago] = '$txtDateRecepcion' Where IdFacturacion='$txtIdFacturacion'";
+
+  /*$objGurdar = new poolConnecion();
+  $con=$objGurdar->ConexionSQLSAP();
+  $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
+  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  return $sqlUpdate;
 }
 
 }

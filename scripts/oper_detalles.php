@@ -55,6 +55,13 @@ switch ($_GET[o]) {
                 $info->ImporteOperacion=$_POST[ImporteOperacion];
                 echo $objF->relacionar_factura($info);
       break;
+      case '9':
+                $info->txtIdFacturacion = $_POST[txtIdFacturacion];
+                $info->txtDateFactura = $_POST[txtDateFactura];
+                $info->txtDateTentativa = $_POST[txtDateTentativa];
+                $info->txtDateRecepcion = $_POST[txtDateRecepcion];
+                echo $objF->modificar_fecha($info);
+      break;
 
   default:
     # code...
