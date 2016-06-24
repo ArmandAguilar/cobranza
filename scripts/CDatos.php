@@ -327,7 +327,7 @@ class panel extends poolConnecion
                     </div>
               </div>
               <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-              <div id=\"divcolProvisionada\">$row_col2New</div>
+              <div id=\"divcolProvisionada\">$row_col2</div>
           </div>
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
