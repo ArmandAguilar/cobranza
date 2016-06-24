@@ -146,7 +146,7 @@ session_start();
 				<div id="page-content">
 					<!--Basic Columns Enbudo-->
 					<!--===================================================-->
-					<div id="DEnvudo" class="panel" style="display:none">
+					<div id="DEnvudo" class="panel">
 						<div class="panel-heading">
 							<h3 class="panel-title">Enbudo</h3>
 						</div>
