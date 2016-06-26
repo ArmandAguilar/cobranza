@@ -1,39 +1,59 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
+include("sis.php");
+include("$path/libs/conexion.php");
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from www.themeon.net/nifty/v2.2/layouts-offcanvas-navigation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Apr 2015 10:44:28 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
+	<link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
 	<title>Forta Ingenieria | Cobranza.</title>
-	<!--STYLESHEET-->
-	<!--=================================================-->
-	<!--Open Sans Font [ OPTIONAL ] -->
- 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
-	<!--Bootstrap Stylesheet [ REQUIRED ]-->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!--Nifty Stylesheet [ REQUIRED ]-->
-	<link href="css/nifty.min.css" rel="stylesheet">
-	<!--Font Awesome [ OPTIONAL ]-->
-	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!--Switchery [ OPTIONAL ]-->
-	<link href="plugins/switchery/switchery.min.css" rel="stylesheet">
-	<!--Bootstrap Select [ OPTIONAL ]-->
-	<link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
-	<!--SCRIPT-->
-	<!--=================================================-->
-	<!--Page Load Progress Bar [ OPTIONAL ]-->
-	<link href="plugins/pace/pace.min.css" rel="stylesheet">
-	<script src="plugins/pace/pace.min.js"></script>
-	<!--Bootstrap Table [ OPTIONAL ]-->
-	<link href="plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-	<!--X-editable [ OPTIONAL ]-->
-	<link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet">
+  <!--STYLESHEET-->
+  <!--=================================================-->
+
+  <!--Open Sans Font [ OPTIONAL ] -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+  <!--Bootstrap Stylesheet [ REQUIRED ]-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!--Nifty Stylesheet [ REQUIRED ]-->
+  <link href="css/nifty.min.css" rel="stylesheet">
+  <!--Font Awesome [ OPTIONAL ]-->
+  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!--Switchery [ OPTIONAL ]-->
+  <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
+  <!--Bootstrap Select [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+  <!--Bootstrap Tags Input [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+  <!--Chosen [ OPTIONAL ]-->
+  <link href="plugins/chosen/chosen.min.css" rel="stylesheet">
+  <!--noUiSlider [ OPTIONAL ]-->
+  <link href="plugins/noUiSlider/jquery.nouislider.min.css" rel="stylesheet">
+  <link href="plugins/noUiSlider/jquery.nouislider.pips.min.css" rel="stylesheet">
+  <!--Bootstrap Timepicker [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+  <!--Bootstrap Datepicker [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet">
+  <!--Dropzone [ OPTIONAL ]-->
+  <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
+  <!--Summernote [ OPTIONAL ]-->
+  <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
+  <!--Demo [ DEMONSTRATION ]-->
+  <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+
+
+
+
+  <!--SCRIPT-->
+  <!--=================================================-->
+
+  <!--Page Load Progress Bar [ OPTIONAL ]-->
+  <link href="plugins/pace/pace.min.css" rel="stylesheet">
+  <script src="plugins/pace/pace.min.js"></script>
 <?php
 	if(empty($_SESSION[IdUsuario]))
 	{
@@ -44,15 +64,11 @@ session_start();
  ?>
 </head>
 <!--TIPS-->
-
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
   <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
-    <input type="hidden" name="txtFactura" id="txtFactura" value="">
-    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="">
-    <input type="hidden" name="txtProyecto" id="txtProyecto" value="">
-    <input type="hidden" name="txtImporte" id="txtImporte" value="">
-    <input type="hidden" name="txtEstado" id="txtEstado" value="">
+    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="<?php echo $_GET[NoProyecto]; ?>">
+
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -61,7 +77,7 @@ session_start();
 				<!--Brand logo & name-->
 				<!--================================-->
 				<div class="navbar-header">
-					<a href="panel.html" class="navbar-brand">
+					<a href="panel.php" class="navbar-brand">
 						<!--<img src="img/logo.png" alt="Nifty Logo" class="brand-icon">-->
 						<div class="brand-title">
 							<span class="brand-text">Cobranza</span>
@@ -86,23 +102,7 @@ session_start();
 						<!--End Navigation toogle button-->
 						<!--Notification dropdown fa-tasks,fa-rotate-right-->
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-						<li class="dropdown">
 
-							<a href="#" onclick="load_enbudo();">
-								<i class="fa fa-th-large fa-lg"></i>
-							</a>
-							<a href="#" onclick="load_lista();">
-								<i class="fa fa-tasks fa-lg"></i>
-							</a>
-							<a href="#" onclick="load_cronograma();">
-								<i class="fa fa-rotate-right fa-lg"></i>
-							</a>
-              <a href="relacionar_lider.php">
-								<i class="fa fa-user"></i>
-							</a>
-							<!--Notification dropdown menu-->
-
-						</li>
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<!--End notifications dropdown-->
 					</ul>
@@ -149,70 +149,17 @@ session_start();
 				<div id="page-content">
 					<!--Basic Columns Enbudo-->
 					<!--===================================================-->
-					<div id="DEnvudo" class="panel">
+					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Enbudo</h3>
-						</div>
-            <div id="load_enbudo"><img src="img/pageloader.gif"/></div>
-						<div class="panel-body" id="rows-enbudo">
-
-
-						</div>
-					</div>
-
-					<!--===================================================-->
-					<!--Basic Lista-->
-					<!--===================================================-->
-					<div id="DLista" class="panel" style="display:none">
-
-						<div class="panel-heading">
-							<h3 class="panel-title">Lista</h3>
-						</div>
-						<div class="panel-body">
-							<table data-toggle="table"
-								   data-url="scripts/datajson.php"
-                   data-search="true"
-								   data-show-refresh="true"
-								   data-show-toggle="true"
-								   data-show-columns="true"
-								   data-page-list="[20, 30, 60]"
-								   data-page-size="15"
-								   data-pagination="true" data-show-pagination-switch="true">
-								<thead>
-
-									<tr>
-										<th data-field="id" data-switchable="false">ID</th>
-										<th data-field="noproyecto">No. Proyecto</th>
-										<th data-field="proyecto">Proyecto</th>
-										<th data-field="estado">Estado</th>
-										<th data-field="vendedor">Vendedor</th>
-										<th data-field="empresa">Empresa</th>
-                    <th data-field="montoantesdeiva">Monto Antes de IVA</th>
-                    <th data-field="iva" data-visible="false">IVA</th>
-									</tr>
-								</thead>
-
-							</table>
-						</div>
-					</div>
-					<!--===================================================-->
-					<!--===================================================-->
-					<!--Basic Time Line-->
-					<!--===================================================-->
-					<div id="DCronograma"class="panel" style="display:none">
-						<div class="panel-heading">
-							<h3 class="panel-title">Time Line</h3>
+							<h3 class="panel-title">Relacionar Lider</h3>
 						</div>
 						<div class="panel-body">
 
 						</div>
 					</div>
-					<!--===================================================-->
 				</div>
 				<!--===================================================-->
 				<!--End page content-->
-
-
 			</div>
 			<!--===================================================-->
 			<!--END CONTENT CONTAINER-->
@@ -228,7 +175,7 @@ session_start();
 								<ul id="mainnav-menu" class="list-group">
 									<!--Menu list item-->
 									<li>
-										<a href="panel.html">
+										<a href="panel.php">
 											<i class="fa fa-dashboard"></i>
 											<span class="menu-title">
 												<strong>Dashboard</strong>
@@ -253,9 +200,6 @@ session_start();
 				<div id="aside">
 					<div class="nano">
 						<div class="nano-content">
-
-
-
 							<!-- Tabs Content -->
 							<!--================================-->
 							<div class="tab-content">
@@ -312,9 +256,20 @@ session_start();
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
+  <!--Bootstrap Select [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+  <!--Switchery [ OPTIONAL ]-->
+	<script src="plugins/switchery/switchery.min.js"></script>
+  <!--Bootstrap Tags Input [ OPTIONAL ]-->
+  <script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+  <!--Chosen [ OPTIONAL ]-->
+  <script src="plugins/chosen/chosen.jquery.min.js"></script>
+  <!--Bootstrap Timepicker [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
 	<!--Fast Click [ OPTIONAL ]-->
 	<script src="plugins/fast-click/fastclick.min.js"></script>
 	<!--Nifty Admin [ RECOMMENDED ]-->
@@ -334,11 +289,7 @@ session_start();
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/scripts.js"></script>
- <script src="js/data.js"></script>
+ <script src="js/add_factura.js"></script>
  </form>
- <script>
-     load_enbudo();
- </script>
 </body>
 </html>
