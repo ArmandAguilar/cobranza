@@ -154,7 +154,34 @@ include("$path/libs/conexion.php");
 							<h3 class="panel-title">Relacionar Lider</h3>
 						</div>
 						<div class="panel-body">
-
+                  <div col="row">
+                      <div class="col-md-2">
+                          Maestros :
+                      </div>
+                      <div class="col-md-*">
+                                  <div class="btn-group bootstrap-select dropup" style="width: 100%;">
+                                      <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Friend" aria-expanded="false">
+                                          <span class="filter-option pull-left">Friend</span>&nbsp;
+                                          <span class="caret"></span>
+                                      </button>
+                                      <div class="dropdown-menu open" style="max-height: 430px; overflow: hidden; min-height: 125px;">
+                                          <div class="bs-searchbox">
+                                              <input type="text" class="input-block-level form-control" autocomplete="off">
+                                          </div>
+                                          <ul class="dropdown-menu inner selectpicker" role="menu" style="max-height: 389px; overflow-y: auto; min-height: 84px;">
+                                              <li data-original-index="0" class=""><a tabindex="0" class="" data-normalized-text="Family"><span class="text">Family</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="1" class="selected active"><a tabindex="0" class="" data-normalized-text="Friend"><span class="text">Friend</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="2"><a tabindex="0" class="" data-normalized-text="Partner"><span class="text">Partner</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="3"><a tabindex="0" class="" data-normalized-text="Sport"><span class="text">Sport</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="4"><a tabindex="0" class="" data-normalized-text="Movie"><span class="text">Movie</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="5"><a tabindex="0" class="" data-normalized-text="Documents"><span class="text">Documents</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="6"><a tabindex="0" class="" data-normalized-text="Music"><span class="text">Music</span><span class="fa fa-check check-mark"></span></a></li>
+                                              <li data-original-index="7"><a tabindex="0" class="" data-normalized-text="Video"><span class="text">Video</span><span class="fa fa-check check-mark"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                      </div>
+                  </div>
 						</div>
 					</div>
 				</div>
