@@ -226,7 +226,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                 <select class="selectpicker"  id="cboIva" name="cboIva" title="Tipo Iva" data-width="100%" onchange="sumar_iva();">
 																		  <option value="2" selected>----</option>
 		                                  <option value="0">0%</option>
-		                                  <option value="1.16">16%</option>
+		                                  <option value="0.16">16%</option>
                                 </select>
                               </div>
                               <div class="col-md-1">

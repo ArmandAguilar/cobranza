@@ -89,7 +89,7 @@ session_start();
 						<li class="dropdown">
 
 							<a href="#" onclick="load_enbudo();">
-								<i class="fa fa-line-chart fa-lg"></i>
+								<i class="fa fa-th-large fa-lg"></i>
 							</a>
 							<a href="#" onclick="load_lista();">
 								<i class="fa fa-tasks fa-lg"></i>
