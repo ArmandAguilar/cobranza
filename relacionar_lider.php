@@ -155,7 +155,8 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
                   <div col="row">
-                            <select name="ProjectoMaestro" id="ProjectoMaestro"   data-placeholder="Maestro..." class="chosen-select" style="width: 450px; display: none;" tabindex="-1" onchange="buscar_costo_programado01();">
+                    ssssss
+                            <select name="ProjectoMaestro" id="ProjectoMaestro"   data-placeholder="Maestro..." class="chosen-select" style="width: 450px; display: none;" tabindex="-1">
                                 <option value="0">--</option>
                                 <option value="1">1</option>
                                 <option value="1">1</option>
