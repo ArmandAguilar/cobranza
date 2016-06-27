@@ -155,7 +155,7 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
               <div col="row">
-                 <div col-md-1>
+                 <div col="col-md-2">
                     Lider:
                  </div>
                   <div col="col-md-4">
@@ -172,7 +172,7 @@ include("$path/libs/conexion.php");
                   </div>
               </div>
               <div col="row">
-                 <div col-md-1>
+                 <div col="col-md-2">
                     Maestro:
                  </div>
                   <div col="col-md-4">
