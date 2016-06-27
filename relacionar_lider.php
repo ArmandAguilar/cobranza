@@ -155,10 +155,10 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
               <div col="row">
-                 <div col="col-md-2">
+                 <div col="col-sm-2">
                     Lider:
                  </div>
-                  <div col="col-md-4">
+                  <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
                           <option>Family</option>
                           <option>Friend</option>
@@ -172,10 +172,10 @@ include("$path/libs/conexion.php");
                   </div>
               </div>
               <div col="row">
-                 <div col="col-md-2">
+                 <div col="col-sm-2">
                     Maestro:
                  </div>
-                  <div col="col-md-4">
+                  <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
                           <option>Family</option>
                           <option>Friend</option>
