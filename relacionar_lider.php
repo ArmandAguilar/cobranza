@@ -31,7 +31,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlEmpreas,$con);
             $Id = $fila[Id];
  					  $cboUsuarios .= "<option value=\"$Id\">$Nombre $Apellidos</option>";
  			 }
-  $objCboMaestros->CerrarSQLSAP($RSet,$con);
+  $objUsuarios->CerrarSQLSAP($RSet,$con);
 
 
  ?>
