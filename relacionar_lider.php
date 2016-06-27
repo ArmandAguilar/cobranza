@@ -200,7 +200,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlEmpreas,$con);
                  </div>
                   <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                          <?php echo $objCboMaestros; ?>
+                          <?php echo $cboMaestros; ?>
                         </select>
                   </div>
               </div>
