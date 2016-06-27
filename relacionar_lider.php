@@ -184,29 +184,31 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 							<h3 class="panel-title">Relacionar Lider</h3>
 						</div>
 						<div class="panel-body">
-              <div col="row">
-                 <div col="col-sm-2">
-                    Lider:
-                 </div>
-                  <div col="col-sm-4">
-                    <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                          <option value="0">--------Usuarios-------</option>
-                          <?php echo  $cboUsuarios; ?>
-                        </select>
-                  </div>
-              </div>
-              <div col="row">
-                 <div col="col-sm-2">
-                    Maestro:
-                 </div>
-                  <div col="col-sm-4">
-                    <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                          <option value="0">--------Maestros-------</option>
-                          <?php echo $cboMaestros; ?>
-                        </select>
-                  </div>
-              </div>
-
+                      <div col="row">
+                         <div col="col-sm-2">
+                            Lider:
+                         </div>
+                          <div col="col-sm-4">
+                            <select id="cboUsuario" name="cboUsuario" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                                  <option value="0">--------Usuarios-------</option>
+                                  <?php echo  $cboUsuarios; ?>
+                                </select>
+                          </div>
+                      </div>
+                      <div col="row">
+                         <div col="col-sm-2">
+                            Maestro:
+                         </div>
+                          <div col="col-sm-4">
+                            <select id="cboMaestro" name="cboMaestro" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                                  <option value="0">--------Maestros-------</option>
+                                  <?php echo $cboMaestros; ?>
+                                </select>
+                          </div>
+                      </div>
+                      <div class="panel-footer text-right">
+										        <button class="btn btn-primary" onclick="relacionar_lider();">Asignar</button>
+									   </div>
           </div>
 					</div>
 				</div>
