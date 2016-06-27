@@ -4,6 +4,36 @@ session_start();
 include("sis.php");
 include("$path/libs/conexion.php");
 
+#Todas los maestros
+$objCboMaestros = new poolConnecion();
+$SqlMaestros="SELECT  [SAP].[dbo].[ProyectoMaestro].NumMaestro,[SAP].[dbo].[ProyectoMaestro].NomMaestro,[SAP].[dbo].[RelacionMaestrosEsclavos].NumProyecto,[SAP].[dbo].[RelacionMaestrosEsclavos].IdMaestroEsclavo FROM [SAP].[dbo].[ProyectoMaestro],[SAP].[dbo].[RelacionMaestrosEsclavos] Where [SAP].[dbo].[ProyectoMaestro].NumMaestro = [SAP].[dbo].[RelacionMaestrosEsclavos].NumMaestro ";
+$con=$objCboMaestros->ConexionSQLSAP();
+$RSet=$objCboMaestros->QuerySQLSAP($SqlEmpreas,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+			 {
+           $NumMaestro  = $fila[NumMaestro];
+           $NomMaestro  = $fila[NomMaestro];
+           $NumProyecto = $fila[NumProyecto];
+           $IdMaestroEsclavo =  $fila[IdMaestroEsclavo];
+					 $cboMaestros .= "<option value=\"$IdMaestroEsclavo\">$NumMaestro .- $NomMaestro ($NumProyecto)</option>";
+			 }
+ $objCboMaestros->CerrarSQLSAP($RSet,$con);
+
+ #Todas los lideres
+ $objUsuarios = new poolConnecion();
+ $SqlUsuarios="Select Id,Nombre,Apellidos From [Northwind].[dbo].[Usuarios] Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
+ $con=$objUsuarios->ConexionSQLNorthwind();
+ $RSet=$objUsuarios->QuerySQLNorthwind($SqlUsuarios,$con);
+  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+        {
+            $Nombre = $fila[Nombre];
+            $Apellidos = $fila[Apellidos];
+            $Id = $fila[Id];
+ 					  $cboUsuarios .= "<option value=\"$Id\">$Nombre $Apellidos</option>";
+ 			 }
+  $objCboMaestros->CerrarSQLSAP($RSet,$con);
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -160,14 +190,7 @@ include("$path/libs/conexion.php");
                  </div>
                   <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                          <option>Family</option>
-                          <option>Friend</option>
-                          <option>Partner</option>
-                          <option>Sport</option>
-                          <option>Movie</option>
-                          <option>Documents</option>
-                          <option>Music</option>
-                          <option>Video</option>
+                          <?php echo  $cboUsuarios; ?>
                         </select>
                   </div>
               </div>
@@ -177,14 +200,7 @@ include("$path/libs/conexion.php");
                  </div>
                   <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                          <option>Family</option>
-                          <option>Friend</option>
-                          <option>Partner</option>
-                          <option>Sport</option>
-                          <option>Movie</option>
-                          <option>Documents</option>
-                          <option>Music</option>
-                          <option>Video</option>
+                          <?php echo $objCboMaestros; ?>
                         </select>
                   </div>
               </div>
