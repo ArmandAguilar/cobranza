@@ -155,19 +155,8 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
 
-                    ssssss
-                            <select name="ProjectoMaestro" id="ProjectoMaestro"   data-placeholder="Maestro..." class="chosen-select" style="width: 450px; display: none;" tabindex="-1">
-                                <option value="0">--</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                                <option value="1">1</option>
-                            </select>
-                
+              <div class="btn-group bootstrap-select show-tick" style="width: 100%;"><button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Choose one of the following..." aria-expanded="false"><span class="filter-option pull-left">Choose one of the following...</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open" style="max-height: 436px; overflow: hidden; min-height: 0px;"><ul class="dropdown-menu inner selectpicker" role="menu" style="max-height: 434px; overflow-y: auto; min-height: 0px;"><li data-original-index="0"><a tabindex="0" class="" data-normalized-text="Family"><span class="text">Family</span><span class="fa fa-check check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" data-normalized-text="Friend"><span class="text">Friend</span><span class="fa fa-check check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-normalized-text="Partner"><span class="text">Partner</span><span class="fa fa-check check-mark"></span></a></li></ul></div></div>
+
 
 						</div>
 					</div>
@@ -304,14 +293,7 @@ include("$path/libs/conexion.php");
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
  <script src="js/add_factura.js"></script>
- <!-- Chosen -->
-    <link rel="stylesheet" href="js/chosen/chosen.css" />
-    <script src="js/chosen/chosen.jquery.js" type="text/javascript"></script>
-   <!-- Chosen -->
  </form>
- <script>
 
-      $(".programado-select").chosen({width: "420px"});
-  </script>
 </body>
 </html>
