@@ -96,9 +96,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
-    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="<?php echo $_GET[NoProyecto]; ?>">
-
+  <form id="frmRelacionar" name="frmRelacionar" action="" method="post">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -206,10 +204,11 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                                 </select>
                           </div>
                       </div>
-                      <div class="panel-footer text-right">
-										        <button class="btn btn-primary" onclick="relacionar_lider();">Asignar</button>
-									   </div>
+
           </div>
+          <div class="panel-footer text-right">
+                <button class="btn btn-primary" onclick="relacionar_lider();">Asignar</button>
+         </div>
 					</div>
 				</div>
 				<!--===================================================-->
