@@ -15,7 +15,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
            $NomMaestro  = $fila[NomMaestro];
            $NumProyecto = $fila[NumProyecto];
            $IdMaestroEsclavo =  $fila[IdMaestroEsclavo];
-					 $cboMaestros .= "<option value=\"$IdMaestroEsclavo\">$NumMaestro .- $NomMaestro ($NumProyecto)</option>";
+					 $cboMaestros .= "<option value=\"$IdMaestroEsclavo\">$NumMaestro .- $NomMaestro (Proyecto : $NumProyecto)</option>";
 			 }
  $objCboMaestros->CerrarSQLSAP($RSet,$con);
 
@@ -190,6 +190,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                  </div>
                   <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                          <option value="0">--------Usuarios-------</option>
                           <?php echo  $cboUsuarios; ?>
                         </select>
                   </div>
@@ -200,6 +201,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                  </div>
                   <div col="col-sm-4">
                     <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                          <option value="0">--------Maestros-------</option>
                           <?php echo $cboMaestros; ?>
                         </select>
                   </div>
