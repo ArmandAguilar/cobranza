@@ -154,7 +154,7 @@ include("$path/libs/conexion.php");
 							<h3 class="panel-title">Relacionar Lider</h3>
 						</div>
 						<div class="panel-body">
-                  <div col="row">
+
                     ssssss
                             <select name="ProjectoMaestro" id="ProjectoMaestro"   data-placeholder="Maestro..." class="chosen-select" style="width: 450px; display: none;" tabindex="-1">
                                 <option value="0">--</option>
@@ -167,7 +167,7 @@ include("$path/libs/conexion.php");
                                 <option value="1">1</option>
                                 <option value="1">1</option>
                             </select>
-                  </div>
+                
 
 						</div>
 					</div>
