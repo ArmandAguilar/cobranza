@@ -154,16 +154,41 @@ include("$path/libs/conexion.php");
 							<h3 class="panel-title">Relacionar Lider</h3>
 						</div>
 						<div class="panel-body">
-                  <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                        <option>Family</option>
-                        <option>Friend</option>
-                        <option>Partner</option>
-                        <option>Sport</option>
-                        <option>Movie</option>
-                        <option>Documents</option>
-                        <option>Music</option>
-                        <option>Video</option>
-                      </select>
+              <div col="row">
+                 <div col-md-1>
+                    Lider:
+                 </div>
+                  <div col="col-md-4">
+                    <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                          <option>Family</option>
+                          <option>Friend</option>
+                          <option>Partner</option>
+                          <option>Sport</option>
+                          <option>Movie</option>
+                          <option>Documents</option>
+                          <option>Music</option>
+                          <option>Video</option>
+                        </select>
+                  </div>
+              </div>
+              <div col="row">
+                 <div col-md-1>
+                    Maestro:
+                 </div>
+                  <div col="col-md-4">
+                    <select class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                          <option>Family</option>
+                          <option>Friend</option>
+                          <option>Partner</option>
+                          <option>Sport</option>
+                          <option>Movie</option>
+                          <option>Documents</option>
+                          <option>Music</option>
+                          <option>Video</option>
+                        </select>
+                  </div>
+              </div>
+
           </div>
 					</div>
 				</div>
