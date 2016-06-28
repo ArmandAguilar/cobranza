@@ -14,7 +14,7 @@ class panel extends poolConnecion
       $RSet=$objPaso1->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-
+               
                    if(!empty($fila[NumProyecto]))
                    {
                      $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
@@ -69,6 +69,7 @@ class panel extends poolConnecion
              {
                      if(!empty($fila[NumProyecto]))
                      {
+
                           $Estatus = $fila[Estatus];
                           switch ($Estatus) {
                             case 'Provisionada':

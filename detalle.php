@@ -565,13 +565,19 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <button data-dismiss="modal" class="close" type="button">
           <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">Cancelar Fuctura</h4>
+          <h4 class="modal-title">¿Quieres cancelar esta factura?</h4>
         </div>
 
         <!--Modal body-->
         <div class="modal-body">
-          <h4 class="text-thin">¿Quieres cancelar esta factura?</h4>
-
+          <h4 class="text-thin">¿Cual es el motivo?</h4>
+          <div class="row">
+              <div class="col-md-8">
+                <div id="DivtxtConcepto" class="form-group has-feedback">
+                <textarea id="txtMotivoCancelacion" name="txtMotivoCancelacion" rows="9" class="form-control" placeholder="Concepto aqui.."><?php echo $Concpeto; ?></textarea>
+              </div>
+              </div>
+          </div>
         </div>
         <!--Modal footer-->
         <div class="modal-footer">
