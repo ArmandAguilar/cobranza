@@ -6,7 +6,7 @@ include("$path/libs/conexion.php");
 
 #Todas los maestros
 $objCboMaestros = new poolConnecion();
-$SqlMaestros="SELECT [SAP].[dbo].[ProyectoMaestro].NumMaestro,[SAP].[dbo].[ProyectoMaestro].NomMaestro,[SAP].[dbo].[RelacionMaestrosEsclavos].NumProyecto,[SAP].[dbo].[RelacionMaestrosEsclavos].IdMaestroEsclavo FROM [SAP].[dbo].[ProyectoMaestro],[SAP].[dbo].[RelacionMaestrosEsclavos] Where [SAP].[dbo].[ProyectoMaestro].NumMaestro = [SAP].[dbo].[RelacionMaestrosEsclavos].NumMaestro ";
+$SqlMaestros="SELECT [SAP].[dbo].[ProyectoMaestro].NumMaestro,[SAP].[dbo].[ProyectoMaestro].NomMaestro,[SAP].[dbo].[RelacionMaestrosEsclavos].NumProyecto,[SAP].[dbo].[RelacionMaestrosEsclavos].IdMaestroEsclavo FROM [SAP].[dbo].[ProyectoMaestro],[SAP].[dbo].[RelacionMaestrosEsclavos] Where [SAP].[dbo].[ProyectoMaestro].NumMaestro = [SAP].[dbo].[RelacionMaestrosEsclavos].NumMaestro order by [SAP].[dbo].[ProyectoMaestro].NumMaestro";
 $con=$objCboMaestros->ConexionSQLSAP();
 $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -21,7 +21,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 
  #Todas los lideres
  $objUsuarios = new poolConnecion();
- $SqlUsuarios="Select Id,Nombre,Apellidos From [Northwind].[dbo].[Usuarios] Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
+ $SqlUsuarios="Select Id,Nombre,Apellidos From [Northwind].[dbo].[Usuarios] Where CobranzaPerfil ='Admin' or CobranzaPerfil='User' order by Nombre";
  $con=$objUsuarios->ConexionSQLNorthwind();
  $RSet=$objUsuarios->QuerySQLNorthwind($SqlUsuarios,$con);
   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -96,7 +96,6 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-  <form id="frmRelacionar" name="frmRelacionar" action="" method="post">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -342,8 +341,6 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/add_factura.js"></script>
- </form>
-
+ <script src="js/relacionar_lider.js"></script>
 </body>
 </html>

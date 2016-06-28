@@ -1,6 +1,6 @@
 function relacionar_lider()
 {
-   var losdatos = {cboUsuario:$('#cboUsuario').val(),cboMaestro:$('#cboMaestro').val()};
+   var losdatos = {cboUsuario:$('#cboUsuario').val(),cboIdMaestro:$('#cboMaestro').val()};
     $.ajax({
            		url:'./scripts/oper_relacionar_lider.php?o=1',
           		type:'POST',
