@@ -180,10 +180,10 @@ function relacionar_usuarios($info)
   $IdLider=$info->IdLider;
 
   $sqlUpdate="UPDATE [SAP].[dbo].[RelacionMaestrosEsclavos] SET [LP] = '$IdLider' WHERE IdMaestroEsclavo='$Id'";
-  /*$objGurdar = new poolConnecion();
+  $objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  $objGurdar->CerrarSQLSAP($RSet,$con);
   return $sqlUpdate;
 
 }
