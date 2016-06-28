@@ -2,7 +2,7 @@
 include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/scripts/CFactuar.php");
-$objF =  new facturas()
+$objF =  new facturas();
 switch ($_GET[o]) {
   case '1':
             $info->Id=$_POST[cboIdMaestro];
