@@ -433,7 +433,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 									        </div>
                       <!--Summernote-->
                       <!--===================================================-->
-                      <textarea placeholder="Message" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
+                      <textarea placeholder="Comentario aqui" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
 											<div class="panel-footer text-right">
 										<button class="btn btn-primary" onclick="agregar_comentario();">Comentar</button>
 									</div>
@@ -574,7 +574,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <div class="row">
               <div class="col-md-8">
                 <div id="DivtxtConcepto" class="form-group has-feedback">
-                <textarea id="txtMotivoCancelacion" name="txtMotivoCancelacion" rows="9" class="form-control" placeholder="Concepto aqui.."><?php echo $Concpeto; ?></textarea>
+                <textarea id="txtMotivoCancelacion" name="txtMotivoCancelacion" rows="9" class="form-control" placeholder="Motivo aqui.."></textarea>
               </div>
               </div>
           </div>
