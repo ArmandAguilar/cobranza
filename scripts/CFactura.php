@@ -74,9 +74,12 @@ function modificar_estado($info)
   $objGurdar->CerrarSQLSAP($RSet,$con);
   return $sql;
 }
-function cancelar_factura($IdFacturacion,$Factura)
+function cancelar_factura($info)
 {
 
+    $IdFacturacion = $info->IdFacturacion;
+    $Factura = $info->Factura;
+    $Motivo = $info->Motivo;
   #Creamos la factura  con *
    $SqlCrearCancelada="INSERT INTO [SAP].[dbo].[FacturacionConsulting]
            ([FacturaForta]
@@ -134,7 +137,7 @@ function cancelar_factura($IdFacturacion,$Factura)
 
 #Cancelamos el modlo original
 
-  $sqlCancelar="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [Estatus]='Cancelada',[FacturaForta] = '*$Factura'  Where IdFacturacion='$IdFacturacion'";
+  $sqlCancelar="UPDATE [SAP].[dbo].[FacturacionConsulting] Set [Estatus]='Cancelada',[FacturaForta] = '*$Factura' ,[MotivoCancelacion]='$Motivo' Where IdFacturacion='$IdFacturacion'";
 
   $objGurdar2 = new poolConnecion();
   $con=$objGurdar2->ConexionSQLSAP();

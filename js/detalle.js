@@ -97,7 +97,7 @@ function agregar_comentario()
                     data:losdatos,
                     success:function(data)
                            {
-                             $("#txtMensaje").val('');
+
                               timeline();
                               $.niftyNoty({
                                 type: 'success',
@@ -164,7 +164,7 @@ function modificar_datos()
                        container : 'floating',
                        timer : 3000
                      });
-                     setTimeout ("redireccionar()", 5000);
+                     setTimeout ("redireccionar()", 4000);
 
                    },
             error:function(req,e,er) {
@@ -186,6 +186,7 @@ function cancelar_factura()
   var losdatos = {
                     IdFacturacion : $("#txtIdFacturacion").val(),
                     Factura : $("#txtFactura").val(),
+                    Motivo : $("#txtMotivoCancelacion").val(),
                 };
   $.ajax({
             url:'./scripts/oper_detalles.php?o=7',
@@ -201,7 +202,7 @@ function cancelar_factura()
                        container : 'floating',
                        timer : 3000
                      });
-                     setTimeout ("redireccionar()", 5000);
+                     setTimeout ("redireccionar()", 4000);
 
                    },
             error:function(req,e,er) {

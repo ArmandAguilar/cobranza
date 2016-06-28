@@ -47,7 +47,10 @@ switch ($_GET[o]) {
       break;
       case '7':
 
-            echo $objF->cancelar_factura($_POST[IdFacturacion],$_POST[Factura]);
+              $info->IdFacturacion=$_POST[IdFacturacion];
+              $info->Factura=$_POST[Factura];
+              $info->Motivo=$_POST[Motivo];
+              echo $objF->cancelar_factura($info);
       break;
       case '8':
                 $info->FacturaForta=$_POST[FacturaForta];
