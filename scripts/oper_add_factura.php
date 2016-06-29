@@ -18,7 +18,7 @@ switch ($_GET[o]) {
             $info->NumProyecto = $_POST[txtNoProyecto];
             $info->CONCEPTO_FACTURA = $_POST[txtConcepto];
             $info->MontoAntesdeIVA = $_POST[txtCantidad];
-            $info->IVA = $_POST[cboIva];
+            $info->IVA = $_POST[txtImporteTotal];
             $info->QuienFactura = $_POST[cboTipoFactura];
             $info->EmpresaSolicitante = $_POST[cboEmpresa];
             $info->SeFacturaA = $_POST[txtRasonSocial];
