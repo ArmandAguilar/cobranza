@@ -61,7 +61,7 @@ session_start();
 				<!--Brand logo & name-->
 				<!--================================-->
 				<div class="navbar-header">
-					<a href="panel.html" class="navbar-brand">
+					<a href="panel.php" class="navbar-brand">
 						<!--<img src="img/logo.png" alt="Nifty Logo" class="brand-icon">-->
 						<div class="brand-title">
 							<span class="brand-text">Cobranza</span>
