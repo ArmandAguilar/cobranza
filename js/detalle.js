@@ -194,7 +194,7 @@ function cancelar_factura()
             data:losdatos,
             success:function(data)
                    {
-
+                     $("#txtMensaje").val();
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
@@ -202,7 +202,7 @@ function cancelar_factura()
                        container : 'floating',
                        timer : 3000
                      });
-                     setTimeout ("redireccionar()", 4000);
+                     //setTimeout ("redireccionar()", 4000);
 
                    },
             error:function(req,e,er) {
