@@ -15,7 +15,7 @@ if($_GET[o]=='1')
                       $Redirecionar=1;
                       $_SESSION["Usuario"]="$fila[Nombre] $fila[Apellidos]";
                       $_SESSION["IdUsuario"]="$fila[Id]";
-                      $_SESSION["CobranzaPerfil"]="$fila[CobranzaPerfil]";
+                      $_SESSION["CobranzaPerfil"]=$fila[CobranzaPerfil];
                       $Avatar = $fila[Avatar];
                       if(!empty($Avatar))
                       {

@@ -41,13 +41,11 @@ session_start();
 		 						window.location.href='logout.php'
 					</script>";
 	}
-  else{
-    if(empty($_SESSION[CobranzaPerfil]))
-    {
-      echo "<script>
- 		 						window.location.href='logout.php'
- 					</script>";
-    }
+  if(empty($_SESSION[CobranzaPerfil]))
+  {
+    echo "<script>
+              window.location.href='logout.php'
+        </script>";
   }
  ?>
 </head>
