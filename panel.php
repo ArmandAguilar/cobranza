@@ -47,7 +47,7 @@ session_start();
   		 						window.location.href='logout.php'
   					</script>";
   	}
-    echo "Esto es el campo $_SESSION[CobranzaPerfil]";
+    
     if(empty($_SESSION[CobranzaPerfil]))
     {
 
