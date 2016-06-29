@@ -34,27 +34,28 @@ session_start();
 	<link href="plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
 	<!--X-editable [ OPTIONAL ]-->
 	<link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet">
-<?php
-	if(empty($_SESSION[IdUsuario]))
-	{
-		 echo "<script>
-		 						window.location.href='logout.php'
-					</script>";
-	}
-  echo "Esto es el campo $_SESSION[CobranzaPerfil]";
-  if(empty($_SESSION[CobranzaPerfil]))
-  {
 
-    echo "<script>
-              window.location.href='logout.php'
-        </script>";
-  }
- ?>
 </head>
 <!--TIPS-->
 
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
+  <?php
+  	if(empty($_SESSION[IdUsuario]))
+  	{
+  		 echo "<script>
+  		 						window.location.href='logout.php'
+  					</script>";
+  	}
+    echo "Esto es el campo $_SESSION[CobranzaPerfil]";
+    if(empty($_SESSION[CobranzaPerfil]))
+    {
+
+      echo "<script>
+                window.location.href='logout.php'
+          </script>";
+    }
+   ?>
   <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
     <input type="hidden" name="txtFactura" id="txtFactura" value="">
     <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="">
