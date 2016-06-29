@@ -39,8 +39,16 @@ session_start();
 	{
 		 echo "<script>
 		 						window.location.href='logout.php'
-					</script>		";
+					</script>";
 	}
+  else{
+    if(empty($_SESSION[CobranzaPerfil]))
+    {
+      echo "<script>
+ 		 						window.location.href='logout.php'
+ 					</script>";
+    }
+  }
  ?>
 </head>
 <!--TIPS-->
@@ -97,9 +105,15 @@ session_start();
 							<a href="#" onclick="load_cronograma();">
 								<i class="fa fa-rotate-right fa-lg"></i>
 							</a>
+              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
+              ?>
               <a href="relacionar_lider.php">
 								<i class="fa fa-user"></i>
 							</a>
+              <?php
+                  }
+                else{}
+              ?>
 							<!--Notification dropdown menu-->
 
 						</li>
