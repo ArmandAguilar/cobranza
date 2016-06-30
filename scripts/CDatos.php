@@ -7,10 +7,12 @@ class panel extends poolConnecion
     {
       $WhereRVEdoCtaGeneral = "";
       $IdUser = $info->IdUser;
+      $UserPerfil = $info->UserPerfil ;
       if ($IdUser>0)
       {
             $WhereRVEdoCtaGeneral = "Where [LP] = '$IdUser'";
       }
+
       #Paso 1
       $contadorPoyectos = 0;
       $objPaso1 = new poolConnecion();
@@ -25,25 +27,49 @@ class panel extends poolConnecion
                      $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
                      $TotalGral += $fila[ImporteFinal];
                      $contadorPoyectos ++;
+                     if ($UserPerfil == "Admin")
+                      {
+                        $row_col1.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
+                                        <div class=\"col-lg-*\">
+                                          <div class=\"panel panel-warning panel-colorful\">
+                                                 <div class=\"pad-all media\">
+                                                   <div class=\"media-left\">
+                                                     <span class=\"icon-wrap icon-wrap-xs\">
+                                                       <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                     </span>
+                                                   </div>
+                                                   <div class=\"media-body\">
+                                                     <p class=\"h4 text-thin media-heading\">$ImporteFinal</p>
+                                                     <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                   </div>
+                                                 </div>
 
-                     $row_col1.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
-                                     <div class=\"col-lg-*\">
-                                       <div class=\"panel panel-warning panel-colorful\">
-                                              <div class=\"pad-all media\">
-                                                <div class=\"media-left\">
-                                                  <span class=\"icon-wrap icon-wrap-xs\">
-                                                    <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
-                                                  </span>
-                                                </div>
-                                                <div class=\"media-body\">
-                                                  <p class=\"h4 text-thin media-heading\">$ImporteFinal</p>
-                                                  <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
-                                                </div>
-                                              </div>
-
+                                           </div>
                                         </div>
-                                     </div>
-                                 </div>";
+                                    </div>";
+                      }
+                    else{
+                      $row_col1.= "<div class=\"row\"  style=\"cursor:pointer\">
+                                      <div class=\"col-lg-*\">
+                                        <div class=\"panel panel-warning panel-colorful\">
+                                               <div class=\"pad-all media\">
+                                                 <div class=\"media-left\">
+                                                   <span class=\"icon-wrap icon-wrap-xs\">
+                                                     <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                   </span>
+                                                 </div>
+                                                 <div class=\"media-body\">
+                                                   <p class=\"h4 text-thin media-heading\">$ImporteFinal</p>
+                                                   <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                 </div>
+                                               </div>
+
+                                         </div>
+                                      </div>
+                                  </div>";
+                      }
+
+
                    }
 
 

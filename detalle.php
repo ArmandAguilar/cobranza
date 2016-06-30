@@ -77,18 +77,26 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <link href="plugins/pace/pace.min.css" rel="stylesheet">
   <script src="plugins/pace/pace.min.js"></script>
 
-	<?php
-		if(empty($_SESSION[IdUsuario]))
-		{
-			 echo "<script>
-			 						window.location.href='logout.php'
-						</script>		";
-		}
-	 ?>
 </head>
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
+  <?php
+    if(empty($_SESSION[IdUsuario]))
+    {
+       echo "<script>
+                  window.location.href='logout.php'
+            </script>";
+    }
+
+    if(empty($_SESSION[CobranzaPerfil]))
+    {
+
+      echo "<script>
+                window.location.href='logout.php'
+          </script>";
+    }
+   ?>
   <input type="hidden" name="txtFactura" id="txtFactura" value="<?php echo $_POST[txtFactura]; ?>"/>
   <input type="hidden" name="txtProyecto" id="txtProyecto" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
   <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
