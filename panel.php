@@ -99,12 +99,12 @@ session_start();
               <?php
               if ($_SESSION[CobranzaPerfil]=="Admin") {
                 echo "<a href=\"#\" onclick=\"load_enbudo();\">
-  								<i class="fa fa-th-large fa-lg\"></i>
+  								<i class=\"fa fa-th-large fa-lg\"></i>
   							</a>";
               }
               else{
                 echo "<a href=\"#\" onclick=\"load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');\">
-  								<i class="fa fa-th-large fa-lg\"></i>
+  								<i class=\"fa fa-th-large fa-lg\"></i>
   							</a>";
               }
                ?>
