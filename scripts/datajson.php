@@ -53,12 +53,12 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           if(!empty($fila[NumProyecto]))
           {
               $contador++;
-              $arr[] = array('id' => "<a href='#'>$contador</a>",
+              $arr[] = array('id' => "$contador",
                               'NumMaestro' => "$NumMaestro",
                               'NumProyecto' => "$NumProyecto",
                               'NomProyecto' => "$NomProyecto",
                               'Empresa' => "$Empresa",
-                              'FacturaForta' => "$FacturaForta",
+                              'FacturaForta' => "<a href='javascript:void(0);alert('$FacturaFort')'>$FacturaForta</a>",
                               'Estatus' => "$Estatus",
                               'FechaFactura' => "$FechaFactura",
                               'FechaTentativa' => "$FechaTentativa",
