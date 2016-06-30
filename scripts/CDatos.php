@@ -270,7 +270,7 @@ class panel extends poolConnecion
         $TotalRecibida  = number_format($TotalRecibida, 2, '.', ',');
         $TotalAprobada  = number_format($TotalAprobada, 2, '.', ',');
         $TotalEnEsperaDePago  = number_format($TotalEnEsperaDePago, 2, '.', ',');
-      $row = "$Sql<div class=\"row\">
+      $row = "<div class=\"row\">
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
