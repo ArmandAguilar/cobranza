@@ -203,16 +203,26 @@ session_start();
 								   data-page-size="15"
 								   data-pagination="true" data-show-pagination-switch="true">
 								<thead>
-
 									<tr>
-										<th data-field="id" data-switchable="false">ID</th>
-										<th data-field="noproyecto">No. Proyecto</th>
-										<th data-field="proyecto">Proyecto</th>
-										<th data-field="estado">Estado</th>
-										<th data-field="vendedor">Vendedor</th>
-										<th data-field="empresa">Empresa</th>
-                    <th data-field="montoantesdeiva">Monto Antes de IVA</th>
-                    <th data-field="iva" data-visible="false">IVA</th>
+                    <th data-field="id" data-switchable="false">No Fila</th>
+                    <th data-field="NumMaestro" data-switchable="false">Num. Maestro</th>
+                    <th data-field="NumProyecto" data-switchable="false">Num. Proyecto</th>
+                    <th data-field="NomProyecto" data-switchable="false">Proyetco</th>
+                    <th data-field="Empresa" data-switchable="false">Empresa</th>
+                    <th data-field="FacturaForta" data-switchable="false">Factura</th>
+                    <th data-field="Estatus" data-switchable="false">Estado</th>
+                    <th data-field="FechaFactura" data-switchable="false">Fecha Factura</th>
+                    <th data-field="FechaTentativa" data-switchable="false">Fecha Tentativa</th>
+                    <th data-field="FechaRecepcion" data-switchable="false">Fehca Recepción</th>
+                    <th data-field="MontoAntesIva" data-switchable="false">Monto</th>
+                    <th data-field="IVA" data-switchable="false">Iva</th>
+                    <th data-field="MontoCIVA" data-switchable="false">Monto Con Iva</th>
+                    <th data-field="SumaAbono" data-switchable="false">Suma a Abono</th>
+                    <th data-field="SaldoPorCobrar" data-switchable="false">Saldo por Cobrar</th>
+                    <th data-field="TrimestreFactura" data-switchable="false">Trimestre</th>
+                    <th data-field="RFC" data-switchable="false">RFC</th>
+                    <th data-field="SeFacturaA" data-switchable="false">Se Factura A</th>
+                    <th data-field="QuienFactura" data-switchable="false">Quien Factura</th>
 									</tr>
 								</thead>
 
