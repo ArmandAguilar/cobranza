@@ -163,18 +163,43 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 										<div class="row">
 
 												<div class="col-lg-3">
-														<p class="text-2x mar-no text-thin" data-target="#modal-mFactura" data-toggle="modal" style="cursor:pointer">Factura : <?php echo $_POST[txtFactura]; ?></p><p class="text-2x mar-no text-thin">Monto : $ <?php echo $_POST[txtImporte]; ?></p>
+                          <?php
+                                if ($_SESSION[CobranzaPerfil]=="Admin")
+                                {
+                                   echo "<p class=\"text-2x mar-no text-thin\" data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\">Factura : $_POST[txtFactura]</p><p class=\"text-2x mar-no text-thin\">Monto : $ $_POST[txtImporte]</p>";
+                                }
+                                else
+                                {
+                                   echo "<p class=\"text-2x mar-no text-thin\" style=\"cursor:pointer\">Factura : $_POST[txtFactura]</p><p class=\"text-2x mar-no text-thin\">Monto : $ $_POST[txtImporte]</p>";
+                                }
+                          ?>
 												</div>
 												<div class="col-lg-6">
                               <div class="row">
                                           <div class="col-lg-3">
-
-                                                    <button  data-target="#modal-relacionar" data-toggle="modal" class="btn btn-primary btn-md">Relacionar Factura</button>
-
+                                            <?php
+                                                  if ($_SESSION[CobranzaPerfil]=="Admin")
+                                                  {
+                                                     echo "<button  data-target=\"#modal-relacionar\" data-toggle=\"modal\" class=\"btn btn-primary btn-md\">Relacionar Factura</button>";
+                                                  }
+                                                  else
+                                                  {
+                                                     echo "<button class=\"btn btn-primary btn-md\">Relacionar Factura</button>";
+                                                  }
+                                            ?>
                                           </div>
                                           <div class="col-lg-3">
+                                            <?php
+                                                  if ($_SESSION[CobranzaPerfil]=="Admin")
+                                                  {
+                                                     echo "<button data-target=\"#modal-cancelar\" data-toggle=\"modal\" class=\"btn btn-danger btn-md\">Cancelar Factura</button>";
+                                                  }
+                                                  else
+                                                  {
+                                                     echo "<button  class=\"btn btn-danger btn-md\">Cancelar Factura</button>";
+                                                  }
+                                            ?>
 
-                                                    <button data-target="#modal-cancelar" data-toggle="modal" class="btn btn-danger btn-md">Cancelar Factura</button>
 
                                           </div>
                                           <div class="col-lg-3">
