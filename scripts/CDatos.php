@@ -20,7 +20,7 @@ class panel extends poolConnecion
              while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                    {
                      $Proy = $fila[NumProyecto];
-                     $ListaOR .= "NumProyecto='$Proy or '";
+                     $ListaOR .= "NumProyecto='$Proy' or ";
                    }
             $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
             $ListaOR = substr($ListaOR, 0, -3);
