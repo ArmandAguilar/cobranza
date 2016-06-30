@@ -26,7 +26,7 @@ switch ($_GET[v]) {
               break;
   case 'enbudoUser':
                   $info->IdUser=$_POST[IdUsuario];
-                  echo $obj->enbudoUser($info);
+                  echo $obj->enbudo($info);
   break;
   default:
     # code...
