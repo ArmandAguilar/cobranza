@@ -215,8 +215,8 @@ session_start();
                     <th data-field="FechaTentativa" data-switchable="false">Fecha Tentativa</th>
                     <th data-field="FechaRecepcion" data-switchable="false">Fehca Recepción</th>
                     <th data-field="MontoAntesIva" data-switchable="false">Monto</th>
-                    <th data-field="IVA" data-switchable="false">Iva</th>
-                    <th data-field="MontoCIVA" data-switchable="false">Monto Con Iva</th>
+                    <th data-field="IVA" data-switchable="true">Iva</th>
+                    <th data-field="MontoCIVA" data-switchable="true">Monto Con Iva</th>
                     <th data-field="SumaAbono" data-switchable="true">Suma a Abono</th>
                     <th data-field="SaldoPorCobrar" data-switchable="true">Saldo por Cobrar</th>
                     <th data-field="TrimestreFactura" data-switchable="true">Trimestre</th>
