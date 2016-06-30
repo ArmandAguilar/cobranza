@@ -19,6 +19,29 @@ function load_enbudo()
           });
 
 }
+function load_enbudo_liders(IdUsuario)
+{
+  $('#DEnvudo').show();
+  $("#DLista").hide();
+  $("#DCronograma").hide();
+  $("#rows-enbudo").empty();
+  $("#load_enbudo").show();
+  var losdatos = {IdUsuario:IdUsuario};
+  $.ajax({
+            url:'./scripts/data.php?v=enbudoUser',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+            {
+                 $("#rows-enbudo").append(data);
+                 $("#load_enbudo").hide();
+            },
+            error:function(req,e,er) {
+              alert(er);
+            }
+          });
+
+}
 function load_lista()
 {
   $('#DEnvudo').hide();

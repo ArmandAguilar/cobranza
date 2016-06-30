@@ -47,7 +47,7 @@ session_start();
   		 						window.location.href='logout.php'
   					</script>";
   	}
-    
+
     if(empty($_SESSION[CobranzaPerfil]))
     {
 
@@ -352,8 +352,18 @@ session_start();
  <script src="js/scripts.js"></script>
  <script src="js/data.js"></script>
  </form>
- <script>
-     load_enbudo();
- </script>
+ <?php
+          if ($_SESSION[CobranzaPerfil]=="Admin") {
+            echo "<script>
+                      load_enbudo();
+                 </script>";
+          }
+          else{
+            echo "<script>
+                      load_enbudo_liders($_SESSION[IdUsuario]);
+                 </script>";
+          }
+  ?>
+
 </body>
 </html>
