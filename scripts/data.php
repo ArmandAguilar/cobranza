@@ -7,7 +7,7 @@ $obj =  new panel();
 switch ($_GET[v]) {
   case 'enbudo':
             $info->IdUser=0;
-            $info->Perfil="User";
+            $info->Perfil="Admin";
             echo $obj->enbudo($info);
     break;
   case 'Provisionada':
