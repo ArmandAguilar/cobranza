@@ -126,7 +126,7 @@ class panel extends poolConnecion
                                                 $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                 $ContadorProvisionada ++;
                                                 $Fecha = $fila[FechaPago];
-                                                $row_col2New.= "$Sql<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
+                                                $row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
                                                                 <div class=\"col-lg-*\">
                                                                   <div class=\"panel panel-primary panel-colorful\">
                                                                          <div class=\"pad-all media\">
@@ -270,7 +270,7 @@ class panel extends poolConnecion
         $TotalRecibida  = number_format($TotalRecibida, 2, '.', ',');
         $TotalAprobada  = number_format($TotalAprobada, 2, '.', ',');
         $TotalEnEsperaDePago  = number_format($TotalEnEsperaDePago, 2, '.', ',');
-      $row = "<div class=\"row\">
+      $row = "$Sql<div class=\"row\">
           <div class=\"col-sm-2\">
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
