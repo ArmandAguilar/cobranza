@@ -96,10 +96,19 @@ session_start();
 						<!--Notification dropdown fa-tasks,fa-rotate-right-->
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<li class="dropdown">
+              <?php
+              if ($_SESSION[CobranzaPerfil]=="Admin") {
+                echo "<a href=\"#\" onclick=\"load_enbudo();\">
+  								<i class="fa fa-th-large fa-lg\"></i>
+  							</a>";
+              }
+              else{
+                echo "<a href=\"#\" onclick=\"load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');\">
+  								<i class="fa fa-th-large fa-lg\"></i>
+  							</a>";
+              }
+               ?>
 
-							<a href="#" onclick="load_enbudo();">
-								<i class="fa fa-th-large fa-lg"></i>
-							</a>
 							<a href="#" onclick="load_lista();">
 								<i class="fa fa-tasks fa-lg"></i>
 							</a>
