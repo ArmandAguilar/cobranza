@@ -71,7 +71,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                               'TrimestreFactura' => "$TrimestreFactura",
                               'RFC' => "$RFC",
                               'SeFacturaA' => "$SeFacturaA",
-                              'QuienFactura' => "$QuienFactura",
+                              'QuienFactura' => "$QuienFactura"
                     );
           }
         }
