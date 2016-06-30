@@ -58,7 +58,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                               'NumProyecto' => "$NumProyecto",
                               'NomProyecto' => "$NomProyecto",
                               'Empresa' => "$Empresa",
-                              'FacturaForta' => "<a href='javascript:void(0);' onclick=\"alert('hola');\">$FacturaForta</a>",
+                              'FacturaForta' => "<a href='javascript:void(0);' onclick=\"load_view('$FacturaForta','$NumProyecto','$NomProyecto','$MontoCIVA','$Estatus');\">$FacturaForta</a>",
                               'Estatus' => "$Estatus",
                               'FechaFactura' => "$FechaFactura",
                               'FechaTentativa' => "$FechaTentativa",
