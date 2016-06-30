@@ -360,10 +360,9 @@ session_start();
           }
           else{
             echo "<script>
-                      load_enbudo_liders($_SESSION[IdUsuario]);
+                      load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');
                  </script>";
           }
   ?>
-
 </body>
 </html>

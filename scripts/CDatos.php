@@ -7,7 +7,7 @@ class panel extends poolConnecion
     {
       $WhereRVEdoCtaGeneral = "";
       $IdUser = $info->IdUser;
-      $UserPerfil = $info->UserPerfil ;
+      $UserPerfil = $info->Perfil ;
       if ($IdUser>0)
       {
             $WhereRVEdoCtaGeneral = "Where [LP] = '$IdUser'";
@@ -27,7 +27,7 @@ class panel extends poolConnecion
                      $ImporteFinal = number_format($fila[ImporteFinal], 2, '.', ',');
                      $TotalGral += $fila[ImporteFinal];
                      $contadorPoyectos ++;
-                     if ($UserPerfil == "Admin")
+                     if ($Perfil == "Admin")
                       {
                         $row_col1.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
                                         <div class=\"col-lg-*\">
