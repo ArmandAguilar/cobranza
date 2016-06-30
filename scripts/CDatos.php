@@ -7,7 +7,7 @@ class panel extends poolConnecion
     {
       $WhereRVEdoCtaGeneral = "";
       $IdUser = $info->IdUser;
-      $UserPerfil = $info->Perfil ;
+      $Perfil = $info->Perfil ;
       if ($IdUser>0)
       {
             $WhereRVEdoCtaGeneral = "Where [LP] = '$IdUser'";
