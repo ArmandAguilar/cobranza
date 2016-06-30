@@ -6,12 +6,29 @@ class panel extends poolConnecion
   function enbudo($info)
     {
       $WhereRVEdoCtaGeneral = "";
+      $ListaOR = "";
       $IdUser = $info->IdUser;
       $Perfil = $info->Perfil ;
       if ($IdUser>0)
       {
             $WhereRVEdoCtaGeneral = "Where [LP] = '$IdUser'";
+
+            $objListaDeProyectos = new poolConnecion();
+            $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
+            $con=$objListaDeProyectos->ConexionSQLSAP();
+            $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
+             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                   {
+                     $Proy = $fila[NumProyecto];
+                     $ListaOR .= "NumProyecto='$Proy or '";
+                   }
+            $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
+            $ListaOR = substr($ListaOR, 0, -3);
+            $BuscarListaWhere = "Where $ListaOR";
       }
+
+      #ordenar Lista de proyectos
+
 
       #Paso 1
       $contadorPoyectos = 0;
@@ -93,7 +110,7 @@ class panel extends poolConnecion
       $TotalEnEsperaDePago = 0;
       $ContadorEnEsperaDePago = 0;
       $objPaso2 = new poolConnecion();
-      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
+      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere";
       $con=$objPaso2->ConexionSQLSAP();
       $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
