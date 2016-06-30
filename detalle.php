@@ -199,8 +199,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                                      echo "<button  class=\"btn btn-danger btn-md\">Cancelar Factura</button>";
                                                   }
                                             ?>
-
-
                                           </div>
                                           <div class="col-lg-3">
                                                           <div class="btn-group">

@@ -20,7 +20,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           if(!empty($fila[NumProyecto]))
           {
               $contador++;
-              $arr[] = array('id' => $contador,
+              $arr[] = array('id' => "<a href='#'>$contador</a>",
                                 'noproyecto' => $NumProyecto,
                                 'proyecto' => $NomProyecto,
                                 'estado' =>$Estatus,
