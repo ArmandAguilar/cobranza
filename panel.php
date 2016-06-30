@@ -217,12 +217,12 @@ session_start();
                     <th data-field="MontoAntesIva" data-switchable="false">Monto</th>
                     <th data-field="IVA" data-switchable="false">Iva</th>
                     <th data-field="MontoCIVA" data-switchable="false">Monto Con Iva</th>
-                    <th data-field="SumaAbono" data-switchable="false">Suma a Abono</th>
-                    <th data-field="SaldoPorCobrar" data-switchable="false">Saldo por Cobrar</th>
-                    <th data-field="TrimestreFactura" data-switchable="false">Trimestre</th>
-                    <th data-field="RFC" data-switchable="false">RFC</th>
-                    <th data-field="SeFacturaA" data-switchable="false">Se Factura A</th>
-                    <th data-field="QuienFactura" data-switchable="false">Quien Factura</th>
+                    <th data-field="SumaAbono" data-switchable="true">Suma a Abono</th>
+                    <th data-field="SaldoPorCobrar" data-switchable="true">Saldo por Cobrar</th>
+                    <th data-field="TrimestreFactura" data-switchable="true">Trimestre</th>
+                    <th data-field="RFC" data-switchable="true">true</th>
+                    <th data-field="SeFacturaA" data-switchable="true">Se Factura A</th>
+                    <th data-field="QuienFactura" data-switchable="true">Quien Factura</th>
 									</tr>
 								</thead>
 
