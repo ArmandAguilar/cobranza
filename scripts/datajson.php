@@ -13,9 +13,9 @@ $Sql="SELECT
       ,[Empresa]
       ,[FacturaForta]
       ,[Estatus]
-      ,[Fecha Factura] As FechaFactura
-      ,[Fecha TENTATIVA de pago] As FechaTentativa
-      ,[Fecha de recepción] As FechaRecepcion
+      ,Convert(varchar(11),[Fecha Factura]) As FechaFactura
+      ,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaTentativa
+      ,Convert(varchar(11),[Fecha de recepción]) As FechaRecepcion
       ,[Monto Antes de IVA] AS MontoAntesIva
       ,[IVA]
       ,[MontoCIVA]
@@ -37,9 +37,9 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
          $Empresa = $fila[Empresa];
          $FacturaForta = $fila[FacturaForta];
          $Estatus = $fila[Estatus];
-         $FechaFactura = Convert(varchar(11),$fila[FechaFactura]);
-         $FechaTentativa = Convert(varchar(11),$fila[FechaTentativa]);
-         $FechaRecepcion = Convert(varchar(11),$fila[FechaRecepcion]);
+         $FechaFactura = $fila[FechaFactura];
+         $FechaTentativa = $fila[FechaTentativa];
+         $FechaRecepcion = $fila[FechaRecepcion];
          $MontoAntesIva = $fila[MontoAntesIva];
          $IVA = number_format($fila[IVA], 2, '.', ',');
          $MontoCIVA = number_format($fila[MontoCIVA], 2, '.', ',');
