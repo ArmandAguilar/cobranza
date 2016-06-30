@@ -98,21 +98,21 @@ session_start();
 						<li class="dropdown">
               <?php
               if ($_SESSION[CobranzaPerfil]=="Admin") {
-                echo "<a href=\"#\" onclick=\"load_enbudo();\">
+                echo "<a href=\"javascript:void(0);\" onclick=\"load_enbudo();\">
   								<i class=\"fa fa-th-large fa-lg\"></i>
   							</a>";
               }
               else{
-                echo "<a href=\"#\" onclick=\"load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');\">
+                echo "<a href=\"javascript:void(0);\" onclick=\"load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');\">
   								<i class=\"fa fa-th-large fa-lg\"></i>
   							</a>";
               }
                ?>
 
-							<a href="#" onclick="load_lista();">
+							<a href="javascript:void(0);" onclick="load_lista();">
 								<i class="fa fa-tasks fa-lg"></i>
 							</a>
-							<a href="#" onclick="load_cronograma();">
+							<a href="javascript:void(0);" onclick="load_cronograma();">
 								<i class="fa fa-rotate-right fa-lg"></i>
 							</a>
               <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
