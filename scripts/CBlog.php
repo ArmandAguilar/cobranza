@@ -65,6 +65,7 @@ class blog extends poolConnecion
                                                    <div class=\"timeline-stat\">
                                                      <div class=\"timeline-icon\"><img src=\"$Avatar\" alt=\"$Usuario\">
                                                      </div>
+                                                     <div class=\"timeline-time\">$Usuario</div>
                                                      <div class=\"timeline-time\">$Fecha</div>
                                                    </div>
                                                    <div class=\"timeline-label\">
