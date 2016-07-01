@@ -37,7 +37,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
-	<title>Forta Ingenieria | Cobranza.</title>
+	<title>Forta Ingenieria | Administración.</title>
   <!--STYLESHEET-->
   <!--=================================================-->
 
@@ -115,7 +115,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 					<a href="panel.php" class="navbar-brand">
 						<!--<img src="img/logo.png" alt="Nifty Logo" class="brand-icon">-->
 						<div class="brand-title">
-							<span class="brand-text">Cobranza</span>
+							<span class="brand-text">FortaIngenieria</span>
 						</div>
 					</a>
 				</div>
@@ -465,7 +465,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 			</div>
 			<!-- Visible when footer positions are static -->
 			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-			<div class="hide-fixed pull-right pad-rgt">Cobranza 1.0</div>
+			<div class="hide-fixed pull-right pad-rgt">Administración 1.0</div>
 			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 			<!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
 			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

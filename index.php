@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
-	<title>Login | Cobranza</title>
+	<title>Login | Administración</title>
 	<!--STYLESHEET-->
 	<!--=================================================-->
 	<!--Open Sans Font [ OPTIONAL ] -->
@@ -34,7 +34,7 @@
 			<div class="cls-brand">
 				<a class="box-inline" href="#">
 					<!-- <img alt="Nifty Admin" src="img/logo.png" class="brand-icon"> -->
-					<span class="brand-title">Cobranza</span>
+					<span class="brand-title">Administración</span>
 				</a>
 			</div>
 		</div>
