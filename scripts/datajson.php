@@ -1,6 +1,30 @@
 <?php
+ini_set('session.auto_start()','On');
+session_start();
 include("../sis.php");
 include("$path/libs/conexion.php");
+$BuscarListaWhere == "";
+if ($_SESSION[IdUsuario]>0)
+{
+    if ($_SESSION[CobranzaPerfil]=="Admin")
+    {
+
+    }
+    else
+     {
+           $objListaDeProyectos = new poolConnecion();
+           $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$_SESSION[IdUsuario]'";
+           $con=$objListaDeProyectos->ConexionSQLSAP();
+           $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
+            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                  {
+                    $Proy = $fila[NumProyecto];
+                    $ListaOR .= "NumProyecto='$Proy' or ";
+                  }
+           $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
+           $ListaOR = substr($ListaOR, 0, -3);
+           $BuscarListaWhere = "Where $ListaOR";
+    }
 
 
 $contador = 0;
@@ -25,7 +49,7 @@ $Sql="SELECT
       ,[RFC]
       ,[SeFacturaA]
       ,[QuienFactura]
-      FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
+      FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere";
 #$Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
 $con=$objPaso2->ConexionSQLSAP();
 $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
@@ -76,5 +100,5 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
           }
         }
 echo json_encode($arr);
-
+}
 ?>
