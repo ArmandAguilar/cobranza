@@ -33,6 +33,14 @@ class blog extends poolConnecion
                  {
                     $Av = $filaA[Avatar];
                  }
+          if (!empty($Av))
+          {
+
+          }
+          else
+           {
+            $Av = "http://187.188.109.47:82/administracion/img/av1.png";
+          }
           return $Av;
     }
     function linea_tiempo($Factura)

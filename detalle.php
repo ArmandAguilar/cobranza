@@ -170,7 +170,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                 }
                                 else
                                 {
-                                   echo "<p class=\"text-2x mar-no text-thin\" style=\"cursor:pointer\">Factura : $_POST[txtFactura]</p><p class=\"text-2x mar-no text-thin\">Monto : $ $_POST[txtImporte]</p>";
+                                   echo "<p class=\"text-2x mar-no text-thin\" data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\">Factura : $_POST[txtFactura]</p><p class=\"text-2x mar-no text-thin\">Monto : $ $_POST[txtImporte]</p>";
                                 }
                           ?>
 												</div>
