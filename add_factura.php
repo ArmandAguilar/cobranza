@@ -29,7 +29,11 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
  			}
   $objProyecto->CerrarSQLSAP($RSet,$con);
 
+  $D = date(d);
+  $M = date(m);
+  $Y = date(Y);
 
+  $Fecha_Factura = "$D/$M/$Y";
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +74,10 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
   <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
-
+  <!--Animate.css [ OPTIONAL ]-->
+  <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
+  <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
 
 
 
@@ -101,7 +108,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
           </script>";
     }
    ?>
-  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
+  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post" class="uk-form">
     <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="<?php echo $_GET[NoProyecto]; ?>">
 
 	<div id="container" class="effect mainnav-out">
@@ -250,6 +257,38 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     </div>
                               </div>
                         </div>
+                        <hr>
+                          <div cols="row">
+                            <div class="col-lg-1">
+                                Facturación
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="input-group date">
+                                    <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
+                                  </div>
+                            </div>
+                          </div>
+                          <div cols="row">
+                            <div class="col-lg-1">
+                              Tentativa
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="input-group date">
+                                    <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
+                                  </div>
+                            </div>
+                          </div>
+                          <div cols="row">
+                            <div class="col-lg-1">
+                                Recepción
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="input-group date">
+                                    <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
+                                  </div>
+                            </div>
+                          </div>
+                          <hr>
                         <div class="row">
                             <div class="col-md-8">
                               <div id="DivtxtConcepto" class="form-group has-feedback">
@@ -484,6 +523,9 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
 	<script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/uikit/js/uikit.min.js"></script>
+  <script src="js/uikit/js/components/datepicker.js"></script>
+   <script src="js/uikit/js/components/form-select.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
   <!--Bootstrap Select [ OPTIONAL ]-->

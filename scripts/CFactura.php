@@ -7,18 +7,15 @@ class facturas extends poolConnecion
 function ingresar_factura($info)
 {
 
- $D = date(d);
- $M = date(m);
- $Y = date(Y);
 
   $Factura = $info->Factura;
   $NumProyecto = $info->NumProyecto;
   $CONCEPTO_FACTURA =  $info->CONCEPTO_FACTURA;
-  $Fecha_Factura = "$D/$M/$Y";
+  $Fecha_Factura = $info->DateFactura;
   $MontoAntesdeIVA = $info->MontoAntesdeIVA;
   $IVA = $info->IVA;
-  $Fecha_recepcion = "01/01/1900";
-  $Fecha_TENTATIVA_de_pago = "01/01/1900";
+  $Fecha_recepcion = $info->DateTentativa;
+  $Fecha_TENTATIVA_de_pago = $info->DateRecepcion;
   $Notas = "";
   $Trimestre = "";
   $Producto = "";

@@ -24,7 +24,9 @@ switch ($_GET[o]) {
             $info->SeFacturaA = $_POST[txtRasonSocial];
             $info->RFC = $_POST[txtRFC];
             $info->DirFiscal = $_POST[txtDir];
-
+            $info->DateFactura = $_POST[txtDateFactura];
+            $info->DateTentativa = $_POST[txtDateTentativa];
+            $info->DateRecepcion = $_POST[txtDateRecepcion];
             echo $objF->ingresar_factura($info);
   break;
   default:

@@ -157,7 +157,10 @@ function guardar_factura()
         cboEmpresa:$('#cboEmpresa').val(),
         txtRasonSocial:$('#txtRasonSocial').val(),
         txtRFC:$('#txtRFC').val(),
-        txtDir:$('#txtDir').val()
+        txtDir:$('#txtDir').val(),
+        txtDateFactura:$('#txtDateFactura').val(),
+        txtDateTentativa:$('#txtDateTentativa').val(),
+        txtDateRecepcion:$('#txtDateRecepcion').val()
       };
       $.ajax({
              		url:'./scripts/oper_add_factura.php?o=2',
