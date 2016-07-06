@@ -262,7 +262,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                       <div class="col-lg-1">
                                           Facturación
                                       </div>
-                                      <div class="col-lg-3">
+                                      <div class="col-lg-2">
                                           <div class="input-group date">
                                               <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
                                             </div>
@@ -271,7 +271,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                       <div class="col-lg-1">
                                         Tentativa
                                       </div>
-                                      <div class="col-lg-3">
+                                      <div class="col-lg-2">
                                           <div class="input-group date">
                                               <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
                                             </div>
@@ -281,7 +281,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                       <div class="col-lg-1">
                                           Recepción
                                       </div>
-                                      <div class="col-lg-3">
+                                      <div class="col-lg-2">
                                           <div class="input-group date">
                                               <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
                                             </div>
