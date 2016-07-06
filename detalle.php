@@ -66,10 +66,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
-  <!--Animate.css [ OPTIONAL ]-->
-  <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
-  <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
+
 
   <!--SCRIPT-->
   <!--=================================================-->
@@ -421,9 +418,12 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                       Facturación
                                   </div>
                                   <div class="col-lg-3">
+                                    <div id="demo-dp-component">
                                       <div class="input-group date">
-                                          <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $FFactura; ?>">
-                                        </div>
+                                        <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" value="<?php echo $FFactura; ?>">
+                                        <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                                 <div cols="row">
@@ -431,9 +431,12 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                     Tentativa
                                   </div>
                                   <div class="col-lg-3">
+                                    <div id="demo-dp-component">
                                       <div class="input-group date">
-                                          <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $FTentativa; ?>">
-                                        </div>
+                                        <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control"  value="<?php echo $FTentativa; ?>">
+                                        <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                                 <div cols="row">
@@ -441,8 +444,11 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                       Recepción
                                   </div>
                                   <div class="col-lg-3">
-                                      <div class="input-group date">
-                                          <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $FRecepcion; ?>">
+                                        <div id="demo-dp-component">
+                                          <div class="input-group date">
+                                            <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control"  value="<?php echo $FRecepcion; ?>">
+                                            <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                          </div>
                                         </div>
                                   </div>
                                 </div>
@@ -850,6 +856,10 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
 	</script>
-
+  <script>
+  $(document).ready(function() {
+  $('#demo-dp-component .input-group.date').datepicker({autoclose:true});
+  });
+  </script>
 </body>
 </html>
