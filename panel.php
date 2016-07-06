@@ -175,7 +175,7 @@ session_start();
 					<!--===================================================-->
 					<div id="DEnvudo" class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Enbudo</h3>
+							<h3 class="panel-title">Embudo</h3>
 						</div>
             <div id="load_enbudo"><img src="img/pageloader.gif"/></div>
 						<div class="panel-body" id="rows-enbudo">
