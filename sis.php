@@ -1,6 +1,6 @@
 <?php
 
- $path = "$_SERVER[DOCUMENT_ROOT]/administracion";
+ $path = "$_SERVER[DOCUMENT_ROOT]/cobranza";
 
 
 ?>
