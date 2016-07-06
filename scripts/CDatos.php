@@ -110,14 +110,21 @@ class panel extends poolConnecion
       $TotalEnEsperaDePago = 0;
       $ContadorEnEsperaDePago = 0;
       $objPaso2 = new poolConnecion();
-      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere order by [Fecha TENTATIVA de pago] desc";
+      $colorFill =  "panel-primary";
+      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere order by [Fecha TENTATIVA de pago] desc";
       $con=$objPaso2->ConexionSQLSAP();
       $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                      if(!empty($fila[NumProyecto]))
                      {
-
+                          $DiasTrascurridos = $fila[DiasTrascurridos];
+                          if ($DiasTrascurridos>0) {
+                            $colorFill =  "panel-danger";
+                          }
+                          else {
+                            $colorFill =  "panel-primary";
+                          }
                           $Estatus = $fila[Estatus];
                           switch ($Estatus) {
                             case 'Provisionada':
@@ -128,7 +135,7 @@ class panel extends poolConnecion
                                                 $Fecha = $fila[FechaPago];
                                                 $row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
                                                                 <div class=\"col-lg-*\">
-                                                                  <div class=\"panel panel-primary panel-colorful\">
+                                                                  <div class=\"panel $colorFill panel-colorful\">
                                                                          <div class=\"pad-all media\">
                                                                            <div class=\"media-left\">
                                                                              <span class=\"icon-wrap icon-wrap-xs\">
