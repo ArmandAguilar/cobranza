@@ -108,7 +108,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
           </script>";
     }
    ?>
-  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post" class="uk-form">
+  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post" >
     <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="<?php echo $_GET[NoProyecto]; ?>">
 
 	<div id="container" class="effect mainnav-out">
@@ -409,19 +409,19 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                         <textarea id="txtMensaje" name="txtMensaje" rows="9" class="form-control" placeholder="Tu mensaje aqui.."></textarea>
                       </div>
                   </div>
-                  <div class="panel-footer text-right">
-                              <div id="msjOk" class="alert alert-success fade in" style="display:none">
-                                        <button class="close" data-dismiss="alert"><span>×</span></button>
-                                        <strong>Oka</strong> Factura Creada con exito.
-                              </div>
-                              <div id="msjError" class="alert alert-danger fade in" style="display:none">
-    										              <button class="close" data-dismiss="alert"><span>×</span></button>
-    										              <strong>Oh!</strong> Verifique los datos de su factura
-    									        </div>
-                              <input type="button" value="Crear Factura" class="btn btn-primary" onclick="validar_datos();"/>
-    								</div>
-              </div>
 
+              </div>
+              <div class="panel-footer text-right">
+                          <div id="msjOk" class="alert alert-success fade in" style="display:none">
+                                    <button class="close" data-dismiss="alert"><span>×</span></button>
+                                    <strong>Oka</strong> Factura Creada con exito.
+                          </div>
+                          <div id="msjError" class="alert alert-danger fade in" style="display:none">
+                                  <button class="close" data-dismiss="alert"><span>×</span></button>
+                                  <strong>Oh!</strong> Verifique los datos de su factura
+                          </div>
+                          <input type="button" value="Crear Factura" class="btn btn-primary" onclick="validar_datos();"/>
+                </div>
           </div>
 
 				</div>

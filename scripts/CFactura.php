@@ -14,6 +14,7 @@ function ingresar_factura($info)
   $Fecha_Factura = $info->DateFactura;
   $MontoAntesdeIVA = $info->MontoAntesdeIVA;
   $IVA = $info->IVA;
+  $Fecha_Factura = $info->DateFactura;
   $Fecha_recepcion = $info->DateTentativa;
   $Fecha_TENTATIVA_de_pago = $info->DateRecepcion;
   $Notas = "";
