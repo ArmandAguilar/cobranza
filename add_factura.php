@@ -267,8 +267,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
                                   </div>
                             </div>
-                          </div>
-                          <div cols="row">
+                          
                             <div class="col-lg-1">
                               Tentativa
                             </div>
@@ -277,8 +276,8 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
                                   </div>
                             </div>
-                          </div>
-                          <div cols="row">
+
+
                             <div class="col-lg-1">
                                 Recepción
                             </div>
@@ -289,7 +288,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                           </div>
                           <hr>
-                          <p></p>
+
                         <div class="row">
                             <div class="col-md-8">
                               <div id="DivtxtConcepto" class="form-group has-feedback">
