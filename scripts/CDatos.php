@@ -353,7 +353,7 @@ class panel extends poolConnecion
                   $Importe = 0;
                   $ContadorProvisionada = 0;
                   $objPasoEdo = new poolConnecion();
-                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' order by  FechaPago $Orden";
+                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' order by  FechaPago $Orden";
                   $con=$objPasoEdo->ConexionSQLSAP();
                   $RSet=$objPasoEdo->QuerySQLSAP($Sql,$con);
                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -361,6 +361,13 @@ class panel extends poolConnecion
 
                                 if(!empty($fila[NumProyecto]))
                                 {
+                                  $DiasTrascurridos = $fila[DiasTrascurridos];
+                                  if ($DiasTrascurridos>0) {
+                                    $colorFill =  "panel-danger";
+                                  }
+                                  else {
+                                    $colorFill =  "panel-primary";
+                                  }
                                   $Importe = number_format($fila[Importe], 2, '.', ',');
                                   $TotalProvisionada += $fila[Importe];
                                   $Proyecto =  substr($fila[NomProyecto], 0, 15);
@@ -368,7 +375,7 @@ class panel extends poolConnecion
                                   $Fecha = $fila[FechaPago];
                                    $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
                                                    <div class=\"col-lg-*\">
-                                                     <div class=\"panel panel-purple panel-colorful\">
+                                                     <div class=\"panel $colorFill panel-colorful\">
                                                             <div class=\"pad-all media\">
                                                               <div class=\"media-left\">
                                                                 <span class=\"icon-wrap icon-wrap-xs\">
