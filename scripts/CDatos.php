@@ -353,7 +353,7 @@ class panel extends poolConnecion
                   $Importe = 0;
                   $ContadorProvisionada = 0;
                   $objPasoEdo = new poolConnecion();
-                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' order by  FechaPago $Orden";
+                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' order by  [Fecha TENTATIVA de pago] $Orden";
                   $con=$objPasoEdo->ConexionSQLSAP();
                   $RSet=$objPasoEdo->QuerySQLSAP($Sql,$con);
                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
