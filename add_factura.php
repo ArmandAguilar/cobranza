@@ -75,7 +75,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
   <!--Animate.css [ OPTIONAL ]-->
-  <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
   <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
 
@@ -267,7 +267,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
                                   </div>
                             </div>
-                          
+
                             <div class="col-lg-1">
                               Tentativa
                             </div>
