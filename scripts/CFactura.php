@@ -166,7 +166,7 @@ function modificar_fecha($info)
   $txtDateFactura = $info->txtDateFactura;
   $txtDateTentativa = $info->txtDateTentativa;
   $txtDateRecepcion = $info->txtDateRecepcion;
-  $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [Fecha Factura] = '$txtDateFactura',[Fecha de recepción] = '$txtDateTentativa',[Fecha TENTATIVA de pago] = '$txtDateRecepcion' Where IdFacturacion='$txtIdFacturacion'";
+  $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [Fecha Factura] = '$txtDateFactura',[Fecha de recepción] = '$txtDateRecepcion',[Fecha TENTATIVA de pago] = '$txtDateTentativa' Where IdFacturacion='$txtIdFacturacion'";
 
   $objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();

@@ -110,7 +110,7 @@ class panel extends poolConnecion
       $TotalEnEsperaDePago = 0;
       $ContadorEnEsperaDePago = 0;
       $objPaso2 = new poolConnecion();
-      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere";
+      $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere order by [Fecha TENTATIVA de pago] desc";
       $con=$objPaso2->ConexionSQLSAP();
       $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
