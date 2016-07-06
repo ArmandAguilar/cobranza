@@ -75,11 +75,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
   <!--Animate.css [ OPTIONAL ]-->
-
   <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
-  <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
-
-
 
   <!--SCRIPT-->
   <!--=================================================-->
