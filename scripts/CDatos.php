@@ -162,7 +162,7 @@ class panel extends poolConnecion
                                                   $Fecha = $fila[FechaPago];
                                                    $row_col3New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteElaborada','Elaborada');\" style=\"cursor:pointer\">
                                                                    <div class=\"col-lg-*\">
-                                                                     <div class=\"panel panel-primary panel-colorful\">
+                                                                     <div class=\"panel $colorFill panel-colorful\">
                                                                             <div class=\"pad-all media\">
                                                                               <div class=\"media-left\">
                                                                                 <span class=\"icon-wrap icon-wrap-xs\">
@@ -189,7 +189,7 @@ class panel extends poolConnecion
                                               $Fecha = $fila[FechaPago];
                                                $row_col4New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteRecibida','Recibida');\" style=\"cursor:pointer\">
                                                                <div class=\"col-lg-*\">
-                                                                 <div class=\"panel panel-primary panel-colorful\">
+                                                                 <div class=\"panel $colorFill panel-colorful\">
                                                                         <div class=\"pad-all media\">
                                                                           <div class=\"media-left\">
                                                                             <span class=\"icon-wrap icon-wrap-xs\">
@@ -216,7 +216,7 @@ class panel extends poolConnecion
                                             $Fecha = $fila[FechaPago];
                                              $row_col5New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteAprobada','Aprobada');\" style=\"cursor:pointer\">
                                                              <div class=\"col-lg-*\">
-                                                               <div class=\"panel panel-primary panel-colorful\">
+                                                               <div class=\"panel $colorFill panel-colorful\">
                                                                       <div class=\"pad-all media\">
                                                                         <div class=\"media-left\">
                                                                           <span class=\"icon-wrap icon-wrap-xs\">
@@ -241,9 +241,12 @@ class panel extends poolConnecion
                                               $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                               $ContadorEnEsperaDePago ++;
                                               $Fecha = $fila[FechaPago];
+                                              if ($colorFill == "panel-primary") {
+                                                    $colorFill="panel-success";
+                                              }
                                                $row_col6New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteEnEsperaDePago','EnEsperaDePago');\" style=\"cursor:pointer\">
                                                                <div class=\"col-lg-*\">
-                                                                 <div class=\"panel panel-success panel-colorful\">
+                                                                 <div class=\"panel $colorFill panel-colorful\">
                                                                         <div class=\"pad-all media\">
                                                                           <div class=\"media-left\">
                                                                             <span class=\"icon-wrap icon-wrap-xs\">
