@@ -75,7 +75,11 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
   <!--Animate.css [ OPTIONAL ]-->
+  <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="js/uikit/css/components/datepicker.min.css" />
+  <link rel="stylesheet" href="js/uikit/css/uikit.min.css" />
+
+
 
   <!--SCRIPT-->
   <!--=================================================-->
@@ -254,34 +258,34 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                               </div>
                         </div>
                         <hr>
-                          <div cols="row">
-                            <div class="col-lg-1">
-                                Facturación
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="input-group date">
-                                    <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
-                                  </div>
-                            </div>
+                          <div class="row">
+                                      <div class="col-lg-1">
+                                          Facturación
+                                      </div>
+                                      <div class="col-lg-3">
+                                          <div class="input-group date">
+                                              <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
+                                            </div>
+                                      </div>
 
-                            <div class="col-lg-1">
-                              Tentativa
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="input-group date">
-                                    <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
-                                  </div>
-                            </div>
+                                      <div class="col-lg-1">
+                                        Tentativa
+                                      </div>
+                                      <div class="col-lg-3">
+                                          <div class="input-group date">
+                                              <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
+                                            </div>
+                                      </div>
 
 
-                            <div class="col-lg-1">
-                                Recepción
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="input-group date">
-                                    <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
-                                  </div>
-                            </div>
+                                      <div class="col-lg-1">
+                                          Recepción
+                                      </div>
+                                      <div class="col-lg-3">
+                                          <div class="input-group date">
+                                              <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control" data-uk-datepicker="{format:'DD-MM-YYYY'}" value="<?php echo $Fecha_Factura; ?>">
+                                            </div>
+                                      </div>
                           </div>
                           <hr>
 
