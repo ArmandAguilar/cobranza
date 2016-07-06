@@ -39,7 +39,7 @@ function ingresar_factura($info)
     $RSet=$objGurdar->QuerySQLSAP($sql,$con);
     $objGurdar->CerrarSQLSAP($RSet,$con);
 
-    return $RSet;
+    return $sql;
 }
 function modificar_datos($info)
 {
