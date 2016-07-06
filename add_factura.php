@@ -289,6 +289,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                             </div>
                           </div>
                           <hr>
+                          <p></p>
                         <div class="row">
                             <div class="col-md-8">
                               <div id="DivtxtConcepto" class="form-group has-feedback">
