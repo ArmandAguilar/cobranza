@@ -567,7 +567,12 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
  </form>
  <script>
 $(document).ready(function() {
- $('#demo-dp-component .input-group.date').datepicker({autoclose:true});
+ $('#demo-dp-component .input-group.date').datepicker({
+   format: "dd/mm/yyyy",
+  todayBtn: "linked",
+  autoclose: true,
+  todayHighlight: true
+ });
 });
 </script>
 </body>

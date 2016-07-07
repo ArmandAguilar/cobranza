@@ -268,7 +268,6 @@ function cambiar_fechas()
             data:losdatos,
             success:function(data)
                    {
-                     alert(data);
                      $.niftyNoty({
                        type: 'success',
                        icon : 'fa fa-check',
