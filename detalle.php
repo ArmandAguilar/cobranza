@@ -859,7 +859,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <script>
   $(document).ready(function() {
   $('#demo-dp-component .input-group.date').datepicker({
-    format: "dd MM, yyyy",
+    format: "dd/mm/yyyy",
 	  todayBtn: "linked",
 	  autoclose: true,
 	  todayHighlight: true
