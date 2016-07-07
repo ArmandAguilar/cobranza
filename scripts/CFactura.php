@@ -168,10 +168,10 @@ function modificar_fecha($info)
   $txtDateRecepcion = $info->txtDateRecepcion;
   $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [Fecha Factura] = '$txtDateFactura',[Fecha de recepción] = '$txtDateRecepcion',[Fecha TENTATIVA de pago] = '$txtDateTentativa' Where IdFacturacion='$txtIdFacturacion'";
 
-  $objGurdar = new poolConnecion();
+  /*$objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);
+  $objGurdar->CerrarSQLSAP($RSet,$con);*/
   return $sqlUpdate;
 }
 function relacionar_usuarios($info)
