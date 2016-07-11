@@ -41,6 +41,8 @@ class panel extends poolConnecion
                                                      {
                                                        $ImporteFinalYears = number_format($fila[ImporteFinal], 2, '.', ',');
                                                        $TotalGralYears += $fila[ImporteFinal];
+                                                       $TotalGral += $fila[ImporteFinal];
+                                                       $contadorPoyectos ++;
                                                        $contadorPoyectosYears ++;
                                                        if ($Perfil == "Admin")
                                                         {
@@ -90,9 +92,9 @@ class panel extends poolConnecion
                                   $objForYear->CerrarSQLSAP($RSet,$con);
                                   $rowFinal .="<div class=\"panel panel-dark panel-colorful media pad-all\">
                                                   <div class=\"media-body\">
-                                                      <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears)</p>
+                                                      <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears)- $value</p>
                                                       <p class=\"text-1x mar-no text-thin\">$ $TotalGralYears </p>
-                                                      <p class=\"text-1x mar-no text-thin\">$value </p>
+
                                                       </div>
                                               </div>
                                               $row_col1";
