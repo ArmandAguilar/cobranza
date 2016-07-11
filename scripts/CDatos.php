@@ -17,7 +17,7 @@ class panel extends poolConnecion
           }
           $i = 0;
           $objYears = new poolConnecion();
-          $Sql="SELECT DISTINCT Years FROM [SAP].[dbo].[RVEdoCtaGeneral] $WhereRVEdoCtaGeneral";
+          $Sql="SELECT DISTINCT Years FROM [SAP].[dbo].[RVEdoCtaGeneral] $WhereRVEdoCtaGeneral order by Years asc";
           $con=$objYears->ConexionSQLSAP();
           $RSet=$objYears->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -32,7 +32,7 @@ class panel extends poolConnecion
                   {
                                   $contadorPoyectosYears = 0;
                                   $objForYear = new poolConnecion();
-                                  $Sql="SELECT [NumProyecto],[NomProyecto],[Cuentas por facturar AIVA]  As ImporteFinal FROM [SAP].[dbo].[RVEdoCtaGeneral] Where Years = '$value' $WhereRVEdoCtaGeneral order by Years asc";
+                                  $Sql="SELECT [NumProyecto],[NomProyecto],[Cuentas por facturar AIVA]  As ImporteFinal FROM [SAP].[dbo].[RVEdoCtaGeneral] Where Years = '$value' $WhereRVEdoCtaGeneral";
                                   $con=$objForYear->ConexionSQLSAP();
                                   $RSet=$objForYear->QuerySQLSAP($Sql,$con);
                                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
