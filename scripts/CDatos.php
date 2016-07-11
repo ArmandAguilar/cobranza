@@ -32,7 +32,7 @@ class panel extends poolConnecion
                   {
                                   $contadorPoyectosYears = 0;
                                   $objForYear = new poolConnecion();
-                                  $Sql="SELECT [NumProyecto],[NomProyecto],[Cuentas por facturar AIVA]  As ImporteFinal FROM [SAP].[dbo].[RVEdoCtaGeneral] Where Years = '$value' $WhereRVEdoCtaGeneral order by Years desc";
+                                  $Sql="SELECT [NumProyecto],[NomProyecto],[Cuentas por facturar AIVA]  As ImporteFinal FROM [SAP].[dbo].[RVEdoCtaGeneral] Where Years = '$value' $WhereRVEdoCtaGeneral order by Years asc";
                                   $con=$objForYear->ConexionSQLSAP();
                                   $RSet=$objForYear->QuerySQLSAP($Sql,$con);
                                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
