@@ -355,9 +355,9 @@ class panel extends poolConnecion
 
            </div>";
                        return  $row;
-         }
+   }
 
-  }
+
   function enbudo($info)
     {
       $WhereRVEdoCtaGeneral = "";
