@@ -26,7 +26,7 @@ class panel extends poolConnecion
                       $i++;
                  }
           $objYears->CerrarSQLSAP($RSet,$con);
-          foreach ($variable as $key => $value)
+          foreach ($array as $key => $value)
            {
                   if (!empty($value))
                   {
