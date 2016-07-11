@@ -26,7 +26,7 @@ class panel extends poolConnecion
                       $i++;
                  }
           $objYears->CerrarSQLSAP($RSet,$con);
-          foreach ($variable as $key => $value)
+          /*foreach ($variable as $key => $value)
            {
                   if (!empty($value))
                   {
@@ -98,7 +98,7 @@ class panel extends poolConnecion
                                               $row_col1";
                                   $row_col1 ="";
                   }
-           }
+           }*/
            #Super modificacion
            $ImporteProvisionada = 0;
            $ContadorProvisionada = 0;
