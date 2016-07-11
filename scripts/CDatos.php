@@ -3,7 +3,7 @@
 class panel extends poolConnecion
 {
 
-  function primera_columna()
+  function primera_columna($info)
   {
           #buscamo todos los años para formar los cuadros
           $WhereRVEdoCtaGeneral = "";

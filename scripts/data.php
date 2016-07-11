@@ -8,7 +8,7 @@ switch ($_GET[v]) {
   case 'enbudo':
             $info->IdUser=0;
             $info->Perfil="Admin";
-            echo $obj->enbudo($info);
+            echo $obj->primera_columna($info);
     break;
   case 'Provisionada':
                     echo $obj->filtro_estado($_GET[v],$_POST[Orden]);
