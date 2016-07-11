@@ -22,7 +22,7 @@ class panel extends poolConnecion
           $RSet=$objYears->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                  {
-                      $array[$i] = $fila[Year];
+                      $array[$i] = $fila[Years];
                       $i++;
                  }
           $objYears->CerrarSQLSAP($RSet,$con);
