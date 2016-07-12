@@ -15,8 +15,7 @@ function LiderNombre($id)
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-                $Nombre = $filaA[Nombre];
-                $Nombre .= $filaA[Apellidos];
+                $Nombre = "$filaA[Nombre] $filaA[Apellidos]";
              }
       if (!empty($Nombre)) {
 
@@ -56,7 +55,6 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                               'NomProyecto' => "$NomProyecto",
                               'Lider' => "$Lider"
                     );
-
         }
 echo json_encode($arr);
 
