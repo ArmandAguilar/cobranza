@@ -18,6 +18,12 @@ function LiderNombre($id)
                 $Nombre = $filaA[Nombre];
                 $Nombre .= $filA[Apellidos];
              }
+      if (!empty($Nombre)) {
+
+      }
+      else {
+          $Nombre = "No Asignado";
+      }
       return $Nombre;
 }
 $contador = 0;
