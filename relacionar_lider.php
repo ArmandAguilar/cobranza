@@ -75,7 +75,13 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
   <!--Demo [ DEMONSTRATION ]-->
   <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
 
-
+  <!--Page Load Progress Bar [ OPTIONAL ]-->
+  <link href="plugins/pace/pace.min.css" rel="stylesheet">
+  <script src="plugins/pace/pace.min.js"></script>
+  <!--Bootstrap Table [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+  <!--X-editable [ OPTIONAL ]-->
+  <link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet"
 
 
   <!--SCRIPT-->
@@ -215,6 +221,39 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
           </div>
           <div class="panel-footer text-right">
                 <button class="btn btn-primary" onclick="relacionar_lider();">Asignar</button>
+         </div>
+					</div>
+          <div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Relacionar Lider</h3>
+						</div>
+						<div class="panel-body">
+                      <div col="row">
+                         <div col="col-sm-2">
+                            Lider:
+                         </div>
+                          <div col="col-sm-4">
+                            <select id="cboUsuario" name="cboUsuario" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                                  <option value="0">--------Usuarios-------</option>
+                                  <?php echo  $cboUsuarios; ?>
+                                </select>
+                          </div>
+                      </div>
+                      <div col="row">
+                         <div col="col-sm-2">
+                            Maestro:
+                         </div>
+                          <div col="col-sm-4">
+                            <select id="cboMaestro" name="cboMaestro" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
+                                  <option value="0">--------Maestros-------</option>
+                                  <?php echo $cboMaestros; ?>
+                                </select>
+                          </div>
+                      </div>
+
+          </div>
+          <div class="panel-footer text-right">
+                
          </div>
 					</div>
 				</div>
