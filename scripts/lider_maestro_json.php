@@ -8,13 +8,15 @@ include("$path/libs/conexion.php");
 function LiderNombre($id)
 {
       #Obtenemos el avatar
+      $Nombre = "";
       $objAvatar = new poolConnecion();
       $Sql="SELECT [Nombre],[Apellidos] FROM [Northwind].[dbo].[Usuarios] Where Id='$id'";
       $con=$objAvatar->ConexionSQLNorthwind();
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-                $Nombre = "$filaA[Nombre],$fila[Apellidos]";
+                $Nombre = $filaA[Nombre];
+                $Nombre = $filA[Apellidos];
              }
        if (!empty($Nombre)) {
 
@@ -55,7 +57,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                               'NumMaestro' => "$NumMaestro",
                               'NumProyecto' => "$NumProyecto",
                               'NomProyecto' => "$NomProyecto",
-                              'Lider' => "$Lider - $fila[IdLider]"
+                              'Lider' => "$Lider"
                     );
 
         }
