@@ -4,6 +4,8 @@ session_start();
 include("../sis.php");
 include("$path/libs/conexion.php");
 
+if if(empty($_SESSION[IdUsuario])){
+  # code...
 
 function LiderNombre($id)
 {
@@ -57,5 +59,5 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                     );
         }
 echo json_encode($arr);
-
+}
 ?>
