@@ -4,7 +4,7 @@ session_start();
 include("../sis.php");
 include("$path/libs/conexion.php");
 
-if if(empty($_SESSION[IdUsuario])){
+if(empty($_SESSION[IdUsuario])){
   # code...
 
 function LiderNombre($id)
