@@ -225,36 +225,45 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 					</div>
           <div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Relacionar Lider</h3>
+							<h3 class="panel-title">Proyectos & Lideres</h3>
 						</div>
 						<div class="panel-body">
-                      <div col="row">
-                         <div col="col-sm-2">
-                            Lider:
-                         </div>
-                          <div col="col-sm-4">
-                            <select id="cboUsuario" name="cboUsuario" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                                  <option value="0">--------Usuarios-------</option>
-                                  <?php echo  $cboUsuarios; ?>
-                                </select>
-                          </div>
-                      </div>
-                      <div col="row">
-                         <div col="col-sm-2">
-                            Maestro:
-                         </div>
-                          <div col="col-sm-4">
-                            <select id="cboMaestro" name="cboMaestro" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                                  <option value="0">--------Maestros-------</option>
-                                  <?php echo $cboMaestros; ?>
-                                </select>
-                          </div>
-                      </div>
+              <table data-toggle="table"
+                   data-url="scripts/datajson.php"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-page-list="[20, 30, 60]"
+                   data-page-size="15"
+                   data-pagination="true" data-show-pagination-switch="true">
+                <thead>
+                  <tr>
+                    <th data-field="id" data-switchable="false">No Fila</th>
+                    <th data-field="NumMaestro" data-switchable="false">Num. Maestro</th>
+                    <th data-field="NumProyecto" data-switchable="false">Num. Proyecto</th>
+                    <th data-field="NomProyecto" data-switchable="false">Proyetco</th>
+                    <th data-field="Empresa" data-switchable="false">Empresa</th>
+                    <th data-field="FacturaForta" data-switchable="false">Factura</th>
+                    <th data-field="Estatus" data-switchable="false">Estado</th>
+                    <th data-field="FechaFactura" data-switchable="false">Fecha Factura</th>
+                    <th data-field="FechaTentativa" data-switchable="false">Fecha Tentativa</th>
+                    <th data-field="FechaRecepcion" data-switchable="false">Fehca Recepción</th>
+                    <th data-field="MontoAntesIva" data-switchable="false">Monto</th>
+                    <th data-field="IVA" data-switchable="true">Iva</th>
+                    <th data-field="MontoCIVA" data-switchable="true">Monto Con Iva</th>
+                    <th data-field="SumaAbono" data-switchable="true">Suma a Abono</th>
+                    <th data-field="SaldoPorCobrar" data-switchable="true">Saldo por Cobrar</th>
+                    <th data-field="TrimestreFactura" data-switchable="true">Trimestre</th>
+                    <th data-field="RFC" data-switchable="true">true</th>
+                    <th data-field="SeFacturaA" data-switchable="true">Se Factura A</th>
+                    <th data-field="QuienFactura" data-switchable="true">Quien Factura</th>
+                  </tr>
+                </thead>
+
+              </table>
 
           </div>
-          <div class="panel-footer text-right">
-                
-         </div>
 					</div>
 				</div>
 				<!--===================================================-->
