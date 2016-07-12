@@ -6,7 +6,7 @@ include("$path/libs/conexion.php");
 
 $contador = 0;
 $arr = array();
-/*$objPaso2 = new poolConnecion();
+$objPaso2 = new poolConnecion();
 $Sql="SELECT
       [SAP].[dbo].[RelacionMaestrosEsclavos].[NumMaestro] As NumMaestro,
       [SAP].[dbo].[RelacionMaestrosEsclavos].[NumProyecto] As NumProyecto,
@@ -35,6 +35,6 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                     );
 
         }
-echo json_encode($arr);*/
-}
+echo json_encode($arr);
+
 ?>
