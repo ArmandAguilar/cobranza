@@ -16,15 +16,10 @@ function LiderNombre($id)
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                 $Nombre = $filaA[Nombre];
-                $Nombre = $filA[Apellidos];
+                $Nombre .= $filA[Apellidos];
              }
-       if (!empty($Nombre)) {
 
-       }
-       else {
-         $Nombre = "No Asigando";
-       }
-      return $Nombre;
+      return $Sql;
 }
 $contador = 0;
 $arr = array();
@@ -48,10 +43,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
               $NumMaestro = $fila[NumMaestro];
               $NumProyecto = $fila[NumProyecto];
               $NomProyecto = $fila[NomProyecto];
-
-                $Lider = LiderNombre($fila[IdLider]);
-
-
+              $Lider = LiderNombre($fila[IdLider]);
               $contador++;
               $arr[] = array('id' => "$contador",
                               'NumMaestro' => "$NumMaestro",
