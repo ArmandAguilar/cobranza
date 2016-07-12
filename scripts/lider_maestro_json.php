@@ -11,13 +11,13 @@ function LiderNombre($id)
       $Nombre = "";
       $objAvatar = new poolConnecion();
       $Sql="SELECT [Nombre],[Apellidos] FROM [Northwind].[dbo].[Usuarios] Where Id='$id'";
-      $con=$objAvatar->ConexionSQLNorthwind();
+      /*$con=$objAvatar->ConexionSQLNorthwind();
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                 $Nombre = $filaA[Nombre];
                 $Nombre .= $filA[Apellidos];
-             }
+             }*/
 
       return $Sql;
 }
