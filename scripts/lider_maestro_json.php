@@ -58,7 +58,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
                               'NumMaestro' => "$NumMaestro",
                               'NumProyecto' => "$NumProyecto",
                               'NomProyecto' => "$NomProyecto",
-                              'Lider' => "$Lider"
+                              'Lider' => "$Lider - $fila[IdLider]"
                     );
 
         }
