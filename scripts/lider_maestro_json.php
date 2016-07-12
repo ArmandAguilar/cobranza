@@ -20,7 +20,7 @@ function LiderNombre($id)
 
        }
        else {
-         $Nombre = "-";
+         $Nombre = "No Asigando";
        }
       return $Nombre;
 }
