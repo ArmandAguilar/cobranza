@@ -16,7 +16,7 @@ function LiderNombre($id)
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                 $Nombre = $filaA[Nombre];
-                $Nombre .= $filA[Apellidos];
+                $Nombre .= $filaA[Apellidos];
              }
       if (!empty($Nombre)) {
 
