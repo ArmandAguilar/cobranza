@@ -90,12 +90,12 @@ class panel extends poolConnecion
                                                      }
                                          }
                                   $objForYear->CerrarSQLSAP($RSet,$con);
+                                  $TotalGralYearsF = number_format($TotalGralYears, 2, '.', ',');
                                   $rowFinal .="<div class=\"panel panel-dark panel-colorful media pad-all\">
-                                                  <div class=\"media-body\">
-                                                      <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears)- $value</p>
-                                                      <p class=\"text-1x mar-no text-thin\">$ $TotalGralYears </p>
-
-                                                      </div>
+                                                    <div class=\"media-body\">
+                                                        <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears) - $value</p>
+                                                        <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsF </p>
+                                                    </div>
                                               </div>
                                               $row_col1";
                                   $row_col1 ="";
@@ -141,7 +141,8 @@ class panel extends poolConnecion
                                                      $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                      $ContadorProvisionada ++;
                                                      $Fecha = $fila[FechaPago];
-                                                     $row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
+                                                     $NomProyecto=str_replace('"','', $fila[NomProyecto]);
+                                                     $row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
                                                                      <div class=\"col-lg-*\">
                                                                        <div class=\"panel $colorFill panel-colorful\">
                                                                               <div class=\"pad-all media\">
@@ -168,7 +169,8 @@ class panel extends poolConnecion
                                                        $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                        $ContadorElaborada ++;
                                                        $Fecha = $fila[FechaPago];
-                                                        $row_col3New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteElaborada','Elaborada');\" style=\"cursor:pointer\">
+                                                       $NomProyecto=str_replace('"','', $fila[NomProyecto]);
+                                                        $row_col3New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteElaborada','Elaborada');\" style=\"cursor:pointer\">
                                                                         <div class=\"col-lg-*\">
                                                                           <div class=\"panel $colorFill panel-colorful\">
                                                                                  <div class=\"pad-all media\">
@@ -195,7 +197,8 @@ class panel extends poolConnecion
                                                    $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                    $ContadorRecibida ++;
                                                    $Fecha = $fila[FechaPago];
-                                                    $row_col4New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteRecibida','Recibida');\" style=\"cursor:pointer\">
+                                                   $NomProyecto=str_replace('"','', $fila[NomProyecto]);
+                                                    $row_col4New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteRecibida','Recibida');\" style=\"cursor:pointer\">
                                                                     <div class=\"col-lg-*\">
                                                                       <div class=\"panel $colorFill panel-colorful\">
                                                                              <div class=\"pad-all media\">
@@ -222,7 +225,8 @@ class panel extends poolConnecion
                                                  $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                  $ContadorAprobada ++;
                                                  $Fecha = $fila[FechaPago];
-                                                  $row_col5New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteAprobada','Aprobada');\" style=\"cursor:pointer\">
+                                                 $NomProyecto=str_replace('"','', $fila[NomProyecto]);
+                                                  $row_col5New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteAprobada','Aprobada');\" style=\"cursor:pointer\">
                                                                   <div class=\"col-lg-*\">
                                                                     <div class=\"panel $colorFill panel-colorful\">
                                                                            <div class=\"pad-all media\">
@@ -233,7 +237,7 @@ class panel extends poolConnecion
                                                                              </div>
                                                                              <div class=\"media-body\">
                                                                                <p class=\"h4 text-thin media-heading\">$ImporteAprobada</p>
-                                                                               <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                                               <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $NomProyecto</small>
                                                                                <small class=\"text-thin\">$Fecha</small>
                                                                              </div>
                                                                            </div>
@@ -249,10 +253,11 @@ class panel extends poolConnecion
                                                    $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                    $ContadorEnEsperaDePago ++;
                                                    $Fecha = $fila[FechaPago];
+                                                   $NomProyecto=str_replace('"','', $fila[NomProyecto]);
                                                    if ($colorFill == "panel-primary") {
                                                          $colorFill="panel-success";
                                                    }
-                                                    $row_col6New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$ImporteEnEsperaDePago','EnEsperaDePago');\" style=\"cursor:pointer\">
+                                                    $row_col6New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteEnEsperaDePago','EnEsperaDePago');\" style=\"cursor:pointer\">
                                                                     <div class=\"col-lg-*\">
                                                                       <div class=\"panel $colorFill panel-colorful\">
                                                                              <div class=\"pad-all media\">
@@ -263,7 +268,7 @@ class panel extends poolConnecion
                                                                                </div>
                                                                                <div class=\"media-body\">
                                                                                  <p class=\"h4 text-thin media-heading\">$ImporteEnEsperaDePago</p>
-                                                                                 <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                                                 <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $NomProyecto</small>
                                                                                  <small class=\"text-thin\">$Fecha</small>
                                                                                </div>
                                                                              </div>
