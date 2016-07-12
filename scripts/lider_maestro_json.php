@@ -46,12 +46,9 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
               $NumMaestro = $fila[NumMaestro];
               $NumProyecto = $fila[NumProyecto];
               $NomProyecto = $fila[NomProyecto];
-              if (is_numeric($fila[IdLider])) {
+
                 $Lider = LiderNombre($fila[IdLider]);
-              }
-              else {
-                $Lider = "-";
-              }
+              
 
               $contador++;
               $arr[] = array('id' => "$contador",
