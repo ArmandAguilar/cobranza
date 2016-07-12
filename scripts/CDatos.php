@@ -66,7 +66,7 @@ class panel extends poolConnecion
                                                                       </div>";
                                                         }
                                                       else{
-                                                        $row_col1.= "<div class=\"row\"  style=\"cursor:pointer\">
+                                                        $row_col1.= "<div class=\"row\"  onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
                                                                         <div class=\"col-lg-*\">
                                                                           <div class=\"panel panel-warning panel-colorful\">
                                                                                  <div class=\"pad-all media\">
