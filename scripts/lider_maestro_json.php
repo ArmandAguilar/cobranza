@@ -4,12 +4,33 @@ session_start();
 include("../sis.php");
 include("$path/libs/conexion.php");
 
+
+function LiderNombre($id)
+{
+      #Obtenemos el avatar
+      $objAvatar = new poolConnecion();
+      $Sql="SELECT [Nombre],[Apellidos] FROM [Northwind].[dbo].[Usuarios] Where Id='$Id'";
+      $con=$objAvatar->ConexionSQLNorthwind();
+      $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
+       while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+             {
+                $Nombre = "$filaA[Nombre],$fila[Apellidos]";
+             }
+       if (!empty($Nombre)) {
+
+       }
+       else {
+         $Nombre = "-";
+       }
+      return $Nombre;
+}
 $contador = 0;
 $arr = array();
 $objPaso2 = new poolConnecion();
 $Sql="SELECT
       [SAP].[dbo].[RelacionMaestrosEsclavos].[NumMaestro] As NumMaestro,
       [SAP].[dbo].[RelacionMaestrosEsclavos].[NumProyecto] As NumProyecto,
+      [SAP].[dbo].[RelacionMaestrosEsclavos].[LP] As IdLider,
       [SAP].[dbo].[Presupuestos].[Proyecto] As NomProyecto
       FROM
       [SAP].[dbo].[RelacionMaestrosEsclavos],
@@ -25,7 +46,13 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
               $NumMaestro = $fila[NumMaestro];
               $NumProyecto = $fila[NumProyecto];
               $NomProyecto = $fila[NomProyecto];
-              $Lider = "Lider";
+              if (is_numeric($fila[IdLider])) {
+                $Lider = LiderNombre($fila[IdLider]);
+              }
+              else {
+                $Lider = "-";
+              }
+
               $contador++;
               $arr[] = array('id' => "$contador",
                               'NumMaestro' => "$NumMaestro",
