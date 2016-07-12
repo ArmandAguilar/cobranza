@@ -9,7 +9,7 @@ function LiderNombre($id)
 {
       #Obtenemos el avatar
       $objAvatar = new poolConnecion();
-      $Sql="SELECT [Nombre],[Apellidos] FROM [Northwind].[dbo].[Usuarios] Where Id='$Id'";
+      $Sql="SELECT [Nombre],[Apellidos] FROM [Northwind].[dbo].[Usuarios] Where Id='$id'";
       $con=$objAvatar->ConexionSQLNorthwind();
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -48,7 +48,7 @@ $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
               $NomProyecto = $fila[NomProyecto];
 
                 $Lider = LiderNombre($fila[IdLider]);
-              
+
 
               $contador++;
               $arr[] = array('id' => "$contador",
