@@ -39,7 +39,7 @@ $Sql="SELECT
       [SAP].[dbo].[RelacionMaestrosEsclavos],
       [SAP].[dbo].[Presupuestos]
       Where
-      [SAP].[dbo].[RelacionMaestrosEsclavos].[NumProyecto] = [SAP].[dbo].[Presupuestos].[NoProyecto]";
+      [SAP].[dbo].[RelacionMaestrosEsclavos].[NumProyecto] = [SAP].[dbo].[Presupuestos].[NoProyecto] order by [SAP].[dbo].[RelacionMaestrosEsclavos].[NumMaestro] desc";
 #$Sql="SELECT [NumProyecto],[NomProyecto],[Estatus],[Vendedor],[Empresa] FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar]";
 $con=$objPaso2->ConexionSQLSAP();
 $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
