@@ -210,7 +210,7 @@ include("$path/libs/conexion.php");
 
           </div>
           <div class="panel-footer text-right">
-                <button class="btn btn-primary" onclick="crear_maestro();">Asignar</button>
+                <button class="btn btn-primary" onclick="crear_maestro();">Crear</button>
          </div>
 					</div>
           <div class="panel">
@@ -243,7 +243,7 @@ include("$path/libs/conexion.php");
 
           </div>
           <div class="panel-footer text-right">
-                <button class="btn btn-primary" onclick="relacionar_maestroproyecto();">Asignar</button>
+                <button class="btn btn-primary" onclick="relacionar_maestroproyecto();">Relacionar</button>
          </div>
 					</div>
           <div class="panel">
@@ -252,7 +252,7 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
               <table data-toggle="table"
-                   data-url="scripts/lider_maestro_json.php"
+                   data-url="scripts/maestros_esclavos_relacion_json.php"
                    data-search="true"
                    data-show-refresh="true"
                    data-show-toggle="true"
