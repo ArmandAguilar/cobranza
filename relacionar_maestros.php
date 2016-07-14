@@ -190,18 +190,18 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
                       <div class="row">
-                         <div class="col-sm-2">
+                         <div class="col-sm-1">
                             No. Maestro:
                          </div>
-                          <div class="col-sm-3">
+                          <div class="col-lg-3">
                             <div id="DivtxtNoMaestro" class="form-group has-feedback">
                                 <input type="text" id="txtNoMaestro" name="txtNoMaestro" class="form-control" placeholder="Numero maestro ...">
                           </div>
                           </div>
-                          <div class="col-sm-2">
+                          <div class="col-sm-1">
                              Maestro:
                           </div>
-                           <div class="col-sm-4">
+                           <div class="col-lg-4">
                              <div id="DivtxtMaestro" class="form-group has-feedback">
                                  <input type="text" id="txtMaestro" name="txtMaestro" class="form-control" placeholder="Nombre maestro">
                            </div>
