@@ -266,7 +266,6 @@ include("$path/libs/conexion.php");
                     <th data-field="NumMaestro" data-switchable="false">Num. Maestro</th>
                     <th data-field="NumProyecto" data-switchable="false">Num. Proyecto</th>
                     <th data-field="NomProyecto" data-switchable="false">Proyetco</th>
-                    <th data-field="Lider" data-switchable="false">Lider</th>
                   </tr>
                 </thead>
 
