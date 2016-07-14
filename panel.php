@@ -115,9 +115,6 @@ session_start();
 							<a href="javascript:void(0);" onclick="load_cronograma();">
 								<i class="fa fa-rotate-right fa-lg"></i>
 							</a>
-              <a href="relacionar_maestro.php">
-								<i class="fa fa-building fa-lg"></i>
-							</a>
               <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
               ?>
               <a href="relacionar_lider.php">
@@ -127,6 +124,9 @@ session_start();
                   }
                 else{}
               ?>
+              <a href="relacionar_maestro.php">
+								<i class="fa fa-building fa-lg"></i>
+							</a>
 							<!--Notification dropdown menu-->
 
 						</li>
