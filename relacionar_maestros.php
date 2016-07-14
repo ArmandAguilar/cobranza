@@ -189,19 +189,19 @@ include("$path/libs/conexion.php");
 							<h3 class="panel-title">Crear un nuevo maestro</h3>
 						</div>
 						<div class="panel-body">
-                      <div col="row">
-                         <div col="col-sm-2">
+                      <div class="row">
+                         <div class="col-sm-2">
                             No. Maestro:
                          </div>
-                          <div col="col-sm-3">
+                          <div class="col-sm-3">
                             <div id="DivtxtNoMaestro" class="form-group has-feedback">
                                 <input type="text" id="txtNoMaestro" name="txtNoMaestro" class="form-control" placeholder="Numero maestro ...">
                           </div>
                           </div>
-                          <div col="col-sm-2">
+                          <div class="col-sm-2">
                              Maestro:
                           </div>
-                           <div col="col-sm-3">
+                           <div class="col-sm-3">
                              <div id="DivtxtMaestro" class="form-group has-feedback">
                                  <input type="text" id="txtMaestro" name="txtMaestro" class="form-control" placeholder="Nombre maestro">
                            </div>
