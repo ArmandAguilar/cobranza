@@ -124,7 +124,7 @@ session_start();
                   }
                 else{}
               ?>
-              <a href="relacionar_maestro.php">
+              <a href="relacionar_maestros.php">
 								<i class="fa fa-building fa-lg"></i>
 							</a>
 							<!--Notification dropdown menu-->
