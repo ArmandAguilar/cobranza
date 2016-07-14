@@ -3,7 +3,6 @@ ini_set('session.auto_start()','On');
 session_start();
 include("sis.php");
 include("$path/libs/conexion.php");
-
 #Todas los maestros
 $objCboMaestros = new poolConnecion();
 $SqlMaestros="SELECT [SAP].[dbo].[ProyectoMaestro].NumMaestro,[SAP].[dbo].[ProyectoMaestro].NomMaestro,[SAP].[dbo].[RelacionMaestrosEsclavos].NumProyecto,[SAP].[dbo].[RelacionMaestrosEsclavos].IdMaestroEsclavo FROM [SAP].[dbo].[ProyectoMaestro],[SAP].[dbo].[RelacionMaestrosEsclavos] Where [SAP].[dbo].[ProyectoMaestro].NumMaestro = [SAP].[dbo].[RelacionMaestrosEsclavos].NumMaestro order by [SAP].[dbo].[ProyectoMaestro].NumMaestro";
@@ -18,7 +17,6 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 					 $cboMaestros .= "<option value=\"$IdMaestroEsclavo\">$NumMaestro .- $NomMaestro (Proyecto : $NumProyecto)</option>";
 			 }
  $objCboMaestros->CerrarSQLSAP($RSet,$con);
-
  #Todas los lideres
  $objUsuarios = new poolConnecion();
  $SqlUsuarios="Select Id,Nombre,Apellidos From [Northwind].[dbo].[Usuarios] Where CobranzaPerfil ='Admin' or CobranzaPerfil='User' order by Nombre";
@@ -32,8 +30,6 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
  					  $cboUsuarios .= "<option value=\"$Id\">$Nombre $Apellidos</option>";
  			 }
   $objUsuarios->CerrarSQLSAP($RSet,$con);
-
-
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,10 +97,8 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                   window.location.href='logout.php'
             </script>";
     }
-
     if(empty($_SESSION[CobranzaPerfil]))
     {
-
       echo "<script>
                 window.location.href='logout.php'
           </script>";
