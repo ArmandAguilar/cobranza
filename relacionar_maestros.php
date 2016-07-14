@@ -252,7 +252,7 @@ include("$path/libs/conexion.php");
 						</div>
 						<div class="panel-body">
               <table data-toggle="table"
-                   data-url="scripts/maestros_esclavos_relacion_json.php"
+                   data-url="scripts/maestros_escalvos_relacion_json.php"
                    data-search="true"
                    data-show-refresh="true"
                    data-show-toggle="true"
