@@ -193,9 +193,9 @@ include("$path/libs/conexion.php");
                          <div class="col-sm-1">
                             No. Maestro:
                          </div>
-                          <div class="col-lg-2">
+                          <div class="col-lg-1">
                             <div id="DivtxtNoMaestro" class="form-group has-feedback">
-                                <input type="text" id="txtNoMaestro" name="txtNoMaestro" class="form-control" placeholder="Numero maestro ...">
+                                <input type="text" id="txtNoMaestro" name="txtNoMaestro" class="form-control" placeholder="0">
                           </div>
                           </div>
                           <div class="col-sm-1">
