@@ -27,10 +27,10 @@ class Maestro extends poolConnecion
         $Proyecto=$info->NoProyecto;
         $NumMaestro=$info->NumMaestro;
         $Sql2="INSERT INTO [SAP].[dbo].[RelacionMaestrosEsclavos] VALUES ('$NumMaestro' ,'$Proyecto','-')";
-        /*$obj = new poolConnecion();
+        $obj = new poolConnecion();
         $con=$obj->ConexionSQLSAP();
         $RSet=$obj->QuerySQLSAP($Sql2,$con);
-        $obj->CerrarSQLSAP($RSet,$con);*/
+        $obj->CerrarSQLSAP($RSet,$con);
         return $Sql2;
 
     }
