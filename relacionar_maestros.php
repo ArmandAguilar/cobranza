@@ -405,6 +405,6 @@ include("$path/libs/conexion.php");
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/relacionar_lider.js"></script>
+ <script src="js/relacionar_maestro_proyecto.js"></script>
 </body>
 </html>
