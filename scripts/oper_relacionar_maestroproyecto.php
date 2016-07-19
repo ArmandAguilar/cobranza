@@ -8,7 +8,7 @@ switch ($_GET[o]) {
 
             $info->NumMaestro=$_POST[txtNoMaestro];
             $info->NomMaestro=$_POST[txtMaestro];
-            echo $objM->guardar_maestro($info);
+            //echo $objM->guardar_maestro($info);
     break;
     case '2':
               $info->NoProyecto=$_POST[cboProyecto];
