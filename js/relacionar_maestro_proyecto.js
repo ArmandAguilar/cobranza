@@ -25,6 +25,7 @@ function crear_maestro()
                          container : 'floating',
                          timer : 3000
                        });
+                       alert(req,e,er);
              }
           });
 
