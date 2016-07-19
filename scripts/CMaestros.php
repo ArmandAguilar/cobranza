@@ -2,7 +2,7 @@
 class Maestro extends poolConnecion
 {
 
-    public function guardar_maestro($info)
+   function guardar_maestro($info)
     {
         $NumMaestro=$info->NumMaestro;
         $NomMaestro=$info->NomMaestro;
@@ -22,7 +22,7 @@ class Maestro extends poolConnecion
 
         return $Sql;
     }
-    public function guardar_relacion($info)
+   function guardar_relacion($info)
     {
         $Proyecto=$info->NoProyecto;
         $NumMaestro=$info->NumMaestro;
