@@ -1,5 +1,6 @@
 <?php
-class Maestro extends poolConnecion{
+class Maestro extends poolConnecion
+{
 
     public function guardar_maestro($info)
     {
@@ -13,8 +14,8 @@ class Maestro extends poolConnecion{
        $S=date(s);
 
         $Sql="INSERT INTO [SAP].[dbo].[ProyectoMaestro] VALUES ('$NumMaestro','$NomMaestro','0' ,'-','-','-' ,'-' ,'-' ,'-','-' ,'-','-','0' ,'0','$y-$m-$y $H:$M:$S','1')";
-        $obj = new poolConnecion();
-        /*$con=$obj->ConexionSQLSAP();
+        /*$obj = new poolConnecion();
+        $con=$obj->ConexionSQLSAP();
         $RSet=$obj->QuerySQLSAP($Sql,$con);
         $obj->CerrarSQLSAP($RSet,$con);*/
 
