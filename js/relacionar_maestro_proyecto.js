@@ -25,7 +25,7 @@ function crear_maestro()
                          container : 'floating',
                          timer : 3000
                        });
-                       alert(req,e,er);
+                       alert(req.toString(),e.toString(),er.toString());
              }
           });
 
