@@ -644,7 +644,7 @@ class panel extends poolConnecion
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectos)</p>
-                      <p class=\"text-1x mar-no text-thin\">$ $TotalGral Antes IVA</p>
+                      <p class=\"text-1x mar-no text-thin\">$ ($TotalGral) Antes IVA</p>
 
                     </div>
               </div>
