@@ -882,7 +882,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         </div>
         <!--Modal footer-->
         <div class="modal-footer">
-          <button id="btnComentar" name="btnComentar" data-dismiss="modal" class="btn btn-primary" onclick="notificar()";>Comentar</button>
+          <button id="btnComentar" name="btnComentar" data-dismiss="modal" class="btn btn-primary" >Comentar</button>
           <button data-dismiss="modal" class="btn btn-default" type="button">Cerrar</button>
         </div>
       </div>
