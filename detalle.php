@@ -472,7 +472,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                       <!--===================================================-->
                       <textarea placeholder="Comentario aqui" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
 											<div class="panel-footer text-right">
-										<button data-target="#modal-notificar" data-toggle="modal" class="btn btn-primary">Comentar</button>
+										<button data-target="#modal-notifcar" data-toggle="modal" class="btn btn-primary">Comentar</button>
 									</div>
                       <!--===================================================-->
                       <!-- End Summernote -->
