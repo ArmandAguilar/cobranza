@@ -15,6 +15,7 @@ function crear_maestro()
                             container : 'floating',
                             timer : 3000
                           });
+                          window.location.href = 'relacionar_maestros.php';
                     },
              error:function(req,e,er) {
                        $.niftyNoty({
