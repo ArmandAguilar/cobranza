@@ -298,8 +298,8 @@ class panel extends poolConnecion
                  <div class=\"panel panel-dark panel-colorful media pad-all\">
                          <div class=\"media-body\">
                            <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectos)</p>
-                           <p class=\"text-1x mar-no text-thin\">$ $TotalGral Antes de iva</p>
-
+                           <p class=\"text-1x mar-no text-thin\">$ $TotalGral</p>
+                          <p class=\"text-1x mar-no text-thin\">Monto antes de iva</p>
                          </div>
                    </div>
                    $rowFinal
@@ -309,6 +309,7 @@ class panel extends poolConnecion
                          <div class=\"media-body\"  onclick=\"order('Provisionada');\" style=\"cursor:pointer\">
                            <p class=\"text-1x mar-no text-thin\">Provisionada ($ContadorProvisionada)</p>
                            <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
+                           <p class=\"text-1x mar-no text-thin\">&nbsp;</p>
                            <input type=\"hidden\" name=\"txthProvisionadaOrder\" id=\"txthProvisionadaOrder\" value=\"asc\">
                          </div>
                    </div>
@@ -320,6 +321,7 @@ class panel extends poolConnecion
                          <div class=\"media-body\"  onclick=\"order('Elaborada');\" style=\"cursor:pointer\">
                            <p class=\"text-1x mar-no text-thin\">Elaborada ($ContadorElaborada)</p>
                            <p class=\"text-1x mar-no text-thin\">$ $TotalElaborada</p>
+                           <p class=\"text-1x mar-no text-thin\">&nbsp;</p>
                            <input type=\"hidden\" name=\"txthElaboradaOrder\" id=\"txthElaboradaOrder\" value=\"asc\">
                          </div>
                    </div>
@@ -331,6 +333,7 @@ class panel extends poolConnecion
                          <div class=\"media-body\"  onclick=\"order('Recibida');\" style=\"cursor:pointer\">
                            <p class=\"text-1x mar-no text-thin\">Recibida ($ContadorRecibida)</p>
                            <p class=\"text-1x mar-no text-thin\">$ $TotalRecibida</p>
+                           <p class=\"text-1x mar-no text-thin\">&nbsp;</p>
                            <input type=\"hidden\" name=\"txthRecibidaOrder\" id=\"txthRecibidaOrder\" value=\"asc\">
                          </div>
                    </div>
@@ -342,6 +345,7 @@ class panel extends poolConnecion
                          <div class=\"media-body\"  onclick=\"order('Aprobada');\" style=\"cursor:pointer\">
                            <p class=\"text-1x mar-no text-thin\">Aprobada ($ContadorAprobada)</p>
                            <p class=\"text-1x mar-no text-thin\">$ $TotalAprobada</p>
+                           <p class=\"text-1x mar-no text-thin\">&nbsp;</p>
                            <input type=\"hidden\" name=\"txthAprobadaOrder\" id=\"txthAprobadaOrder\" value=\"asc\">
                          </div>
                    </div>
@@ -353,6 +357,7 @@ class panel extends poolConnecion
                          <div class=\"media-body\"  onclick=\"order('EnEsperaDePago');\" style=\"cursor:pointer\">
                            <p class=\"text-1x mar-no text-thin\">Es. de pago ($ContadorEnEsperaDePago)</p>
                            <p class=\"text-1x mar-no text-thin\">$ $TotalEnEsperaDePago</p>
+                           <p class=\"text-1x mar-no text-thin\">&nbsp;</p>
                            <input type=\"hidden\" name=\"txthEsdepagoOrder\" id=\"txthEsdepagoOrder\" value=\"asc\">
                          </div>
                    </div>
