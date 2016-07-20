@@ -644,8 +644,8 @@ class panel extends poolConnecion
             <div class=\"panel panel-dark panel-colorful media pad-all\">
                     <div class=\"media-body\">
                       <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectos)</p>
-                      <p class=\"text-1x mar-no text-thin\">$ ($TotalGral) Antes IVA</p>
-
+                      <p class=\"text-1x mar-no text-thin\">$ $TotalGral </p>
+                      <p class=\"text-1x mar-no text-thin\">Monto Antes de Iva </p>
                     </div>
               </div>
               $row_col1
@@ -655,6 +655,7 @@ class panel extends poolConnecion
                     <div class=\"media-body\"  onclick=\"order('Provisionada');\" style=\"cursor:pointer\">
                       <p class=\"text-1x mar-no text-thin\">Provisionada ($ContadorProvisionada)</p>
                       <p class=\"text-1x mar-no text-thin\">$ $TotalProvisionada</p>
+                      <p class=\"text-1x mar-no text-thin\">Monto Antes de Iva </p>
                       <input type=\"hidden\" name=\"txthProvisionadaOrder\" id=\"txthProvisionadaOrder\" value=\"asc\">
                     </div>
               </div>
