@@ -298,10 +298,25 @@ function redireccionar()
 }
 $("#btnComentar").click(function()
   {
-      $("input[type=checkbox]:checked").each(function()
-        {
-          alert($(this).val());
-        }
-      );
-      alert('Envia notificaciones');
+    if($("#txtMensaje").val() ==  "")
+    {
+      $("#lblErroMensaje").show(1000);
+      $.niftyNoty({
+       type: 'danger',
+       icon : 'fa fa-minus',
+       message : 'oh! a ocurrido un error el comentario no puede estar vacio.',
+       container : 'floating',
+       timer : 3000
+     });
+    }
+    else {
+            $("#lblErroMensaje").hide();
+            $("input[type=checkbox]:checked").each(function()
+              {
+                alert($(this).val());
+              }
+            );
+            alert('Envia notificaciones');
+    }
+
     });
