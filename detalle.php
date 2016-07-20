@@ -815,7 +815,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   <!--End Default Bootstrap Modal-->
   <!-- Default Bootstrap Modal - Enviar Email -->
   <!--===================================================-->
-  <div class="modal bunce" id="modal-notiifcar" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal bunce" id="modal-notifcar" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
