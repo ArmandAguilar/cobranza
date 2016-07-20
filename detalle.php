@@ -472,7 +472,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                       <!--===================================================-->
                       <textarea placeholder="Comentario aqui" rows="13" class="form-control" id="txtMensaje" name="txtMensaje"></textarea>
 											<div class="panel-footer text-right">
-										<button class="btn btn-primary" onclick="agregar_comentario();">Comentar</button>
+										<button data-target=\"#modal-cancelar\" data-toggle=\"modal\" class="btn btn-primary">Comentar</button>
 									</div>
                       <!--===================================================-->
                       <!-- End Summernote -->
@@ -813,7 +813,83 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   </div>
   <!--===================================================-->
   <!--End Default Bootstrap Modal-->
+  <!-- Default Bootstrap Modal - Enviar Email -->
+  <!--===================================================-->
+  <div class="modal bunce" id="modal-notiifcar" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
+        <!--Modal header-->
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close" type="button">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Notificar</h4>
+        </div>
+        <!--Modal body-->
+        <div class="modal-body">
+          <!-- Codigo aqui -->
+                  <?php
+                            $contandor = 1;
+                            $objUsuarios = new poolConnecion();
+                            $SqlUsuarios="Select Nombre From [Northwind].[dbo].[Usuarios] Where CobranzaPerfil ='Admin' or CobranzaPerfil='User'";
+                            $con=$objUsuarios->ConexionSQLNorthwind();
+                            $RSet=$objUsuarios->QuerySQLNorthwind($SqlUsuarios,$con);
+                             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                   {
+
+                                      $Nombre = $fila[Nombre];
+                                        switch ($contandor)
+                                         {
+                                              case 1:
+                                                            $row .= "<div class=\"row\">
+                                                                      <div class=\"col-md-3 checkbox\">
+                                                                          <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>$Nombre</label>
+                                                                      </div>";
+                                                          $contandor = 2;
+                                              break;
+
+                                              case 2:
+                                                          $row .= "<div class=\"col-md-3\">
+                                                                      <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>$Nombre</label>
+                                                                  </div>";
+                                                          $contandor = 3;
+                                              break;
+
+                                              case 3:
+                                                            $row .= "<div class=\"col-md-3\">
+                                                                                <label class=\"form-checkbox form-icon active form-text\"><input type=\"checkbox\"/>$Nombre</label>
+                                                                            </div>
+                                                                      </div>";
+
+                                                          $contandor = 1;
+                                              break;
+
+                                        }
+                                    }
+                             $objUsuarios->CerrarSQLNorthwind($RSet,$con);
+                             if($contandor == 1)
+                             {
+                               $row .="</div>";
+                             }
+                             else{
+                               if ($contandor == 2) {
+                                  $row .="</div>";
+                               }
+                             }
+                            echo $row;
+                  ?>
+        </div>
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button  data-dismiss="modal" class="btn btn-danger" onclick="cancelar_factura();">Aceptar</button>
+          <button data-dismiss="modal" class="btn btn-default" type="button">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===================================================-->
+  <!--End Default Bootstrap Modal-->
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
