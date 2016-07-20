@@ -296,8 +296,12 @@ function redireccionar()
   window.location.href='panel.php';
 
 }
-$("#btnComentar").click(function(){
-$("input[type=checkbox]:checked").each(function() {
-    alert( $(this).val() );
-});
-});
+$("#btnComentar").click(function()
+  {
+      $("input[type=checkbox]:checked").each(function()
+        {
+          alert($(this).val());
+        }
+      );
+      alert('Envia notificaciones');
+    });
