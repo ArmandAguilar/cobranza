@@ -296,3 +296,11 @@ function redireccionar()
   window.location.href='panel.php';
 
 }
+function notificar()
+{
+  $("input[type=checkbox]:checked").each(function()
+   {
+     alert( $(this).val() );
+   });
+
+}
