@@ -106,6 +106,7 @@ function agregar_comentario()
                                 container : 'floating',
                                 timer : 3000
                               });
+                              $("#txtMensaje").val('')
                            },
                     error:function(req,e,er) {
                       alert('error!' + er);
@@ -305,7 +306,7 @@ function EnviarNotificacion(idusuario,email)
             data:losdatos,
             success:function(data)
                    {
-                    
+
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
