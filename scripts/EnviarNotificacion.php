@@ -1,5 +1,4 @@
 <?php
-<?php
 include("../sis.php");
 include("$path/libs/conexion.php");
 function avatar($Id)
