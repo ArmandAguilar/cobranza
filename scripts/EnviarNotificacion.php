@@ -2,6 +2,18 @@
 include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/libs/PHPMailer/PHPMailerAutoload.php");
+/*Datos de quien envia*/
+$objUsuarioActual = new poolConnecion();
+$Sql="Select Nombre,Apellidos,Email From Usuarios Where Id='$_POST[idusuario]'";
+$con=$objUsuarioActual->ConexionSQLNorthwind();
+$RSet=$objUsuarioActual->QuerySQLNorthwind($Sql,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+       {
+              $NombreUsuario = "$fila[Nombre] $fila[Apellidos]";
+              $EmailUsuario="$fila[Email]";
+        }
+ $objUsuarioActual->CerrarSQLNorthwind($RSet,$con);
+/*Datos Factura*/
 function avatar($Id)
 {
       #Obtenemos el avatar
@@ -24,7 +36,7 @@ function avatar($Id)
       return $Av;
 }
 $objTimeLine = new poolConnecion();
-$Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where IdFacturacion='$_GET[IdFacturacion]' order by Id desc";
+$Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where IdFacturacion='$_POST[IdFacturacion]' order by Id desc";
 $con=$objTimeLine->ConexionSQLSAP();
 $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -200,13 +212,13 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  //Password to use for SMTP authentication
  $mail->Password = "fortaMX010205**";
  //Set who the message is to be sent from
- $mail->setFrom('ventas@fortaingenieria.mx', 'Ventas');
+ $mail->setFrom($EmailUsuario, $NombreUsuario);
  //Set an alternative reply-to address
- $mail->addReplyTo('ventas@fortaingenieria.mx', 'Ventas');
+ $mail->addReplyTo($EmailUsuario,$NombreUsuario);
  //Set who the message is to be sent to
- $mail->addAddress('a.aguilar@gategeek.com','Armando Aguilar L.');
+ $mail->addAddress($_POST[email],'Armando Aguilar L.');
  //Set the subject line
- $mail->Subject = 'Proyecto';
+ $mail->Subject = $_POST[Factura];
  //Read an HTML message body from an external file, convert referenced images to embedded,
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);

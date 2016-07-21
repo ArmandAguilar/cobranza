@@ -296,6 +296,31 @@ function redireccionar()
   window.location.href='panel.php';
 
 }
+function EnviarNotificacion(idusuario,email)
+{
+  var lodadatos ={idusuario:idusuario,email:email,IdFacturacion:$("#txtIdFacturacion").val(),Factura:$("#txtFactura").val() };
+  $.ajax({
+            url:'./scripts/EnviarNotificacion.php',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+
+
+                   },
+            error:function(req,e,er) {
+              //alert('error!' + er);
+
+              $.niftyNoty({
+               type: 'danger',
+               icon : 'fa fa-minus',
+               message : 'oh! a ocurrido un error al notificar al usuario.',
+               container : 'floating',
+               timer : 3000
+             });
+            }
+         });
+}
 $("#btnComentar").click(function()
   {
     if($("#txtMensaje").val() ==  "")
@@ -310,12 +335,13 @@ $("#btnComentar").click(function()
      });
     }
     else {
+            alert('Gurdamos el mensaje');
             $("#lblErroMensaje").hide();
             $("input[type=checkbox]:checked").each(function()
               {
-                alert($(this).val());
+                EnviarNotificacion($("#txtIdUsuario").val(),$(this).val())
               }
             );
-            alert('Envia notificaciones');
+
        }
     });

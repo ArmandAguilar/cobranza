@@ -65,6 +65,9 @@ switch ($_GET[o]) {
                 $info->txtDateRecepcion = $_POST[txtDateRecepcion];
                 echo $objF->modificar_fecha($info);
       break;
+      case '10':
+
+      break;
 
   default:
     # code...
