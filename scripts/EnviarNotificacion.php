@@ -149,7 +149,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
       padding-top: 25px;
       color: #000000;
       font-family: sans-serif;\" class=\"header\">
-        Proyecto
+        $_POST[Factura]
     </td>
   </tr>
   <!-- LINE -->
