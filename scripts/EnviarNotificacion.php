@@ -36,7 +36,7 @@ function avatar($Id)
       return $Av;
 }
 $objTimeLine = new poolConnecion();
-$Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where IdFacturacion='$_GET[IdFacturacion]' order by Id desc";
+$Sql="SELECT Mensaje,Usuario,IdUsuario,Convert(varchar(11),[Fecha],11) As Fechas FROM [SAP].[dbo].[AACobranzaBlog] Where IdFacturacion='$_POST[IdFacturacion]' order by Id desc";
 $con=$objTimeLine->ConexionSQLSAP();
 $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -169,13 +169,13 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);
  //send the message, check for errors
- /*if (!$mail->send())
+ if (!$mail->send())
   {
      echo "Mailer Error: " . $mail->ErrorInfo;
    }
 else
   {
      echo "Message sent!";
-   }*/
+   }
 
   ?>
