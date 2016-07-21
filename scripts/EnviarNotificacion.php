@@ -139,7 +139,6 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  				Proyecto
  		</td>
  	</tr>
-
  	<!-- LINE -->
  	<!-- Set line color -->
  	<tr>
