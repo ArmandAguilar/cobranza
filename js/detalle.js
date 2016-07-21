@@ -305,8 +305,7 @@ function EnviarNotificacion(idusuario,email)
             data:losdatos,
             success:function(data)
                    {
-                      alert(data);
-
+                    
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
@@ -335,7 +334,7 @@ $("#btnComentar").click(function()
      });
     }
     else {
-            alert('Gurdamos el mensaje');
+            agregar_comentario();
             $("#lblErroMensaje").hide();
             $("input[type=checkbox]:checked").each(function()
               {
