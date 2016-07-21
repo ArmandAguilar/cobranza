@@ -317,6 +317,5 @@ $("#btnComentar").click(function()
               }
             );
             alert('Envia notificaciones');
-    }
-
+       }
     });
