@@ -33,7 +33,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
           $Usuario = $fila[Usuario];
           $Fecha = $fila[Fechas];
           $IdUsuario = $fila[IdUsuario];
-          $Avatar = $this->avatar($IdUsuario);
+          $Avatar = avatar($IdUsuario);
           $TimeLine .= "<tr>
             <td align=\"center\" valign=\"top\" style=\"border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;\" class=\"list-item\"><table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;\">
                 <!-- LIST ITEM IMAGE -->
