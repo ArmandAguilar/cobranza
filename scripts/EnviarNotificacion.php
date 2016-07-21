@@ -54,7 +54,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
                   font-family: sans-serif;\" class=\"paragraph\">
                     <b style=\"color: #333333;\">$Usuario $Fecha</b><br/>
                     $Mensaje
-                </td>";
+                </td></tr>";
        }
  $objTimeLine->CerrarSQLSAP($RSet,$con);
  ?>
