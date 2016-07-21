@@ -177,7 +177,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  </body>
  </html>";
  echo $mjs;
-/*
+
  $mail = new PHPMailer;
  //Tell PHPMailer to use SMTP
  $mail->isSMTP();
@@ -204,7 +204,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  //Set an alternative reply-to address
  $mail->addReplyTo('ventas@fortaingenieria.mx', 'Ventas');
  //Set who the message is to be sent to
- $mail->addAddress('a.aguilar@fortaingenieria.com','Armando Aguilar L.');
+ $mail->addAddress('a.aguilar@gategeek.com','Armando Aguilar L.');
  //Set the subject line
  $mail->Subject = 'Proyecto';
  //Read an HTML message body from an external file, convert referenced images to embedded,
@@ -219,5 +219,5 @@ else
   {
      echo "Message sent!";
    }
-*/
+
   ?>
