@@ -298,7 +298,7 @@ function redireccionar()
 }
 function EnviarNotificacion(idusuario,email)
 {
-  var losadatos ={idusuario:idusuario,email:email,IdFacturacion:$("#txtIdFacturacion").val(),Factura:$("#txtFactura").val() };
+  var losdatos ={idusuario:idusuario,email:email,IdFacturacion:$("#txtIdFacturacion").val(),Factura:$("#txtFactura").val() };
   $.ajax({
             url:'./scripts/EnviarNotificacion.php',
             type:'POST',
