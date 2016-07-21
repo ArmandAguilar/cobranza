@@ -176,7 +176,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
 
  </body>
  </html>";
- echo $mjs;
+
 
  $mail = new PHPMailer;
  //Tell PHPMailer to use SMTP
@@ -209,7 +209,7 @@ $RSet=$objTimeLine->QuerySQLSAP($Sql,$con);
  $mail->Subject = 'Proyecto';
  //Read an HTML message body from an external file, convert referenced images to embedded,
  //convert HTML into a basic plain-text alternative body
- $mail->msgHTML($msj);
+ $mail->msgHTML($mjs);
  //send the message, check for errors
  if (!$mail->send())
   {
