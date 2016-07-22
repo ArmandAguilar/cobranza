@@ -903,7 +903,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <button data-dismiss="modal" class="close" type="button">
           <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">Notificar</h4>
+          <h4 class="modal-title">Datos Facturacion</h4>
         </div>
         <!--Modal body-->
         <div class="modal-body">
@@ -945,7 +945,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                           </div>
                           <div class="col-md-8">
                               <div id="DivtxtDir" class="form-group has-feedback">
-                                  <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
+                                  <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Direcci&oacute;n"></textarea>
                               </div>
                           </div>
                         </div>
