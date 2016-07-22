@@ -417,13 +417,17 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
               </thead>
               <tbody>
                 <tr>
-                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-purple"><i class="fa fa-desktop fa-lg"></i></span></td>
-                  <td>
-                    <span class="text-semibold">Desktop</span>
-                    <br>
-                    <small class="text-muted">Last 7 days : 4,234k</small>
+                  <td class="text-center">
+                    <span class="text-muted">Armando Aguilar</span>
                   </td>
-                  <td class="text-center"><span class="text-danger text-semibold">- 28.76%</span></td>
+                  <td>
+                    <span class="text-muted">Facturacion:00/00/000</span>
+                    <br>
+                    <small class="text-muted">Tentantiva:00/00/000</small>
+                    <br>
+                    <small class="text-muted">Modificacion:00/00/000</small>
+                  </td>
+                  <td class="text-center"><span class="text-danger text-semibold">Provicionda</span></td>
                 </tr>
                 <tr>
                   <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-info"><i class="fa fa-laptop fa-lg"></i></span></td>
