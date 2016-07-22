@@ -909,9 +909,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <div class="modal-body">
           <!-- Codigo aqui -->
                           <div class="row">
-                                  <div class="col-md-1">
-                                      <p class="text-bold">Empresa</p>
-                                  </div>
                                   <div class="col-md-6">
                                     <select class="selectpicker" id="cboEmpresa" name="txtImporteTotal" title="Seleciona una empresa" data-width="100%" onchange="datos_empresa();">
                                          <option value="0" selected>------</option>
@@ -920,9 +917,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                   </div>
                         </div>
                         <div class="row">
-                              <div class="col-md-1">
-                                  <p class="text-bold">R. Social:</p>
-                              </div>
                               <div class="col-md-6">
                                     <div id="DivtxtRasonSocial" class="form-group has-feedback">
                                         <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here...">
