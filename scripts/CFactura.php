@@ -212,7 +212,7 @@ function modificar_datos_facturacion($info)
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
   $objGurdar->CerrarSQLSAP($RSet,$con);*/
-  return $sqlUpdate;
+  return $IdEmpresa;
 }
 }
  ?>
