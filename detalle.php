@@ -343,7 +343,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                 </div>
                 <div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Clientes</h3>
+                    <h3 class="panel-title">Cliente</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row">
@@ -401,7 +401,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                 </div>
 							<div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Colaboradores</h3>
+                    <h3 class="panel-title">Movimientos</h3>
                   </div>
                   <div class="panel-body">
                     <!--Hover Rows-->
