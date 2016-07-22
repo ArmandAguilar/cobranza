@@ -930,7 +930,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                       </div>
                               </div>
                         </div>
-                        <div cass="row">
+                        <div class="row">
                           <div class="col-md-8">
                               <div id="DivtxtDir" class="form-group has-feedback">
                                   <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Direccion"></textarea>
