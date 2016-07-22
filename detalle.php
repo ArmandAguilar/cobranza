@@ -915,7 +915,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                   <div class="col-md-6">
                                     <select class="selectpicker" id="cboEmpresa" name="txtImporteTotal" title="Seleciona una empresa" data-width="100%" onchange="datos_empresa();">
                                          <option value="0" selected>------</option>
-                                          <?php echo $cbo; ?>
+
                                     </select>
                                   </div>
                         </div>
@@ -940,9 +940,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                               </div>
                         </div>
                         <div cass="row">
-                          <div class="col-md-1">
-                              <p class="text-bold">Dirección Fiscal</p>
-                          </div>
                           <div class="col-md-8">
                               <div id="DivtxtDir" class="form-group has-feedback">
                                   <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Direcci&oacute;n"></textarea>
