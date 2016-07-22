@@ -224,10 +224,10 @@ function registar_evento($info)
         $FechaModificacion = $info->FechaModificacion;
         $Estado = $info->Estado;
         $Sql = "INSERT INTO [SAP].[dbo].[AAHistoricoMovFacturacion] VALUES ('$IdFacturacion','$IdUsuario','$FechaFacturacion','$FechaTentativa','$FechaModificacion','$Estado')";
-        $objGurdar = new poolConnecion();
+        /*$objGurdar = new poolConnecion();
         $con=$objGurdar->ConexionSQLSAP();
         $RSet=$objGurdar->QuerySQLSAP($Sql,$con);
-        $objGurdar->CerrarSQLSAP($RSet,$con);
+        $objGurdar->CerrarSQLSAP($RSet,$con);*/
         return $Sql;
 }
 }

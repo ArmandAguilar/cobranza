@@ -397,5 +397,17 @@ function editar_empresa()
 }
 function registra_evento()
 {
-  
+   var losdatos = {IdFacturacion:$("#txtIdFacturacion").val(),IdUsuario:$("#IdUsuario").val(),FechaFacturacion:$("#txtDateFactura").val(),FechaTentativa:$("#txtDateTentativa").val(),Estado:$("#txtEstado").val()};
+   $.ajax({
+             url:'./scripts/oper_detalles.php?o=11',
+             type:'POST',
+             data:losdatos,
+             success:function(data)
+                    {
+                        alert(data);
+                    },
+             error:function(req,e,er) {
+               alert('error!' + er);
+             }
+          });
 }
