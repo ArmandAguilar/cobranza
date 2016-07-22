@@ -7,6 +7,18 @@ include("$path/libs/conexion.php");
 $Factura = $_POST[txtFactura];
 
 $ArryaFactura = split("-",$Factura);
+#Todas las Empresas
+$objCboEmpresas = new poolConnecion();
+$SqlEmpreas="SELECT [IdEmpresa],[Empresa] FROM [SAP].[dbo].[empresas] order by empresa";
+$con=$objCboEmpresas->ConexionSQLSAP();
+$RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+			 {
+					 $IdEmpresa = $fila[IdEmpresa];
+					 $Empresa = $fila[Empresa];
+					 $cboEmpresas .= "<option value=\"$IdEmpresa\">$Empresa</option>";
+			 }
+ $objCboEmpresas->CerrarSQLSAP($RSet,$con);
 #Obtenemos el IdEmpresa de presupuestos
 $objFactura = new poolConnecion();
 $Sql1="SELECT [IdFacturacion],[CONCEPTO FACTURA] As Concepto,[Monto Antes de IVA] As Monto,[IVA],replace(convert(varchar,[Fecha de recepción],106),' ','/') As FRecepcion ,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FTetativa,replace(convert(varchar,[Fecha Factura],106),' ','/')  As FFactura,[Trimestre] FROM [SAP].[dbo].[FacturacionConsulting] Where FacturaForta='$_POST[txtFactura]'";
@@ -903,7 +915,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <button data-dismiss="modal" class="close" type="button">
           <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">Datos Facturacion</h4>
+          <h4 class="modal-title">Cambiar Datos de Facturacion</h4>
         </div>
         <!--Modal body-->
         <div class="modal-body">
@@ -912,7 +924,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                   <div class="col-md-6">
                                     <select id="cboMaestro" name="cboMaestro" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
                                           <option value="0">--------Empresas-------</option>
-                                          <?php echo  $optionEmpresas; ?>
+                                          <?php echo  $cboEmpresas; ?>
                                     </select>
                                   </div>
                         </div>
