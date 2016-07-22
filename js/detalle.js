@@ -275,6 +275,7 @@ function cambiar_fechas()
                        container : 'floating',
                        timer : 3000
                      });
+                     registra_evento();
 
                    },
             error:function(req,e,er) {
