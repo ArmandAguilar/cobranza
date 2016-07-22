@@ -930,19 +930,16 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                               </div>
                         </div>
                         <div class="row">
-                              <div class="col-md-1">
-                                  <p class="text-bold">RFC:</p>
-                              </div>
                               <div class="col-md-4">
                                     <div id="DivtxtRFC" class="form-group has-feedback">
-                                        <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here...">
+                                        <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="RFC">
                                       </div>
                               </div>
                         </div>
                         <div cass="row">
                           <div class="col-md-8">
                               <div id="DivtxtDir" class="form-group has-feedback">
-                                  <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Direcci&oacute;n"></textarea>
+                                  <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Direccion"></textarea>
                               </div>
                           </div>
                         </div>
