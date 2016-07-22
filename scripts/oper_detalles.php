@@ -73,6 +73,19 @@ switch ($_GET[o]) {
               $info->Dir=$_POST[Dir];
               echo $objF->modificar_datos_facturacion($info);
       break;
+      case '11':
+                $D = date(d);
+                $M = date(m);
+                $Y = date(Y);
+                $Fecha = "$Y/$M/$D";
+                $info->IdFacturacion = $_POST[IdFacturacion];
+                $info->IdUsuario = $_POST[IdUsuario];
+                $info->FechaFacturacion = $_POST[FechaFacturacion];
+                $info->FechaTentativa = $_POST[FechaTentativa];
+                $info->FechaModificacion = $Fecha;
+                $info->Estado = $_POST[Estado];
+                echo $objF->registar_evento($info);
+      break;
 
   default:
     # code...

@@ -214,5 +214,21 @@ function modificar_datos_facturacion($info)
   $objGurdar->CerrarSQLSAP($RSet,$con);
   return $sqlUpdate;
 }
+function registar_evento($info)
+{
+
+        $IdFacturacion = $info->IdFacturacion;
+        $IdUsuario = $info->IdUsuario;
+        $FechaFacturacion = $info->FechaFacturacion;
+        $FechaTentativa = $info->FechaTentativa;
+        $FechaModificacion = $info->FechaModificacion;
+        $Estado = $info->Estado;
+        $Sql = "INSERT INTO [SAP].[dbo].[AAHistoricoMovFacturacion] VALUES ('$IdFacturacion','$IdUsuario','$FechaFacturacion','$FechaTentativa','$FechaModificacion','$Estado')";
+        $objGurdar = new poolConnecion();
+        $con=$objGurdar->ConexionSQLSAP();
+        $RSet=$objGurdar->QuerySQLSAP($Sql,$con);
+        $objGurdar->CerrarSQLSAP($RSet,$con);
+        return $Sql;
+}
 }
  ?>

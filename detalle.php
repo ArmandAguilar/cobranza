@@ -399,24 +399,192 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
 									</div>
                 </div>
-							<!--	<div class="panel">
+								<div class="panel">
                   <div class="panel-heading">
                     <h3 class="panel-title">Colaboradores</h3>
                   </div>
                   <div class="panel-body">
-													<div class="row">
-															<div class="col-lg-5">
-																<p class="text-bold">Armando Aguilar</p>
-																<p class="text-bold">Armando Aguilar</p>
-																<p class="text-bold">Armando Aguilar</p>
-																<p class="text-bold">Armando Aguilar</p>
-
-															</div>
-												 </div>
+                    <!-- Foo Table - Pagination -->
+          <!--===================================================-->
+          <div class="panel-body">
+            <label class="form-inline">Show
+              <select id="demo-show-entries" class="form-control input-sm">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+              </select>
+              entries
+            </label>
+            <table id="demo-foo-pagination" class="table toggle-arrow-tiny" data-page-size="5">
+              <thead>
+                <tr>
+                  <th data-toggle="true">First Name</th>
+                  <th>Last Name</th>
+                  <th data-hide="all">Job Title</th>
+                  <th data-hide="all">DOB</th>
+                  <th data-hide="all">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Isidra</td>
+                  <td>Boudreaux</td>
+                  <td>Traffic Court Referee</td>
+                  <td>22 Jun 1972</td>
+                  <td><span class="label label-table label-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Shona</td>
+                  <td>Woldt</td>
+                  <td>Airline Transport Pilot</td>
+                  <td>3 Oct 1981</td>
+                  <td><span class="label label-table label-dark">Disabled</span></td>
+                </tr>
+                <tr>
+                  <td>Granville</td>
+                  <td>Leonardo</td>
+                  <td>Business Services Sales Representative</td>
+                  <td>19 Apr 1969</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Easer</td>
+                  <td>Dragoo</td>
+                  <td>Drywall Stripper</td>
+                  <td>13 Dec 1977</td>
+                  <td><span class="label label-table label-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Maple</td>
+                  <td>Halladay</td>
+                  <td>Aviation Tactical Readiness Officer</td>
+                  <td>30 Dec 1991</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Maxine</td>
+                  <td><a href="#">Woldt</a></td>
+                  <td><a href="#">Business Services Sales Representative</a></td>
+                  <td>17 Oct 1987</td>
+                  <td><span class="label label-table label-dark">Disabled</span></td>
+                </tr>
+                <tr>
+                  <td>Lorraine</td>
+                  <td>Mcgaughy</td>
+                  <td>Hemodialysis Technician</td>
+                  <td>11 Nov 1983</td>
+                  <td><span class="label label-table label-dark">Disabled</span></td>
+                </tr>
+                <tr>
+                  <td>Lizzee</td>
+                  <td><a href="#">Goodlow</a></td>
+                  <td>Technical Services Librarian</td>
+                  <td>1 Nov 1961</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Judi</td>
+                  <td>Badgett</td>
+                  <td>Electrical Lineworker</td>
+                  <td>23 Jun 1981</td>
+                  <td><span class="label label-table label-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Lauri</td>
+                  <td>Hyland</td>
+                  <td>Blackjack Supervisor</td>
+                  <td>15 Nov 1985</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Isidra</td>
+                  <td>Boudreaux</td>
+                  <td>Traffic Court Referee</td>
+                  <td>22 Jun 1972</td>
+                  <td><span class="label label-table label-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Shona</td>
+                  <td>Woldt</td>
+                  <td>Airline Transport Pilot</td>
+                  <td>3 Oct 1981</td>
+                  <td><span class="label label-table label-dark">Disabled</span></td>
+                </tr>
+                <tr>
+                  <td>Granville</td>
+                  <td>Leonardo</td>
+                  <td>Business Services Sales Representative</td>
+                  <td>19 Apr 1969</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Easer</td>
+                  <td>Dragoo</td>
+                  <td>Drywall Stripper</td>
+                  <td>13 Dec 1977</td>
+                  <td><span class="label label-table label-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Maple</td>
+                  <td>Halladay</td>
+                  <td>Aviation Tactical Readiness Officer</td>
+                  <td>30 Dec 1991</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Maxine</td>
+                  <td><a href="#">Woldt</a></td>
+                  <td><a href="#">Business Services Sales Representative</a></td>
+                  <td>17 Oct 1987</td>
+                  <td><span class="label label-table label-dark">Disabled</span></td>
+                </tr>
+                <tr>
+                  <td>Lorraine</td>
+                  <td>Mcgaughy</td>
+                  <td>Hemodialysis Technician</td>
+                  <td>11 Nov 1983</td>
+                  <td><span class="label label-table label-dark">Disabled</span></td>
+                </tr>
+                <tr>
+                  <td>Lizzee</td>
+                  <td><a href="#">Goodlow</a></td>
+                  <td>Technical Services Librarian</td>
+                  <td>1 Nov 1961</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+                <tr>
+                  <td>Judi</td>
+                  <td>Badgett</td>
+                  <td>Electrical Lineworker</td>
+                  <td>23 Jun 1981</td>
+                  <td><span class="label label-table label-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Lauri</td>
+                  <td>Hyland</td>
+                  <td>Blackjack Supervisor</td>
+                  <td>15 Nov 1985</td>
+                  <td><span class="label label-table label-danger">Suspended</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5">
+                    <div class="text-right">
+                      <ul class="pagination"></ul>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!--===================================================-->
+          <!-- End Foo Table - Pagination --
 
 
 									</div>
-                </div>-->
+                </div>
               </div>
 
                 <div class="col-lg-8">

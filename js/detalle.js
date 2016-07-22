@@ -395,3 +395,7 @@ function editar_empresa()
           		}
            });
 }
+function registra_evento()
+{
+  
+}
