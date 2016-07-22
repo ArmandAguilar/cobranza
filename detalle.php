@@ -926,7 +926,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                           <option value="0">--------Empresas-------</option>
                                           <?php echo  $cboEmpresas; ?>
                                     </select>
-                                    <input type="hidden" name="txtNombreEmpresa" id="txtNombreEmpresa"/>
+                                    
                                   </div>
                         </div>
                         <div class="row">
