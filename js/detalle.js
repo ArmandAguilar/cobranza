@@ -97,7 +97,6 @@ function agregar_comentario()
                     data:losdatos,
                     success:function(data)
                            {
-
                               timeline();
                               $.niftyNoty({
                                 type: 'success',

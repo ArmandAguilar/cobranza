@@ -229,7 +229,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <div class="row">
               <div class="col-lg-4">
                 <div class="panel">
-                  <div class="panel-heading">
+                  <div class="panel-heading" data-target="#modal-modificar-empresa" data-toggle="modal" style="cursor:pointer">
                     <h3 class="panel-title">Empresa</h3>
                   </div>
                   <div class="panel-body">
@@ -881,6 +881,74 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                              }
                             echo $row;
                   ?>
+        </div>
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button id="btnComentar" name="btnComentar" data-dismiss="modal" class="btn btn-primary" >Comentar</button>
+          <button data-dismiss="modal" class="btn btn-default" type="button">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===================================================-->
+  <!--End Default Bootstrap Modal-->
+  <!-- Default Bootstrap Modal - Enviar Modificar Empresa -->
+  <!--===================================================-->
+  <div class="modal bunce" id="modal-modificar-empresa" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal header-->
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close" type="button">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Notificar</h4>
+        </div>
+        <!--Modal body-->
+        <div class="modal-body">
+          <!-- Codigo aqui -->
+                          <div class="row">
+                                  <div class="col-md-1">
+                                      <p class="text-bold">Empresa</p>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <select class="selectpicker" id="cboEmpresa" name="txtImporteTotal" title="Seleciona una empresa" data-width="100%" onchange="datos_empresa();">
+                                         <option value="0" selected>------</option>
+                                          <?php echo $cbo; ?>
+                                    </select>
+                                  </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-md-1">
+                                  <p class="text-bold">R. Social:</p>
+                              </div>
+                              <div class="col-md-6">
+                                    <div id="DivtxtRasonSocial" class="form-group has-feedback">
+                                        <input type="text" id="txtRasonSocial" name="txtRasonSocial" class="form-control" placeholder="Readonly input here...">
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-md-1">
+                                  <p class="text-bold">RFC:</p>
+                              </div>
+                              <div class="col-md-4">
+                                    <div id="DivtxtRFC" class="form-group has-feedback">
+                                        <input type="text" id="txtRFC" name="txtRFC" class="form-control" placeholder="Readonly input here...">
+                                      </div>
+                              </div>
+                        </div>
+                        <div cass="row">
+                          <div class="col-md-1">
+                              <p class="text-bold">Dirección Fiscal</p>
+                          </div>
+                          <div class="col-md-8">
+                              <div id="DivtxtDir" class="form-group has-feedback">
+                                  <textarea rows="9" id="txtDir" name="txtDir" class="form-control" placeholder="Your content here.."></textarea>
+                              </div>
+                          </div>
+                        </div>
         </div>
         <!--Modal footer-->
         <div class="modal-footer">
