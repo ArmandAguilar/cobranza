@@ -193,7 +193,7 @@ function modificar_datos_facturacion($info)
 
   $IdEmpresa = $info->IdEmpresa;
   $IdFacturacion = $info->IdFacturacion;
-  $RasonSocial  = $info->RasonSocial
+  $RasonSocial  = $info->RasonSocial;
   $RFC  = $info->RFC;
   $Dir  = $info->Dir;
 
