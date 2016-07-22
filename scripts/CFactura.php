@@ -208,10 +208,10 @@ function modificar_datos_facturacion($info)
    $objCboEmpresas->CerrarSQLSAP($RSet,$con);
    $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [EmpresaSolicitante] = '$Empresa', [SeFacturaA] = '$RasonSocial'  ,[RFC] = '$RFC',[DirFiscal] = '$Dir'  Where IdFacturacion='$IdFacturacion'";
 
-  /*$objGurdar = new poolConnecion();
+  $objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
-  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  $objGurdar->CerrarSQLSAP($RSet,$con);
   return $sqlUpdate;
 }
 }

@@ -381,7 +381,14 @@ function editar_empresa()
           		data:losdatos,
           		success:function(data)
           	         {
-                           alert(data);
+                           $.niftyNoty({
+                             type: 'success',
+                             icon : 'fa fa-check',
+                             message : '<strong>Oka</strong> datos modificados',
+                             container : 'floating',
+                             timer : 3000
+                           });
+                           redireccionar();
           		       },
           		error:function(req,e,er) {
           			alert('error!' + er);
