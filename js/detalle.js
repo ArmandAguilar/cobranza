@@ -370,7 +370,7 @@ function editar_empresa()
     var idEmpresa = $("#cboEmpresa").val();
     var losdatos = {
       IdEmpresa:idEmpresa,
-      IdFacturacion: $("#IdFacturacion").val(),
+      IdFacturacion: $("#txtIdFacturacion").val(),
       RasonSocial:$("#txtRasonSocial").val(),
       RFC:$("#txtRFC").val(),
       Dir:$("#txtDir").val()
