@@ -922,7 +922,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <!-- Codigo aqui -->
                           <div class="row">
                                   <div class="col-md-6">
-                                    <select id="cboEmpresas" name="cboEmpresas" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;" onchange="datos_empresa();">
+                                    <select id="cboEmpresa" name="cboEmpresa" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;" onchange="datos_empresa();">
                                           <option value="0">--------Empresas-------</option>
                                           <?php echo  $cboEmpresas; ?>
                                     </select>
