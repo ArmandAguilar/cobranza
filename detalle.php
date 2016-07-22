@@ -410,9 +410,9 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
             <table class="table table-hover table-vcenter">
               <thead>
                 <tr>
-                  <th class="min-width">Device</th>
-                  <th>Name</th>
-                  <th class="text-center">Value</th>
+                  <th class="min-width">Usuario</th>
+                  <th>Movimientos</th>
+                  <th class="text-center">Estado</th>
                 </tr>
               </thead>
               <tbody>
@@ -421,40 +421,13 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                     <span class="text-muted">Armando Aguilar</span>
                   </td>
                   <td>
-                    <span class="text-muted">Facturacion:00/00/000</span>
+                    <small class="text-muted">Facturacion:00/00/000</small>
                     <br>
                     <small class="text-muted">Tentantiva:00/00/000</small>
                     <br>
                     <small class="text-muted">Modificacion:00/00/000</small>
                   </td>
-                  <td class="text-center"><span class="text-danger text-semibold">Provicionda</span></td>
-                </tr>
-                <tr>
-                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-info"><i class="fa fa-laptop fa-lg"></i></span></td>
-                  <td>
-                    <span class="text-semibold">Laptop</span>
-                    <br>
-                    <small class="text-muted">Last 7 days : 3,876k</small>
-                  </td>
-                  <td class="text-center"><span class="text-warning text-semibold">- 8.55%</span></td>
-                </tr>
-                <tr>
-                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-danger"><i class="fa fa-tablet fa-lg"></i></span></td>
-                  <td>
-                    <span class="text-semibold">Tablet</span>
-                    <br>
-                    <small class="text-muted">Last 7 days : 45,678k</small>
-                  </td>
-                  <td class="text-center"><span class="text-success text-semibold">+ 58.56%</span></td>
-                </tr>
-                <tr>
-                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-mint"><i class="fa fa-mobile fa-lg"></i></span></td>
-                  <td>
-                    <span class="text-semibold">Smartphone</span>
-                    <br>
-                    <small class="text-muted">Last 7 days : 34,553k</small>
-                  </td>
-                  <td class="text-center"><span class="text-success text-semibold">+ 35.76%</span></td>
+                  <td class="text-center"><span class="text-success text-semibold">Provicionda</span></td>
                 </tr>
               </tbody>
             </table>
