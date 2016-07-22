@@ -66,12 +66,12 @@ switch ($_GET[o]) {
                 echo $objF->modificar_fecha($info);
       break;
       case '10':
-              $info->IdEmpresa=$_POST[IdEmpresa];
+              /*$info->IdEmpresa=$_POST[IdEmpresa];
               $info->IdFacturacion=$_POST[IdFacturacion];
               $info->RasonSocial=$_POST[RasonSocial];
               $info->RFC=$_POST[RFC];
               $info->Dir=$_POST[Dir];
-              echo $objF->modificar_datos_facturacion($info);
+              echo $objF->modificar_datos_facturacion($info);*/
       break;
 
   default:
