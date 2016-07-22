@@ -198,7 +198,7 @@ function modificar_datos_facturacion($info)
   $Dir  = $info->Dir;
 
   $objCboEmpresas = new poolConnecion();
-  $SqlEmpreas="SELECT [Empresa] FROM [SAP].[dbo].[empresas] IdEmpresa='$IdEmpresa'";
+  $SqlEmpreas="SELECT [Empresa] FROM [SAP].[dbo].[empresas] Where IdEmpresa='$IdEmpresa'";
   $con=$objCboEmpresas->ConexionSQLSAP();
   $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -206,13 +206,13 @@ function modificar_datos_facturacion($info)
   					 $Empresa = $fila[Empresa];
   			 }
    $objCboEmpresas->CerrarSQLSAP($RSet,$con);
-  $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [EmpresaSolicitante] = '$Empresa', [SeFacturaA] = '$RasonSocial'  ,[RFC] = '$RFC',[DirFiscal] = '$Dir'  Where IdFacturacion='$IdFacturacion'";
+   $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [EmpresaSolicitante] = '$Empresa', [SeFacturaA] = '$RasonSocial'  ,[RFC] = '$RFC',[DirFiscal] = '$Dir'  Where IdFacturacion='$IdFacturacion'";
 
   /*$objGurdar = new poolConnecion();
   $con=$objGurdar->ConexionSQLSAP();
   $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
   $objGurdar->CerrarSQLSAP($RSet,$con);*/
-  return $SqlEmpreas;
+  return $sqlUpdate;
 }
 }
  ?>
