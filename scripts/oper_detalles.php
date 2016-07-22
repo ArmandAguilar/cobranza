@@ -71,8 +71,7 @@ switch ($_GET[o]) {
               $info->RasonSocial=$_POST[RasonSocial];
               $info->RFC=$_POST[RFC];
               $info->Dir=$_POST[Dir];
-              //echo $objF->modificar_datos_facturacion($info);
-              echo $_POST[IdEmpresa];
+              echo $objF->modificar_datos_facturacion($info);
       break;
 
   default:
