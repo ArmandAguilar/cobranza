@@ -399,188 +399,64 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
 									</div>
                 </div>
-								<div class="panel">
+							<div class="panel">
                   <div class="panel-heading">
                     <h3 class="panel-title">Colaboradores</h3>
                   </div>
                   <div class="panel-body">
-                    <!-- Foo Table - Pagination -->
+                    <!--Hover Rows-->
           <!--===================================================-->
           <div class="panel-body">
-            <label class="form-inline">Show
-              <select id="demo-show-entries" class="form-control input-sm">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-              </select>
-              entries
-            </label>
-            <table id="demo-foo-pagination" class="table toggle-arrow-tiny" data-page-size="5">
+            <table class="table table-hover table-vcenter">
               <thead>
                 <tr>
-                  <th data-toggle="true">First Name</th>
-                  <th>Last Name</th>
-                  <th data-hide="all">Job Title</th>
-                  <th data-hide="all">DOB</th>
-                  <th data-hide="all">Status</th>
+                  <th class="min-width">Device</th>
+                  <th>Name</th>
+                  <th class="text-center">Value</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Isidra</td>
-                  <td>Boudreaux</td>
-                  <td>Traffic Court Referee</td>
-                  <td>22 Jun 1972</td>
-                  <td><span class="label label-table label-success">Active</span></td>
+                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-purple"><i class="fa fa-desktop fa-lg"></i></span></td>
+                  <td>
+                    <span class="text-semibold">Desktop</span>
+                    <br>
+                    <small class="text-muted">Last 7 days : 4,234k</small>
+                  </td>
+                  <td class="text-center"><span class="text-danger text-semibold">- 28.76%</span></td>
                 </tr>
                 <tr>
-                  <td>Shona</td>
-                  <td>Woldt</td>
-                  <td>Airline Transport Pilot</td>
-                  <td>3 Oct 1981</td>
-                  <td><span class="label label-table label-dark">Disabled</span></td>
+                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-info"><i class="fa fa-laptop fa-lg"></i></span></td>
+                  <td>
+                    <span class="text-semibold">Laptop</span>
+                    <br>
+                    <small class="text-muted">Last 7 days : 3,876k</small>
+                  </td>
+                  <td class="text-center"><span class="text-warning text-semibold">- 8.55%</span></td>
                 </tr>
                 <tr>
-                  <td>Granville</td>
-                  <td>Leonardo</td>
-                  <td>Business Services Sales Representative</td>
-                  <td>19 Apr 1969</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
+                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-danger"><i class="fa fa-tablet fa-lg"></i></span></td>
+                  <td>
+                    <span class="text-semibold">Tablet</span>
+                    <br>
+                    <small class="text-muted">Last 7 days : 45,678k</small>
+                  </td>
+                  <td class="text-center"><span class="text-success text-semibold">+ 58.56%</span></td>
                 </tr>
                 <tr>
-                  <td>Easer</td>
-                  <td>Dragoo</td>
-                  <td>Drywall Stripper</td>
-                  <td>13 Dec 1977</td>
-                  <td><span class="label label-table label-success">Active</span></td>
-                </tr>
-                <tr>
-                  <td>Maple</td>
-                  <td>Halladay</td>
-                  <td>Aviation Tactical Readiness Officer</td>
-                  <td>30 Dec 1991</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
-                </tr>
-                <tr>
-                  <td>Maxine</td>
-                  <td><a href="#">Woldt</a></td>
-                  <td><a href="#">Business Services Sales Representative</a></td>
-                  <td>17 Oct 1987</td>
-                  <td><span class="label label-table label-dark">Disabled</span></td>
-                </tr>
-                <tr>
-                  <td>Lorraine</td>
-                  <td>Mcgaughy</td>
-                  <td>Hemodialysis Technician</td>
-                  <td>11 Nov 1983</td>
-                  <td><span class="label label-table label-dark">Disabled</span></td>
-                </tr>
-                <tr>
-                  <td>Lizzee</td>
-                  <td><a href="#">Goodlow</a></td>
-                  <td>Technical Services Librarian</td>
-                  <td>1 Nov 1961</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
-                </tr>
-                <tr>
-                  <td>Judi</td>
-                  <td>Badgett</td>
-                  <td>Electrical Lineworker</td>
-                  <td>23 Jun 1981</td>
-                  <td><span class="label label-table label-success">Active</span></td>
-                </tr>
-                <tr>
-                  <td>Lauri</td>
-                  <td>Hyland</td>
-                  <td>Blackjack Supervisor</td>
-                  <td>15 Nov 1985</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
-                </tr>
-                <tr>
-                  <td>Isidra</td>
-                  <td>Boudreaux</td>
-                  <td>Traffic Court Referee</td>
-                  <td>22 Jun 1972</td>
-                  <td><span class="label label-table label-success">Active</span></td>
-                </tr>
-                <tr>
-                  <td>Shona</td>
-                  <td>Woldt</td>
-                  <td>Airline Transport Pilot</td>
-                  <td>3 Oct 1981</td>
-                  <td><span class="label label-table label-dark">Disabled</span></td>
-                </tr>
-                <tr>
-                  <td>Granville</td>
-                  <td>Leonardo</td>
-                  <td>Business Services Sales Representative</td>
-                  <td>19 Apr 1969</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
-                </tr>
-                <tr>
-                  <td>Easer</td>
-                  <td>Dragoo</td>
-                  <td>Drywall Stripper</td>
-                  <td>13 Dec 1977</td>
-                  <td><span class="label label-table label-success">Active</span></td>
-                </tr>
-                <tr>
-                  <td>Maple</td>
-                  <td>Halladay</td>
-                  <td>Aviation Tactical Readiness Officer</td>
-                  <td>30 Dec 1991</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
-                </tr>
-                <tr>
-                  <td>Maxine</td>
-                  <td><a href="#">Woldt</a></td>
-                  <td><a href="#">Business Services Sales Representative</a></td>
-                  <td>17 Oct 1987</td>
-                  <td><span class="label label-table label-dark">Disabled</span></td>
-                </tr>
-                <tr>
-                  <td>Lorraine</td>
-                  <td>Mcgaughy</td>
-                  <td>Hemodialysis Technician</td>
-                  <td>11 Nov 1983</td>
-                  <td><span class="label label-table label-dark">Disabled</span></td>
-                </tr>
-                <tr>
-                  <td>Lizzee</td>
-                  <td><a href="#">Goodlow</a></td>
-                  <td>Technical Services Librarian</td>
-                  <td>1 Nov 1961</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
-                </tr>
-                <tr>
-                  <td>Judi</td>
-                  <td>Badgett</td>
-                  <td>Electrical Lineworker</td>
-                  <td>23 Jun 1981</td>
-                  <td><span class="label label-table label-success">Active</span></td>
-                </tr>
-                <tr>
-                  <td>Lauri</td>
-                  <td>Hyland</td>
-                  <td>Blackjack Supervisor</td>
-                  <td>15 Nov 1985</td>
-                  <td><span class="label label-table label-danger">Suspended</span></td>
+                  <td class="text-center"><span class="icon-wrap icon-wrap-sm icon-circle bg-mint"><i class="fa fa-mobile fa-lg"></i></span></td>
+                  <td>
+                    <span class="text-semibold">Smartphone</span>
+                    <br>
+                    <small class="text-muted">Last 7 days : 34,553k</small>
+                  </td>
+                  <td class="text-center"><span class="text-success text-semibold">+ 35.76%</span></td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="5">
-                    <div class="text-right">
-                      <ul class="pagination"></ul>
-                    </div>
-                  </td>
-                </tr>
-              </tfoot>
             </table>
           </div>
           <!--===================================================-->
-          <!-- End Foo Table - Pagination --
+          <!--End Hover Rows-->
 
 
 									</div>
