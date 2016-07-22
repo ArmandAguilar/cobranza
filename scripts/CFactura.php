@@ -188,5 +188,31 @@ function relacionar_usuarios($info)
   return $sqlUpdate;
 
 }
+function modificar_datos_facturacion($info)
+{
+
+  $IdEmpresa = $info->IdEmpresa;
+  $IdFacturacion = $info->IdFacturacion;
+  $RasonSocial  = $info->RasonSocial
+  $RFC  = $info->RFC;
+  $Dir  = $info->Dir;
+
+  $objCboEmpresas = new poolConnecion();
+  $SqlEmpreas="SELECT [Empresa] FROM [SAP].[dbo].[empresas] IdEmpresa='$IdEmpresa'";
+  $con=$objCboEmpresas->ConexionSQLSAP();
+  $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
+   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+  			 {
+  					 $Empresa = $fila[Empresa];
+  			 }
+   $objCboEmpresas->CerrarSQLSAP($RSet,$con);
+  $sqlUpdate="UPDATE [SAP].[dbo].[FacturacionConsulting] SET [EmpresaSolicitante] = '$Empresa', [SeFacturaA] = '$RasonSocial'  ,[RFC] = '$RFC',[DirFiscal] = '$Dir'  Where IdFacturacion='$IdFacturacion'";
+
+  /*$objGurdar = new poolConnecion();
+  $con=$objGurdar->ConexionSQLSAP();
+  $RSet=$objGurdar->QuerySQLSAP($sqlUpdate,$con);
+  $objGurdar->CerrarSQLSAP($RSet,$con);*/
+  return $sqlUpdate;
+}
 }
  ?>

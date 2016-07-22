@@ -364,3 +364,35 @@ function datos_empresa()
           		}
            });
 }
+function editar_empresa()
+{
+
+    var idEmpresa = $("#cboEmpresa").val();
+    var losdatos = {
+      IdEmpresa:idEmpresa,
+      IdFacturacion: $("#IdFacturacion").val(),
+      RasonSocial:$("#txtRasonSocial").val(),
+      RFC:$("#txtRFC").val(),
+      Dir:$("#txtDir").val()
+    };
+    $.ajax({
+           		url:'./scripts/oper_detalles.php?o=10',
+          		type:'POST',
+          		data:losdatos,
+          		success:function(data)
+          	         {
+                           /*$.niftyNoty({
+                             type: 'success',
+                             icon : 'fa fa-check',
+                             message : '<strong>Oka</strong> modificación realizada',
+                             container : 'floating',
+                             timer : 3000
+                           });
+                           redireccionar();*/
+                           alert(data);
+          		       },
+          		error:function(req,e,er) {
+          			alert('error!' + er);
+          		}
+           });
+}

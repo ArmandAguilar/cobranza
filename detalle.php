@@ -926,6 +926,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                           <option value="0">--------Empresas-------</option>
                                           <?php echo  $cboEmpresas; ?>
                                     </select>
+                                    <input type="hidden" name="txtNombreEmpresa" id="txtNombreEmpresa"/>
                                   </div>
                         </div>
                         <div class="row">
@@ -952,7 +953,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         </div>
         <!--Modal footer-->
         <div class="modal-footer">
-          <button id="btnGuardar" name="btnGuardar" data-dismiss="modal" class="btn btn-primary">Cambiar</button>
+          <button id="btnGuardar" name="btnGuardar" data-dismiss="modal" class="btn btn-primary" onclick="editar_empresa();">Cambiar</button>
           <button data-dismiss="modal" class="btn btn-default" type="button">Cerrar</button>
         </div>
       </div>
