@@ -272,7 +272,7 @@ function leer_eventos($info)
 
     $tabla .= "</tbody>
         </table>";
-        return $Sql;
+        return $tabla;
 }
 }
  ?>
