@@ -86,6 +86,10 @@ switch ($_GET[o]) {
                 $info->Estado = $_POST[Estado];
                 echo $objF->registar_evento($info);
       break;
+      case '12':
+                $info->IdFacturacion = $_POST[IdFacturacion];
+                echo $objF->leer_eventos($info);
+      breask;
 
   default:
     # code...

@@ -406,7 +406,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                   <div class="panel-body">
                     <!--Hover Rows-->
           <!--===================================================-->
-          <div class="panel-body">
+          <div id="DivMovimientos" class="panel-body">
             <table class="table table-hover table-vcenter">
               <thead>
                 <tr>
@@ -1023,6 +1023,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 			detalles_empresa(<?php echo $_POST[txtNoProyecto]; ?>);
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
+      leer_registro();
 	</script>
   <script>
   $(document).ready(function() {

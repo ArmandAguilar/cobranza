@@ -224,11 +224,55 @@ function registar_evento($info)
         $FechaModificacion = $info->FechaModificacion;
         $Estado = $info->Estado;
         $Sql = "INSERT INTO [SAP].[dbo].[AAHistoricoMovFacturacion] VALUES ('$IdFacturacion','$IdUsuario','$FechaFacturacion','$FechaTentativa','$FechaModificacion','$Estado')";
-        /*$objGurdar = new poolConnecion();
+        $objGurdar = new poolConnecion();
         $con=$objGurdar->ConexionSQLSAP();
         $RSet=$objGurdar->QuerySQLSAP($Sql,$con);
-        $objGurdar->CerrarSQLSAP($RSet,$con);*/
+        $objGurdar->CerrarSQLSAP($RSet,$con);
         return $Sql;
+}
+function leer_eventos($info)
+{
+
+      $IdFacturacion = $info -> IdFacturacion;
+      $tabla .= "<table class=\"table table-hover table-vcenter\">
+        <thead>
+          <tr>
+            <th class=\"min-width\">Usuario</th>
+            <th>Movimientos</th>
+            <th class=\"text-center\">Estado</th>
+          </tr>
+        </thead>
+        <tbody>";
+        $con=$objEventos->ConexionSQLSAP();
+        $Sql =  "SELECT [IdUsuario],Convert(varchar(11),[FechaFacturacion],11) As FechaFacturacion,Convert(varchar(11),[FechaTentativa],11)  As FechaTentativa,Convert(varchar(11)[FechaModificacion] As FechaModificacion ,[Estado] FROM [SAP].[dbo].[AAHistoricoMovFacturacion] Where IdFacturacion='$IdFacturacion'";
+        $RSet=$objEventos->QuerySQLSAP($Sql,$con);
+         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+               {
+                    $IdUsuario = $fila[IdUsuario];
+                    $FechaFacturacion = $fila[FechaFacturacion];
+                    $FechaTentativa = $fila[FechaTentativa];
+                    $FechaModificacion = $fila[FechaModificacion];
+                    $Estado = $fila[Estado];
+
+                 $tabla .= "<tr>
+                               <td class=\"text-center\">
+                                 <span class=\"text-muted\">$IdUsuario</span>
+                               </td>
+                               <td>
+                                 <small class=\"text-muted\">Facturacion:$FechaFacturacion</small>
+                                 <br>
+                                 <small class=\"text-muted\">Tentantiva:$FechaTentativa</small>
+                                 <br>
+                                 <small class=\"text-muted\">Modificacion:$FechaModificacion</small>
+                               </td>
+                               <td class=\"text-center\"><span class=\"text-success text-semibold\">$Estado</span></td>
+                         </tr>";
+               }
+            $objEventos->CerrarSQLSAP($RSet,$con);
+
+    $tabla .= "</tbody>
+        </table>";
+        return $tabla;
 }
 }
  ?>

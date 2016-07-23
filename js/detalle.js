@@ -406,10 +406,27 @@ function registra_evento()
              data:losdatos,
              success:function(data)
                     {
-                        alert(data);
+                        leer_registro();
                     },
              error:function(req,e,er) {
                alert('error!' + er);
              }
           });
+}
+function leer_registro()
+{
+  $("#DivMovimientos").empty();
+  var losdatos = {IdFacturacion:$("#txtIdFacturacion").val()};
+  $.ajax({
+            url:'./scripts/oper_detalles.php?o=12',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                      $("#DivMovimientos").append();
+                   },
+            error:function(req,e,er) {
+              alert('error!' + er);
+            }
+         });
 }
