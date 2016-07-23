@@ -244,7 +244,7 @@ function leer_eventos($info)
         </thead>
         <tbody>";
         $con=$objEventos->ConexionSQLSAP();
-        $Sql =  "SELECT [IdUsuario],Convert(varchar(11),[FechaFacturacion],11) As FechaFacturacion,Convert(varchar(11),[FechaTentativa],11)  As FechaTentativa,Convert(varchar(11),[FechaModificacion]) As FechaModificacion ,[Estado] FROM [SAP].[dbo].[AAHistoricoMovFacturacion] Where IdFacturacion='$IdFacturacion'";
+        $Sql = "SELECT [IdUsuario],Convert(varchar(11),[FechaFacturacion],11) As FechaFacturacion,Convert(varchar(11),[FechaTentativa],11)  As FechaTentativa,Convert(varchar(11),[FechaModificacion]) As FechaModificacion ,[Estado] FROM [SAP].[dbo].[AAHistoricoMovFacturacion] Where IdFacturacion='$IdFacturacion'";
         $RSet=$objEventos->QuerySQLSAP($Sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                {
