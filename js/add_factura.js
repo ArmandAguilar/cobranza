@@ -171,7 +171,7 @@ function guardar_factura()
 
                           $('#msjOk').show();
                           $('#msjOk').hide(9000);
-                          //alert(data);
+                          /* aqui procesamos el envio*/
                           window.location.href='panel.php';
             		       },
             		error:function(req,e,er) {
@@ -181,4 +181,12 @@ function guardar_factura()
             		}
              });
 
+}
+function EnviarCorreo()
+{
+  $("input[type=checkbox]:checked").each(function()
+    {
+      alert($(this).val())
+    }
+  );
 }
