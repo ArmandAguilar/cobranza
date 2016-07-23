@@ -424,8 +424,7 @@ function leer_registro()
             data:losdatos,
             success:function(data)
                    {
-                     alert($("#txtIdFacturacion").val());
-                      $("#DivMovimientos").append();
+                      $("#DivMovimientos").append(data);
                    },
             error:function(req,e,er) {
               alert('error!' + er);
