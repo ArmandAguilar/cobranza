@@ -77,7 +77,7 @@ switch ($_GET[o]) {
                 $D = date(d);
                 $M = date(m);
                 $Y = date(Y);
-                $Fecha = "$Y/$M/$D";
+                $Fecha = "$D/$M/$Y";
                 $info->IdFacturacion = $_POST[IdFacturacion];
                 $info->IdUsuario = $_POST[IdUsuario];
                 $info->FechaFacturacion = $_POST[FechaFacturacion];
