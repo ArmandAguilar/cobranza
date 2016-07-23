@@ -406,7 +406,7 @@ function registra_evento()
              data:losdatos,
              success:function(data)
                     {
-                      alert(data);
+                      
                         leer_registro();
                     },
              error:function(req,e,er) {

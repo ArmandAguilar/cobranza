@@ -230,6 +230,19 @@ function registar_evento($info)
         $objGurdar->CerrarSQLSAP($RSet,$con);
         return $Sql;
 }
+function usuario($idusuario)
+{
+
+  $objUsuarioActual = new poolConnecion();
+  $Sql="Select Nombre,Apellidos From Usuarios Where Id='$idusuario'";
+  $con=$objUsuarioActual->ConexionSQLNorthwind();
+  $RSet=$objUsuarioActual->QuerySQLNorthwind($Sql,$con);
+   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+         {
+            $NombreUsuario = "$fila[Nombre] $fila[Apellidos]";
+          }
+  return $NombreUsuario;
+}
 function leer_eventos($info)
 {
       $IdFacturacion = $info->IdFacturacion;
@@ -253,10 +266,10 @@ function leer_eventos($info)
                     $FechaTentativa = $fila[FechaTentativa];
                     $FechaModificacion = $fila[FechaModificacion];
                     $Estado = $fila[Estado];
-
+                    $Usuario=$this->usuario($IdUsuario);
                  $tabla .= "<tr>
                                <td class=\"text-center\">
-                                 <span class=\"text-muted\">$IdUsuario</span>
+                                 <span class=\"text-muted\">$Usuario</span>
                                </td>
                                <td>
                                  <small class=\"text-muted\">Facturacion:$FechaFacturacion</small>
