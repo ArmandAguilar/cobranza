@@ -87,7 +87,7 @@ switch ($_GET[o]) {
                 echo $objF->registar_evento($info);
       break;
       case '12':
-                //$info->IdFacturacion = $_POST[IdFacturacion];
+                $info->IdFacturacion = $_POST[IdFacturacion];
                 echo $objF->leer_eventos($info);
       break;
 

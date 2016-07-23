@@ -232,8 +232,7 @@ function registar_evento($info)
 }
 function leer_eventos($info)
 {
-
-      $IdFacturacion = $info -> IdFacturacion;
+      $IdFacturacion = $info->IdFacturacion;
       $tabla .= "<table class=\"table table-hover table-vcenter\">
         <thead>
           <tr>
@@ -243,6 +242,7 @@ function leer_eventos($info)
           </tr>
         </thead>
         <tbody>";
+        $objEventos = new poolConnecion();
         $con=$objEventos->ConexionSQLSAP();
         $Sql = "SELECT [IdUsuario],Convert(varchar(11),[FechaFacturacion],11) As FechaFacturacion,Convert(varchar(11),[FechaTentativa],11)  As FechaTentativa,Convert(varchar(11),[FechaModificacion]) As FechaModificacion ,[Estado] FROM [SAP].[dbo].[AAHistoricoMovFacturacion] Where IdFacturacion='$IdFacturacion'";
         $RSet=$objEventos->QuerySQLSAP($Sql,$con);
