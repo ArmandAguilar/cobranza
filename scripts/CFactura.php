@@ -37,8 +37,9 @@ function ingresar_factura($info)
     $objGurdar = new poolConnecion();
     $con=$objGurdar->ConexionSQLSAP();
     $RSet=$objGurdar->QuerySQLSAP($sql,$con);
-    $ID=sqlsrv_fetch($RSet);
-    $IDs=sqlsrv_next_result($RSet);
+    sqlsrv_next_result($RSet);
+    sqlsrv_fetch($RSet);
+    $IDs= sqlsrv_get_field($RSet, 0); 
     $objGurdar->CerrarSQLSAP($RSet,$con);
 
   /*buscamos last id */
