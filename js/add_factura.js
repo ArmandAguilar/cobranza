@@ -168,7 +168,7 @@ function guardar_factura()
             		data:losdatos,
             		success:function(data)
             	         {
-                          alert(data);
+                          alert('Last Id' + data);
                           $('#msjOk').show();
                           $('#msjOk').hide(9000);
                           /* aqui procesamos el envio*/

@@ -41,7 +41,16 @@ function ingresar_factura($info)
     $IDs=$objGurdar->CerrarSQLSAP($RSet,$con);
 
   /*buscamos last id */
-    return "$IDs";
+  $objLastId = new poolConnecion();
+  $SqlID="SELECT [IdFacturacion] FROM [SAP].[dbo].[FacturacionConsulting] order by desc";
+  $con=$objLastId->ConexionSQLSAP();
+  $RSet=$objLastId->QuerySQLSAP($SqlID,$con);
+   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+  			 {
+  					 $IdFacturacion = $fila[IdFacturacion];
+  			 }
+   $objLastId->CerrarSQLSAP($RSet,$con);
+    return $IdFacturacion;
 }
 function modificar_datos($info)
 {
