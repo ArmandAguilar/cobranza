@@ -38,10 +38,11 @@ function ingresar_factura($info)
     $con=$objGurdar->ConexionSQLSAP();
     $RSet=$objGurdar->QuerySQLSAP($sql,$con);
     $ID=sqlsrv_fetch($RSet);
+    $IDs=sqlsrv_next_result($RSet);
     $objGurdar->CerrarSQLSAP($RSet,$con);
 
   /*buscamos last id */
-    return $ID;
+    return "$ID-$IDs";
 }
 function modificar_datos($info)
 {
