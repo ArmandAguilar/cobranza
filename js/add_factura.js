@@ -168,11 +168,11 @@ function guardar_factura()
             		data:losdatos,
             		success:function(data)
             	         {
-                          alert('Last Id' + data);
-                          $('#msjOk').show();
-                          $('#msjOk').hide(9000);
-                          /* aqui procesamos el envio*/
-                          /*window.location.href='panel.php';*/
+                            var IdFacturacion = data;
+                            guardar_mensaje(IdFacturacion);
+                            $('#msjOk').show();
+                            $('#msjOk').hide(9000);
+
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
@@ -182,16 +182,61 @@ function guardar_factura()
              });
 
 }
-function guardar_mensaje()
+function guardar_mensaje(IdFactura)
 {
+        var losdatos = {IdFactura:IdFactura,
+          txtProyecto:$("#txtProyecto").val(),
+          txtUsuario:$("#txtIdUsuario").val(),
+          txtEstado:'Provicionada',
+          txtMensaje:$("#txtMensaje").val()
+        };
+          $.ajax({
+                    url:'./scripts/oper_add_factura.php?o=3',
+                    type:'POST',
+                    data:losdatos,
+                    success:function(data)
+                           {
 
+                           },
+                    error:function(req,e,er) {
+                      alert('error!' + er);
+                    }
+                 });
+}
 
+function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
+{
+  var losdatos ={idusuario:idusuario,email:email,IdFacturacion:idFacturacion,Factura:NombreFactura};
+  $.ajax({
+            url:'./scripts/EnviarNotificacion.php',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+
+                   },
+            error:function(req,e,er) {
+              //alert('error!' + er);
+
+              $.niftyNoty({
+               type: 'danger',
+               icon : 'fa fa-minus',
+               message : 'oh! a ocurrido un error al notificar al usuario.',
+               container : 'floating',
+               timer : 3000
+             });
+            }
+         });
 }
 function EnviarCorreo()
 {
+  var idFacturacion =  guardar_factura();
+  var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
-      alert($(this).val())
+      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),idFacturacion,NombreFactura);
+      /*alert($(this).val())*/
     }
   );
+  alert('Termine de enviar todos los mensajes...');
 }

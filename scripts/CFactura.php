@@ -42,7 +42,7 @@ function ingresar_factura($info)
 
   /*buscamos last id */
   $objLastId = new poolConnecion();
-  $SqlID="SELECT [IdFacturacion] FROM [SAP].[dbo].[FacturacionConsulting] order by [IdFacturacion] desc";
+  $SqlID="SELECT [IdFacturacion] FROM [SAP].[dbo].[FacturacionConsulting] order by [IdFacturacion] asc";
   $con=$objLastId->ConexionSQLSAP();
   $RSet=$objLastId->QuerySQLSAP($SqlID,$con);
    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))

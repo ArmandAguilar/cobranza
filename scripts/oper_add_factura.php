@@ -5,6 +5,7 @@ include("$path/scripts/CEmpresa.php");
 include("$path/scripts/CFactura.php");
 $objE =  new empresa();
 $objF = new facturas();
+$objB = new blog();
 
 switch ($_GET[o]) {
   case '1':
@@ -27,7 +28,16 @@ switch ($_GET[o]) {
             $info->DateFactura = $_POST[txtDateFactura];
             $info->DateTentativa = $_POST[txtDateTentativa];
             $info->DateRecepcion = $_POST[txtDateRecepcion];
+
             echo $objF->ingresar_factura($info);
+  break;
+  case '3':
+            $info->IdFactura=$_POST[IdFactura];
+            $info->NoProyecto=$_POST[txtProyecto];
+            $info->Usuario=$_POST[txtUsuario];
+            $info->Comentario=$_POST[txtMensaje];
+            $info->Estado=$_POST[txtEstado];
+            echo $objB->insert_blog($info);
   break;
   default:
     # code...
