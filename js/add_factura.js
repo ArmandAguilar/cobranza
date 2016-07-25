@@ -172,7 +172,7 @@ function guardar_factura()
                           $('#msjOk').show();
                           $('#msjOk').hide(9000);
                           /* aqui procesamos el envio*/
-                          window.location.href='panel.php';
+                          /*window.location.href='panel.php';*/
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
