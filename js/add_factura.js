@@ -168,7 +168,7 @@ function guardar_factura()
             		data:losdatos,
             		success:function(data)
             	         {
-
+                          alert(data);
                           $('#msjOk').show();
                           $('#msjOk').hide(9000);
                           /* aqui procesamos el envio*/
@@ -180,6 +180,11 @@ function guardar_factura()
                   $('#msjError').hide(8000);
             		}
              });
+
+}
+function guardar_mensaje()
+{
+
 
 }
 function EnviarCorreo()
