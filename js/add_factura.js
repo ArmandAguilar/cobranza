@@ -129,7 +129,7 @@ function validar_datos()
                                                                           else {
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
-                                                                                    alert('IdFacturacion' + $("#txtIdFacturacion").val());
+
                                                                                   //EnviarCorreo();
                                                                               }
                                                                        }
@@ -141,7 +141,7 @@ function validar_datos()
                         }
                 }
          }
-
+alert('IdFacturacion' + $("#txtIdFacturacion").val());
 }
 function guardar_factura()
 {
