@@ -238,7 +238,6 @@ function EnviarCorreo()
   $.ajax({
             url:'./scripts/oper_add_factura.php?o=4',
             type:'POST',
-            data:losdatos,
             success:function(data)
                    {
                      Id = data;
