@@ -213,7 +213,7 @@ function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
             data:losdatos,
             success:function(data)
                    {
-
+                     alert(data);
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
