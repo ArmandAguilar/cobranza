@@ -217,7 +217,7 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
             data:losdatos,
             success:function(data)
                    {
-                     alert(data);
+
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
@@ -253,5 +253,5 @@ function EnviarCorreo()
             }
          });
 
-  alert('Termine de enviar todos los mensajes...');
+         window.location.href='panel.php';
 }
