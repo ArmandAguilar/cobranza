@@ -240,19 +240,19 @@ function EnviarCorreo()
             type:'POST',
             success:function(data)
                    {
-                     Id = data;
+                     $("input[type=checkbox]:checked").each(function()
+                       {
+                         var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
+                         EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,data);
+                         /*alert($(this).val())*/
+                       }
+                     );
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
 
             }
          });
-  $("input[type=checkbox]:checked").each(function()
-    {
-      var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
-      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,Id);
-      /*alert($(this).val())*/
-    }
-  );
+
   alert('Termine de enviar todos los mensajes...');
 }
