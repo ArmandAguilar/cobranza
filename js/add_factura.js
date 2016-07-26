@@ -210,6 +210,7 @@ function guardar_mensaje(IdFactura)
 
 function EnviarNotificacion(idusuario,email,NombreFactura)
 {
+  alert('go:' + $("#txtIdFacturacion").val());
   var losdatos ={idusuario:idusuario,email:email,IdFacturacion:$("#txtIdFacturacion").val(),Factura:NombreFactura};
   $.ajax({
             url:'./scripts/EnviarNotificacion.php',
