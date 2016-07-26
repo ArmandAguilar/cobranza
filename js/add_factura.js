@@ -260,5 +260,5 @@ function EnviarCorreo()
             }
          });
   /*Pintamos boton de salir*/
-  $('#btnTerminar').show();
+  
 }
