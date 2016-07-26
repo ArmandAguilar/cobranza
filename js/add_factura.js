@@ -234,7 +234,7 @@ function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
 }
 function EnviarCorreo()
 {
-
+  guardar_factura();
   var idFacturacion =  $("#txtIdFacturacion").val();
   alert($("#txtIdFacturacion").val());
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
