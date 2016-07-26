@@ -131,7 +131,7 @@ function validar_datos()
                                                                                   guardar_factura();
                                                                                   setTimeout(EnviarCorreo(), 4000);
                                                                                   setTimeout(function(){ }, 8000);
-                                                                                  window.location.href='panel.php';
+                                                                                  //window.location.href='panel.php';
                                                                               }
                                                                        }
                                                                 }
