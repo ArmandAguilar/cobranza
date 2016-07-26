@@ -130,7 +130,8 @@ function validar_datos()
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
                                                                                   setTimeout(EnviarCorreo(), 4000);
-
+                                                                                  setTimeout(function(){ }, 8000);
+                                                                                  window.location.href='panel.php';
                                                                               }
                                                                        }
                                                                 }
@@ -252,6 +253,5 @@ function EnviarCorreo()
 
             }
          });
-         setTimeout(function(){ }, 4000);
-         window.location.href='panel.php';
+
 }
