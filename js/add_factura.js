@@ -241,6 +241,7 @@ function EnviarCorreo()
             success:function(data)
                    {
                      Id = data;
+                     alert(Id);
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
