@@ -3,6 +3,7 @@ include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/scripts/CEmpresa.php");
 include("$path/scripts/CFactura.php");
+include("$path/scripts/CBlog.php");
 $objE =  new empresa();
 $objF = new facturas();
 $objB = new blog();
