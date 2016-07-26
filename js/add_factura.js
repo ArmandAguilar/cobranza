@@ -233,7 +233,7 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 function EnviarCorreo()
 {
   guardar_factura();
-  sleep(2000);
+  setTimeout($("#txtIdFacturacion").val(), 2000);
   var idF = $("#txtIdFacturacion").val();
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
