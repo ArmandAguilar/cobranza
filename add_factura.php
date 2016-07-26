@@ -305,10 +305,10 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                     <p class="text-bold">Empresa</p>
                                 </div>
                                 <div class="col-md-6">
-                                  <select class="selectpicker" id="cboEmpresa" name="cboEmpresa" title="Seleciona una empresa" data-width="100%" onchange="datos_empresa();">
-																			 <option value="0" selected>------</option>
-                                    		<?php echo $cbo; ?>
-                                  </select>
+                                      <select id="cboEmpresa" name="cboEmpresa" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;" onchange="datos_empresa();">
+                                              <option value="0" selected>------</option>
+                                              <?php echo $cbo; ?>
+                                        </select>
                                 </div>
                       </div>
                       <div class="row">
@@ -424,7 +424,8 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
                                   <button class="close" data-dismiss="alert"><span>×</span></button>
                                   <strong>Oh!</strong> Verifique los datos de su factura
                           </div>
-                          <input type="button" value="Crear Factura" class="btn btn-primary" onclick="validar_datos();"/>
+                          <input id="btnTerminar" name="btnTerminar" type="button" value="Terminar" class="btn btn-primary" onclick="javascript:window.location.href='panel.php';" style="display:none"/>
+                          <input id="btnCrearFactura" name="btnCrearFactura" type="button" value="Crear Factura" class="btn btn-primary" onclick="validar_datos();"/>
                 </div>
           </div>
 

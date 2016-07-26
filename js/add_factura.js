@@ -235,6 +235,7 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 }
 function EnviarCorreo()
 {
+  $('#btnCrearFactura').hide();
   var Id = 0;
   $.ajax({
             url:'./scripts/oper_add_factura.php?o=4',
@@ -253,5 +254,6 @@ function EnviarCorreo()
 
             }
          });
-
+  /*Pintamos boton de salir*/
+  $('#btnTerminar').show();
 }
