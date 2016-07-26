@@ -214,7 +214,6 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
   var losdatos ={
     idusuario:idusuario,
     email:email,
-    IdFacturacion:idF,
     Factura:NombreFactura,
     Mensaje:$('#txtMensaje').val(),
   };

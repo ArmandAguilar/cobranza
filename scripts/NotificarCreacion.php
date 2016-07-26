@@ -3,27 +3,20 @@ include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/libs/PHPMailer/PHPMailerAutoload.php");
 
-$objUsuarioActual = new poolConnecion();
-$Sql="Select Nombre,Apellidos,Email From Usuarios Where Id='$_POST[idusuario]'";
-$con=$objUsuarioActual->ConexionSQLNorthwind();
-$RSet=$objUsuarioActual->QuerySQLNorthwind($Sql,$con);
- while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-       {
-              $NombreUsuario = "$fila[Nombre] $fila[Apellidos]";
-              $EmailUsuario="$fila[Email]";
-        }
- $objUsuarioActual->CerrarSQLNorthwind($RSet,$con);
+
 /*Datos Factura*/
-function avatar($Id)
-{
+$Usuario="";
+$Avatar ="http://187.188.109.47:82/administracion/img/av1.png";
+
       #Obtenemos el avatar
       $objAvatar = new poolConnecion();
-      $Sql="SELECT [Avatar] FROM [Northwind].[dbo].[Usuarios] Where Id='$Id'";
+      $Sql="SELECT Nombre,Apellidos,Avatar FROM [Northwind].[dbo].[Usuarios] Where Id='$_GET[idUsuario]'";
       $con=$objAvatar->ConexionSQLNorthwind();
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-                $Av = $filaA[Avatar];
+                $Usuario="$fila[Nombre] $fila[Apellidos]";
+                $Avatar = $filaA[Avatar];
              }
       if (!empty($Av))
       {
@@ -31,10 +24,9 @@ function avatar($Id)
       }
       else
        {
-        $Av = "http://187.188.109.47:82/administracion/img/av1.png";
+        $Avatar = "http://187.188.109.47:82/administracion/img/av1.png";
       }
-      return $Av;
-}
+
 $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
  <head>
   <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">
@@ -105,8 +97,10 @@ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
                               <img border=\"0\" vspace=\"0\" hspace=\"0\" style=\"padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block; color: #000000;\" src=\"$Avatar\" alt=\"H\" title=\"Highly compatible\"width=\"50\" height=\"50\">
                           </td>
                           <td align=\"left\" valign=\"top\" style=\"font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;padding-top: 25px;color: #000000;font-family: sans-serif;\" class=\"paragraph\" width=\"80%\">
-                              <b style=\"color: #333333;\">$Usuario $Fecha</b><br/>
-                              $_POST[Mensaje]
+                              <b style=\"color: #333333;\">$Usuario</b><br/>
+                              $_GET[Mensaje]
+                              -----------------------------------------------------------
+                              Este correo es informativo, favor no responder a esta dirección de correo
                               <hr color=\"#E0E0E0\" align=\"center\" width=\"100%\" size=\"1\" noshade style=\"margin: 0; padding: 0;\" />
                           </td>
                    </tr>";
@@ -139,13 +133,13 @@ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
  //Password to use for SMTP authentication
  $mail->Password = "fortaMX010205**";
  //Set who the message is to be sent from
- $mail->setFrom($EmailUsuario, $NombreUsuario);
+ $mail->setFrom('ventas@fortaingenieria.mx','Depto Ventas');
  //Set an alternative reply-to address
- $mail->addReplyTo($EmailUsuario,$NombreUsuario);
+ $mail->addReplyTo('ventas@fortaingenieria.mx','Depto Ventas');
  //Set who the message is to be sent to
- $mail->addAddress($_POST[email],'Armando Aguilar L.');
+ $mail->addAddress($_GET[email],$Usuario);
  //Set the subject line
- $mail->Subject = $_POST[Factura];
+ $mail->Subject = $_GET[Factura];
  //Read an HTML message body from an external file, convert referenced images to embedded,
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);
