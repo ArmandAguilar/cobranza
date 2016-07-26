@@ -129,9 +129,9 @@ function validar_datos()
                                                                           else {
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
-                                                                                  setTimeout(EnviarCorreo(), 4000);
-                                                                                  setTimeout(function(){ }, 8000);
-                                                                                  //window.location.href='panel.php';
+                                                                                  EnviarCorreo();
+                                                                                  setTimeout(function(){ }, 90000);
+                                                                                  window.location.href='panel.php';
                                                                               }
                                                                        }
                                                                 }
@@ -212,7 +212,7 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 {
 
   var losdatos ={
-    idusuario:idusuario,
+    idUsuario:idusuario,
     email:email,
     Factura:NombreFactura,
     Mensaje:$('#txtMensaje').val(),
