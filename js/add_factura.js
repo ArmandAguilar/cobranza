@@ -208,9 +208,9 @@ function guardar_mensaje(IdFactura)
                  });
 }
 
-function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
+function EnviarNotificacion(idusuario,email,NombreFactura)
 {
-  var losdatos ={idusuario:idusuario,email:email,IdFacturacion:idFacturacion,Factura:NombreFactura};
+  var losdatos ={idusuario:idusuario,email:email,IdFacturacion:$("#txtIdFacturacion").val(),Factura:NombreFactura};
   $.ajax({
             url:'./scripts/EnviarNotificacion.php',
             type:'POST',
