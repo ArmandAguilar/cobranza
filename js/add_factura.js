@@ -252,6 +252,6 @@ function EnviarCorreo()
 
             }
          });
-
+         setTimeout(function(){ }, 4000);
          window.location.href='panel.php';
 }
