@@ -41,7 +41,7 @@ switch ($_GET[o]) {
             echo $objB->insert_blog($info);
   break;
   case '4':
-            echo $objB->last_id();
+            echo $objF->last_id();
   break;
   default:
     # code...
