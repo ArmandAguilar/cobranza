@@ -418,7 +418,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
               <div class="panel-footer text-right">
                           <div id="msjOk" class="alert alert-success fade in" style="display:none">
                                     <button class="close" data-dismiss="alert"><span>×</span></button>
-                                    <strong>Oka</strong> Factura Creada con exito.
+                                    <strong>Oka</strong> Procesando información en un momento será redireccionado.
                           </div>
                           <div id="msjError" class="alert alert-danger fade in" style="display:none">
                                   <button class="close" data-dismiss="alert"><span>×</span></button>
