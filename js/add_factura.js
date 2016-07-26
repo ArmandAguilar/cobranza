@@ -181,7 +181,6 @@ function guardar_factura()
                   $('#msjError').hide(8000);
             		}
              });
-             return IdFacturacion.toString();
 }
 function guardar_mensaje(IdFactura)
 {
@@ -233,7 +232,9 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 }
 function EnviarCorreo()
 {
-  var idF = guardar_factura();
+  guardar_factura();
+  sleep(2000);
+  var idF = $("#txtIdFacturacion").val();
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
