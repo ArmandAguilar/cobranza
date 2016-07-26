@@ -219,7 +219,7 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
     Mensaje:$('#txtMensaje').val(),
   };
   $.ajax({
-            url:'./scripts/NoticarCreacion.php',
+            url:'./scripts/NotificarCreacion.php',
             type:'POST',
             data:losdatos,
             success:function(data)
