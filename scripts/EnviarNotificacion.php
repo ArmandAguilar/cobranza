@@ -169,13 +169,13 @@ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);
  //send the message, check for errors
-/* if (!$mail->send())
+ if (!$mail->send())
   {
      echo "Mailer Error: " . $mail->ErrorInfo;
    }
 else
   {
      echo "Message sent!";
-   }*/
-echo $Sql;
+   }
+
   ?>

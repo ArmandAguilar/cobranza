@@ -244,7 +244,6 @@ function EnviarCorreo()
                        {
                          var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
                          EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,data);
-                         /*alert($(this).val())*/
                        }
                      );
                    },
