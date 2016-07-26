@@ -106,6 +106,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
     <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="<?php echo $_GET[NoProyecto]; ?>">
     <input type="hidden" name="txtUsuario" id="txtUsuario" value="<?php echo $_SESSION[Usuario]; ?>"/>
     <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>"/>
+    <input type="hidden" name="txtIdFacturacion" id="txtIdFacturacion"/>
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->

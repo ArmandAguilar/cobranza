@@ -185,6 +185,7 @@ function guardar_factura()
 }
 function guardar_mensaje(IdFactura)
 {
+        $("#txtIdFacturacion").val(IdFactura);
         var losdatos = {IdFactura:IdFactura,
           txtProyecto:$("#txtProyecto").val(),
           txtUsuario:$("#txtIdUsuario").val(),
@@ -231,7 +232,7 @@ function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
 }
 function EnviarCorreo()
 {
-  var idFacturacion =  guardar_factura();
+  var idFacturacion =  $("#txtIdFacturacion").val(IdFactura);
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
