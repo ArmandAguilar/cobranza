@@ -128,8 +128,9 @@ function validar_datos()
                                                                             }
                                                                           else {
                                                                                   $('#DivtxtDir').removeClass('has-error');
-                                                                                  guardar_factura();    
-                                                                                  EnviarCorreo();
+                                                                                  guardar_factura();
+                                                                                    alert($("#txtIdFacturacion").val());
+                                                                                  //EnviarCorreo();
                                                                               }
                                                                        }
                                                                 }
@@ -236,8 +237,6 @@ function EnviarCorreo()
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
-
-      alert($("#txtIdFacturacion").val());
       //EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,idF);
       /*alert($(this).val())*/
     }
