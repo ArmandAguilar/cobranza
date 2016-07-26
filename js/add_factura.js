@@ -169,7 +169,7 @@ function guardar_factura()
             		success:function(data)
             	         {
                             var IdFacturacion = data;
-                            $("#txtIdFacturacion").val(IdFacturacion);
+                            $("#txtIdFacturacion").val(data);
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
                             $('#msjOk').hide(9000);
