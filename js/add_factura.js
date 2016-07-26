@@ -238,7 +238,8 @@ function EnviarCorreo()
   $("input[type=checkbox]:checked").each(function()
     {
       var idF = $("#txtIdFacturacion").val();
-      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,idF);
+      alert(idF);
+      //EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,idF);
       /*alert($(this).val())*/
     }
   );
