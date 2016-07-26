@@ -173,9 +173,7 @@ function guardar_factura()
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
                             $('#msjOk').hide(9000);
-                            alert('mmmmIdsss' + IdFacturacion.toString());
-
-
+                            return IdFacturacion;
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
@@ -208,10 +206,10 @@ function guardar_mensaje(IdFactura)
                  });
 }
 
-function EnviarNotificacion(idusuario,email,NombreFactura)
+function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 {
-  alert('go:' + $("#txtIdFacturacion").val());
-  var losdatos ={idusuario:idusuario,email:email,IdFacturacion:$("#txtIdFacturacion").val(),Factura:NombreFactura};
+  alert('go:' + idF);
+  var losdatos ={idusuario:idusuario,email:email,IdFacturacion:idF,Factura:NombreFactura};
   $.ajax({
             url:'./scripts/EnviarNotificacion.php',
             type:'POST',
@@ -235,11 +233,11 @@ function EnviarNotificacion(idusuario,email,NombreFactura)
 }
 function EnviarCorreo()
 {
-  guardar_factura();
+  var idF = guardar_factura();
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
-      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),$("#txtIdFacturacion").val(),NombreFactura);
+      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,idF);
       /*alert($(this).val())*/
     }
   );
