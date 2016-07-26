@@ -172,7 +172,7 @@ function guardar_factura()
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
                             $('#msjOk').hide(9000);
-                            return data;
+
 
             		       },
             		error:function(req,e,er) {
@@ -232,7 +232,9 @@ function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
 }
 function EnviarCorreo()
 {
+
   var idFacturacion =  $("#txtIdFacturacion").val();
+  alert($("#txtIdFacturacion").val());
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
