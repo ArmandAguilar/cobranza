@@ -128,7 +128,7 @@ function validar_datos()
                                                                             }
                                                                           else {
                                                                                   $('#DivtxtDir').removeClass('has-error');
-                                                                                  guardar_factura()
+                                                                                  EnviarCorreo();
                                                                               }
                                                                        }
                                                                 }
