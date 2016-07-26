@@ -241,7 +241,7 @@ function EnviarCorreo()
             success:function(data)
                    {
                      Id = data;
-                     alert(Id);
+                     alert(data);
                    },
             error:function(req,e,er) {
               //alert('error!' + er);
@@ -251,7 +251,7 @@ function EnviarCorreo()
   $("input[type=checkbox]:checked").each(function()
     {
       var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
-      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,Id);
+      //EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,Id);
       /*alert($(this).val())*/
     }
   );
