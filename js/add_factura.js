@@ -129,8 +129,8 @@ function validar_datos()
                                                                           else {
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
-
-                                                                                  //EnviarCorreo();
+                                                                                  setTimeout(EnviarCorreo(), 4000);
+                                                                                  
                                                                               }
                                                                        }
                                                                 }
@@ -141,7 +141,7 @@ function validar_datos()
                         }
                 }
          }
-alert('IdFacturacion' + $("#txtIdFacturacion").val());
+
 }
 function guardar_factura()
 {
@@ -209,7 +209,7 @@ function guardar_mensaje(IdFactura)
 
 function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 {
-  alert($("#txtIdFacturacion").val());
+
   var losdatos ={idusuario:idusuario,email:email,IdFacturacion:idF,Factura:NombreFactura};
   $.ajax({
             url:'./scripts/EnviarNotificacion.php',
@@ -237,7 +237,7 @@ function EnviarCorreo()
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
-      //EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,idF);
+      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,$('#txtIdFacturacion').val());
       /*alert($(this).val())*/
     }
   );
