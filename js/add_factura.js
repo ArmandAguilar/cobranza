@@ -130,7 +130,7 @@ function validar_datos()
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
                                                                                   EnviarCorreo();
-                                                                                  setTimeout(function(){ window.location.href='panel.php';}, 80000);
+                                                                                  setTimeout(function(){ window.location.href='panel.php';}, 9000);
 
                                                                               }
                                                                        }
@@ -175,8 +175,6 @@ function guardar_factura()
                             $("#txtIdFacturacion").val(data);
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
-                            $('#msjOk').hide(9000);
-
             		       },
             		error:function(req,e,er) {
             			alert('error!' + er);
@@ -249,7 +247,7 @@ function EnviarCorreo()
                    {
                      $("input[type=checkbox]:checked").each(function()
                        {
-                      
+
                            var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
                            EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,data);
 
