@@ -15,17 +15,9 @@ $Avatar ="http://187.188.109.47:82/administracion/img/av1.png";
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
-                $Usuario="$fila[Nombre] $fila[Apellidos]";
+                $Usuario="$filaA[Nombre] $filaA[Apellidos]";
                 $Avatar = $filaA[Avatar];
              }
-      if (!empty($Av))
-      {
-
-      }
-      else
-       {
-        $Avatar = "http://187.188.109.47:82/administracion/img/av1.png";
-      }
 
 echo $mjs = "$Sql<html xmlns=\"http://www.w3.org/1999/xhtml\">
  <head>
@@ -99,6 +91,7 @@ echo $mjs = "$Sql<html xmlns=\"http://www.w3.org/1999/xhtml\">
                           <td align=\"left\" valign=\"top\" style=\"font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;padding-top: 25px;color: #000000;font-family: sans-serif;\" class=\"paragraph\" width=\"80%\">
                               <b style=\"color: #333333;\">$Usuario</b><br/>
                               $_GET[Mensaje]
+                              <br>
                               -----------------------------------------------------------
                               Este correo es informativo, favor no responder a esta dirección de correo
                               <hr color=\"#E0E0E0\" align=\"center\" width=\"100%\" size=\"1\" noshade style=\"margin: 0; padding: 0;\" />
