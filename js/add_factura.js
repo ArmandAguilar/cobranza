@@ -130,7 +130,7 @@ function validar_datos()
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
                                                                                   setTimeout(EnviarCorreo(), 4000);
-                                                                                  
+
                                                                               }
                                                                        }
                                                                 }
@@ -234,10 +234,24 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 }
 function EnviarCorreo()
 {
-  var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
+  var Id = 0;
+  $.ajax({
+            url:'./scripts/oper_add_factura.php?o=4',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                     Id = data;
+                   },
+            error:function(req,e,er) {
+              //alert('error!' + er);
+
+            }
+         });
   $("input[type=checkbox]:checked").each(function()
     {
-      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,$('#txtIdFacturacion').val());
+      var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
+      EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,Id);
       /*alert($(this).val())*/
     }
   );

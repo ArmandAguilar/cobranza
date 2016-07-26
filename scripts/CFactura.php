@@ -298,5 +298,18 @@ function leer_eventos($info)
         </table>";
         return $tabla;
 }
+function last_id()
+{
+  $objLastId = new poolConnecion();
+  $SqlID="SELECT [IdFacturacion] FROM [SAP].[dbo].[FacturacionConsulting] order by [IdFacturacion] asc";
+  $con=$objLastId->ConexionSQLSAP();
+  $RSet=$objLastId->QuerySQLSAP($SqlID,$con);
+   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+  			 {
+  					 $IdFacturacion = $fila[IdFacturacion];
+  			 }
+   $objLastId->CerrarSQLSAP($RSet,$con);
+   return $IdFacturacion;
+}
 }
  ?>

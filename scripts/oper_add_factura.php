@@ -40,6 +40,9 @@ switch ($_GET[o]) {
             $info->Estado=$_POST[txtEstado];
             echo $objB->insert_blog($info);
   break;
+  case '4':
+            echo $objB->last_id();
+  break;
   default:
     # code...
     break;
