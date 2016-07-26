@@ -232,7 +232,7 @@ function EnviarNotificacion(idusuario,email,idFacturacion,NombreFactura)
 }
 function EnviarCorreo()
 {
-  var idFacturacion =  $("#txtIdFacturacion").val(IdFactura);
+  var idFacturacion =  $("#txtIdFacturacion").val();
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
