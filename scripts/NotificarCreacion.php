@@ -10,7 +10,7 @@ $Avatar ="http://187.188.109.47:82/administracion/img/av1.png";
 
       #Obtenemos el avatar
       $objAvatar = new poolConnecion();
-      $Sql="SELECT Nombre,Apellidos,Avatar FROM [Northwind].[dbo].[Usuarios] Where Id='$_GET[idUsuario]'";
+      $Sql="SELECT Nombre,Apellidos,Avatar FROM [Northwind].[dbo].[Usuarios] Where Id='$_POST[idUsuario]'";
       $con=$objAvatar->ConexionSQLNorthwind();
       $RSet=$objAvatar->QuerySQLNorthwind($Sql,$con);
        while($filaA=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -19,7 +19,7 @@ $Avatar ="http://187.188.109.47:82/administracion/img/av1.png";
                 $Avatar = $filaA[Avatar];
              }
 
-echo $mjs = "$Sql<html xmlns=\"http://www.w3.org/1999/xhtml\">
+ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
  <head>
   <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0;\">
@@ -90,7 +90,7 @@ echo $mjs = "$Sql<html xmlns=\"http://www.w3.org/1999/xhtml\">
                           </td>
                           <td align=\"left\" valign=\"top\" style=\"font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;padding-top: 25px;color: #000000;font-family: sans-serif;\" class=\"paragraph\" width=\"80%\">
                               <b style=\"color: #333333;\">$Usuario</b><br/>
-                              $_GET[Mensaje]
+                              $_POST[Mensaje]
                               <p>
                               -----------------------------------------------------------
                               </p>
@@ -131,20 +131,19 @@ echo $mjs = "$Sql<html xmlns=\"http://www.w3.org/1999/xhtml\">
  //Set an alternative reply-to address
  $mail->addReplyTo('ventas@fortaingenieria.mx','Depto Ventas');
  //Set who the message is to be sent to
- $mail->addAddress($_GET[email],$Usuario);
+ $mail->addAddress($_POST[email],$Usuario);
  //Set the subject line
- $mail->Subject = $_GET[Factura];
+ $mail->Subject = $_POST[Factura];
  //Read an HTML message body from an external file, convert referenced images to embedded,
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);
  //send the message, check for errors
-/* if (!$mail->send())
+ if (!$mail->send())
   {
      echo "Mailer Error: " . $mail->ErrorInfo;
    }
 else
   {
      echo "Message sent!";
-   }*/
-echo "goo";
+   }
   ?>
