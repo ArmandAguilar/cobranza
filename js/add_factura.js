@@ -173,7 +173,7 @@ function guardar_factura()
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
                             $('#msjOk').hide(9000);
-                            alert('mmmmId' + IdFacturacion.toString());
+                            alert('mmmmIdsss' + IdFacturacion.toString());
 
 
             		       },
