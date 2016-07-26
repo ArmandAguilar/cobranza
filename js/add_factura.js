@@ -180,7 +180,7 @@ function guardar_factura()
                   $('#msjError').hide(8000);
             		}
              });
-
+             return IdFacturacion;
 }
 function guardar_mensaje(IdFactura)
 {
