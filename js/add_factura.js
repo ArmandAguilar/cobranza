@@ -169,6 +169,7 @@ function guardar_factura()
             		success:function(data)
             	         {
                             var IdFacturacion = data;
+                            $("#txtIdFacturacion").val(IdFacturacion);
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
                             $('#msjOk').hide(9000);
@@ -185,7 +186,7 @@ function guardar_factura()
 }
 function guardar_mensaje(IdFactura)
 {
-        $("#txtIdFacturacion").val(IdFactura);
+
         var losdatos = {IdFactura:IdFactura,
           txtProyecto:$("#txtProyecto").val(),
           txtUsuario:$("#txtIdUsuario").val(),
