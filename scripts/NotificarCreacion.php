@@ -103,7 +103,7 @@ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
                               Este correo es informativo, favor no responder a esta dirección de correo
                               <hr color=\"#E0E0E0\" align=\"center\" width=\"100%\" size=\"1\" noshade style=\"margin: 0; padding: 0;\" />
                           </td>
-                   </tr>";
+                   </tr>
             </table>
 
         </td>
@@ -144,13 +144,13 @@ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);
  //send the message, check for errors
- if (!$mail->send())
+/* if (!$mail->send())
   {
      echo "Mailer Error: " . $mail->ErrorInfo;
    }
 else
   {
      echo "Message sent!";
-   }
-
+   }*/
+echo "goo";
   ?>
