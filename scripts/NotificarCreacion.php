@@ -133,7 +133,7 @@ $Avatar ="http://187.188.109.47:82/administracion/img/av1.png";
  //Set who the message is to be sent to
  $mail->addAddress($_POST[email],$Usuario);
  //Set the subject line
- $mail->Subject = $_POST[Factura];
+ $mail->Subject = "Factura : $_POST[Factura]";
  //Read an HTML message body from an external file, convert referenced images to embedded,
  //convert HTML into a basic plain-text alternative body
  $mail->msgHTML($mjs);
