@@ -207,7 +207,7 @@ function guardar_mensaje(IdFactura)
 
 function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 {
-  alert('go:' + idF);
+  alert($("#txtIdFacturacion").val());
   var losdatos ={idusuario:idusuario,email:email,IdFacturacion:idF,Factura:NombreFactura};
   $.ajax({
             url:'./scripts/EnviarNotificacion.php',
@@ -233,12 +233,11 @@ function EnviarNotificacion(idusuario,email,NombreFactura,idF)
 function EnviarCorreo()
 {
   guardar_factura();
-  setTimeout($("#txtIdFacturacion").val(), 2000);
-  alert($("#txtIdFacturacion").val());
-  var idF = $("#txtIdFacturacion").val();
+
   var NombreFactura = $('#txtFactura').val() + $('#txtFacturaNo').val() + $('#cboTipoFactura').val();
   $("input[type=checkbox]:checked").each(function()
     {
+      var idF = $("#txtIdFacturacion").val();
       EnviarNotificacion($("#txtIdUsuario").val(),$(this).val(),NombreFactura,idF);
       /*alert($(this).val())*/
     }
