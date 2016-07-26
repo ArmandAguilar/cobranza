@@ -172,6 +172,7 @@ function guardar_factura()
                             guardar_mensaje(IdFacturacion);
                             $('#msjOk').show();
                             $('#msjOk').hide(9000);
+                            return data;
 
             		       },
             		error:function(req,e,er) {
@@ -180,7 +181,7 @@ function guardar_factura()
                   $('#msjError').hide(8000);
             		}
              });
-             return IdFacturacion;
+
 }
 function guardar_mensaje(IdFactura)
 {
