@@ -130,8 +130,8 @@ function validar_datos()
                                                                                   $('#DivtxtDir').removeClass('has-error');
                                                                                   guardar_factura();
                                                                                   EnviarCorreo();
-                                                                                  setTimeout(function(){ }, 90000);
-                                                                                  window.location.href='panel.php';
+                                                                                  setTimeout(function(){ window.location.href='panel.php';}, 1000000);
+
                                                                               }
                                                                        }
                                                                 }
