@@ -241,6 +241,38 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <div class="row">
               <div class="col-lg-4">
                 <div class="panel">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Datos Facturación</h3>
+                    </div>
+                    <div class="panel-body">
+                          <!-- Codigo Aqui -->
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-bold">Empresa Solicitante</p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-thin" id="lblEmpresaSolicitante" name="lblEmpresaSolicitante" ></p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-bold">Se Factura A:</p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-thin" id="lblSeFacturaA" name="lblSeFacturaA" ></p>
+                              </div>
+                          </div>
+                          <address>
+    												<strong>Dirección Fiscal</strong><br>
+    												<div id="lblDir"></div><br>
+    											</address>
+  									</div>
+                  </div>
+                <div class="panel">
                   <div class="panel-heading" data-target="#modal-modificar-empresa" data-toggle="modal" style="cursor:pointer">
                     <h3 class="panel-title">Empresa</h3>
                   </div>
@@ -405,37 +437,35 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                   </div>
                   <div class="panel-body">
                     <!--Hover Rows-->
-          <!--===================================================-->
-          <div id="DivMovimientos" class="panel-body">
-            <table class="table table-hover table-vcenter">
-              <thead>
-                <tr>
-                  <th class="min-width">Usuario</th>
-                  <th>Movimientos</th>
-                  <th class="text-center">Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="text-center">
-                    <span class="text-muted">Armando Aguilar</span>
-                  </td>
-                  <td>
-                    <small class="text-muted">Facturacion:00/00/000</small>
-                    <br>
-                    <small class="text-muted">Tentantiva:00/00/000</small>
-                    <br>
-                    <small class="text-muted">Modificacion:00/00/000</small>
-                  </td>
-                  <td class="text-center"><span class="text-success text-semibold">Provicionda</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!--===================================================-->
-          <!--End Hover Rows-->
-
-
+                            <!--===================================================-->
+                            <div id="DivMovimientos" class="panel-body">
+                              <table class="table table-hover table-vcenter">
+                                <thead>
+                                  <tr>
+                                    <th class="min-width">Usuario</th>
+                                    <th>Movimientos</th>
+                                    <th class="text-center">Estado</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="text-center">
+                                      <span class="text-muted">Armando Aguilar</span>
+                                    </td>
+                                    <td>
+                                      <small class="text-muted">Facturacion:00/00/000</small>
+                                      <br>
+                                      <small class="text-muted">Tentantiva:00/00/000</small>
+                                      <br>
+                                      <small class="text-muted">Modificacion:00/00/000</small>
+                                    </td>
+                                    <td class="text-center"><span class="text-success text-semibold">Provicionda</span></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <!--===================================================-->
+                            <!--End Hover Rows-->
 									</div>
                 </div>
               </div>
