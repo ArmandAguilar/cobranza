@@ -68,7 +68,7 @@ function validar_datos()
                     else
                         {
                            $('#DivtxtFacturaNo').removeClass('has-error');
-                            if (txtCantidad_ == "")
+                            if (txtCantidad_ == 0)
                              {
                                  $('#DivtxtCantidad').addClass('has-error');
                                  $('#msjError').show();
@@ -260,5 +260,5 @@ function EnviarCorreo()
             }
          });
   /*Pintamos boton de salir*/
-  
+
 }

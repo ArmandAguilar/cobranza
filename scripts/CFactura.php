@@ -117,7 +117,7 @@ function cancelar_factura($info)
       ,[NumProyecto]
       ,[CONCEPTO FACTURA]
       ,[Fecha Factura]
-      ,[Estatus]
+      ,'Cancelada'
       ,(-1 * [Monto Antes de IVA])
       ,(-1 * [IVA])
       ,[Fecha de recepción]
