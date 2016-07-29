@@ -13,7 +13,7 @@ class panel extends poolConnecion
           $Perfil = $info->Perfil ;
           if($IdUser>0)
           {
-                $WhereRVEdoCtaGeneralYear = "Where [LP] = '$IdUser'";
+                $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
                 $WhereRVEdoCtaGeneral = " And [LP] = '$IdUser'";
 
           }
@@ -21,7 +21,7 @@ class panel extends poolConnecion
           $objYears = new poolConnecion();
           $SqlYear="SELECT DISTINCT Years FROM [SAP].[dbo].[RVEdoCtaGeneral] $WhereRVEdoCtaGeneralYear order by Years desc";
           $con=$objYears->ConexionSQLSAP();
-          $RSet=$objYears->QuerySQLSAP($Sql,$con);
+          $RSet=$objYears->QuerySQLSAP($SqlYear,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                  {
                       $array[$i] = $fila[Years];
@@ -47,7 +47,7 @@ class panel extends poolConnecion
                                                        $contadorPoyectos ++;
                                                        $contadorPoyectosYears ++;
 
-                                                          $row_col1.= "$Sql<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
+                                                          $row_col1.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
                                                                           <div class=\"col-lg-*\">
                                                                             <div class=\"panel panel-warning panel-colorful\">
                                                                                    <div class=\"pad-all media\">
