@@ -192,8 +192,8 @@ function order(col)
               case 'EnEsperaDePago':
                                     $("#divcolEnEsperaDePago").empty();
                                     $("#divcol6L").show();
-                                    var losdatos = {Orden:$("#txthEnEsperaDePagoOrder").val()};
-                                    var filtroOrden = $("#txthEnEsperaDePagoOrder").val();
+                                    var losdatos = {Orden:$("#txthEsdepagoOrder").val()};
+                                    var filtroOrden = $("#txthEsdepagoOrder").val();
                                     $.ajax({
                                               url:'./scripts/data.php?v=EnEsperaDePago',
                                               type:'POST',
@@ -204,12 +204,12 @@ function order(col)
                                                   $("#divcolEnEsperaDePago").append(data);
                                                   if(filtroOrden == "asc")
                                                   {
-                                                    $("#txthEnEsperaDePagoOrder").val('desc')
+                                                    $("#txthEsdepagoOrder").val('desc')
                                                   }
                                                   else{
                                                     if(filtroOrden == "desc")
                                                     {
-                                                      $("#txthEnEsperaDePagoOrder").val('asc')
+                                                      $("#txthEsdepagoOrder").val('asc')
                                                     }
                                                   }
 
