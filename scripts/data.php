@@ -28,7 +28,7 @@ switch ($_GET[v]) {
   case 'enbudoUser':
                   $info->IdUser=$_POST[IdUsuario];
                   $info->Perfil = $_POST[Perfil];
-                  echo $obj->enbudo($info);
+                  echo $obj->primera_columna($info);
   break;
   default:
     # code...
