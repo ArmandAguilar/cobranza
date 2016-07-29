@@ -316,14 +316,14 @@ function QuienFacura($IdFacturacion)
       $arr = array();
       #Detalle Empresa
       $objQuienFactura = new poolConnecion();
-      $Sql="SELECT [QuienFactura],[EmpresaSolicitante],[SeFactura],[RFC],[DirFiscal] FROM FacturacionConsulting Where IdFacturacion='$IdFacturacion'";
+      $Sql="SELECT [QuienFactura],[EmpresaSolicitante],[SeFacturaA],[RFC],[DirFiscal] FROM FacturacionConsulting Where IdFacturacion='$IdFacturacion'";
       $con=$objQuienFactura->ConexionSQLSAP();
       $RSet=$objQuienFactura->QuerySQLSAP($Sql,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                 $QuienFactura = $fila[QuienFactura];
                 $EmpresaSolicitante = $fila[EmpresaSolicitante];
-                $SeFactura = $fila[SeFactura];
+                $SeFactura = $fila[SeFacturaA];
                 $RFC = $fila[RFC];
                 $DirFiscal = $fila[DirFiscal];
                  $arr[] = array('QuienFactura' => $QuienFactura,

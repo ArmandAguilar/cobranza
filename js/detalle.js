@@ -446,7 +446,7 @@ function QuienFactura()
             success:function(data)
                    {
                      var dataJson = eval(data);
-                      /*$("#lblQuienFactura").val(dataJson[0].QuienFactura);*/
+                      $("#lblQuienFactura").val(dataJson[0].QuienFactura);
                       $("#lblEmpresaSolicitante").val(dataJson[0].EmpresaSolicitante);
                       $("#lblSeFacturaA").val(dataJson[0].SeFactura);
                       $("#lblRFCS").val(dataJson[0].RFC);
