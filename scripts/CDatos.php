@@ -7,17 +7,19 @@ class panel extends poolConnecion
   {
           #buscamo todos los años para formar los cuadros
           $WhereRVEdoCtaGeneral = "";
+          $WhereRVEdoCtaGeneralYear = "";
           $ListaOR = "";
           $IdUser = $info->IdUser;
           $Perfil = $info->Perfil ;
           if($IdUser>0)
           {
+                $WhereRVEdoCtaGeneralYear = "Where [LP] = '$IdUser'";
                 $WhereRVEdoCtaGeneral = ",[LP] = '$IdUser'";
 
           }
           $i = 0;
           $objYears = new poolConnecion();
-          $SqlYear="SELECT DISTINCT Years FROM [SAP].[dbo].[RVEdoCtaGeneral] $WhereRVEdoCtaGeneral order by Years desc";
+          $SqlYear="SELECT DISTINCT Years FROM [SAP].[dbo].[RVEdoCtaGeneral] $WhereRVEdoCtaGeneralYear order by Years desc";
           $con=$objYears->ConexionSQLSAP();
           $RSet=$objYears->QuerySQLSAP($Sql,$con);
            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
