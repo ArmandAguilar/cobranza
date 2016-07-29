@@ -97,7 +97,7 @@ class panel extends poolConnecion
            $ContadorEnEsperaDePago = 0;
            $objPaso2 = new poolConnecion();
            $colorFill =  "panel-primary";
-           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere $WhereRVEdoCtaGeneral order by [Fecha TENTATIVA de pago] asc";
+           $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] $BuscarListaWhere  order by [Fecha TENTATIVA de pago] asc";
            $con=$objPaso2->ConexionSQLSAP();
            $RSet=$objPaso2->QuerySQLSAP($Sql,$con);
             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
