@@ -127,8 +127,13 @@ $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
               <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\" bgcolor=\"#FFFFFF\" width=\"560\" style=\"border-collapse: collapse; border-spacing: 0; padding: 0; width: inherit;max-width: 560px;\" class=\"container\">
                     <!-- Aqui Varible //-->
                     $TimeLine
-            </table>
 
+            </table>
+            <p>
+            -----------------------------------------------------------
+            </p>
+            <br>Este correo es informativo, favor no responder a esta dirección de correo
+            <p></p>
         </td>
     </tr>
  </table>

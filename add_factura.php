@@ -346,7 +346,7 @@ $RSet=$objCboEmpresas->QuerySQLSAP($SqlEmpreas,$con);
 					</div>
           <div class="panel">
     						<div class="panel-heading">
-    							<h3 class="panel-title">Notificar (No Disponible)</h3>
+    							<h3 class="panel-title">Notificar</h3>
     						</div>
     						<div class="panel-body">
                   <?php

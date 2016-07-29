@@ -95,6 +95,7 @@ $Avatar ="http://187.188.109.47:82/administracion/img/av1.png";
                               -----------------------------------------------------------
                               </p>
                               <br>Este correo es informativo, favor no responder a esta dirección de correo
+                              <p></p>
                               <hr color=\"#E0E0E0\" align=\"center\" width=\"100%\" size=\"1\" noshade style=\"margin: 0; padding: 0;\" />
                           </td>
                    </tr>
