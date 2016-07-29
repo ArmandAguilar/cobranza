@@ -334,8 +334,8 @@ function QuienFacura($IdFacturacion)
                               );
              }
        $objQuienFactura->CerrarSQLSAP($RSet,$con);
-       //return json_encode($arr);
-       return $Sql;
+       return json_encode($arr);
+       //return $Sql;
 }
 }
  ?>

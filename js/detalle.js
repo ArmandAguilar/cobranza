@@ -445,13 +445,13 @@ function QuienFactura()
             data:losdatos,
             success:function(data)
                    {
-                     alert(data);
-                     /*var dataJson = eval(data);
-                      $("#lblQuienFactura").val(dataJson[0].QuienFactura);
-                      $("#lblEmpresaSolicitante").val(dataJson[0].EmpresaSolicitante);
-                      $("#lblSeFacturaA").val(dataJson[0].SeFactura);
-                      $("#lblRFCS").val(dataJson[0].RFC);
-                      $("#lblDir").val(dataJson[0].DirFiscal);*/
+                    
+                     var dataJson = eval(data);
+                      $("#lblQuienFactura").append(dataJson[0].QuienFactura);
+                      $("#lblEmpresaSolicitante").append(dataJson[0].EmpresaSolicitante);
+                      $("#lblSeFacturaA").append(dataJson[0].SeFactura);
+                      $("#lblRFCS").append(dataJson[0].RFC);
+                      $("#lblDir").append(dataJson[0].DirFiscal);
                    },
             error:function(req,e,er) {
               alert('error!' + er);
