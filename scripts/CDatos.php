@@ -14,7 +14,7 @@ class panel extends poolConnecion
           if($IdUser>0)
           {
                 $WhereRVEdoCtaGeneralYear = "Where [LP] = '$IdUser'";
-                $WhereRVEdoCtaGeneral = ",[LP] = '$IdUser'";
+                $WhereRVEdoCtaGeneral = " And [LP] = '$IdUser'";
 
           }
           $i = 0;
