@@ -16,6 +16,19 @@ class panel extends poolConnecion
                 $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
                 $WhereRVEdoCtaGeneral = " [LP] = '$IdUser'";
 
+                $objListaDeProyectos = new poolConnecion();
+                $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
+                $con=$objListaDeProyectos->ConexionSQLSAP();
+                $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
+                 while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                       {
+                         $Proy = $fila[NumProyecto];
+                         $ListaOR .= "NumProyecto='$Proy' or ";
+                       }
+                $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
+                $ListaOR = substr($ListaOR, 0, -3);
+                $BuscarListaWhere = "Where $ListaOR";
+
           }
           $i = 0;
           $objYears = new poolConnecion();
