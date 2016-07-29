@@ -90,7 +90,9 @@ switch ($_GET[o]) {
                 $info->IdFacturacion = $_POST[IdFacturacion];
                 echo $objF->leer_eventos($info);
       break;
-
+      case '13':
+                echo $objF->QuienFacura($_POST[IdFacturacion]);
+      break;
   default:
     # code...
     break;

@@ -406,7 +406,7 @@ function registra_evento()
              data:losdatos,
              success:function(data)
                     {
-                      
+
                         leer_registro();
                     },
              error:function(req,e,er) {
@@ -425,6 +425,32 @@ function leer_registro()
             success:function(data)
                    {
                       $("#DivMovimientos").append(data);
+                   },
+            error:function(req,e,er) {
+              alert('error!' + er);
+            }
+         });
+}
+function QuienFactura()
+{
+  $("#lblQuienFactura").empty();
+  $("#lblEmpresaSolicitante").empty();
+  $("#lblSeFacturaA").empty();
+  $("#lblRFCS").empty();
+  $("#lblDir").empty();
+  var losdatos = {IdFacturacion:$("#txtIdFacturacion").val()};
+  $.ajax({
+            url:'./scripts/oper_detalles.php?o=13',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                     var dataJson = eval(data);
+                      $("#lblQuienFactura").val(dataJson[0].QuienFactura);
+                      $("#lblEmpresaSolicitante").val(dataJson[0].EmpresaSolicitante);
+                      $("#lblSeFacturaA").val(dataJson[0].SeFactura);
+                      $("#lblRFCS").val(dataJson[0].RFC);
+                      $("#lblDir").val(dataJson[0].DirFiscal);
                    },
             error:function(req,e,er) {
               alert('error!' + er);

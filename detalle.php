@@ -241,11 +241,21 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
           <div class="row">
               <div class="col-lg-4">
                 <div class="panel">
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-target="#modal-modificar-empresa" data-toggle="modal" style="cursor:pointer">
                       <h3 class="panel-title">Datos Facturación</h3>
                     </div>
                     <div class="panel-body">
                           <!-- Codigo Aqui -->
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-bold">Quien Factura</p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-thin" id="lblQuienFactura" name="lblQuienFactura" ></p>
+                              </div>
+                          </div>
                           <div class="row">
                               <div class="col-sm-*">
                                   <p class="text-bold">Empresa Solicitante</p>
@@ -266,6 +276,16 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                   <p class="text-thin" id="lblSeFacturaA" name="lblSeFacturaA" ></p>
                               </div>
                           </div>
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-bold">RFC:</p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-*">
+                                  <p class="text-thin" id="lblRFCS" name="lblRFCS" ></p>
+                              </div>
+                          </div>
                           <address>
     												<strong>Dirección Fiscal</strong><br>
     												<div id="lblDir"></div><br>
@@ -273,7 +293,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
   									</div>
                   </div>
                 <div class="panel">
-                  <div class="panel-heading" data-target="#modal-modificar-empresa" data-toggle="modal" style="cursor:pointer">
+                  <div class="panel-heading">
                     <h3 class="panel-title">Empresa</h3>
                   </div>
                   <div class="panel-body">
@@ -1054,6 +1074,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
       detalles_cliente(<?php echo $_POST[txtNoProyecto]; ?>);
       timeline();
       leer_registro();
+      QuienFactura();
 	</script>
   <script>
   $(document).ready(function() {

@@ -311,5 +311,30 @@ function last_id()
    $objLastId->CerrarSQLSAP($RSet,$con);
    return $IdFacturacion;
 }
+function QuienFacura($IdFacturacion)
+{
+      $arr = array();
+      #Detalle Empresa
+      $objQuienFactura = new poolConnecion();
+      $Sql="SELECT [QuienFactura],[EmpresaSolicitante],[SeFactura],[RFC],[DirFiscal] FROM FacturacionConsulting Where IdFacturacion='$IdFacturacion'";
+      $con=$objQuienFactura->ConexionSQLSAP();
+      $RSet=$objQuienFactura->QuerySQLSAP($Sql,$con);
+       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+             {
+                $QuienFactura = $fila[QuienFactura];
+                $EmpresaSolicitante = $fila[EmpresaSolicitante];
+                $SeFactura = $fila[SeFactura];
+                $RFC = $fila[RFC];
+                $DirFiscal = $fila[DirFiscal];
+                 $arr[] = array('QuienFactura' => $QuienFactura,
+                                'EmpresaSolicitante' => $EmpresaSolicitante,
+                                'SeFactura' => $SeFactura,
+                                'RFC' => $RFC,
+                                'DirFiscal' => $DirFiscal
+                              );
+             }
+       $objQuienFactura->CerrarSQLSAP($RSet,$con);
+       return json_encode($arr);
+}
 }
  ?>
