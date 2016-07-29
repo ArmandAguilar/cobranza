@@ -268,7 +268,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                           </div>
                           <div class="row">
                               <div class="col-sm-*">
-                                  <p class="text-bold">Se Factura A:</p>
+                                  <p class="text-bold">Se Factura A</p>
                               </div>
                           </div>
                           <div class="row">
@@ -278,7 +278,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                           </div>
                           <div class="row">
                               <div class="col-sm-*">
-                                  <p class="text-bold">RFC:</p>
+                                  <p class="text-bold">RFC</p>
                               </div>
                           </div>
                           <div class="row">
