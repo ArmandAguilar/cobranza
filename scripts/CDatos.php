@@ -356,8 +356,8 @@ class panel extends poolConnecion
                    <div id=\"divcolEnEsperaDePago\">$row_col6New</div>
                </div>
 
-           </div>$Sql";
-                       return  $row;
+           </div>";
+                       return  $Sql;
    }
 
 
