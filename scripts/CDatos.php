@@ -44,7 +44,7 @@ class panel extends poolConnecion
                                                        $TotalGral += $fila[ImporteFinal];
                                                        $contadorPoyectos ++;
                                                        $contadorPoyectosYears ++;
-                                                       
+
                                                           $row_col1.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
                                                                           <div class=\"col-lg-*\">
                                                                             <div class=\"panel panel-warning panel-colorful\">
@@ -71,7 +71,7 @@ class panel extends poolConnecion
                                          }
                                   $objForYear->CerrarSQLSAP($RSet,$con);
                                   $TotalGralYearsF = number_format($TotalGralYears, 2, '.', ',');
-                                  $rowFinal .="<div class=\"panel panel-dark panel-colorful media pad-all\">
+                                  $rowFinal .="$Sql<div class=\"panel panel-dark panel-colorful media pad-all\">
                                                     <div class=\"media-body\">
                                                         <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears) - $value</p>
                                                         <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsF </p>
