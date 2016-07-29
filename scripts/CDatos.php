@@ -73,7 +73,7 @@ class panel extends poolConnecion
                                                         <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsF </p>
                                                     </div>
                                               </div>
-                                              $row_col1 $SqlYear";
+                                              $row_col1";
                                   $row_col1 ="";
                   }
            }
@@ -279,6 +279,7 @@ class panel extends poolConnecion
                          </div>
                    </div>
                    $rowFinal
+                   $SqlYear
                </div>
                <div class=\"col-sm-2\" >
                  <div class=\"panel panel-dark panel-colorful media pad-all\">
