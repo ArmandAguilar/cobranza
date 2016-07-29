@@ -390,7 +390,7 @@ function editar_empresa()
                              container : 'floating',
                              timer : 3000
                            });
-                           redireccionar();
+                           QuienFactura();
           		       },
           		error:function(req,e,er) {
           			alert('error!' + er);
@@ -445,7 +445,7 @@ function QuienFactura()
             data:losdatos,
             success:function(data)
                    {
-                    
+
                      var dataJson = eval(data);
                       $("#lblQuienFactura").append(dataJson[0].QuienFactura);
                       $("#lblEmpresaSolicitante").append(dataJson[0].EmpresaSolicitante);
