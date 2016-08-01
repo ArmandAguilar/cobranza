@@ -361,7 +361,7 @@ class panel extends poolConnecion
    }
 
 
-  function enbudo($info)
+  /*function enbudo($info)
     {
       $WhereRVEdoCtaGeneral = "";
       $ListaOR = "";
@@ -705,14 +705,35 @@ class panel extends poolConnecion
 
       </div>";
                   return  $row;
-    }
-  function filtro_estado($Edo,$Orden)
+    }*/
+  function filtro_estado($Edo,$Orden,$IdUser)
       {
+
+                $ListaOR = "";
+                  if($IdUser>0)
+                  {
+                        $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
+                        $WhereRVEdoCtaGeneral = " [LP] = '$IdUser'";
+
+                        $objListaDeProyectos = new poolConnecion();
+                        $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
+                        $con=$objListaDeProyectos->ConexionSQLSAP();
+                        $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
+                         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                               {
+                                 $Proy = $fila[NumProyecto];
+                                 $ListaOR .= "NumProyecto='$Proy' or ";
+                               }
+                        $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
+                        $ListaOR = substr($ListaOR, 0, -3);
+                        $BuscarListaWhere = "And $ListaOR";
+
+                  }
                   #Paso Filtro
                   $Importe = 0;
                   $ContadorProvisionada = 0;
                   $objPasoEdo = new poolConnecion();
-                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' order by  [Fecha TENTATIVA de pago] $Orden";
+                  $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where Estatus='$Edo' $BuscarListaWhere order by  [Fecha TENTATIVA de pago] $Orden";
                   $con=$objPasoEdo->ConexionSQLSAP();
                   $RSet=$objPasoEdo->QuerySQLSAP($Sql,$con);
                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
