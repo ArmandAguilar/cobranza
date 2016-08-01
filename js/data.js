@@ -72,7 +72,7 @@ function order(col)
           case 'Provisionada':
                                 $("#divcolProvisionada").empty();
                                 $("#divcol2L").show();
-                                var losdatos = {Orden:$("#txthProvisionadaOrder").val(),IdUsuario:$("#txtIdUsuario").val()};
+                                var losdatos = {Orden:$("#txthProvisionadaOrder").val(),IdUsuario:$("#txtIdUsuario").val(),Perfil:$("#txtPerfil").val()};
                                 var filtroOrden = $("#txthProvisionadaOrder").val();
                                 $.ajax({
                                           url:'./scripts/data.php?v=Provisionada',
@@ -102,7 +102,7 @@ function order(col)
            case 'Elaborada':
                                  $("#divcolElaborada").empty();
                                  $("#divcol3L").show();
-                                 var losdatos = {Orden:$("#txthElaboradaOrder").val(),IdUsuario:$("#txtIdUsuario").val()};
+                                 var losdatos = {Orden:$("#txthElaboradaOrder").val(),IdUsuario:$("#txtIdUsuario").val(),Perfil:$("#txtPerfil").val()};
                                  var filtroOrden = $("#txthElaboradaOrder").val();
                                  $.ajax({
                                            url:'./scripts/data.php?v=Elaborada',
@@ -132,7 +132,7 @@ function order(col)
             case 'Recibida':
                                   $("#divcolRecibida").empty();
                                   $("#divcol4L").show();
-                                  var losdatos = {Orden:$("#txthRecibidaOrder").val(),IdUsuario:$("#txtIdUsuario").val()};
+                                  var losdatos = {Orden:$("#txthRecibidaOrder").val(),IdUsuario:$("#txtIdUsuario").val(),Perfil:$("#txtPerfil").val()};
                                   var filtroOrden = $("#txthRecibidaOrder").val();
                                   $.ajax({
                                             url:'./scripts/data.php?v=Recibida',
@@ -162,7 +162,7 @@ function order(col)
              case 'Aprobada':
                                    $("#divcolAprobada").empty();
                                    $("#divcol5L").show();
-                                   var losdatos = {Orden:$("#txthAprobadaOrder").val(),IdUsuario:$("#txtIdUsuario").val()};
+                                   var losdatos = {Orden:$("#txthAprobadaOrder").val(),IdUsuario:$("#txtIdUsuario").val(),Perfil:$("#txtPerfil").val()};
                                    var filtroOrden = $("#txthAprobadaOrder").val();
                                    $.ajax({
                                              url:'./scripts/data.php?v=Aprobada',
@@ -192,7 +192,7 @@ function order(col)
               case 'EnEsperaDePago':
                                     $("#divcolEnEsperaDePago").empty();
                                     $("#divcol6L").show();
-                                    var losdatos = {Orden:$("#txthEsdepagoOrder").val(),IdUsuario:$("#txtIdUsuario").val()};
+                                    var losdatos = {Orden:$("#txthEsdepagoOrder").val(),IdUsuario:$("#txtIdUsuario").val(),Perfil:$("#txtPerfil").val()};
                                     var filtroOrden = $("#txthEsdepagoOrder").val();
                                     $.ajax({
                                               url:'./scripts/data.php?v=EnEsperaDePago',

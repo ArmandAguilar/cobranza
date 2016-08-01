@@ -706,28 +706,32 @@ class panel extends poolConnecion
       </div>";
                   return  $row;
     }*/
-  function filtro_estado($Edo,$Orden,$IdUser)
+  function filtro_estado($Edo,$Orden,$IdUser,$Perfil)
       {
 
                 $ListaOR = "";
                   if($IdUser>0)
                   {
-                        $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
-                        $WhereRVEdoCtaGeneral = " [LP] = '$IdUser'";
+                    if ($Perfil ==  "Admin") {
 
-                        $objListaDeProyectos = new poolConnecion();
-                        $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
-                        $con=$objListaDeProyectos->ConexionSQLSAP();
-                        $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
-                         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                               {
-                                 $Proy = $fila[NumProyecto];
-                                 $ListaOR .= "NumProyecto='$Proy' or ";
-                               }
-                        $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
-                        $ListaOR = substr($ListaOR, 0, -3);
-                        $BuscarListaWhere = "And $ListaOR";
+                    }
+                    else {
+                              $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
+                              $WhereRVEdoCtaGeneral = " [LP] = '$IdUser'";
 
+                              $objListaDeProyectos = new poolConnecion();
+                              $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
+                              $con=$objListaDeProyectos->ConexionSQLSAP();
+                              $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
+                               while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                     {
+                                       $Proy = $fila[NumProyecto];
+                                       $ListaOR .= "NumProyecto='$Proy' or ";
+                                     }
+                              $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
+                              $ListaOR = substr($ListaOR, 0, -3);
+                              $BuscarListaWhere = "And $ListaOR";
+                        }
                   }
                   #Paso Filtro
                   $Importe = 0;

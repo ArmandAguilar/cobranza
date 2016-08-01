@@ -63,6 +63,7 @@ session_start();
     <input type="hidden" name="txtImporte" id="txtImporte" value="">
     <input type="hidden" name="txtEstado" id="txtEstado" value="">
     <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>">
+    <input type="hidden" name="txtIdPerfil" id="txtPerfil" value="<?php echo $_SESSION[CobranzaPerfil]; ?>">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
