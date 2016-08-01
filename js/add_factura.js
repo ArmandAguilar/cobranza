@@ -173,7 +173,14 @@ function guardar_factura()
             	         {
                             var IdFacturacion = data;
                             $("#txtIdFacturacion").val(data);
-                            guardar_mensaje(IdFacturacion);
+                            if($("#txtMensaje").val() == "")
+                              {
+
+                              }
+                            else{
+                                  guardar_mensaje(IdFacturacion);
+                               }
+
                             $('#msjOk').show();
             		       },
             		error:function(req,e,er) {
