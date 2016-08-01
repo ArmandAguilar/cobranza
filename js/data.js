@@ -72,7 +72,7 @@ function order(col)
           case 'Provisionada':
                                 $("#divcolProvisionada").empty();
                                 $("#divcol2L").show();
-                                var losdatos = {Orden:$("#txthProvisionadaOrder").val(),IdUsuario:$("txtIdUsuario").val()};
+                                var losdatos = {Orden:$("#txthProvisionadaOrder").val(),IdUsuario:$("#txtIdUsuario").val()};
                                 var filtroOrden = $("#txthProvisionadaOrder").val();
                                 $.ajax({
                                           url:'./scripts/data.php?v=Provisionada',
