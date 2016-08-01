@@ -753,7 +753,7 @@ class panel extends poolConnecion
                                   $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                   $ContadorProvisionada ++;
                                   $Fecha = $fila[FechaPago];
-                                   $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
+                                   $row_col2.= "$Sql<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$fila[NomProyecto]','$Importe','Provisionada');\" style=\"cursor:pointer\">
                                                    <div class=\"col-lg-*\">
                                                      <div class=\"panel $colorFill panel-colorful\">
                                                             <div class=\"pad-all media\">
