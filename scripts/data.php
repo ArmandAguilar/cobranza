@@ -11,19 +11,19 @@ switch ($_GET[v]) {
             echo $obj->primera_columna($info);
     break;
   case 'Provisionada':
-                    echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POS[IdUsuario]);
+                    echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario]);
     break;
   case 'Elaborada':
-                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POS[IdUsuario]);
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario]);
       break;
   case 'Recibida':
-                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POS[IdUsuario]);
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario]);
         break;
   case 'Aprobada':
-                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POS[IdUsuario]);
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario]);
         break;
   case 'EnEsperaDePago':
-                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POS[IdUsuario]);
+                      echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario]);
               break;
   case 'enbudoUser':
                   $info->IdUser=$_POST[IdUsuario];
