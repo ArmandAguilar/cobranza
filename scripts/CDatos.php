@@ -27,7 +27,7 @@ class panel extends poolConnecion
                        }
                 $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
                 $ListaOR = substr($ListaOR, 0, -3);
-                $BuscarListaWhere = "Where $ListaOR";
+                $BuscarListaWhere = "and ($ListaOR)";
 
           }
           $i = 0;
