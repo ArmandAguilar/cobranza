@@ -27,7 +27,7 @@ class panel extends poolConnecion
                        }
                 $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
                 $ListaOR = substr($ListaOR, 0, -3);
-                $BuscarListaWhere = "and ($ListaOR)";
+                $BuscarListaWhere = " and ($ListaOR)";
 
           }
           $i = 0;
@@ -60,7 +60,7 @@ class panel extends poolConnecion
                                                        $contadorPoyectos ++;
                                                        $contadorPoyectosYears ++;
 
-                                                          $row_col1.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
+                                                          $row_col1.= "$Sql<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
                                                                           <div class=\"col-lg-*\">
                                                                             <div class=\"panel panel-warning panel-colorful\">
                                                                                    <div class=\"pad-all media\">
