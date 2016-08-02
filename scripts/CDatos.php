@@ -14,7 +14,7 @@ class panel extends poolConnecion
           if($IdUser>0)
           {
                 $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
-                $WhereRVEdoCtaGeneral = " [LP] = '$IdUser'";
+                $WhereRVEdoCtaGeneral = " and [LP] = '$IdUser'";
 
                 $objListaDeProyectos = new poolConnecion();
                 $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
@@ -27,7 +27,7 @@ class panel extends poolConnecion
                        }
                 $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
                 $ListaOR = substr($ListaOR, 0, -3);
-                $BuscarListaWhere = " and ($ListaOR)";
+                $BuscarListaWhere = "Where $ListaOR";
 
           }
           $i = 0;
@@ -82,7 +82,7 @@ class panel extends poolConnecion
                                          }
                                   $objForYear->CerrarSQLSAP($RSet,$con);
                                   $TotalGralYearsF = number_format($TotalGralYears, 2, '.', ',');
-                                  $rowFinal .="$Sql<div class=\"panel panel-dark panel-colorful media pad-all\">
+                                  $rowFinal .="<div class=\"panel panel-dark panel-colorful media pad-all\">
                                                     <div class=\"media-body\">
                                                         <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears) - $value</p>
                                                         <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsF </p>
