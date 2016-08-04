@@ -167,7 +167,7 @@ echo $mjs = "<html xmlns=\"http://www.w3.org/1999/xhtml\">
  //Set an alternative reply-to address
  $mail->addReplyTo($EmailUsuario,$NombreUsuario);
  //Set who the message is to be sent to
- $mail->addAddress($_POST[email],'Armando Aguilar L.');
+ $mail->addAddress($_GET[email],'Armando Aguilar L.');
  //Set the subject line
  $mail->Subject = $_POST[Factura];
  //Read an HTML message body from an external file, convert referenced images to embedded,
