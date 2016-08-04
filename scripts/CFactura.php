@@ -1,5 +1,6 @@
 <?php
-
+ini_set('session.auto_start()','On');
+session_start();
 class facturas extends poolConnecion
 {
 
@@ -7,7 +8,7 @@ class facturas extends poolConnecion
 function ingresar_factura($info)
 {
 
-
+  $Ac=$_SESSION[Acronimo];
   $Factura = $info->Factura;
   $NumProyecto = $info->NumProyecto;
   $CONCEPTO_FACTURA =  $info->CONCEPTO_FACTURA;
@@ -31,7 +32,7 @@ function ingresar_factura($info)
   $MotivoCancelacion = "";
   $CondicionesDePago = "";
 
-    $sql = "INSERT INTO [SAP].[dbo].[FacturacionConsulting] VALUES ('$Factura','$NumProyecto','$CONCEPTO_FACTURA','$Fecha_Factura' ,'Provisionada','$MontoAntesdeIVA','$IVA','$Fecha_recepcion','$Fecha_TENTATIVA_de_pago','$Notas','$Trimestre','$Producto','$Entrego_Factura','$ImporteLetra','$QuienFactura','$EmpresaSolicitante','$SeFacturaA','$RFC','$DirFiscal','$TelefonoEmpresa','$MotivoCancelacion','$CondicionesDePago')";
+    $sql = "INSERT INTO [SAP].[dbo].[FacturacionConsulting] VALUES ('$Ac-$Factura','$NumProyecto','$CONCEPTO_FACTURA','$Fecha_Factura' ,'Provisionada','$MontoAntesdeIVA','$IVA','$Fecha_recepcion','$Fecha_TENTATIVA_de_pago','$Notas','$Trimestre','$Producto','$Entrego_Factura','$ImporteLetra','$QuienFactura','$EmpresaSolicitante','$SeFacturaA','$RFC','$DirFiscal','$TelefonoEmpresa','$MotivoCancelacion','$CondicionesDePago')";
 
     #Guradamos Factura
     $objGurdar = new poolConnecion();
