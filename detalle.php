@@ -732,7 +732,12 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
         <div class="row">
                   <div class="col-md-3">
                       <div id="DivtxtFactura" class="form-group has-feedback">
-                           <input type="text" id="txtFacturaModificar" name="txtFacturaModificar" class="form-control" placeholder="Factura" value="<?php echo "$ArryaFactura[0]-$ArryaFactura[1]"; ?>">
+                        <?php
+                          $Factura_Parte1 = $ArryaFactura[0];
+                          $Factura_Parte1 .= "-";
+                          $Factura_Parte1 .= $ArryaFactura[1];
+                        ?>
+                           <input type="text" id="txtFacturaModificar" name="txtFacturaModificar" class="form-control" placeholder="Factura" value="<?php echo $Factura_Parte1; ?>">
                     </div>
                   </div>
                   <div class="col-md-3">
