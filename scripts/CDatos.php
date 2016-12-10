@@ -460,7 +460,7 @@ function segunda_columna($info)
          $RSet=$objYearsProvicion->QuerySQLSAP($SqlYearP,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                     $arrayYears[$i] = $fila[Years];
+                     $arrayYears[$i] = $fila[Year];
                      $i++;
                 }
          $objYearsProvicion->CerrarSQLSAP($RSet,$con);
@@ -495,7 +495,7 @@ function segunda_columna($info)
                                                                             </div>
                                                                             <div class=\"media-body\">
                                                                               <p class=\"h4 text-thin media-heading\">$ImporteFinalYears</p>
-                                                                              <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                                              
                                                                             </div>
                                                                           </div>
 
@@ -552,7 +552,7 @@ function segunda_columna($info)
                              }
                              $Estatus = $fila[Estatus];
                              switch ($Estatus) {
-                               case 'Provisionada':
+                               /*case 'Provisionada':
                                                    $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
                                                    $TotalProvisionada += $fila[Importe];
                                                    $Proyecto =  substr($fila[NomProyecto], 0, 15);
@@ -578,7 +578,7 @@ function segunda_columna($info)
                                                                       </div>
                                                                    </div>
                                                                </div>";
-                                 break;
+                                 break;*/
                                  case 'Elaborada':
 
                                                      $ImporteElaborada = number_format($fila[Importe], 2, '.', ',');
