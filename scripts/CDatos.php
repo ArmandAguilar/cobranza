@@ -455,13 +455,13 @@ function segunda_columna($info)
          #Buscamos años para provisondas
          $j = 0;
          $objYearsProvicion = new poolConnecion();
-         $SqlYearP="SELECT  DISTINCT [Año Factura] As Year FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada')";
+         $SqlYearP="SELECT  DISTINCT [Año Factura] As Year FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where [Estatus] = 'Provisionada'";
          $con=$objYearsProvicion->ConexionSQLSAP();
          $RSet=$objYearsProvicion->QuerySQLSAP($SqlYearP,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                     $arrayYears[$i] = $fila[Year];
-                     $i++;
+                     $arrayYears[$j] = $fila[Year];
+                     $j++;
                 }
          $objYearsProvicion->CerrarSQLSAP($RSet,$con);
 
@@ -495,7 +495,7 @@ function segunda_columna($info)
                                                                             </div>
                                                                             <div class=\"media-body\">
                                                                               <p class=\"h4 text-thin media-heading\">$ImporteFinalYears</p>
-                                                                              
+
                                                                             </div>
                                                                           </div>
 
@@ -508,7 +508,7 @@ function segunda_columna($info)
                          $TotalGralYearsF = number_format($TotalGralYears, 2, '.', ',');
                          $rowFinalProviciones .="<div class=\"panel panel-dark panel-colorful media pad-all\">
                                            <div class=\"media-body\">
-                                               <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears) - $value</p>
+                                               <p class=\"text-1x mar-no text-thin\">Proviciones ($contadorPoyectosYears) - $value</p>
                                                <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsF </p>
                                            </div>
                                      </div>
