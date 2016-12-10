@@ -484,7 +484,7 @@ function segunda_columna($info)
                                               $contadorPoyectos ++;
                                               $contadorPoyectosYears ++;
 
-                                                 $row_col2.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
+                                                 /*$row_col2.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
                                                                  <div class=\"col-lg-*\">
                                                                    <div class=\"panel panel-blue panel-colorful\">
                                                                           <div class=\"pad-all media\">
@@ -501,7 +501,7 @@ function segunda_columna($info)
 
                                                                     </div>
                                                                  </div>
-                                                             </div>";
+                                                             </div>";*/
                                             }
                                 }
                          $objForYear->CerrarSQLSAP($RSet,$con);
