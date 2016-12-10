@@ -387,7 +387,9 @@ function segunda_columna($info)
               $BuscarListaWhere = "Where $ListaOR";
 
         }
+        #Obtenemos Años para Proyectos
         $i = 0;
+
         $objYears = new poolConnecion();
         $SqlYear="SELECT DISTINCT Years FROM [SAP].[dbo].[RVEdoCtaGeneral] $WhereRVEdoCtaGeneralYear order by Years desc";
         $con=$objYears->ConexionSQLSAP();
@@ -450,12 +452,68 @@ function segunda_columna($info)
                 }
          }
          /* Aqui Corremos otra vez los años para calcular los cuadros negros */
-         foreach ($array as $key => $value)
+         #Buscamos años para provisondas
+         $j = 0;
+         $objYearsProvicion = new poolConnecion();
+         $SqlYearP="SELECT  DISTINCT [Año Factura] As Year FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada')";
+         $con=$objYearsProvicion->ConexionSQLSAP();
+         $RSet=$objYearsProvicion->QuerySQLSAP($SqlYearP,$con);
+          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                {
+                     $arrayYears[$i] = $fila[Years];
+                     $i++;
+                }
+         $objYearsProvicion->CerrarSQLSAP($RSet,$con);
+
+         foreach ($arrayYears as $key => $value)
           {
                  if (!empty($value))
                  {
-                         $Sql="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where [Estatus] = 'Elaborada' and ";
+                         $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value') ";
+                         $contadorPoyectosYears = 0;
+                         $objForYear = new poolConnecion();
+                         $con=$objForYear->ConexionSQLSAP();
+                         $RSet=$objForYear->QuerySQLSAP($SqlProvicionadas,$con);
+                          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                {
+                                            if(!empty($fila[NumProyecto]))
+                                            {
+                                              $ImporteFinalYears = number_format($fila[Importe], 2, '.', ',');
+                                              $TotalGralYears += $fila[Importe];
+                                              $TotalGral += $fila[Importe];
+                                              $contadorPoyectos ++;
+                                              $contadorPoyectosYears ++;
 
+                                                 $row_col2.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
+                                                                 <div class=\"col-lg-*\">
+                                                                   <div class=\"panel panel-blue panel-colorful\">
+                                                                          <div class=\"pad-all media\">
+                                                                            <div class=\"media-left\">
+                                                                              <span class=\"icon-wrap icon-wrap-xs\">
+                                                                                <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                              </span>
+                                                                            </div>
+                                                                            <div class=\"media-body\">
+                                                                              <p class=\"h4 text-thin media-heading\">$ImporteFinalYears</p>
+                                                                              <small class=\"text-uppercase\">$fila[NumProyecto] .- $fila[NomProyecto]</small>
+                                                                            </div>
+                                                                          </div>
+
+                                                                    </div>
+                                                                 </div>
+                                                             </div>";
+                                            }
+                                }
+                         $objForYear->CerrarSQLSAP($RSet,$con);
+                         $TotalGralYearsF = number_format($TotalGralYears, 2, '.', ',');
+                         $rowFinalProviciones .="<div class=\"panel panel-dark panel-colorful media pad-all\">
+                                           <div class=\"media-body\">
+                                               <p class=\"text-1x mar-no text-thin\">Proyectos ($contadorPoyectosYears) - $value</p>
+                                               <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsF </p>
+                                           </div>
+                                     </div>
+                                     $row_col2";
+                         $row_col2 ="";
                  }
          }
 
@@ -674,6 +732,7 @@ function segunda_columna($info)
                  </div>
                  <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
                  <div id=\"divcolProvisionada\">$row_col2New</div>
+                 $rowFinalProviciones
              </div>
              <div class=\"col-sm-2\">
                <div class=\"panel panel-dark panel-colorful media pad-all\">
