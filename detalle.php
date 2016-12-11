@@ -737,7 +737,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                           $Factura_Parte1 .= "-";
                           $Factura_Parte1 .= $ArryaFactura[1];
                         ?>
-                           <input type="text" id="txtFacturaModificar" name="txtFacturaModificar" class="form-control" placeholder="Factura" value="<?php echo $Factura_Parte1; ?>">
+                           <input type="text" id="txtFacturaModificar" name="txtFacturaModificar" class="form-control" placeholder="Factura" value="<?php echo $ArryaFactura[0]; ?>">
                     </div>
                   </div>
                   <div class="col-md-3">
