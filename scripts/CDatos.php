@@ -460,8 +460,8 @@ function segunda_columna($info)
          $RSet=$objYearsProvicion->QuerySQLSAP($SqlYearP,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                     $arrayYears[$j] = $fila[Year];
-                     $row_col2.= "$fila[Year] ,";
+                     $arrayYears[$j] = $fila[Years];
+
                      $j++;
                 }
          $objYearsProvicion->CerrarSQLSAP($RSet,$con);
