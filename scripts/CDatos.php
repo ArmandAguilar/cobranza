@@ -480,27 +480,24 @@ function segunda_columna($info)
                                 {
                                             if(!empty($fila[NumProyecto]))
                                             {
-                                                $ImporteFinalYearsProvicion += $fila[Importe];
+                                                  $ImporteFinalYearsProvicion += $fila[Importe];
+                                                  $contadorPoyectos ++;
+                                                  $DiasTrascurridos = $fila[DiasTrascurridos];
+                                                  $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
+                                                  $TotalProvisionada += $fila[Importe];
 
+                                                  $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                                  $Fecha = $fila[FechaPago];
+                                                  $NomProyecto=str_replace('"','', $fila[NomProyecto]);
 
-
-
-                                              $contadorPoyectos ++;
-                                              $contadorPoyectosYears ++;
-                                              $DiasTrascurridos = $fila[DiasTrascurridos];
-                                              $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
-                                              $TotalProvisionada += $fila[Importe];
-
-                                              $Proyecto =  substr($fila[NomProyecto], 0, 15);
-                                              $Fecha = $fila[FechaPago];
-                                              $NomProyecto=str_replace('"','', $fila[NomProyecto]);
-
-                                              if ($DiasTrascurridos>0) {
-                                                $colorFill =  "panel-danger";
-                                              }
-                                              else {
-                                                $colorFill =  "panel-primary";
-                                              }
+                                                  if ($DiasTrascurridos>0)
+                                                  {
+                                                    $colorFill =  "panel-danger";
+                                                  }
+                                                else
+                                                  {
+                                                    $colorFill =  "panel-primary";
+                                                  }
                                                  $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
                                                                  <div class=\"col-lg-*\">
                                                                    <div class=\"panel $colorFill panel-colorful\">
