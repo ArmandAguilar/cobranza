@@ -993,7 +993,7 @@ function segunda_columna($info)
                                     $row_col2 ="";
                             }
                     }
-                    return $row_col2;
+                    return $rowFinalProviciones;
           }
 }
  ?>
