@@ -485,10 +485,16 @@ function segunda_columna($info)
                                               $TotalGral += $fila[Importe];
                                               $contadorPoyectos ++;
                                               $contadorPoyectosYears ++;
-
-                                                 /*$row_col2.= "<div class=\"row\" onclick=\"load_add_factura($fila[NumProyecto])\" style=\"cursor:pointer\">
+                                              $DiasTrascurridos = $fila[DiasTrascurridos];
+                                              if ($DiasTrascurridos>0) {
+                                                $colorFill =  "panel-danger";
+                                              }
+                                              else {
+                                                $colorFill =  "panel-primary";
+                                              }
+                                                 $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
                                                                  <div class=\"col-lg-*\">
-                                                                   <div class=\"panel panel-blue panel-colorful\">
+                                                                   <div class=\"panel $colorFill panel-colorful\">
                                                                           <div class=\"pad-all media\">
                                                                             <div class=\"media-left\">
                                                                               <span class=\"icon-wrap icon-wrap-xs\">
@@ -496,14 +502,15 @@ function segunda_columna($info)
                                                                               </span>
                                                                             </div>
                                                                             <div class=\"media-body\">
-                                                                              <p class=\"h4 text-thin media-heading\">$ImporteFinalYears</p>
-
+                                                                              <p class=\"h4 text-thin media-heading\">$ImporteProvisionada</p>
+                                                                              <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                                              <small class=\"text-thin\">$Fecha</small>
                                                                             </div>
                                                                           </div>
 
                                                                     </div>
                                                                  </div>
-                                                             </div>";*/
+                                                             </div>";
                                             }
                                 }
                          $objForYear->CerrarSQLSAP($RSet,$con);
@@ -734,7 +741,7 @@ function segunda_columna($info)
                  </div>
                  <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
                  <div id=\"divcolProvisionada\">$row_col2New</div>
-                 m $rowFinalProviciones m
+                  $rowFinalProviciones
              </div>
              <div class=\"col-sm-2\">
                <div class=\"panel panel-dark panel-colorful media pad-all\">
