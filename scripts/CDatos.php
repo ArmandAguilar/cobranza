@@ -388,7 +388,7 @@ function segunda_columna($info)
               $BuscarListaWhere = "Where $ListaOR";
               if(!empty($ListaOR))
               {
-                $BuscarListaWhere2 = "($ListaOR) and "
+                $BuscarListaWhere2 = "($ListaOR) and ";
               }
 
         }
