@@ -455,7 +455,7 @@ function segunda_columna($info)
          #Buscamos años para provisondas
          $j = 0;
          $objYearsProvicion = new poolConnecion();
-         $SqlYearP="SELECT DISTINCT YEAR([Fecha TENTATIVA de pago]) as Years FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where [Estatus] = 'Provisionada' order by [Fecha TENTATIVA de pago] desc";
+         $SqlYearP="SELECT DISTINCT YEAR([Fecha TENTATIVA de pago]) as Years FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where [Estatus] = 'Provisionada' order by Years desc";
          $con=$objYearsProvicion->ConexionSQLSAP();
          $RSet=$objYearsProvicion->QuerySQLSAP($SqlYearP,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
