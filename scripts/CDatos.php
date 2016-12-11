@@ -884,6 +884,116 @@ function segunda_columna($info)
                    $objPasoEdo->CerrarSQLSAP($RSet,$con);
                    return $row_col2;
       }
+      function filtro_estado_pro($Edo,$Orden,$IdUser,$Perfil)
+          {
 
+                  $ListaOR = "";
+                    if($IdUser>0)
+                    {
+                      if ($Perfil ==  "Admin") {
+
+                      }
+                      else {
+                                $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
+                                $WhereRVEdoCtaGeneral = " [LP] = '$IdUser'";
+
+                                $objListaDeProyectos = new poolConnecion();
+                                $SqlListaProyectos="SELECT [NumProyecto] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [LP]='$IdUser'";
+                                $con=$objListaDeProyectos->ConexionSQLSAP();
+                                $RSet=$objListaDeProyectos->QuerySQLSAP($SqlListaProyectos,$con);
+                                 while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                       {
+                                         $Proy = $fila[NumProyecto];
+                                         $ListaOR .= "NumProyecto='$Proy' or ";
+                                       }
+                                $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
+                                $ListaOR = substr($ListaOR, 0, -3);
+                                if(!empty($ListaOR))
+                                {
+                                  $BuscarListaWhere2 = "($ListaOR) and ";
+                                }
+                          }
+                    }
+                    #Buscamos años para provisondas
+                    $j = 0;
+                    $objYearsProvicion = new poolConnecion();
+                    $SqlYearP="SELECT DISTINCT YEAR([Fecha TENTATIVA de pago]) as Years FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where [Estatus] = 'Provisionada' order by Years $Orden";
+                    $con=$objYearsProvicion->ConexionSQLSAP();
+                    $RSet=$objYearsProvicion->QuerySQLSAP($SqlYearP,$con);
+                     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                           {
+                                $arrayYears[$j] = $fila[Years];
+
+                                $j++;
+                           }
+                    $objYearsProvicion->CerrarSQLSAP($RSet,$con);
+
+                    foreach ($arrayYears as $key => $value)
+                     {
+                            if (!empty($value))
+                            {
+                                   $ImporteFinalYearsProvicion = 0;
+                                    $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where $BuscarListaWhere2 ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value')  order by [Fecha TENTATIVA de pago] desc ";
+                                    $contadorProvicionesYears = 0;
+                                    $objForYear = new poolConnecion();
+                                    $con=$objForYear->ConexionSQLSAP();
+                                    $RSet=$objForYear->QuerySQLSAP($SqlProvicionadas,$con);
+                                     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                           {
+                                                       if(!empty($fila[NumProyecto]))
+                                                       {
+                                                             $ImporteFinalYearsProvicion += $fila[Importe];
+                                                             $contadorProvicionesYears ++;
+                                                             $DiasTrascurridos = $fila[DiasTrascurridos];
+                                                             $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
+                                                             $TotalProvisionada += $fila[Importe];
+
+                                                             $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                                             $Fecha = $fila[FechaPago];
+                                                             $NomProyecto=str_replace('"','', $fila[NomProyecto]);
+
+                                                             if ($DiasTrascurridos>0)
+                                                             {
+                                                               $colorFill =  "panel-danger";
+                                                             }
+                                                           else
+                                                             {
+                                                               $colorFill =  "panel-primary";
+                                                             }
+                                                            $row_col2.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
+                                                                            <div class=\"col-lg-*\">
+                                                                              <div class=\"panel $colorFill panel-colorful\">
+                                                                                     <div class=\"pad-all media\">
+                                                                                       <div class=\"media-left\">
+                                                                                         <span class=\"icon-wrap icon-wrap-xs\">
+                                                                                           <i class=\"fa fa-dollar fa-fw fa-2x\"></i>
+                                                                                         </span>
+                                                                                       </div>
+                                                                                       <div class=\"media-body\">
+                                                                                         <p class=\"h4 text-thin media-heading\">$ImporteProvisionada</p>
+                                                                                         <small class=\"text-uppercase\">($fila[FacturaForta]) $fila[NumProyecto] .- $Proyecto</small>
+                                                                                         <small class=\"text-thin\">$Fecha</small>
+                                                                                       </div>
+                                                                                     </div>
+
+                                                                               </div>
+                                                                            </div>
+                                                                        </div>";
+                                                       }
+                                           }
+                                    $objForYear->CerrarSQLSAP($RSet,$con);
+                                    $TotalGralYearsFProviciones = number_format($ImporteFinalYearsProvicion, 2, '.', ',');
+                                    $rowFinalProviciones .="<div class=\"panel panel-dark panel-colorful media pad-all\">
+                                                      <div class=\"media-body\">
+                                                          <p class=\"text-1x mar-no text-thin\">Proviciones ($contadorProvicionesYears) - $value</p>
+                                                          <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsFProviciones </p>
+                                                      </div>
+                                                </div>
+                                                $row_col2";
+                                    $row_col2 ="";
+                            }
+                    }
+                    return $row_col2;
+          }
 }
  ?>
