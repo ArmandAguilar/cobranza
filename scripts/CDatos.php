@@ -751,8 +751,8 @@ function segunda_columna($info)
                        </div>
                  </div>
                  <div id=\"divcol2L\" style=\"display:none\"><img src=\"img/load_col.gif\"/></div>
-                 <div id=\"divcolProvisionada\">$row_col2New</div>
-                  $rowFinalProviciones
+                 <div id=\"divcolProvisionada\">$rowFinalProviciones</div>
+
              </div>
              <div class=\"col-sm-2\">
                <div class=\"panel panel-dark panel-colorful media pad-all\">
