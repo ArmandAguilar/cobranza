@@ -486,6 +486,11 @@ function segunda_columna($info)
                                               $contadorPoyectos ++;
                                               $contadorPoyectosYears ++;
                                               $DiasTrascurridos = $fila[DiasTrascurridos];
+                                              $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
+                                              $TotalProvisionada += $fila[Importe];
+                                              $Proyecto =  substr($fila[NomProyecto], 0, 15);
+                                              $Fecha = $fila[FechaPago];
+                                              $NomProyecto=str_replace('"','', $fila[NomProyecto]);
                                               if ($DiasTrascurridos>0) {
                                                 $colorFill =  "panel-danger";
                                               }
