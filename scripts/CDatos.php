@@ -470,7 +470,7 @@ function segunda_columna($info)
           {
                  if (!empty($value))
                  {
-                        $ImporteFinalYearsProvicion = 0
+                        $ImporteFinalYearsProvicion = 0;
                          $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value')  order by [Fecha TENTATIVA de pago] desc ";
                          $contadorPoyectosYears = 0;
                          $objForYear = new poolConnecion();
