@@ -480,7 +480,7 @@ function segunda_columna($info)
                                 {
                                             if(!empty($fila[NumProyecto]))
                                             {
-                                                $ImporteFinalYearsProvicion += $fila[Importe]
+                                                $ImporteFinalYearsProvicion += $fila[Importe];
 
 
 
