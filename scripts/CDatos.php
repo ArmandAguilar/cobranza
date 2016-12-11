@@ -554,14 +554,14 @@ function segunda_columna($info)
                              }
                              $Estatus = $fila[Estatus];
                              switch ($Estatus) {
-                               /*case 'Provisionada':
+                               case 'Provisionada':
                                                    $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
                                                    $TotalProvisionada += $fila[Importe];
                                                    $Proyecto =  substr($fila[NomProyecto], 0, 15);
                                                    $ContadorProvisionada ++;
                                                    $Fecha = $fila[FechaPago];
                                                    $NomProyecto=str_replace('"','', $fila[NomProyecto]);
-                                                   $row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
+                                                   /*$row_col2New.= "<div class=\"row\" onclick=\"load_view('$fila[FacturaForta]','$fila[NumProyecto]','$NomProyecto','$ImporteProvisionada','Provisionada');\" style=\"cursor:pointer\">
                                                                    <div class=\"col-lg-*\">
                                                                      <div class=\"panel $colorFill panel-colorful\">
                                                                             <div class=\"pad-all media\">
@@ -579,8 +579,8 @@ function segunda_columna($info)
 
                                                                       </div>
                                                                    </div>
-                                                               </div>";
-                                 break;*/
+                                                               </div>";*/
+                                 break;
                                  case 'Elaborada':
 
                                                      $ImporteElaborada = number_format($fila[Importe], 2, '.', ',');
