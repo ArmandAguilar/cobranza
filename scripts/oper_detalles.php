@@ -38,6 +38,7 @@ switch ($_GET[o]) {
               $info->IVA = $_POST[IVA];
               $info->Trimestre = $_POST[Trimestre];
               $info->Concepto = $_POST[Concepto];
+              $info->TipoFactura = $_POST[cboTipoFactura];
               echo $objF->modificar_datos($info);
       break;
       case '6':
