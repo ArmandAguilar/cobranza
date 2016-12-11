@@ -11,7 +11,8 @@ switch ($_GET[v]) {
             echo $obj->segunda_columna($info);
     break;
   case 'Provisionada':
-                    echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario],$_POST[Perfil]);
+                    //echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario],$_POST[Perfil]);
+                    echo $obj->filtro_estado_pro($_GET[v],$_POST[Orden],$_POST[IdUsuario],$_POST[Perfil]);
     break;
   case 'Elaborada':
                       echo $obj->filtro_estado($_GET[v],$_POST[Orden],$_POST[IdUsuario],$_POST[Perfil]);

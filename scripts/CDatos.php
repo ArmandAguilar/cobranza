@@ -368,6 +368,7 @@ function segunda_columna($info)
         $ListaOR = "";
         $IdUser = $info->IdUser;
         $Perfil = $info->Perfil ;
+        $BuscarListaWhere2 = "";
         if($IdUser>0)
         {
               $WhereRVEdoCtaGeneralYear = " Where [LP] = '$IdUser'";
@@ -385,6 +386,10 @@ function segunda_columna($info)
               $objListaDeProyectos->CerrarSQLSAP($RSet,$con);
               $ListaOR = substr($ListaOR, 0, -3);
               $BuscarListaWhere = "Where $ListaOR";
+              if(!empty($ListaOR))
+              {
+                $BuscarListaWhere2 = "($ListaOR) and "
+              }
 
         }
         #Obtenemos Años para Proyectos
@@ -471,7 +476,7 @@ function segunda_columna($info)
                  if (!empty($value))
                  {
                         $ImporteFinalYearsProvicion = 0;
-                         $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value')  order by [Fecha TENTATIVA de pago] desc ";
+                         $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where $BuscarListaWhere2 ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value')  order by [Fecha TENTATIVA de pago] desc ";
                          $contadorProvicionesYears = 0;
                          $objForYear = new poolConnecion();
                          $con=$objForYear->ConexionSQLSAP();
