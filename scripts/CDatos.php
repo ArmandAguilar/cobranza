@@ -472,7 +472,7 @@ function segunda_columna($info)
                  {
                         $ImporteFinalYearsProvicion = 0;
                          $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value')  order by [Fecha TENTATIVA de pago] desc ";
-                         $contadorPoyectosYears = 0;
+                         $contadorProvicionesYears = 0;
                          $objForYear = new poolConnecion();
                          $con=$objForYear->ConexionSQLSAP();
                          $RSet=$objForYear->QuerySQLSAP($SqlProvicionadas,$con);
@@ -481,7 +481,7 @@ function segunda_columna($info)
                                             if(!empty($fila[NumProyecto]))
                                             {
                                                   $ImporteFinalYearsProvicion += $fila[Importe];
-                                                  $contadorPoyectos ++;
+                                                  $contadorProvicionesYears ++;
                                                   $DiasTrascurridos = $fila[DiasTrascurridos];
                                                   $ImporteProvisionada = number_format($fila[Importe], 2, '.', ',');
                                                   $TotalProvisionada += $fila[Importe];
@@ -523,7 +523,7 @@ function segunda_columna($info)
                          $TotalGralYearsFProviciones = number_format($ImporteFinalYearsProvicion, 2, '.', ',');
                          $rowFinalProviciones .="<div class=\"panel panel-dark panel-colorful media pad-all\">
                                            <div class=\"media-body\">
-                                               <p class=\"text-1x mar-no text-thin\">Proviciones ($contadorPoyectosYears) - $value</p>
+                                               <p class=\"text-1x mar-no text-thin\">Proviciones ($contadorProvicionesYears) - $value</p>
                                                <p class=\"text-1x mar-no text-thin\">$ $TotalGralYearsFProviciones </p>
                                            </div>
                                      </div>
