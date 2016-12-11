@@ -461,6 +461,7 @@ function segunda_columna($info)
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
                      $arrayYears[$j] = $fila[Year];
+                     $row_col2.= "$fila[Year] ,"
                      $j++;
                 }
          $objYearsProvicion->CerrarSQLSAP($RSet,$con);
@@ -469,7 +470,7 @@ function segunda_columna($info)
           {
                  if (!empty($value))
                  {
-                        
+
                          $SqlProvicionadas="SELECT [NumProyecto],[NomProyecto],[FacturaForta],[MontoCIVA] As Importe,Convert(varchar(11),[Fecha TENTATIVA de pago]) As FechaPago,[Estatus],DATEDIFF(dd, [Fecha TENTATIVA de pago], GetDate())  As DiasTrascurridos FROM [SAP].[dbo].[EstadoDeFacturasActivasxCobrar] Where ([Estatus] = 'Provisionada') and  ([Fecha TENTATIVA de pago] >= '01/01/$value' and [Fecha TENTATIVA de pago]<='31/12/$value') ";
                          $contadorPoyectosYears = 0;
                          $objForYear = new poolConnecion();
