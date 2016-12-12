@@ -1,3 +1,3 @@
 <?php
- $path = "$_SERVER[DOCUMENT_ROOT]/admin";
+ $path = "$_SERVER[DOCUMENT_ROOT]/administracion";
 ?>
