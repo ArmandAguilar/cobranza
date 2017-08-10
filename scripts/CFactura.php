@@ -339,5 +339,21 @@ function QuienFacura($IdFacturacion)
        return json_encode($arr);
        //return $Sql;
 }
+function addDate($info)
+{
+  /* Here we need know olddate and new date for make the cal in the dates */
+    $txtDateFactura = $info->txtDateFactura;
+    $txtDateTentativa = $info->txtDateTentativa;
+    $txtDateRecepcion = $info->txtDateRecepcion;
+    $txtNumProyecto = $info->txtNumProyecto;
+    $txtDateTentativaOld = $info->txtDateTentativaOld;
+
+
+
+    $sql  = "SELECT  DATEADD(d,1,''$txtDateFactura') As txtDateFactura,DATEADD(d,1,''$txtDateTentativa') As txtDateTentativa,DATEADD(d,1,'$txtDateRecepcion') As txtDateRecepcion"
+
+}
+
+
 }
  ?>

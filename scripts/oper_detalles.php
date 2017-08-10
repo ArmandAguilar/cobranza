@@ -60,6 +60,9 @@ switch ($_GET[o]) {
                 echo $objF->relacionar_factura($info);
       break;
       case '9':
+
+                #Here Add + all dates
+                
                 $info->txtIdFacturacion = $_POST[txtIdFacturacion];
                 $info->txtDateFactura = $_POST[txtDateFactura];
                 $info->txtDateTentativa = $_POST[txtDateTentativa];
