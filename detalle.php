@@ -545,7 +545,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 
         									 </div>
                            <div class="panel-footer text-right">
-                         <button class="btn btn-primary" onclick="cambiar_fechas_provicionadas();">Update</button>
+                         <button class="btn btn-primary" onclick="cambiar_fechas_proviciondas();">Update</button>
                        </div>
                     </div>
                   <?php }
@@ -847,6 +847,12 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                 <div class="col-md-3">
                         <select id="cboTrimestre" name="cboTrimestre" class="selectpicker" title="Seleciona tipo de factura" data-width="100%">
                           <option value="<?php echo $Trimestre; ?>" selected><?php echo $Trimestre; ?></option>
+                          <option value="T1-2018">T1-2018</option>
+                          <option value="T2-2018">T2-2018</option>
+                          <option value="T3-2018">T3-2018</option>
+                          <option value="T1-2017">T1-2017</option>
+                          <option value="T2-2017">T2-2017</option>
+                          <option value="T3-2017">T3-2017</option>
                           <option value="T1-2016">T1-2016</option>
                           <option value="T2-2016">T2-2016</option>
                           <option value="T3-2016">T3-2016</option>
