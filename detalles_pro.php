@@ -518,6 +518,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                                     <div id="demo-dp-component">
                                       <div class="input-group date">
                                         <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control"  value="<?php echo $FTentativa; ?>">
+                                        <input type="hidden" id="txtDateTentativaOld" name="txtDateTentativaOld" class="form-control"  value="<?php echo $FTentativa; ?>">
                                         <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
                                       </div>
                                     </div>

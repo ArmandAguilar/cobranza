@@ -339,18 +339,45 @@ function QuienFacura($IdFacturacion)
        return json_encode($arr);
        //return $Sql;
 }
-function addDate($info)
+function sumAndUpdateDates($info)
 {
   /* Here we need know olddate and new date for make the cal in the dates */
+    $txtIdFacturacion = $info->txtIdFacturacion;
     $txtDateFactura = $info->txtDateFactura;
     $txtDateTentativa = $info->txtDateTentativa;
     $txtDateRecepcion = $info->txtDateRecepcion;
     $txtNumProyecto = $info->txtNumProyecto;
     $txtDateTentativaOld = $info->txtDateTentativaOld;
 
+    /* Get the diff betewent Current day  - Old Days */
+    $objGetDifDate = new poolConnecion();
+    $con=$objGetDifDate->ConexionSQLSAP();
+    $Sql = "SELECT DATEDIFF(DAY, '$txtDateTentativaOld','$txtDateTentativa') As TotalDays";
+    $RSet=$objGetDifDate->QuerySQLSAP($Sql,$con);
+     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+           {
+                $Days = $fila[TotalDays];
 
+          }
+    $objGetDifDate->CerrarSQLSAP($RSet,$con);
 
-    $sql  = "SELECT  DATEADD(d,1,''$txtDateFactura') As txtDateFactura,DATEADD(d,1,''$txtDateTentativa') As txtDateTentativa,DATEADD(d,1,'$txtDateRecepcion') As txtDateRecepcion"
+   /* Calculate the next dates */
+    $Sql  = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As txtDateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As txtDateRecepcion"
+    $objGetNewDate = new poolConnecion();
+    $con=$objGetNewDate->ConexionSQLSAP();
+    $RSet=$objGetNewDate->QuerySQLSAP($Sql,$con);
+     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+           {
+                $txtDateFacturaNew = $fila[txtDateFactura];
+                $txtDateRecepcionNew = $fila[txtDateRecepcion];
+          }
+    $objGetNewDate->CerrarSQLSAP($RSet,$con);
+
+    $info->txtIdFacturacion = $txtIdFacturacion;
+    $info->txtDateFactura = $txtDateFacturaNew;
+    $info->txtDateTentativa = $txtDateTentativa
+    $info->txtDateRecepcion = $txtDateRecepcionNew;
+    $this->modificar_fecha($info);
 
 }
 
