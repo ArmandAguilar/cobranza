@@ -495,7 +495,59 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                   <?php if ($_POST[txtEstado] == 'Provisionada') {
 
                     ?>
-                    Pro
+                    <div class="panel">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">Fecha de Factura</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="uk-form">
+                                  <div cols="row">
+                                    <div class="col-lg-1">
+                                        Facturación
+                                    </div>
+                                    <div class="col-lg-3">
+                                      <div id="demo-dp-component">
+                                        <div class="input-group date">
+                                          <input type="text" id="txtDateFactura" name="txtDateFactura" class="form-control" value="<?php echo $FFactura; ?>">
+                                          <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div cols="row">
+                                    <div class="col-lg-1">
+                                      Tentativa
+                                    </div>
+                                    <div class="col-lg-3">
+                                      <div id="demo-dp-component">
+                                        <div class="input-group date">
+                                          <input type="text" id="txtDateTentativa" name="txtDateTentativa" class="form-control"  value="<?php echo $FTentativa; ?>">
+                                          <input type="hidden" id="txtDateTentativaOld" name="txtDateTentativaOld" class="form-control"  value="<?php echo $FTentativa; ?>">
+                                          <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div cols="row">
+                                    <div class="col-lg-1">
+                                        Recepción
+                                    </div>
+                                    <div class="col-lg-3">
+                                          <div id="demo-dp-component">
+                                            <div class="input-group date">
+                                              <input type="text" id="txtDateRecepcion" name="txtDateRecepcion" class="form-control"  value="<?php echo $FRecepcion; ?>">
+                                              <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                                            </div>
+                                          </div>
+                                    </div>
+                                  </div>
+                                </form>
+
+        									 </div>
+                           <div class="panel-footer text-right">
+                         <button class="btn btn-primary" onclick="cambiar_fechas();">Update</button>
+                       </div>
+                    </div>
                   <?php }
                   else {?>
                   <div class="panel">
