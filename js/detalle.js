@@ -264,7 +264,7 @@ function cambiar_fechas_proviciondas()
     txtDateRecepcion:$("#txtDateRecepcion").val()
   };
   $.ajax({
-            url:'./scripts/oper_detalles.php?o=9a',
+            url:'./scripts/oper_detalles.php?o=9b',
             type:'POST',
             data:losdatos,
             success:function(data)
