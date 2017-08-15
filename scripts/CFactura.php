@@ -350,7 +350,7 @@ function sumAndUpdateDates($info)
     $txtDateTentativaOld = $info->txtDateTentativaOld;
 
     /* Get the diff betewent Current day  - Old Days */
-    $objGetDifDate = new poolConnecion();
+    /*$objGetDifDate = new poolConnecion();
     $con=$objGetDifDate->ConexionSQLSAP();
     $Sql = "SELECT DATEDIFF(DAY, '$txtDateTentativaOld','$txtDateTentativa') As TotalDays";
     $RSet=$objGetDifDate->QuerySQLSAP($Sql,$con);
@@ -359,10 +359,10 @@ function sumAndUpdateDates($info)
                 $Days = $fila[TotalDays];
 
           }
-    $objGetDifDate->CerrarSQLSAP($RSet,$con);
+    $objGetDifDate->CerrarSQLSAP($RSet,$con);*/
 
    /* Calculate the next dates */
-    $Sql  = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As txtDateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As txtDateRecepcion";
+    /*$Sql  = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As txtDateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As txtDateRecepcion";
     $objGetNewDate = new poolConnecion();
     $con=$objGetNewDate->ConexionSQLSAP();
     $RSet=$objGetNewDate->QuerySQLSAP($Sql,$con);
@@ -371,13 +371,13 @@ function sumAndUpdateDates($info)
                 $txtDateFacturaNew = $fila[txtDateFactura];
                 $txtDateRecepcionNew = $fila[txtDateRecepcion];
           }
-    $objGetNewDate->CerrarSQLSAP($RSet,$con);
+    $objGetNewDate->CerrarSQLSAP($RSet,$con);*/
 
-    $info->txtIdFacturacion = $txtIdFacturacion;
+    /*$info->txtIdFacturacion = $txtIdFacturacion;
     $info->txtDateFactura = $txtDateFacturaNew;
     $info->txtDateTentativa = $txtDateTentativa
     $info->txtDateRecepcion = $txtDateRecepcionNew;
-    $this->modificar_fecha($info);
+    $this->modificar_fecha($info);*/
 
 }
 
