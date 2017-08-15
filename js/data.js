@@ -59,6 +59,7 @@ function load_view(Factura,NoProyecto,Proyecto,Importe,Estado)
   $("#txtEstado").val(Estado);
   document.forms["frmDetalle"].submit();
 }
+
 function load_add_factura(NoProyecto)
 {
 

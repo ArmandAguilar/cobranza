@@ -489,7 +489,7 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
 									</div>
                 </div>
               </div>
-
+              <?php if ( $_POST[txtEstado] != 'Provisionada') {?>
                 <div class="col-lg-8">
                   <div class="panel">
                           <div class="panel-heading">
@@ -543,7 +543,9 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
                        <button class="btn btn-primary" onclick="cambiar_fechas();">Actualizar</button>
                      </div>
                   </div>
-
+                <?php } else {
+                        echo "Provicionada"
+                }  ?>
                   <div class="panel">
                     <div class="panel-heading">
                       <h3 class="panel-title">Comentar</h3>
