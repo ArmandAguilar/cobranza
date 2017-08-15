@@ -255,6 +255,45 @@ function relacionar_factura()
                }
             });
 }
+function cambiar_fechas_proviciondas()
+{
+  var losdatos = {
+    txtIdFacturacion:$("#txtIdFacturacion").val(),
+    txtDateFactura:$("#txtDateFactura").val(),
+    txtDateTentativa:$("#txtDateTentativa").val(),
+    txtDateRecepcion:$("#txtDateRecepcion").val()
+  };
+  $.ajax({
+            url:'./scripts/oper_detalles.php?o=9a',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                     $.niftyNoty({
+                       type: 'success',
+                       icon : 'fa fa-check',
+                       message : '<strong>Oka</strong> modificacion realizada ',
+                       container : 'floating',
+                       timer : 3000
+                     });
+                     //registra_evento();
+                     alert(data);
+
+                   },
+            error:function(req,e,er) {
+              //alert('error!' + er);
+
+              $.niftyNoty({
+               type: 'danger',
+               icon : 'fa fa-minus',
+               message : 'oh! a ocurrido un error.',
+               container : 'floating',
+               timer : 3000
+             });
+            }
+         });
+
+}
 function cambiar_fechas()
 {
   var losdatos = {
