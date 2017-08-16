@@ -357,7 +357,6 @@ function sumAndUpdateDates($info)
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
                 $Days = $fila[TotalDays];
-
           }
     $objGetDifDate->CerrarSQLSAP($RSet,$con);
     return $Days;
