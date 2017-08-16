@@ -71,7 +71,7 @@ switch ($_GET[o]) {
                 $info->txtDateFactura = $_POST[txtDateFactura];
                 $info->txtDateTentativa = $_POST[txtDateTentativa];
                 $info->txtDateRecepcion = $_POST[txtDateRecepcion];
-                $txtDateTentativaOld = $_POST[txtDateTentativaOld];
+                $info->txtDateTentativaOld = $_POST[txtDateTentativaOld];
                 echo $objF->sumAndUpdateDates($info);
       break;
       case '10':
