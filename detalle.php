@@ -491,7 +491,6 @@ $RSet=$objFactura->QuerySQLSAP($Sql1,$con);
               </div>
 
                 <div class="col-lg-8">
-                  <?php echo $_POST[txtEstado]; ?>
                   <?php if ($_POST[txtEstado] == 'Provisionada') {
 
                     ?>
