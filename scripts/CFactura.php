@@ -359,7 +359,7 @@ function sumAndUpdateDates($info)
                 $Days = $fila[TotalDays];
           }
     $objGetDifDate->CerrarSQLSAP($RSet,$con);
-    return $Days;
+    return $Sql;
    /* Calculate the next dates */
     /*$Sql  = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As txtDateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As txtDateRecepcion";
     $objGetNewDate = new poolConnecion();
