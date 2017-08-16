@@ -352,7 +352,7 @@ function sumAndUpdateDates($info)
     /* Get the diff betewent Current day  - Old Days */
     $objGetDifDate = new poolConnecion();
     $con=$objGetDifDate->ConexionSQLSAP();
-    $Sql = "SELECT DATEDIFF(DAY, '$txtDateTentativa','$txtDateTentativaOld') As TotalDays";
+    $Sql = "SELECT DATEDIFF(DAY, '$txtDateTentativaOld','$txtDateTentativa') As TotalDays";
     $RSet=$objGetDifDate->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
