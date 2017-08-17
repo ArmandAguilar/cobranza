@@ -364,15 +364,15 @@ function sumAndUpdateDates($info)
 
     $objGetNewDate = new poolConnecion();
     $con=$objGetNewDate->ConexionSQLSAP();
-    $SqlNewDate = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As DateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As DateRecepcion";
+    $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,$Days,'$txtDateFactura'),106),' ','/') As DateFactura,convert(varchar,DATEADD(d,$Days,'$txtDateRecepcion'),106),' ','/') As DateRecepcion";
     $RSet2=$objGetNewDate->QuerySQLSAP($SqlNewDate ,$con);
     while($fila=sqlsrv_fetch_array($RSet2,SQLSRV_FETCH_ASSOC))
            {
-                $DateFactura = $fila[DateFactura];
-                //$DateRecepcion = $fila[DateRecepcion];
+                $txtDateFactura = $fila[DateFactura];
+                $txtDateRecepcion = $fila[DateRecepcion];
          }
     //$objGetNewDate->CerrarSQLSAP($RSet,$con);
-    $Go =  "$DateFactura --  $DateRecepcionNew";
+    $Go =  "$txtDateFactura --  $txtDateRecepcion";
     return $Go;
     /*$info->txtIdFacturacion = $txtIdFacturacion;
     $info->txtDateFactura = $txtDateFacturaNew;
