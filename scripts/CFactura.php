@@ -361,15 +361,15 @@ function sumAndUpdateDates($info)
     $objGetDifDate->CerrarSQLSAP($RSet,$con);
 
    /* Calculate the next dates */
-    $Sql  = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As txtDateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As txtDateRecepcion";
+    $SqlNewDate  = "SELECT  DATEADD(d,$Days,'$txtDateFactura') As txtDateFactura,DATEADD(d,$Days,'$txtDateRecepcion') As txtDateRecepcion";
     $objGetNewDate = new poolConnecion();
     $con=$objGetNewDate->ConexionSQLSAP();
-    $RSet=$objGetNewDate->QuerySQLSAP($Sql,$con);
-    // while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-          // {
-            //    $txtDateFacturaNew = $fila[txtDateFactura];
-              //  $txtDateRecepcionNew = $fila[txtDateRecepcion];
-        //  }
+    $RSet=$objGetNewDate->QuerySQLSAP($SqlNewDate ,$con);
+     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+           {
+                $txtDateFacturaNew = $fila[txtDateFactura];
+                $txtDateRecepcionNew = $fila[txtDateRecepcion];
+         }
     //$objGetNewDate->CerrarSQLSAP($RSet,$con);
     $Go =  "$txtDateFacturaNew ---- $txtDateRecepcionNew";
     return $Go;
