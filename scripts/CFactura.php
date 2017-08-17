@@ -372,7 +372,7 @@ function sumAndUpdateDates($info)
                 //$DateRecepcion = $fila[DateRecepcion];
          }
     //$objGetNewDate->CerrarSQLSAP($RSet,$con);
-    $Go =  "$DateFacturaNew  $DateRecepcionNew";
+    $Go =  "$DateFactura --  $DateRecepcionNew";
     return $Go;
     /*$info->txtIdFacturacion = $txtIdFacturacion;
     $info->txtDateFactura = $txtDateFacturaNew;
