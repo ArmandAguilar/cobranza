@@ -368,8 +368,8 @@ function sumAndUpdateDates($info)
     $RSet2=$objGetNewDate->QuerySQLSAP($SqlNewDate ,$con);
     while($fila=sqlsrv_fetch_array($RSet2,SQLSRV_FETCH_ASSOC))
            {
-                //$txtDateFacturaNew = $fila[txtDateFactura];
-                //$txtDateRecepcionNew = $fila[txtDateRecepcion];
+                $txtDateFacturaNew = $fila[txtDateFactura];
+                $txtDateRecepcionNew = $fila[txtDateRecepcion];
          }
     //$objGetNewDate->CerrarSQLSAP($RSet,$con);
     $Go =  "$txtDateFacturaNew  $txtDateRecepcionNew";
