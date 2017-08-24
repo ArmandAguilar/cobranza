@@ -341,7 +341,7 @@ function QuienFacura($IdFacturacion)
 }
 function sumDate($date,$noplus)
 {
-      $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,$noplus,'$date'),106),' ','/') As Fecha,DATENAME(dw,'23-08-2017') As  Dia";
+      $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,$noplus,'$date'),106),' ','/') As Fecha,DATENAME(dw,'$date') As  Dia";
       $objGetAddDate = new poolConnecion();
       $con=$objGetAddDate->ConexionSQLSAP();
       $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
