@@ -376,7 +376,7 @@ function sumDate($date,$noplus)
                     // $objGetAddDate->CerrarSQLSAP($RSet,$con);
           break;
       }
-      retun $DateAdd;
+      return $DateAdd;
 }
 function sumAndUpdateDates($info)
 {
@@ -412,34 +412,34 @@ function sumAndUpdateDates($info)
          }
     $objGetNewDate->CerrarSQLSAP($RSet2,$con);
   /* here make a verificqtion the date dont be Sat or Sun */
-    //$txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
-    //$txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
+    $txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
+    $txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
 
-    //$info->txtIdFacturacion = $txtIdFacturacion;
-    //$info->txtDateFactura = $txtDateFacturaNew;
-    //$info->txtDateTentativa = $txtDateTentativa;
-    //$info->txtDateRecepcion = $txtDateRecepcionNew;
-    //$this->modificar_fecha($info);
+    $info->txtIdFacturacion = $txtIdFacturacion;
+    $info->txtDateFactura = $txtDateFacturaNew;
+    $info->txtDateTentativa = $txtDateTentativa;
+    $info->txtDateRecepcion = $txtDateRecepcionNew;
+    $this->modificar_fecha($info);
 
     /* Now we need  update all provicionadas with the same NumProyecto  */
       /* Get date  all proviciotion */
-      //$Sql  = "SELECT [IdFacturacion],convert(varchar,[Fecha Factura],106) As FechaFactura,convert(varchar,[Fecha de recepción],106) As FechaDeRecepcion,convert(varchar,[Fecha TENTATIVA de pago]) As FechaTentativa FROM [SAP].[dbo].[FacturacionConsulting] Where Estatus = 'Provisionada' and [NumProyecto] = '$txtNumProyecto'";
-      //$objGetProvicionesProyecto = new poolConnecion();
-      //$con=$objGetProvicionesProyecto->ConexionSQLSAP();
-      //$RSet=$objGetProvicionesProyecto->QuerySQLSAP($SqlNewDate ,$con);
-      //while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-        //     {
+      $Sql  = "SELECT [IdFacturacion],convert(varchar,[Fecha Factura],106) As FechaFactura,convert(varchar,[Fecha de recepción],106) As FechaDeRecepcion,convert(varchar,[Fecha TENTATIVA de pago]) As FechaTentativa FROM [SAP].[dbo].[FacturacionConsulting] Where Estatus = 'Provisionada' and [NumProyecto] = '$txtNumProyecto'";
+      $objGetProvicionesProyecto = new poolConnecion();
+      $con=$objGetProvicionesProyecto->ConexionSQLSAP();
+      $RSet=$objGetProvicionesProyecto->QuerySQLSAP($SqlNewDate ,$con);
+      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+             {
                   /*Here Calculate the new dates for the new proviciones*/
-          //        $txtDateFactura = $this->sumDate($fila[FechaFactura],$Days);
-          //        $txtDateRecepcion = $this->sumDate($fila[FechaDeRecepcion],$Days);
-          //        $txtDateFechaTentaiva = $this->sumDate($fila[FechaTentativa],$Days);
-          //        $info->txtIdFacturacion = $fila[IdFacturacion];
-          //        $info->txtDateFactura = $txtDateFactura;
-          //        $info->txtDateTentativa = $txtDateFechaTentaiva;
-          //        $info->txtDateRecepcion = $txtDateRecepcion;
-          //        $this->modificar_fecha($info);
-          // }
-      //$objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);*/
+                  $txtDateFactura = $this->sumDate($fila[FechaFactura],$Days);
+                  $txtDateRecepcion = $this->sumDate($fila[FechaDeRecepcion],$Days);
+                  $txtDateFechaTentaiva = $this->sumDate($fila[FechaTentativa],$Days);
+                  $info->txtIdFacturacion = $fila[IdFacturacion];
+                  $info->txtDateFactura = $txtDateFactura;
+                  $info->txtDateTentativa = $txtDateFechaTentaiva;
+                  $info->txtDateRecepcion = $txtDateRecepcion;
+                  $this->modificar_fecha($info);
+           }
+      $objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);
 
 }
 
