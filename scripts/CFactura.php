@@ -412,8 +412,8 @@ function sumAndUpdateDates($info)
          }
     $objGetNewDate->CerrarSQLSAP($RSet2,$con);
   /* here make a verificqtion the date dont be Sat or Sun */
-    $txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
-    $txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
+    //$txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
+    //$txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
 
     $info->txtIdFacturacion = $txtIdFacturacion;
     $info->txtDateFactura = $txtDateFacturaNew;
