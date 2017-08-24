@@ -344,7 +344,7 @@ function sumDate($date,$noplus)
       $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,$noplus,'$date'),106),' ','/') As Fecha,DATENAME(dw,'23-08-2017') As  Dia";
       $objGetAddDate = new poolConnecion();
       $con=$objGetAddDate->ConexionSQLSAP();
-      $RSet=$objGetAddDate->QuerySQLSAP($Sql,$con);
+      $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                   $DateAdd = $fila[Fecha];
@@ -357,7 +357,7 @@ function sumDate($date,$noplus)
                       $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,2,'$DateAdd'),106),' ','/') As Fecha";
                       $objGetAddDate = new poolConnecion();
                       $con=$objGetAddDate->ConexionSQLSAP();
-                      $RSet=$objGetAddDate->QuerySQLSAP($Sql,$con);
+                      $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                              {
                                   $DateAdd = $fila[Fecha];
@@ -368,15 +368,12 @@ function sumDate($date,$noplus)
                      $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,1,'$date'),106),' ','/') As Fecha";
                      $objGetAddDate = new poolConnecion();
                      $con=$objGetAddDate->ConexionSQLSAP();
-                     $RSet=$objGetAddDate->QuerySQLSAP($Sql,$con);
+                     $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
                       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                             {
                                  $DateAdd = $fila[Fecha];
                            }
                     // $objGetAddDate->CerrarSQLSAP($RSet,$con);
-          break;
-        default:
-          # code...
           break;
       }
       retun $DateAdd;
@@ -418,11 +415,11 @@ function sumAndUpdateDates($info)
     $txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
     $txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
 
-    $info->txtIdFacturacion = $txtIdFacturacion;
-    $info->txtDateFactura = $txtDateFacturaNew;
-    $info->txtDateTentativa = $txtDateTentativa;
-    $info->txtDateRecepcion = $txtDateRecepcionNew;
-    $this->modificar_fecha($info);
+    //$info->txtIdFacturacion = $txtIdFacturacion;
+    //$info->txtDateFactura = $txtDateFacturaNew;
+    //$info->txtDateTentativa = $txtDateTentativa;
+    //$info->txtDateRecepcion = $txtDateRecepcionNew;
+    //$this->modificar_fecha($info);
 
     /* Now we need  update all provicionadas with the same NumProyecto  */
       /* Get date  all proviciotion */
