@@ -443,6 +443,5 @@ function sumAndUpdateDates($info)
 
 }
 
-
 }
  ?>
