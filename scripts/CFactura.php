@@ -440,7 +440,7 @@ function sumAndUpdateDates($info)
         //          $this->modificar_fecha($info);
         //   }
       //$objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);
-      return $SqlNewDate;
+      echo $SqlNewDate;
 }
 
 }
