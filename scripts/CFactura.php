@@ -341,7 +341,7 @@ function QuienFacura($IdFacturacion)
 }
 function sumDate($date,$noplus)
 {
-      $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,$noplus,'$date'),106),' ','/') As Fecha,DATENAME(dw,'$date') As  Dia";
+      $SqlNewDate = "SELECT  replace(convert(varchar,DATEADD(d,$noplus,'$date'),106),' ','/') As Fecha,DATENAME(dw,'$date') As  Dia";
       $objGetAddDate = new poolConnecion();
       $con=$objGetAddDate->ConexionSQLSAP();
       $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
@@ -354,7 +354,7 @@ function sumDate($date,$noplus)
 
       switch ($DateDayName) {
         case 'Sábado':
-                      $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,2,'$DateAdd'),106),' ','/') As Fecha";
+                      $SqlNewDate = "SELECT  replace(convert(varchar,DATEADD(d,2,'$DateAdd'),106),' ','/') As Fecha";
                       $objGetAddDate = new poolConnecion();
                       $con=$objGetAddDate->ConexionSQLSAP();
                       $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
@@ -365,7 +365,7 @@ function sumDate($date,$noplus)
                     //$objGetAddDate->CerrarSQLSAP($RSet,$con);
           break;
         case 'Domingo':
-                     $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,1,'$date'),106),' ','/') As Fecha";
+                     $SqlNewDate = "SELECT  replace(convert(varchar,DATEADD(d,1,'$date'),106),' ','/') As Fecha";
                      $objGetAddDate = new poolConnecion();
                      $con=$objGetAddDate->ConexionSQLSAP();
                      $RSet=$objGetAddDate->QuerySQLSAP($SqlNewDate,$con);
@@ -403,7 +403,7 @@ function sumAndUpdateDates($info)
 
     $objGetNewDate = new poolConnecion();
     $con=$objGetNewDate->ConexionSQLSAP();
-    $SqlNewDate = "SELECT  convert(varchar,DATEADD(d,$Days,'$txtDateFactura'),106),' ','/') As DateFactura,convert(varchar,DATEADD(d,$Days,'$txtDateRecepcion'),106),' ','/') As DateRecepcion";
+    $SqlNewDate = "SELECT  replace(convert(varchar,DATEADD(d,$Days,'$txtDateFactura'),106),' ','/') As DateFactura,replace(convert(varchar,DATEADD(d,$Days,'$txtDateRecepcion'),106),' ','/') As DateRecepcion";
     $RSet2=$objGetNewDate->QuerySQLSAP($SqlNewDate ,$con);
     while($fila=sqlsrv_fetch_array($RSet2,SQLSRV_FETCH_ASSOC))
            {
