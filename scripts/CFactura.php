@@ -434,7 +434,7 @@ function sumAndUpdateDates($info)
                   $txtDateRecepcion = $this->sumDate($fila[FechaDeRecepcion],$Days);
                   $txtDateFechaTentaiva = $this->sumDate($fila[FechaTentativa],$Days);
                   $info->txtIdFacturacion = $fila[IdFacturacion];
-                  $Salidad .= "IdFacturacion : $fila[IdFacturacion] txtDateFactura : $txtDateFactura  txtDateRecepcion: $txtDateRecepcion txtDateFechaTentaiva: $txtDateFechaTentaiva ";
+                  $Salidad .= "IdFacturacion : $fila[IdFacturacion] txtDateFactura ($fila[FechaFactura]): $txtDateFactura  txtDateRecepcion($fila[FechaDeRecepcion]): $txtDateRecepcion txtDateFechaTentaiva ($fila[FechaTentativa]): $txtDateFechaTentaiva ";
                   //$info->txtDateFactura = $txtDateFactura;
                   //$info->txtDateTentativa = $txtDateFechaTentaiva;
                   //$info->txtDateRecepcion = $txtDateRecepcion;
