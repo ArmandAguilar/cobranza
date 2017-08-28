@@ -426,7 +426,7 @@ function sumAndUpdateDates($info)
       $Sql  = "SELECT [IdFacturacion],replace(convert(varchar,[Fecha Factura],106),' ','/') As FechaFactura,replace(convert(varchar,[Fecha de recepción],106),' ','/') As FechaDeRecepcion,replace(convert(varchar,[Fecha TENTATIVA de pago]),' ','/') As FechaTentativa FROM [SAP].[dbo].[FacturacionConsulting] Where Estatus = 'Provisionada' and [NumProyecto] = '$txtNumProyecto'";
       $objGetProvicionesProyecto = new poolConnecion();
       $con=$objGetProvicionesProyecto->ConexionSQLSAP();
-      $RSet=$objGetProvicionesProyecto->QuerySQLSAP($SqlNewDate ,$con);
+      $RSet=$objGetProvicionesProyecto->QuerySQLSAP($Sql ,$con);
       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                   /*Here Calculate the new dates for the new proviciones*/
