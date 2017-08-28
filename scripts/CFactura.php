@@ -423,7 +423,7 @@ function sumAndUpdateDates($info)
 
     /* Now we need  update all provicionadas with the same NumProyecto  */
       /* Get date  all proviciotion */
-      $Sql  = "SELECT [IdFacturacion],replace(convert(varchar,[Fecha Factura],106),' ','/') As FechaFactura,replace(convert(varchar,[Fecha de recepción],106),' ','/') As FechaDeRecepcion,replace(convert(varchar,[Fecha TENTATIVA de pago]),' ','/') As FechaTentativa FROM [SAP].[dbo].[FacturacionConsulting] Where Estatus = 'Provisionada' and [NumProyecto] = '$txtNumProyecto'";
+      $Sql  = "SELECT [IdFacturacion],replace(convert(varchar,[Fecha Factura],106),' ','/') As FechaFactura,replace(convert(varchar,[Fecha de recepción],106),' ','/') As FechaDeRecepcion,replace(convert(varchar,[Fecha TENTATIVA de pago],106),' ','/') As FechaTentativaFROM [SAP].[dbo].[FacturacionConsulting] Where Estatus = 'Provisionada' and [NumProyecto] = '$txtNumProyecto' and IdFacturacion <> '$txtIdFacturacion'";
       $objGetProvicionesProyecto = new poolConnecion();
       $con=$objGetProvicionesProyecto->ConexionSQLSAP();
       $RSet=$objGetProvicionesProyecto->QuerySQLSAP($Sql ,$con);
