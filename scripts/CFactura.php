@@ -412,14 +412,14 @@ function sumAndUpdateDates($info)
          }
     $objGetNewDate->CerrarSQLSAP($RSet2,$con);
   /* here make a verificqtion the date dont be Sat or Sun */
-    //$txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
-    //$txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
+    $txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
+    $txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
 
-    $info->txtIdFacturacion = $txtIdFacturacion;
-    $info->txtDateFactura = $txtDateFacturaNew;
-    $info->txtDateTentativa = $txtDateTentativa;
-    $info->txtDateRecepcion = $txtDateRecepcionNew;
-    $this->modificar_fecha($info);
+    //$info->txtIdFacturacion = $txtIdFacturacion;
+    //$info->txtDateFactura = $txtDateFacturaNew;
+    //$info->txtDateTentativa = $txtDateTentativa;
+    //$info->txtDateRecepcion = $txtDateRecepcionNew;
+    //$this->modificar_fecha($info);
 
     /* Now we need  update all provicionadas with the same NumProyecto  */
       /* Get date  all proviciotion */
@@ -428,9 +428,9 @@ function sumAndUpdateDates($info)
       //$con=$objGetProvicionesProyecto->ConexionSQLSAP();
       //$RSet=$objGetProvicionesProyecto->QuerySQLSAP($SqlNewDate ,$con);
       //while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-        //     {
+            // {
                   /*Here Calculate the new dates for the new proviciones*/
-        //          $txtDateFactura = $this->sumDate($fila[FechaFactura],$Days);
+                  //$txtDateFactura = $this->sumDate($fila[FechaFactura],$Days);
         //          $txtDateRecepcion = $this->sumDate($fila[FechaDeRecepcion],$Days);
         //          $txtDateFechaTentaiva = $this->sumDate($fila[FechaTentativa],$Days);
         //          $info->txtIdFacturacion = $fila[IdFacturacion];
@@ -440,7 +440,7 @@ function sumAndUpdateDates($info)
         //          $this->modificar_fecha($info);
         //   }
       //$objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);
-      echo $SqlNewDate;
+      echo "$txtDateFacturaNew - $txtDateRecepcionNew";
 }
 
 }
