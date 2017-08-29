@@ -279,7 +279,7 @@ function cambiar_fechas_proviciondas()
                        timer : 3000
                      });
                      //registra_evento();
-                     $("#txtMensaje").val(data);
+                     //$("#txtMensaje").val(data);
 
                    },
             error:function(req,e,er) {

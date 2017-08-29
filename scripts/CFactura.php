@@ -430,18 +430,18 @@ function sumAndUpdateDates($info)
       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
              {
                   /*Here Calculate the new dates for the new proviciones*/
-                  $txtDateFactura = $this->sumDate($fila[FechaFactura],$Days);
-                  $txtDateRecepcion = $this->sumDate($fila[FechaDeRecepcion],$Days);
-                  $txtDateFechaTentaiva = $this->sumDate($fila[FechaTentativa],$Days);
+                  $txtDateFacturaDB = $this->sumDate($fila[FechaFactura],$Days);
+                  $txtDateRecepcionDB = $this->sumDate($fila[FechaDeRecepcion],$Days);
+                  $txtDateFechaTentaivaDB = $this->sumDate($fila[FechaTentativa],$Days);
                   $info->txtIdFacturacion = $fila[IdFacturacion];
-                  $Salidad .= "IdFacturacion : $fila[IdFacturacion] txtDateFactura ($fila[FechaFactura]): $txtDateFactura  txtDateRecepcion($fila[FechaDeRecepcion]): $txtDateRecepcion txtDateFechaTentaiva ($fila[FechaTentativa]): $txtDateFechaTentaiva ";
-                  //$info->txtDateFactura = $txtDateFactura;
-                  //$info->txtDateTentativa = $txtDateFechaTentaiva;
-                  //$info->txtDateRecepcion = $txtDateRecepcion;
-                  //$this->modificar_fecha($info);
+                  //$Salidad .= "IdFacturacion : $fila[IdFacturacion] txtDateFactura ($fila[FechaFactura]): $txtDateFactura  txtDateRecepcion($fila[FechaDeRecepcion]): $txtDateRecepcion txtDateFechaTentaiva ($fila[FechaTentativa]): $txtDateFechaTentaiva ";
+                  $info->txtDateFactura = $txtDateFacturaDB;
+                  $info->txtDateTentativa = $txtDateFechaTentaivaDB;
+                  $info->txtDateRecepcion = $txtDateRecepcionDB;
+                  $this->modificar_fecha($info);
            }
       $objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);
-      echo "$Salidad";
+
 }
 
 }
