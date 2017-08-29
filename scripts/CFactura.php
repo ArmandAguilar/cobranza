@@ -415,11 +415,11 @@ function sumAndUpdateDates($info)
     $txtDateFacturaNew = $this->sumDate($txtDateFacturaNew,0);
     $txtDateRecepcionNew = $this->sumDate($txtDateRecepcionNew,0);
 
-    //$info->txtIdFacturacion = $txtIdFacturacion;
-    //$info->txtDateFactura = $txtDateFacturaNew;
-    //$info->txtDateTentativa = $txtDateTentativa;
-    //$info->txtDateRecepcion = $txtDateRecepcionNew;
-    //$this->modificar_fecha($info);
+    $info->txtIdFacturacion = $txtIdFacturacion;
+    $info->txtDateFactura = $txtDateFacturaNew;
+    $info->txtDateTentativa = $txtDateTentativa;
+    $info->txtDateRecepcion = $txtDateRecepcionNew;
+    $this->modificar_fecha($info);
 
     /* Now we need  update all provicionadas with the same NumProyecto  */
       /* Get date  all proviciotion */
