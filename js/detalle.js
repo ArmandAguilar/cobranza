@@ -263,7 +263,7 @@ function cambiar_fechas_proviciondas()
     txtDateTentativa:$("#txtDateTentativa").val(),
     txtDateRecepcion:$("#txtDateRecepcion").val(),
     txtDateTentativaOld:$("#txtDateTentativaOld").val(),
-    txtNoProyecto:$("txtProyecto").val()
+    txtNoProyecto:$("#txtProyecto").val()
   };
   $.ajax({
             url:'./scripts/oper_detalles.php?o=9b',
