@@ -191,59 +191,18 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 						<div class="panel-body">
                       <div col="row">
                          <div col="col-sm-2">
-                            Lider:
+                             <div class="input-group mar-btm">
+   											                  <input type="text" placeholder="Search" class="form-control">
+   											                  <span class="input-group-btn"><button class="btn btn-danger btn-labeled fa fa-search" type="button">Search</button></span>
+   										       </div>
                          </div>
-                          <div col="col-sm-4">
-                            <select id="cboUsuario" name="cboUsuario" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                                  <option value="0">--------Usuarios-------</option>
-                                  <?php echo  $cboUsuarios; ?>
-                                </select>
-                          </div>
-                      </div>
-                      <div col="row">
-                         <div col="col-sm-2">
-                            Maestro:
-                         </div>
-                          <div col="col-sm-4">
-                            <select id="cboMaestro" name="cboMaestro" class="selectpicker" data-live-search="true" data-width="100%" style="display: none;">
-                                  <option value="0">--------Maestros-------</option>
-                                  <?php echo $cboMaestros; ?>
-                                </select>
-                          </div>
-                      </div>
 
-          </div>
+                       </div>
+         </div>
           <div class="panel-footer text-right">
                 <button class="btn btn-primary" onclick="relacionar_lider();">Asignar</button>
          </div>
 					</div>
-          <div class="panel">
-						<div class="panel-heading">
-							<h3 class="panel-title">Proyectos & Lideres</h3>
-						</div>
-						<div class="panel-body">
-              <table data-toggle="table"
-                   data-url="scripts/lider_maestro_json.php"
-                   data-search="true"
-                   data-show-refresh="true"
-                   data-show-toggle="true"
-                   data-show-columns="true"
-                   data-page-list="[20, 30, 60]"
-                   data-page-size="15"
-                   data-pagination="true" data-show-pagination-switch="true">
-                <thead>
-                  <tr>
-                    <th data-field="id" data-switchable="false">No Fila</th>
-                    <th data-field="NumMaestro" data-switchable="false">Num. Maestro</th>
-                    <th data-field="NumProyecto" data-switchable="false">Num. Proyecto</th>
-                    <th data-field="NomProyecto" data-switchable="false">Proyetco</th>
-                    <th data-field="Lider" data-switchable="false">Lider</th>
-                  </tr>
-                </thead>
-
-              </table>
-
-          </div>
 					</div>
 				</div>
 				<!--===================================================-->
