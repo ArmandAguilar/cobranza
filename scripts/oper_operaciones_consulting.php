@@ -10,10 +10,12 @@ switch ($_GET[o]) {
               $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
                while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                      {
+
+                         $Abono = number_format($fila[Abono], 2, '.', ',')
                           $TFilas .= "<tr>
                                         <td>$fila[Id_Oper]</td>
                                         <td>$fila[Fecha]</td>
-                                        <td>$fila[Abono]</td>
+                                        <td>$Abono</td>
                                         <td>$fila[Cargo]</td>
                                         <td>$fila[Saldo]</td>
                                         <td>$fila[CategoriaCargo]</td>
