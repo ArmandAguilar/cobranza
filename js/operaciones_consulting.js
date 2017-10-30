@@ -14,6 +14,7 @@ function buscar_operaciones()
                              container : 'floating',
                              timer : 3000
                            });
+                           alert('sendagta');
                            $("#CTable").empty();
           		       },
           		error:function(req,e,er) {
