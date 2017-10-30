@@ -31,7 +31,7 @@ switch ($_GET[o]) {
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
 
-               echo $Sql;
+               echo $TFilas;
       break;
 
     default:
