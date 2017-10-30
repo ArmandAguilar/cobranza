@@ -25,6 +25,6 @@ function buscar_operaciones()
                 					timer : 3000
                 				});
               }
-           });*/
+           });
 
 }
