@@ -126,9 +126,9 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 				<div class="navbar-content clearfix">
 					<ul class="nav navbar-top-links pull-left">
             <li class="dropdown">
-
-
-							
+              <a href="panel.php">
+								<i class="fa fa-home"></i>
+							</a>
               <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
               ?>
               <a href="relacionar_lider.php">
