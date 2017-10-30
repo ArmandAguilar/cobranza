@@ -193,14 +193,25 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                          <div col="col-sm-2">
                              <div class="input-group mar-btm">
    											                  <input type="text" placeholder="Search" class="form-control">
-   											                  <span class="input-group-btn"><button class="btn btn-danger btn-labeled fa fa-search" type="button">Search</button></span>
+   											                  <span class="input-group-btn"><button class="btn btn-primary" btn-labeled fa fa-search" type="button">Search</button></span>
    										       </div>
                          </div>
 
                        </div>
          </div>
           <div class="panel-footer text-right">
-                <button class="btn btn-primary" onclick="relacionar_lider();">Asignar</button>
+
+         </div>
+					</div>
+          <div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title"></h3>
+						</div>
+						<div class="panel-body">
+
+         </div>
+          <div class="panel-footer text-right">
+
          </div>
 					</div>
 					</div>
