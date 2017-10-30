@@ -126,25 +126,9 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 				<div class="navbar-content clearfix">
 					<ul class="nav navbar-top-links pull-left">
             <li class="dropdown">
-              <?php
-              if ($_SESSION[CobranzaPerfil]=="Admin") {
-                echo "<a href=\"javascript:void(0);\" onclick=\"load_enbudo();\">
-  								<i class=\"fa fa-th-large fa-lg\"></i>
-  							</a>";
-              }
-              else{
-                echo "<a href=\"javascript:void(0);\" onclick=\"load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');\">
-  								<i class=\"fa fa-th-large fa-lg\"></i>
-  							</a>";
-              }
-               ?>
 
-							<a href="javascript:void(0);" onclick="load_lista();">
-								<i class="fa fa-tasks fa-lg"></i>
-							</a>
-							<a href="javascript:void(0);" onclick="load_cronograma();">
-								<i class="fa fa-rotate-right fa-lg"></i>
-							</a>
+
+							
               <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
               ?>
               <a href="relacionar_lider.php">
