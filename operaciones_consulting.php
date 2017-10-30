@@ -212,41 +212,40 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Invoice</th>
-                        <th>User</th>
-                        <th>Amount</th>
+                        <th>Operación</th>
+                        <th>Fecha</th>
+                        <th>Abono</th>
+                        <th>Cargo</th>
+                        <th>Saldo</th>
+                        <th>Cat. Cargo</th>
+                        <th>Cat. Abono</th>
+                        <th>Cat. Costo</th>
+                        <th>Cuenta</th>
+                        <th>MesAnio</th>
+                        <th>Iva</th>
+                        <th>Empresa</th>
+                        <th>Referencia</th>
+                        <th>Ctarc</th>
+                        <th>RFC</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td><a href="#fakelink" class="btn-link">Order #53451</a></td>
-                        <td>Scott S. Calabrese</td>
-                        <td>$24.98</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#fakelink" class="btn-link">Order #53452</a></td>
-                        <td>Teresa L. Doe</td>
-                        <td>$564.00</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#fakelink" class="btn-link">Order #53453</a></td>
-                        <td>Steve N. Horton</td>
-                        <td>$58.87</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#fakelink" class="btn-link">Order #53454</a></td>
-                        <td>Charles S Boyle</td>
-                        <td>$97.50</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#fakelink" class="btn-link">Order #53455</a></td>
-                        <td>Lucy Doe</td>
-                        <td>$12.79</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#fakelink" class="btn-link">Order #53456</a></td>
-                        <td>Michael Bunr</td>
-                        <td>$249.99</td>
+                        <td>Operación</td>
+                        <td>Fecha</td>
+                        <td>Abono</td>
+                        <td>Cargo</td>
+                        <td>Saldo</td>
+                        <td>Cat. Cargo</td>
+                        <td>Cat. Abono</td>
+                        <td>Cat. Costo</td>
+                        <td>Cuenta</td>
+                        <td>MesAnio</td>
+                        <td>Iva</td>
+                        <td>Empresa</td>
+                        <td>Referencia</td>
+                        <td>Ctarc</td>
+                        <td>RFC</td>
                       </tr>
                     </tbody>
                   </table>
@@ -389,6 +388,6 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/relacionar_lider.js"></script>
+ <script src="js/operaciones_consulting.js"></script>
 </body>
 </html>
