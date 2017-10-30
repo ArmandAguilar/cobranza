@@ -247,6 +247,23 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                         <td>Ctarc</td>
                         <td>RFC</td>
                       </tr>
+                      <tr>
+                        <td>Operación</td>
+                        <td>Fecha</td>
+                        <td>Abono</td>
+                        <td>Cargo</td>
+                        <td>Saldo</td>
+                        <td>Cat. Cargo</td>
+                        <td>Cat. Abono</td>
+                        <td>Cat. Costo</td>
+                        <td>Cuenta</td>
+                        <td>MesAnio</td>
+                        <td>Iva</td>
+                        <td>Empresa</td>
+                        <td>Referencia</td>
+                        <td>Ctarc</td>
+                        <td>RFC</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
