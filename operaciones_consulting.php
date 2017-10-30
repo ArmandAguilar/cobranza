@@ -186,14 +186,14 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 					<!--===================================================-->
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Relacionar Lider</h3>
+							<h3 class="panel-title">Operaciones Consulting</h3>
 						</div>
 						<div class="panel-body">
                       <div col="row">
                          <div col="col-sm-2">
                              <div class="input-group mar-btm">
    											                  <input type="text" placeholder="Search" class="form-control">
-   											                  <span class="input-group-btn"><button class="btn btn-primary" btn-labeled fa fa-search" type="button">Search</button></span>
+   											                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button">Search</button></span>
    										       </div>
                          </div>
 
@@ -208,7 +208,49 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="panel-body">
-
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Invoice</th>
+                        <th>User</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="#fakelink" class="btn-link">Order #53451</a></td>
+                        <td>Scott S. Calabrese</td>
+                        <td>$24.98</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#fakelink" class="btn-link">Order #53452</a></td>
+                        <td>Teresa L. Doe</td>
+                        <td>$564.00</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#fakelink" class="btn-link">Order #53453</a></td>
+                        <td>Steve N. Horton</td>
+                        <td>$58.87</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#fakelink" class="btn-link">Order #53454</a></td>
+                        <td>Charles S Boyle</td>
+                        <td>$97.50</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#fakelink" class="btn-link">Order #53455</a></td>
+                        <td>Lucy Doe</td>
+                        <td>$12.79</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#fakelink" class="btn-link">Order #53456</a></td>
+                        <td>Michael Bunr</td>
+                        <td>$249.99</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
          </div>
           <div class="panel-footer text-right">
 
