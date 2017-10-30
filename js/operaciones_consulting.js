@@ -1,5 +1,6 @@
 function buscar_operaciones()
 {
+  $("#CTable").empty();
    var losdatos = {txtSearch:$('#cboUsuario').val()};
     $.ajax({
            		url:'./scripts/oper_operaciones_consulting.php?o=1',
@@ -14,8 +15,7 @@ function buscar_operaciones()
                              container : 'floating',
                              timer : 3000
                            });
-                           alert('sendagta');
-                           $("#CTable").empty();
+                           $("#CTable").append(data);
           		       },
           		error:function(req,e,er) {
                         $.niftyNoty({
