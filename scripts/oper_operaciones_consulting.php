@@ -12,12 +12,14 @@ switch ($_GET[o]) {
                      {
 
                          $Abono = number_format($fila[Abono], 2, '.', ',');
+                         $Cargo = number_format($fila[Cargo], 2, '.', ',');
+                         $Saldo = number_format($fila[Saldo], 2, '.', ',');
                           $TFilas .= "<tr>
                                         <td>$fila[Id_Oper]</td>
                                         <td>$fila[Fecha]</td>
-                                        <td>$Abono</td>
-                                        <td>$fila[Cargo]</td>
-                                        <td>$fila[Saldo]</td>
+                                        <td>$ $Abono</td>
+                                        <td>$ $Cargo</td>
+                                        <td>$ $Saldo</td>
                                         <td>$fila[CategoriaCargo]</td>
                                         <td>$fila[CategoriaAbono]</td>
                                         <td>$fila[CategoriaCosto]</td>
