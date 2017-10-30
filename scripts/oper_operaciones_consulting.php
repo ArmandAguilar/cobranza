@@ -11,7 +11,7 @@ switch ($_GET[o]) {
                while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                      {
 
-                         $Abono = number_format($fila[Abono], 2, '.', ',')
+                         $Abono = number_format($fila[Abono], 2, '.', ',');
                           $TFilas .= "<tr>
                                         <td>$fila[Id_Oper]</td>
                                         <td>$fila[Fecha]</td>
