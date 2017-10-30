@@ -1,7 +1,7 @@
 function buscar_operaciones()
 {
   $("#CTable").empty();
-   var losdatos = {txtSearch:$('#cboUsuario').val()};
+   var losdatos = {txtSearch:$('#txtSearch').val()};
     $.ajax({
            		url:'./scripts/oper_operaciones_consulting.php?o=1',
           		type:'POST',
