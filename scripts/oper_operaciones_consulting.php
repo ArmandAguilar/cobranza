@@ -13,19 +13,19 @@ switch ($_GET[o]) {
                           $TFilas .= "<tr>
                                         <td>$fila[Id_Oper]</td>
                                         <td>$fila[Fecha]</td>
-                                        <td>Abono</td>
-                                        <td>Cargo</td>
-                                        <td>Saldo</td>
-                                        <td>Cat. Cargo</td>
-                                        <td>Cat. Abono</td>
-                                        <td>Cat. Costo</td>
-                                        <td>Cuenta</td>
-                                        <td>MesAnio</td>
-                                        <td>Iva</td>
-                                        <td>Empresa</td>
-                                        <td>Referencia</td>
-                                        <td>Ctarc</td>
-                                        <td>RFC</td>
+                                        <td>$fila[Abono]</td>
+                                        <td>$fila[Cargo]</td>
+                                        <td>$fila[Saldo]</td>
+                                        <td>$fila[CategoriaCargo]</td>
+                                        <td>$fila[CategoriaAbono]</td>
+                                        <td>$fila[CategoriaCosto]</td>
+                                        <td>$fila[Cuenta]</td>
+                                        <td>$fila[MesAnio]</td>
+                                        <td>$fila[Iva]</td>
+                                        <td>$fila[Empresa]</td>
+                                        <td>$fila[Referencia]</td>
+                                        <td>$fila[Ctarc]</td>
+                                        <td>$fila[RFC]</td>
                                     </tr>";
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
