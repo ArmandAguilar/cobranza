@@ -192,8 +192,8 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                       <div col="row">
                          <div col="col-sm-2">
                              <div class="input-group mar-btm">
-   											                  <input type="text" placeholder="Search" class="form-control">
-   											                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button">Search</button></span>
+   											                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
+   											                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_operaciones();">Search</button></span>
    										       </div>
                          </div>
 
@@ -229,7 +229,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                         <th>RFC</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="CTable">
                       <tr>
                         <td>Operación</td>
                         <td>Fecha</td>

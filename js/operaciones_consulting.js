@@ -1,8 +1,8 @@
 function buscar_operaciones()
 {
-   var losdatos = {cboUsuario:$('#cboUsuario').val(),cboIdMaestro:$('#cboMaestro').val()};
-    /*$.ajax({
-           		url:'./scripts/oper_relacionar_lider.php?o=1',
+   var losdatos = {txtSearch:$('#cboUsuario').val()};
+    $.ajax({
+           		url:'./scripts/oper_operaciones_consulting.php?o=1',
           		type:'POST',
           		data:losdatos,
           		success:function(data)
@@ -14,6 +14,7 @@ function buscar_operaciones()
                              container : 'floating',
                              timer : 3000
                            });
+                           $("#CTable").empty();
           		       },
           		error:function(req,e,er) {
                         $.niftyNoty({
