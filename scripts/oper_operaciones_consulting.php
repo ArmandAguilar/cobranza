@@ -10,7 +10,7 @@ switch ($_GET[o]) {
               $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
                while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                      {
-                          $TFilas = "<tr>
+                          $TFilas .= "<tr>
                                         <td>$fila[Id_Oper]</td>
                                         <td>$fila[Fecha]</td>
                                         <td>Abono</td>
@@ -26,7 +26,7 @@ switch ($_GET[o]) {
                                         <td>Referencia</td>
                                         <td>Ctarc</td>
                                         <td>RFC</td>
-                                    </tr>"
+                                    </tr>";
 
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
