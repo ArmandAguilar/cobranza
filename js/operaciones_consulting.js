@@ -11,11 +11,19 @@ function buscar_operaciones()
                            $.niftyNoty({
                              type: 'success',
                              icon : 'fa fa-check',
-                             message : '<strong>Oka</strong> relación creada',
+                             message : 'Procesando  .............',
+                             container : 'floating',
+                             timer : 9000
+                           });
+                           $("#CTable").append(data);
+                           $.niftyNoty({
+                             type: 'success',
+                             icon : 'fa fa-check',
+                             message : 'Imprimiendo datos..',
                              container : 'floating',
                              timer : 3000
                            });
-                           $("#CTable").append(data);
+                           alert(data);
           		       },
           		error:function(req,e,er) {
                         $.niftyNoty({

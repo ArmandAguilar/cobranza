@@ -27,7 +27,6 @@ switch ($_GET[o]) {
                                         <td>Ctarc</td>
                                         <td>RFC</td>
                                     </tr>";
-
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
 
