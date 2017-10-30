@@ -15,6 +15,7 @@ function buscar_operaciones()
                              container : 'floating',
                              timer : 3000
                            });
+                           alert(data);
                            $("#CTable").append(data);
           		       },
           		error:function(req,e,er) {
