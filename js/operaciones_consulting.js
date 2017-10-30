@@ -23,7 +23,7 @@ function buscar_operaciones()
                              container : 'floating',
                              timer : 3000
                            });
-                           alert(data);
+                           
           		       },
           		error:function(req,e,er) {
                         $.niftyNoty({
