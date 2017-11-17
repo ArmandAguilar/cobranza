@@ -41,7 +41,7 @@ function buscar_operaciones()
 function buscar_subperacion()
 {
   $("#CTable").empty();
-   var losdatos = {txtCuenta:$('#txtSearch').val(),txtMesAnio:$('#txtMesAnio').val()};
+   var losdatos = {txtCuenta:$('#txtCuenta').val(),txtMesAnio:$('#txtMesAnio').val()};
     $.ajax({
            		url:'./scripts/oper_operaciones_consulting.php?o=2',
           		type:'POST',
