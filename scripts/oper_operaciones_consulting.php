@@ -49,7 +49,7 @@ switch ($_GET[o]) {
                   $sqlad=substr($sqlad, 0, -4);
 
                   $Sql="Select Id_Oper,CONVERT(Varchar(255),Fecha) As Fecha,Abono,Cargo,Saldo,Concepto,CategoriaCargo,CategoriaAbono,Cuenta,CategoriaCosto,[Mes-Anio] As MesAnio,Iva,Empresa,Referencia,Ctarc,RFC From OperacionesConsulting Where $sqlad";
-                  $objOperaciones = new poolConnecion();
+                  /*$objOperaciones = new poolConnecion();
                   $con=$objOperaciones->ConexionSQLSAP();
                   $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
                    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -77,6 +77,8 @@ switch ($_GET[o]) {
                                         </tr>";
                          }
                    $objOperaciones->CerrarSQLSAP($RSet,$con);
+                   echo $TFilas;*/
+                   echo $Sql;
       break;
 
     default:
