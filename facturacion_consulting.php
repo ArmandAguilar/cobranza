@@ -175,20 +175,14 @@ include("$path/libs/conexion.php");
 							<h3 class="panel-title">Operaciones Consulting</h3>
 						</div>
 						<div class="panel-body">
-                      <div col="row">
-                         <div col="col-sm-2">
-                             <div class="input-group mar-btm">
-   											                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
-   											                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_operaciones();">Search</button></span>
-   										       </div>
-                         </div>
-
-                       </div>
-                       <div col="row">
-                                <div class="col-md-3 mar-btm"><input type="text" name="txtCuenta" id="txtCuenta" class="form-control" placeholder="Cuenta"></div>
-                                <div class="col-md-3 mar-btm"><input type="text" name="txtMesAnio" id="txtMesAnio" class="form-control" placeholder="Año-Mes"></div>
-                                <div class="col-md-3"><span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_subperacion();">Search</button></span></div>
-                        </div>
+                <div col="row">
+                   <div col="col-sm-2">
+                       <div class="input-group mar-btm">
+										                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
+										                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_facturas();">Search</button></span>
+									       </div>
+                   </div>
+                 </div>
          </div>
           <div class="panel-footer text-right">
 
@@ -363,6 +357,6 @@ include("$path/libs/conexion.php");
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/operaciones_consulting.js"></script>
+ <script src="js/facturacion_consulting.js"></script>
 </body>
 </html>
