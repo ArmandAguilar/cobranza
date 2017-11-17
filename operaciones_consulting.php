@@ -213,7 +213,9 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
                        <div col="row">
                                 <div class="col-md-3 mar-btm">Cuenta:<input type="text" class="form-control" placeholder="Name"></div>
                                 <div class="col-md-3 mar-btm">Año-Mes:<input type="text" class="form-control" placeholder="Name"></div>
-                                <div class="col-md-3 mar-btm"><button class="btn btn-primary btn-labeled fa fa-search" type="button">Search</button></div>
+                        </div>
+                        <div col="row">
+                            <div class="col-md-3 mar-btm"><button class="btn btn-primary btn-labeled fa fa-search" type="button">Search</button></div>
                         </div>
          </div>
           <div class="panel-footer text-right">
