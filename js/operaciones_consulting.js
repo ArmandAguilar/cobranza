@@ -55,8 +55,8 @@ function buscar_subperacion()
                              container : 'floating',
                              timer : 9000
                            });
-                           /*$("#CTable").append(data);*/
-                           $("#txtSearch").val(data);
+                           $("#CTable").append(data);
+                           /*$("#txtSearch").val(data);*/
                            $.niftyNoty({
                              type: 'success',
                              icon : 'fa fa-check',
