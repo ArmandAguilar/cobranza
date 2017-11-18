@@ -197,21 +197,12 @@ include("$path/libs/conexion.php");
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Operación</th>
-                        <th>Fecha</th>
-                        <th>Abono</th>
-                        <th>Cargo</th>
-                        <th>Saldo</th>
-                        <th>Cat. Cargo</th>
-                        <th>Cat. Abono</th>
-                        <th>Cat. Costo</th>
-                        <th>Cuenta</th>
-                        <th>MesAnio</th>
-                        <th>Iva</th>
-                        <th>Empresa</th>
-                        <th>Referencia</th>
-                        <th>Ctarc</th>
-                        <th>RFC</th>
+                          <th>Id</th>
+                          <th>IdCobro</th>
+                          <th>Factura</th>
+                          <th>Operacion Abono</th>
+                          <th>Importe</th>
+                          <th>Accion</th>
                       </tr>
                     </thead>
                     <tbody id="CTable">
