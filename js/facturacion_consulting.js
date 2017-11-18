@@ -3,7 +3,7 @@ function buscar_facturas()
   $("#CTable").empty();
    var losdatos = {txtSearch:$('#txtSearch').val()};
     $.ajax({
-           		url:'./scripts/oper_operaciones_consulting.php?o=1',
+           		url:'./scripts/oper_facturacion.php?o=1',
           		type:'POST',
           		data:losdatos,
           		success:function(data)
