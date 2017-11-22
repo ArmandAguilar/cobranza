@@ -16,15 +16,15 @@ switch ($_GET[o]) {
                                         <td>$fila[Id_Cobro]</td>
                                         <td>$fila[FacturaForta]</td>
                                         <td>$fila[OperacionAbono]</td>
-                                        <td><div data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\">$ $ImporteOperacion</div></td>
-                                        <td>Cancelar operacion</td>
+                                        <td>$ $ImporteOperacion</td>
+                                        <td><div data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\">Cancelar operacion</div></td>
                                     </tr>";
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
                echo $TFilas;
       break;
       case '2':
-            
+
       break;
 
     default:
