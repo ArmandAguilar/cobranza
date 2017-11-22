@@ -60,7 +60,7 @@ function Cancelar()
                            timer : 5000
                          });
                          $("#CTable").empty();
-                         $('#txtSearch').val();
+                         $('#txtSearch').val('');
 
                    },
             error:function(req,e,er) {
