@@ -120,8 +120,12 @@ include("$path/libs/conexion.php");
     								<i class="fa fa-search"></i>
     							</a>
               <?php } else {} ?>
-							<!--Notification dropdown menu-->
-
+							<!--Notification dropdown menu-- >
+              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {?>
+                  <a href="facturacion_consulting.php">
+    								<i class="fa fa-dollar"></i>
+    							</a>
+              <?php } else {} ?>
 						</li>
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<!--End notifications dropdown-->
