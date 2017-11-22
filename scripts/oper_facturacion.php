@@ -25,11 +25,11 @@ switch ($_GET[o]) {
       break;
       case '2':
                 $Sql="DELETE FROM [SAP].[dbo].[CobrosConsulting] WHERE Id='$_POST[Id]' and FacturaForta = '$_POST[FacturaForta]' and OperacionAbono = '$_POST[OperacionAbono]'";
-                /*$objOperaciones = new poolConnecion();
+                $objOperaciones = new poolConnecion();
                 $con=$objOperaciones->ConexionSQLSAP();
                 $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
-                $objOperaciones->CerrarSQLSAP($RSet,$con);*/
-                echo $Sql;
+                $objOperaciones->CerrarSQLSAP($RSet,$con);
+                
       break;
 
     default:

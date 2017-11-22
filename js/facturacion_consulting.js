@@ -13,7 +13,7 @@ function buscar_facturas()
                              icon : 'fa fa-check',
                              message : 'Procesando  .............',
                              container : 'floating',
-                             timer : 9000
+                             timer : 5000
                            });
                            $("#CTable").append(data);
           		       },
@@ -54,11 +54,11 @@ function Cancelar()
                            icon : 'fa fa-check',
                            message : 'Procesando  .............',
                            container : 'floating',
-                           timer : 9000
+                           timer : 5000
                          });
                          $("#CTable").empty();
                          $('#txtSearch').val();
-                         alert(data);
+
                    },
             error:function(req,e,er) {
                       $.niftyNoty({
