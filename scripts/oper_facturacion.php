@@ -24,8 +24,7 @@ switch ($_GET[o]) {
                echo $TFilas;
       break;
       case '2':
-            <p class="text-2x mar-no text-thin" data-target="#modal-mFactura" data-toggle="modal" style="cursor:pointer">Factura : AGR-Provision 27-1917-CeI</p>
-
+            
       break;
 
     default:
