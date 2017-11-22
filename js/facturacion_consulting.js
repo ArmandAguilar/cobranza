@@ -37,3 +37,14 @@ function buscar_facturas()
            });
 
 }
+function setValoreMsj(Id,FacturaForta,OperacionAbono)
+{
+  $("#Id").val(Id);
+  $("#FacturaForta").val(FacturaForta);
+  $("#OperacionAbono").val(OperacionAbono);
+}
+
+function Cancelar()
+{
+  alert('Cacelada');
+}

@@ -16,7 +16,7 @@ switch ($_GET[o]) {
                                         <td>$fila[Id_Cobro]</td>
                                         <td>$fila[FacturaForta]</td>
                                         <td>$fila[OperacionAbono]</td>
-                                        <td>$ $ImporteOperacion</td>
+                                        <td><div data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\">$ $ImporteOperacion</div></td>
                                         <td>Cancelar operacion</td>
                                     </tr>";
                      }
@@ -24,7 +24,7 @@ switch ($_GET[o]) {
                echo $TFilas;
       break;
       case '2':
-
+            <p class="text-2x mar-no text-thin" data-target="#modal-mFactura" data-toggle="modal" style="cursor:pointer">Factura : AGR-Provision 27-1917-CeI</p>
 
       break;
 
