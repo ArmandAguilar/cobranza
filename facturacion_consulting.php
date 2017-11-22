@@ -176,7 +176,7 @@ include("$path/libs/conexion.php");
 					<!--===================================================-->
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Operaciones Consulting</h3>
+							<h3 class="panel-title">Facturación Consulting</h3>
 						</div>
 						<div class="panel-body">
                 <div col="row">
