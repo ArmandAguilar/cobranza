@@ -17,7 +17,7 @@ switch ($_GET[o]) {
                                         <td>$fila[FacturaForta]</td>
                                         <td>$fila[OperacionAbono]</td>
                                         <td>$ $ImporteOperacion</td>
-                                        <td><div data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\">Cancelar operacion</div></td>
+                                        <td><div data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\" onclick=\"setValoreMsj($fila[Id],'$fila[FacturaForta]','$fila[OperacionAbono]')\">Cancelar operacion</div></td>
                                     </tr>";
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
