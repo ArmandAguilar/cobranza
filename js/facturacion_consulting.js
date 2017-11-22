@@ -41,7 +41,7 @@ function Cancelar()
   var losdatos = {
     Id:$("#Id").val(),
     FacturaForta:$("#FacturaForta").val(),
-    OperacionAbono;$("#OperacionAbono").val(),
+    OperacionAbono:$("#OperacionAbono").val(),
   }
   $.ajax({
             url:'./scripts/oper_facturacion.php?o=2',
