@@ -24,7 +24,7 @@ switch ($_GET[o]) {
                echo $TFilas;
       break;
       case '2':
-                $Sql="";
+                $Sql="DELETE FROM [SAP].[dbo].[CobrosConsulting] WHERE Id='$_POST[Id]' and FacturaForta = '$_POST[FacturaForta]' and OperacionAbono = '$_POST[OperacionAbono]'";
                 /*$objOperaciones = new poolConnecion();
                 $con=$objOperaciones->ConexionSQLSAP();
                 $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
