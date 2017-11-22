@@ -286,10 +286,10 @@ include("$path/libs/conexion.php");
           <!--Modal body-->
           <div class="modal-body">
                 <h3><b>¿ Esta seguro que desea borrar este registro?</h3></b>
-                <input type="text" name="Id" id="Id" value="">
-                <input type="text" name="FacturaForta" id="FacturaForta" value="">
-                <input type="text" name="OperacionAbono" id="OperacionAbono" value="">
-
+                <input type="hidden" name="Id" id="Id" value="">
+                <input type="hidden" name="FacturaForta" id="FacturaForta" value="">
+                <input type="hidden" name="OperacionAbono" id="OperacionAbono" value="">
+                Id:<div id="txtId"></div> Factura:<div id="txtFactura"></div> Operación:<div id="txtOperacion"></div> 
           </div>
           <!--Modal footer-->
           <div class="modal-footer">
