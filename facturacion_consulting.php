@@ -290,9 +290,9 @@ include("$path/libs/conexion.php");
                 <input type="hidden" name="FacturaForta" id="FacturaForta" value="">
                 <input type="hidden" name="OperacionAbono" id="OperacionAbono" value="">
                 <div class="row">
-                    <div col="col-sm-2">Id:<div id="txtId"></div> </div>
-                    <div col="col-sm-2">Factura:<div id="txtFactura"></div></div>
-                    <div col="col-sm-2">Operación:<div id="txtOperacion"></div></div>
+                    <div class="col-sm-2">Id:<div id="txtId"></div> </div>
+                    <div class="col-sm-2">Factura:<div id="txtFactura"></div></div>
+                    <div class="col-sm-2">Operación:<div id="txtOperacion"></div></div>
                 </div>
 
           </div>
