@@ -125,7 +125,7 @@ include("$path/libs/conexion.php");
                   <a href="facturacion_consulting.php">
     								<i class="fa fa-dollar"></i>
     							</a>
-              <?php } else {} ?>
+              <?php } else {echo "mmm";} ?>
 						</li>
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<!--End notifications dropdown-->
