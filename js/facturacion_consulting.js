@@ -34,9 +34,9 @@ function setValoreMsj(Id,FacturaForta,OperacionAbono)
   $("#Id").val(Id);
   $("#FacturaForta").val(FacturaForta);
   $("#OperacionAbono").val(OperacionAbono);
-  $("txtId").append(Id);
-  $("txtFactura").append(FacturaForta);
-  $("txtOperacion").append(OperacionAbono);
+  $("#txtId").append(Id);
+  $("#txtFactura").append(FacturaForta);
+  $("#txtOperacion").append(OperacionAbono);
 }
 
 function Cancelar()
