@@ -24,7 +24,12 @@ switch ($_GET[o]) {
                echo $TFilas;
       break;
       case '2':
-
+                $Sql="";
+                /*$objOperaciones = new poolConnecion();
+                $con=$objOperaciones->ConexionSQLSAP();
+                $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
+                $objOperaciones->CerrarSQLSAP($RSet,$con);*/
+                echo $Sql;
       break;
 
     default:

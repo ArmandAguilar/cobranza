@@ -16,14 +16,6 @@ function buscar_facturas()
                              timer : 9000
                            });
                            $("#CTable").append(data);
-                           $.niftyNoty({
-                             type: 'success',
-                             icon : 'fa fa-check',
-                             message : 'Imprimiendo datos..',
-                             container : 'floating',
-                             timer : 3000
-                           });
-
           		       },
           		error:function(req,e,er) {
                         $.niftyNoty({
@@ -46,5 +38,36 @@ function setValoreMsj(Id,FacturaForta,OperacionAbono)
 
 function Cancelar()
 {
-  alert('Cacelada');
+  var losdatos = {
+    Id:$("#Id").val(),
+    FacturaForta:$("#FacturaForta").val(),
+    OperacionAbono;$("#OperacionAbono").val(),
+  }
+  $.ajax({
+            url:'./scripts/oper_facturacion.php?o=2',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                         $.niftyNoty({
+                           type: 'success',
+                           icon : 'fa fa-check',
+                           message : 'Procesando  .............',
+                           container : 'floating',
+                           timer : 9000
+                         });
+                         $("#CTable").empty();
+                         $('#txtSearch').val();
+                         alert(data);
+                   },
+            error:function(req,e,er) {
+                      $.niftyNoty({
+                        type: 'danger',
+                        icon : 'fa fa-minus',
+                        message : 'oh! a ocurrido un error.',
+                        container : 'floating',
+                        timer : 3000
+                      });
+            }
+         });
 }
