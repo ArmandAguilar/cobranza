@@ -134,6 +134,11 @@ session_start();
     								<i class="fa fa-search"></i>
     							</a>
               <?php } else {} ?>
+              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {?>
+                  <a href="facturacion_consulting.php">
+    								<i class="fa fa-dollar"></i>
+    							</a>
+              <?php } else {} ?>
 							<!--Notification dropdown menu-->
 
 						</li>
