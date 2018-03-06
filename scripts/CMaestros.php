@@ -28,7 +28,7 @@ class Maestro extends poolConnecion
         $Proyecto=$info->NoProyecto;
         $NumMaestro=$info->NumMaestro;
         #Here search if exist previos relationship
-        $SqlSearch =  "SELECT [IdMaestroEsclavo] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [NumMaestro] = '$NumMaestro' and [NumProyecto] = '$Proyecto'";
+        $SqlSearch = "SELECT [IdMaestroEsclavo] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [NumMaestro] = '$NumMaestro' and [NumProyecto] = '$Proyecto'";
         $Exist = 0;
         $con=$objCboSearchRelation->ConexionSQLSAP();
         $RSet=$objCboSearchRelation->QuerySQLSAP($SqlSearch,$con);
@@ -38,7 +38,7 @@ class Maestro extends poolConnecion
         			 }
          $objCboSearchRelation->CerrarSQLSAP($RSet,$con);
 
-        if ($Exist == 0) {
+        if ($Exist == "0") {
           $Sql2="INSERT INTO [SAP].[dbo].[RelacionMaestrosEsclavos] VALUES ('$NumMaestro' ,'$Proyecto','-')";
           $obj = new poolConnecion();
           $con=$obj->ConexionSQLSAP();
@@ -50,7 +50,7 @@ class Maestro extends poolConnecion
           $Exist = 1;
         }
 
-        return $Exist;
+        return $SqlSearch;
 
     }
 
