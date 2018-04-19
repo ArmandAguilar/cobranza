@@ -22,37 +22,38 @@ class Maestro extends poolConnecion
 
         return $Sql;
     }
-   function guardar_relacion($info)
-    {
+    function guardar_relacion($info)
+     {
 
-        $Proyecto=$info->NoProyecto;
-        $NumMaestro=$info->NumMaestro;
-        #Here search if exist previos relationship
-        $SqlSearch = "SELECT [IdMaestroEsclavo] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [NumMaestro] = '$NumMaestro' and [NumProyecto] = '$Proyecto'";
-        $Exist = 0;
-        $con=$objCboSearchRelation->ConexionSQLSAP();
-        $RSet=$objCboSearchRelation->QuerySQLSAP($SqlSearch,$con);
-         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-        			 {
-        					 $Exist = 1;
-        			 }
-         $objCboSearchRelation->CerrarSQLSAP($RSet,$con);
+         $Proyecto=$info->NoProyecto;
+         $NumMaestro=$info->NumMaestro;
+         #Here search if exist previos relationship
+         $SqlSearch = "SELECT [IdMaestroEsclavo] FROM [SAP].[dbo].[RelacionMaestrosEsclavos] Where [NumMaestro] = '$NumMaestro' and [NumProyecto] = '$Proyecto'";
+         $Exist = 0;
+         $objCboSearchRelation = new poolConnecion();
+         $con=$objCboSearchRelation->ConexionSQLSAP();
+         $RSet=$objCboSearchRelation->QuerySQLSAP($SqlSearch,$con);
+          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+         			 {
+         					 $Exist = 1;
+         			 }
+          $objCboSearchRelation->CerrarSQLSAP($RSet,$con);
 
-        if ($Exist == "0") {
-          $Sql2="INSERT INTO [SAP].[dbo].[RelacionMaestrosEsclavos] VALUES ('$NumMaestro' ,'$Proyecto','-')";
-          $obj = new poolConnecion();
-          $con=$obj->ConexionSQLSAP();
-          $RSet=$obj->QuerySQLSAP($Sql2,$con);
-          $obj->CerrarSQLSAP($RSet,$con);
-        }
-        else
-        {
-          $Exist = 1;
-        }
+         if ($Exist == "0") {
+           $Sql2="INSERT INTO [SAP].[dbo].[RelacionMaestrosEsclavos] VALUES ('$NumMaestro' ,'$Proyecto','-')";
+           $obj = new poolConnecion();
+           $con=$obj->ConexionSQLSAP();
+           $RSet=$obj->QuerySQLSAP($Sql2,$con);
+           $obj->CerrarSQLSAP($RSet,$con);
+         }
+         else
+         {
+           $Exist = 1;
+         }
 
-        return $SqlSearch;
+         return $Exist;
 
-    }
+     }
 
 }
 ?>
