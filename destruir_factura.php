@@ -1,68 +1,83 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
+include("sis.php");
+include("$path/libs/conexion.php");
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
+	<link rel="shortcut icon" href="img/cuadrito-30x30.png" type="image/x-png" />
 	<title>Forta Ingenieria | Administración.</title>
-	<!--STYLESHEET-->
-	<!--=================================================-->
-	<!--Open Sans Font [ OPTIONAL ] -->
- 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
-	<!--Bootstrap Stylesheet [ REQUIRED ]-->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!--Nifty Stylesheet [ REQUIRED ]-->
-	<link href="css/nifty.min.css" rel="stylesheet">
-	<!--Font Awesome [ OPTIONAL ]-->
-	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!--Switchery [ OPTIONAL ]-->
-	<link href="plugins/switchery/switchery.min.css" rel="stylesheet">
-	<!--Bootstrap Select [ OPTIONAL ]-->
-	<link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
-	<!--SCRIPT-->
-	<!--=================================================-->
-	<!--Page Load Progress Bar [ OPTIONAL ]-->
-	<link href="plugins/pace/pace.min.css" rel="stylesheet">
-	<script src="plugins/pace/pace.min.js"></script>
-	<!--Bootstrap Table [ OPTIONAL ]-->
-	<link href="plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-	<!--X-editable [ OPTIONAL ]-->
-	<link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet">
+  <!--STYLESHEET-->
+  <!--=================================================-->
 
+  <!--Open Sans Font [ OPTIONAL ] -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+  <!--Bootstrap Stylesheet [ REQUIRED ]-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!--Nifty Stylesheet [ REQUIRED ]-->
+  <link href="css/nifty.min.css" rel="stylesheet">
+  <!--Font Awesome [ OPTIONAL ]-->
+  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!--Switchery [ OPTIONAL ]-->
+  <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
+  <!--Bootstrap Select [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+  <!--Bootstrap Tags Input [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+  <!--Chosen [ OPTIONAL ]-->
+  <link href="plugins/chosen/chosen.min.css" rel="stylesheet">
+  <!--noUiSlider [ OPTIONAL ]-->
+  <link href="plugins/noUiSlider/jquery.nouislider.min.css" rel="stylesheet">
+  <link href="plugins/noUiSlider/jquery.nouislider.pips.min.css" rel="stylesheet">
+  <!--Bootstrap Timepicker [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+  <!--Bootstrap Datepicker [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet">
+  <!--Dropzone [ OPTIONAL ]-->
+  <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
+  <!--Summernote [ OPTIONAL ]-->
+  <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
+  <!--Demo [ DEMONSTRATION ]-->
+  <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+
+  <!--Page Load Progress Bar [ OPTIONAL ]-->
+  <link href="plugins/pace/pace.min.css" rel="stylesheet">
+  <script src="plugins/pace/pace.min.js"></script>
+  <!--Bootstrap Table [ OPTIONAL ]-->
+  <link href="plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+  <!--X-editable [ OPTIONAL ]-->
+  <link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet"
+
+
+  <!--SCRIPT-->
+  <!--=================================================-->
+
+  <!--Page Load Progress Bar [ OPTIONAL ]-->
+  <link href="plugins/pace/pace.min.css" rel="stylesheet">
+  <script src="plugins/pace/pace.min.js"></script>
 </head>
 <!--TIPS-->
-
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
   <?php
-  	if(empty($_SESSION[IdUsuario]))
-  	{
-  		 echo "<script>
-  		 						window.location.href='logout.php'
-  					</script>";
-  	}
-
+    if(empty($_SESSION[IdUsuario]))
+    {
+       echo "<script>
+                  window.location.href='logout.php'
+            </script>";
+    }
     if(empty($_SESSION[CobranzaPerfil]))
     {
-
       echo "<script>
                 window.location.href='logout.php'
           </script>";
     }
    ?>
-  <form id="frmDetalle" name="frmDetalle" action="detalle.php" method="post">
-    <input type="hidden" name="txtFactura" id="txtFactura" value="">
-    <input type="hidden" name="txtNoProyecto" id="txtNoProyecto" value="">
-    <input type="hidden" name="txtProyecto" id="txtProyecto" value="">
-    <input type="hidden" name="txtImporte" id="txtImporte" value="">
-    <input type="hidden" name="txtEstado" id="txtEstado" value="">
-    <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>">
-    <input type="hidden" name="txtIdPerfil" id="txtPerfil" value="<?php echo $_SESSION[CobranzaPerfil]; ?>">
 	<div id="container" class="effect mainnav-out">
 		<!--NAVBAR-->
 		<!--===================================================-->
@@ -84,37 +99,9 @@ session_start();
 				<!--================================-->
 				<div class="navbar-content clearfix">
 					<ul class="nav navbar-top-links pull-left">
-						<!--Navigation toogle button-->
-						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						<li class="tgl-menu-btn">
-							<a class="mainnav-toggle push" href="#">
-								<i class="fa fa-navicon fa-lg"></i>
-							</a>
-						</li>
-						-->
-						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-						<!--End Navigation toogle button-->
-						<!--Notification dropdown fa-tasks,fa-rotate-right-->
-						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-						<li class="dropdown">
-              <?php
-              if ($_SESSION[CobranzaPerfil]=="Admin") {
-                echo "<a href=\"javascript:void(0);\" onclick=\"load_enbudo();\">
-  								<i class=\"fa fa-th-large fa-lg\"></i>
-  							</a>";
-              }
-              else{
-                echo "<a href=\"javascript:void(0);\" onclick=\"load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');\">
-  								<i class=\"fa fa-th-large fa-lg\"></i>
-  							</a>";
-              }
-               ?>
-
-							<a href="javascript:void(0);" onclick="load_lista();">
-								<i class="fa fa-tasks fa-lg"></i>
-							</a>
-							<a href="javascript:void(0);" onclick="load_cronograma();">
-								<i class="fa fa-rotate-right fa-lg"></i>
+            <li class="dropdown">
+              <a href="panel.php">
+								<i class="fa fa-home"></i>
 							</a>
               <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
               ?>
@@ -138,16 +125,12 @@ session_start();
     								<i class="fa fa-dollar"></i>
     							</a>
               <?php } else {} ?>
-              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {?>
-                  <a href="destruir_factura.php">
-                    <i class="fa fa-file-text"></i>
-                  </a>
-              <?php } else {} ?>
 							<!--Notification dropdown menu-->
 
 						</li>
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<!--End notifications dropdown-->
+					</ul>
 					</ul>
 					<ul class="nav navbar-top-links pull-right">
 						<!--User dropdown-->
@@ -192,80 +175,70 @@ session_start();
 				<div id="page-content">
 					<!--Basic Columns Enbudo-->
 					<!--===================================================-->
-					<div id="DEnvudo" class="panel">
+					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Embudo</h3>
-						</div>
-            <div id="load_enbudo"><img src="img/pageloader.gif"/></div>
-						<div class="panel-body" id="rows-enbudo">
-
-
-						</div>
-					</div>
-
-					<!--===================================================-->
-					<!--Basic Lista-->
-					<!--===================================================-->
-					<div id="DLista" class="panel" style="display:none">
-
-						<div class="panel-heading">
-							<h3 class="panel-title">Lista</h3>
+							<h3 class="panel-title">Operaciones Consulting</h3>
 						</div>
 						<div class="panel-body">
-							<table data-toggle="table"
-								   data-url="scripts/datajson.php"
-                   data-search="true"
-								   data-show-refresh="true"
-								   data-show-toggle="true"
-								   data-show-columns="true"
-								   data-page-list="[20, 30, 60]"
-								   data-page-size="15"
-								   data-pagination="true" data-show-pagination-switch="true">
-								<thead>
-									<tr>
-                    <th data-field="id" data-switchable="false">No Fila</th>
-                    <th data-field="NumMaestro" data-switchable="false">Num. Maestro</th>
-                    <th data-field="NumProyecto" data-switchable="false">Num. Proyecto</th>
-                    <th data-field="NomProyecto" data-switchable="false">Proyetco</th>
-                    <th data-field="Empresa" data-switchable="false">Empresa</th>
-                    <th data-field="FacturaForta" data-switchable="false">Factura</th>
-                    <th data-field="Estatus" data-switchable="false">Estado</th>
-                    <th data-field="FechaFactura" data-switchable="false">Fecha Factura</th>
-                    <th data-field="FechaTentativa" data-switchable="false">Fecha Tentativa</th>
-                    <th data-field="FechaRecepcion" data-switchable="false">Fehca Recepción</th>
-                    <th data-field="MontoAntesIva" data-switchable="false">Monto</th>
-                    <th data-field="IVA" data-switchable="true">Iva</th>
-                    <th data-field="MontoCIVA" data-switchable="true">Monto Con Iva</th>
-                    <th data-field="SumaAbono" data-switchable="true">Suma a Abono</th>
-                    <th data-field="SaldoPorCobrar" data-switchable="true">Saldo por Cobrar</th>
-                    <th data-field="TrimestreFactura" data-switchable="true">Trimestre</th>
-                    <th data-field="RFC" data-switchable="true">true</th>
-                    <th data-field="SeFacturaA" data-switchable="true">Se Factura A</th>
-                    <th data-field="QuienFactura" data-switchable="true">Quien Factura</th>
-									</tr>
-								</thead>
+                      <div col="row">
+                         <div col="col-sm-2">
+                             <div class="input-group mar-btm">
+   											                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
+   											                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_operaciones();">Search</button></span>
+   										       </div>
+                         </div>
 
-							</table>
-						</div>
+                       </div>
+                       <div col="row">
+                                <div class="col-md-3 mar-btm"><input type="text" name="txtCuenta" id="txtCuenta" class="form-control" placeholder="Cuenta"></div>
+                                <div class="col-md-3 mar-btm"><input type="text" name="txtMesAnio" id="txtMesAnio" class="form-control" placeholder="Año-Mes"></div>
+                                <div class="col-md-3"><span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_subperacion();">Search</button></span></div>
+                        </div>
+         </div>
+          <div class="panel-footer text-right">
+
+         </div>
 					</div>
-					<!--===================================================-->
-					<!--===================================================-->
-					<!--Basic Time Line-->
-					<!--===================================================-->
-					<div id="DCronograma"class="panel" style="display:none">
+          <div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Time Line</h3>
+							<h3 class="panel-title"></h3>
 						</div>
 						<div class="panel-body">
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Operación</th>
+                        <th>Fecha</th>
+                        <th>Abono</th>
+                        <th>Cargo</th>
+                        <th>Saldo</th>
+                        <th>Cat. Cargo</th>
+                        <th>Cat. Abono</th>
+                        <th>Cat. Costo</th>
+                        <th>Cuenta</th>
+                        <th>MesAnio</th>
+                        <th>Iva</th>
+                        <th>Empresa</th>
+                        <th>Referencia</th>
+                        <th>Ctarc</th>
+                        <th>RFC</th>
+                      </tr>
+                    </thead>
+                    <tbody id="CTable">
 
-						</div>
+                    </tbody>
+                  </table>
+                </div>
+         </div>
+          <div class="panel-footer text-right">
+
+         </div>
 					</div>
-					<!--===================================================-->
+					</div>
 				</div>
 				<!--===================================================-->
 				<!--End page content-->
-
-
 			</div>
 			<!--===================================================-->
 			<!--END CONTENT CONTAINER-->
@@ -281,7 +254,7 @@ session_start();
 								<ul id="mainnav-menu" class="list-group">
 									<!--Menu list item-->
 									<li>
-										<a href="panel.html">
+										<a href="panel.php">
 											<i class="fa fa-dashboard"></i>
 											<span class="menu-title">
 												<strong>Dashboard</strong>
@@ -306,9 +279,6 @@ session_start();
 				<div id="aside">
 					<div class="nano">
 						<div class="nano-content">
-
-
-
 							<!-- Tabs Content -->
 							<!--================================-->
 							<div class="tab-content">
@@ -365,9 +335,20 @@ session_start();
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 	<!--jQuery [ REQUIRED ]-->
-	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
 	<!--BootstrapJS [ RECOMMENDED ]-->
 	<script src="js/bootstrap.min.js"></script>
+  <!--Bootstrap Select [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+  <!--Switchery [ OPTIONAL ]-->
+	<script src="plugins/switchery/switchery.min.js"></script>
+  <!--Bootstrap Tags Input [ OPTIONAL ]-->
+  <script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+  <!--Chosen [ OPTIONAL ]-->
+  <script src="plugins/chosen/chosen.jquery.min.js"></script>
+  <!--Bootstrap Timepicker [ OPTIONAL ]-->
+	<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
 	<!--Fast Click [ OPTIONAL ]-->
 	<script src="plugins/fast-click/fastclick.min.js"></script>
 	<!--Nifty Admin [ RECOMMENDED ]-->
@@ -387,20 +368,6 @@ session_start();
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/scripts.js"></script>
- <script src="js/data.js"></script>
- </form>
- <?php
-          if ($_SESSION[CobranzaPerfil]=="Admin") {
-            echo "<script>
-                      load_enbudo();
-                 </script>";
-          }
-          else{
-            echo "<script>
-                      load_enbudo_liders($_SESSION[IdUsuario],'$_SESSION[CobranzaPerfil]');
-                 </script>";
-          }
-  ?>
+ <script src="js/operaciones_consulting.js"></script>
 </body>
 </html>
