@@ -125,10 +125,7 @@ include("$path/libs/conexion.php");
     								<i class="fa fa-dollar"></i>
     							</a>
               <?php } else {} ?>
-							<!--Notification dropdown menu-->
-
 						</li>
-						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<!--End notifications dropdown-->
 					</ul>
 					</ul>
@@ -177,23 +174,17 @@ include("$path/libs/conexion.php");
 					<!--===================================================-->
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Operaciones Consulting</h3>
+							<h3 class="panel-title">Facturación Consulting</h3>
 						</div>
 						<div class="panel-body">
-                      <div col="row">
-                         <div col="col-sm-2">
-                             <div class="input-group mar-btm">
-   											                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
-   											                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_operaciones();">Search</button></span>
-   										       </div>
-                         </div>
-
-                       </div>
-                       <div col="row">
-                                <div class="col-md-3 mar-btm"><input type="text" name="txtCuenta" id="txtCuenta" class="form-control" placeholder="Cuenta"></div>
-                                <div class="col-md-3 mar-btm"><input type="text" name="txtMesAnio" id="txtMesAnio" class="form-control" placeholder="Año-Mes"></div>
-                                <div class="col-md-3"><span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_subperacion();">Search</button></span></div>
-                        </div>
+                <div col="row">
+                   <div col="col-sm-2">
+                       <div class="input-group mar-btm">
+										                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
+										                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_facturas();">Search</button></span>
+									       </div>
+                   </div>
+                 </div>
          </div>
           <div class="panel-footer text-right">
 
@@ -208,21 +199,12 @@ include("$path/libs/conexion.php");
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Operación</th>
-                        <th>Fecha</th>
-                        <th>Abono</th>
-                        <th>Cargo</th>
-                        <th>Saldo</th>
-                        <th>Cat. Cargo</th>
-                        <th>Cat. Abono</th>
-                        <th>Cat. Costo</th>
-                        <th>Cuenta</th>
-                        <th>MesAnio</th>
-                        <th>Iva</th>
-                        <th>Empresa</th>
-                        <th>Referencia</th>
-                        <th>Ctarc</th>
-                        <th>RFC</th>
+                          <th>Id</th>
+                          <th>IdCobro</th>
+                          <th>Factura</th>
+                          <th>Operacion Abono</th>
+                          <th>Importe</th>
+                          <th>Accion</th>
                       </tr>
                     </thead>
                     <tbody id="CTable">
@@ -290,6 +272,43 @@ include("$path/libs/conexion.php");
 			<!--===================================================-->
 			<!--END ASIDE-->
 		</div>
+    <!--Default Bootstrap Modal modal-mFactura-->
+    <!--===================================================-->
+    <div class="modal bunce" id="modal-mFactura" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!--Modal header-->
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Eliminar Operación</h4>
+          </div>
+          <!--Modal body-->
+          <div class="modal-body">
+                <h3><b>¿ Esta seguro que desea borrar este registro?</h3></b>
+                <input type="hidden" name="Id" id="Id" value="">
+                <input type="hidden" name="FacturaForta" id="FacturaForta" value="">
+                <input type="hidden" name="OperacionAbono" id="OperacionAbono" value="">
+                <div class="row">
+                    <div class="col-sm-4">Id:<div id="txtId"></div> </div>
+                    <div class="col-sm-4">Factura:<div id="txtFactura"></div></div>
+                    <div class="col-sm-4">Operación:<div id="txtOperacion"></div></div>
+                </div>
+
+          </div>
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-danger" onclick="Cancelar();">Modificar</button>
+            <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===================================================-->
+    <!--End Default Bootstrap Modal-->
+
 		<!-- FOOTER -->
 		<!--===================================================-->
 		<footer id="footer">
@@ -368,6 +387,6 @@ include("$path/libs/conexion.php");
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/operaciones_consulting.js"></script>
+ <script src="js/facturacion_consulting.js"></script>
 </body>
 </html>
