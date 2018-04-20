@@ -449,9 +449,9 @@ function serachBills($info)
   $TFilas = "";
     $Factura = $info->Factura;
     $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[Trimestre],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]  like '%$Factura%'";
-    $objSB = new poolConnecion();
+    /*$objSB = new poolConnecion();
     $con=$objSB->ConexionSQLSAP();
-    $RSet=$objSB->QuerySQLSAP($Sql ,$con);
+    $RSet=$objSB->QuerySQLSAP($Sql ,$con);*/
     /*while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
              $MontoAIVA = number_format($fila[Monto Antes de IVA], 2, '.', ',');
