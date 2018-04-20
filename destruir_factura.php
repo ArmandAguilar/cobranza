@@ -14,7 +14,6 @@ include("$path/libs/conexion.php");
 	<title>Forta Ingenieria | Administración.</title>
   <!--STYLESHEET-->
   <!--=================================================-->
-
   <!--Open Sans Font [ OPTIONAL ] -->
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
   <!--Bootstrap Stylesheet [ REQUIRED ]-->
@@ -200,7 +199,6 @@ include("$path/libs/conexion.php");
                     <thead>
                       <tr>
                           <th>Id</th>
-                          <th>IdCobro</th>
                           <th>Factura</th>
                           <th>Operacion Abono</th>
                           <th>Importe</th>
@@ -367,7 +365,6 @@ include("$path/libs/conexion.php");
   <script src="plugins/chosen/chosen.jquery.min.js"></script>
   <!--Bootstrap Timepicker [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-
 	<!--Fast Click [ OPTIONAL ]-->
 	<script src="plugins/fast-click/fastclick.min.js"></script>
 	<!--Nifty Admin [ RECOMMENDED ]-->
@@ -387,6 +384,6 @@ include("$path/libs/conexion.php");
 	<script src="plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<!--Bootstrap Table Extension [ OPTIONAL ]-->
 	<script src="plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
- <script src="js/facturacion_consulting.js"></script>
+ <script src="js/destruir_factura.js"></script>
 </body>
 </html>

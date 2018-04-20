@@ -1,7 +1,7 @@
 <?php
 include("../sis.php");
 include("$path/libs/conexion.php");
-
+include("$path/libs/CFactura.php")
 switch ($_GET[o]) {
     case '1':
               $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where FacturaForta = '$_POST[txtSearch]'";
@@ -29,8 +29,14 @@ switch ($_GET[o]) {
                 $con=$objOperaciones->ConexionSQLSAP();
                 $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
                 $objOperaciones->CerrarSQLSAP($RSet,$con);
-                
+
       break;
+      case '3':
+              $info->Factura = $_POST[txtSearch];
+              $objFactura = new Factura();
+              echo $objFactura->serachBills($info);
+
+          break;
 
     default:
     break;

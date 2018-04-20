@@ -443,6 +443,31 @@ function sumAndUpdateDates($info)
       $objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);
 
 }
+function serachBills($info)
+{
+    $Factura = $info->Factura;
+    $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[Trimestre],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]='$Factura'";
+    $objSB = new poolConnecion();
+    $con=$objSB->ConexionSQLSAP();
+    $RSet=$objSB->QuerySQLSAP($Sql ,$con);
+    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+           {
+             $MontoAIVA = number_format($fila[Monto Antes de IVA], 2, '.', ',');
+             $IVA = number_format($fila[IVA], 2, '.', ',');
+             $TFilas .= "<tr>
+                           <td>$fila[[IdFacturacion]</td>
+                           <td>$fila[FacturaForta]</td>
+                           <td>$fila[NumProyecto]</td>
+                           <td>$fila[FechaFactura]</td>
+                           <td>$ $MontoAIVA</td>
+                           <td>$ $AIVA</td>
+                           <td>$fila[Trimestre]</td>
+                           <td>$fila[QuienFactura]</td>
+                       </tr>";
+           }
+    $objSB->CerrarSQLSAP($RSet,$con);
+
+}
 
 }
  ?>
