@@ -33,8 +33,9 @@ switch ($_GET[o]) {
       break;
       case '3':
               $info->Factura = $_POST[txtSearch];
-              $objFactura = new factura();
-              echo $objFactura->serachBills($info);
+              $objFactura = new facturas();
+              //echo $objFactura->serachBills($info);
+              echo "uu";
           break;
 
     default:
