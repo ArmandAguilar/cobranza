@@ -453,7 +453,7 @@ function searchBills($info)
     $RSet=$objSB->QuerySQLSAP($Sql ,$con);
     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
-             $MontoAIVA = number_format($fila[Monto Antes de IVA], 2, '.', ',');
+             $MontoAIVA = number_format($fila[MontoAIVA], 2, '.', ',');
              $IVA = number_format($fila[IVA], 2, '.', ',');
              $TFilas .= "<tr>
                            <td>$fila[IdFacturacion]</td>
