@@ -443,9 +443,9 @@ function sumAndUpdateDates($info)
       $objGetProvicionesProyecto->CerrarSQLSAP($RSet,$con);
 
 }
-function serachBills($info)
+function searchBills($info)
 {
-  $TFilas = "";
+    $TFilas = "";
     $Factura = $info->Factura;
     $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[Trimestre],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]  like '%$Factura%'";
     $objSB = new poolConnecion();
@@ -456,7 +456,7 @@ function serachBills($info)
              $MontoAIVA = number_format($fila[Monto Antes de IVA], 2, '.', ',');
              $IVA = number_format($fila[IVA], 2, '.', ',');
              $TFilas .= "<tr>
-                           <td>$fila[[IdFacturacion]</td>
+                           <td>$fila[IdFacturacion]</td>
                            <td>$fila[FacturaForta]</td>
                            <td>$fila[NumProyecto]</td>
                            <td>$fila[FechaFactura]</td>

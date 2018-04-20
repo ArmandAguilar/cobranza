@@ -34,7 +34,7 @@ switch ($_GET[o]) {
       case '3':
               $info->Factura = $_POST[txtSearch];
               $objFactura = new facturas();
-              echo $objFactura->serachBills($info);
+              echo $objFactura->searchBills($info);
 
           break;
 
