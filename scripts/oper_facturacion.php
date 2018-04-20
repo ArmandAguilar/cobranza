@@ -32,9 +32,10 @@ switch ($_GET[o]) {
 
       break;
       case '3':
-              $info->Factura = $_POST[txtSearch];
-              $objFactura = new Factura();
-              echo $objFactura->serachBills($info);
+              //$info->Factura = $_POST[txtSearch];
+              //$objFactura = new Factura();
+              //echo $objFactura->serachBills($info);
+              echo "goo";
           break;
 
     default:
