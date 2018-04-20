@@ -35,7 +35,6 @@ switch ($_GET[o]) {
               $info->Factura = $_POST[txtSearch];
               $objFactura = new Factura();
               echo $objFactura->serachBills($info);
-
           break;
 
     default:

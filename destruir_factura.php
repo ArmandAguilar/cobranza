@@ -173,7 +173,7 @@ include("$path/libs/conexion.php");
 					<!--===================================================-->
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Facturación Consulting</h3>
+							<h3 class="panel-title">Buscar Factura</h3>
 						</div>
 						<div class="panel-body">
                 <div col="row">
@@ -200,9 +200,12 @@ include("$path/libs/conexion.php");
                       <tr>
                           <th>Id</th>
                           <th>Factura</th>
-                          <th>Operacion Abono</th>
-                          <th>Importe</th>
-                          <th>Accion</th>
+                          <th>Num. Proyecto</th>
+                          <th>Fecha Factura</th>
+                          <th>Monto</th>
+                          <th>IVA</th>
+                          <th>Trimestre</th>
+                          <th>QuienFactura</th>
                       </tr>
                     </thead>
                     <tbody id="CTable">
