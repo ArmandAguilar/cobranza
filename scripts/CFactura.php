@@ -447,12 +447,12 @@ function serachBills($info)
 {
 
   $TFilas = "";
-    /*$Factura = $info->Factura;*/
+    $Factura = $info->Factura;
     $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[Trimestre],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]  like '%$Factura%'";
-    /*$objSB = new poolConnecion();
+    $objSB = new poolConnecion();
     $con=$objSB->ConexionSQLSAP();
-    $RSet=$objSB->QuerySQLSAP($Sql ,$con);*/
-    /*while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+    $RSet=$objSB->QuerySQLSAP($Sql ,$con);
+    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
              $MontoAIVA = number_format($fila[Monto Antes de IVA], 2, '.', ',');
              $IVA = number_format($fila[IVA], 2, '.', ',');
@@ -467,8 +467,8 @@ function serachBills($info)
                            <td>$fila[QuienFactura]</td>
                        </tr>";
            }
-    $objSB->CerrarSQLSAP($RSet,$con);*/
-    return $Sql;
+    $objSB->CerrarSQLSAP($RSet,$con);
+    return $TFilas;
 }
 
 }
