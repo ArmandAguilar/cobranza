@@ -461,7 +461,7 @@ function searchBills($info)
                            <td>$fila[NumProyecto]</td>
                            <td>$fila[FechaFactura]</td>
                            <td>$ $MontoAIVA</td>
-                           <td>$ $AIVA</td>
+                           <td>$ $IVA</td>
                            <td>$fila[Trimestre]</td>
                            <td>$fila[QuienFactura]</td>
                        </tr>";
