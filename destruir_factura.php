@@ -298,7 +298,7 @@ include("$path/libs/conexion.php");
           </div>
           <!--Modal footer-->
           <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-danger" onclick="Cancelar();">Modificar</button>
+            <button data-dismiss="modal" class="btn btn-danger" onclick="Eliminar();">Eliminar</button>
             <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
           </div>
         </div>
