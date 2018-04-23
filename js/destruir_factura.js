@@ -57,10 +57,8 @@ function Eliminar()
                            container : 'floating',
                            timer : 5000
                          });
-                         $("#CTable").empty();
-                         $('#txtSearch').val('');
-                         alert(data);
-
+                         $("#Id").val();
+                         buscar_facturas();
                    },
             error:function(req,e,er) {
                       $.niftyNoty({
