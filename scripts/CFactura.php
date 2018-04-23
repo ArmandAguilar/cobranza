@@ -447,7 +447,7 @@ function searchBills($info)
 {
     $TFilas = "";
     $Factura = $info->Factura;
-    $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[Trimestre],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]  like '%$Factura%'";
+    $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]  like '%$Factura%'";
     $objSB = new poolConnecion();
     $con=$objSB->ConexionSQLSAP();
     $RSet=$objSB->QuerySQLSAP($Sql ,$con);
@@ -462,8 +462,8 @@ function searchBills($info)
                            <td>$fila[FechaFactura]</td>
                            <td>$ $MontoAIVA</td>
                            <td>$ $IVA</td>
-                           <td>$fila[Trimestre]</td>
                            <td>$fila[QuienFactura]</td>
+                           <td><div data-target=\"#modal-mFactura\" data-toggle=\"modal\" style=\"cursor:pointer\" onclick=\"sel_factura($fila[IdFacturacion],'$fila[FacturaForta]')\">Eliminar</div></td>
                        </tr>";
            }
     $objSB->CerrarSQLSAP($RSet,$con);

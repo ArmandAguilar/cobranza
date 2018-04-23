@@ -284,18 +284,15 @@ include("$path/libs/conexion.php");
             <button data-dismiss="modal" class="close" type="button">
             <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title">Eliminar Operación</h4>
+            <h4 class="modal-title">Eliminar Factura</h4>
           </div>
           <!--Modal body-->
           <div class="modal-body">
-                <h3><b>¿ Esta seguro que desea borrar este registro?</h3></b>
+                <h3><b>¿ Esta seguro que desea borrar esta factura?</h3></b>
                 <input type="hidden" name="Id" id="Id" value="">
-                <input type="hidden" name="FacturaForta" id="FacturaForta" value="">
-                <input type="hidden" name="OperacionAbono" id="OperacionAbono" value="">
                 <div class="row">
                     <div class="col-sm-4">Id:<div id="txtId"></div> </div>
                     <div class="col-sm-4">Factura:<div id="txtFactura"></div></div>
-                    <div class="col-sm-4">Operación:<div id="txtOperacion"></div></div>
                 </div>
 
           </div>

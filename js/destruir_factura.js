@@ -29,3 +29,17 @@ function buscar_facturas()
            });
 
 }
+
+function sel_factura(Id,Factura)
+{
+  $("#Id").val(Id);
+  $("#txtId").empty();
+  $("#txtFactura").empty();
+  $("#txtId").append(Id);
+  $("#txtFactura").append(FacturaForta);
+}
+
+function Eliminar()
+{
+  alert('Eliminada');
+}
