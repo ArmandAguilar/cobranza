@@ -37,6 +37,11 @@ switch ($_GET[o]) {
               echo $objFactura->searchBills($info);
 
           break;
+    case '4':
+              $info->Id; = $_POST[Id];
+              $objFactura = new facturas();
+              echo $objFactura->del_bills($info);
+          break;
 
     default:
     break;

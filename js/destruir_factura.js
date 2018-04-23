@@ -41,5 +41,35 @@ function sel_factura(Id,Factura)
 
 function Eliminar()
 {
-  alert('Eliminada');
+  var losdatos = {
+    Id:$("#Id").val(),
+  }
+  $.ajax({
+            url:'./scripts/oper_facturacion.php?o=4',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+                   {
+                         $.niftyNoty({
+                           type: 'success',
+                           icon : 'fa fa-check',
+                           message : 'Procesando  .............',
+                           container : 'floating',
+                           timer : 5000
+                         });
+                         $("#CTable").empty();
+                         $('#txtSearch').val('');
+                         alert(data);
+
+                   },
+            error:function(req,e,er) {
+                      $.niftyNoty({
+                        type: 'danger',
+                        icon : 'fa fa-minus',
+                        message : 'oh! a ocurrido un error.',
+                        container : 'floating',
+                        timer : 3000
+                      });
+            }
+         });
 }
