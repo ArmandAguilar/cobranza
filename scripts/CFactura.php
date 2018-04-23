@@ -477,8 +477,8 @@ function del_bills($info){
   $Sql = "DELETE FROM [SAP].[dbo].[FacturacionConsulting] WHERE IdFacturacion = '$IdFacturta'";
   $RSet=$objDelFactura->QuerySQLSAP($Sql ,$con);
   $objDelFactura->CerrarSQLSAP($RSet,$con);
-  
-  return $Sql;
+
+  return $con;
 }
 
 
