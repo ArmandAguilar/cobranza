@@ -36,7 +36,7 @@ function sel_factura(Id,Factura)
   $("#txtId").empty();
   $("#txtFactura").empty();
   $("#txtId").append(Id);
-  $("#txtFactura").append(FacturaForta);
+  $("#txtFactura").append(Factura);
 }
 
 function Eliminar()
