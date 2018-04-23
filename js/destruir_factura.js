@@ -30,6 +30,25 @@ function buscar_facturas()
 
 }
 
+function re_load()
+{
+  $("#CTable").empty();
+   var losdatos = {txtSearch:$('#txtSearch').val()};
+    $.ajax({
+              url:'./scripts/oper_facturacion.php?o=3',
+              type:'POST',
+              data:losdatos,
+              success:function(data)
+                     {
+
+                           $("#CTable").append(data);
+                     },
+              error:function(req,e,er) {
+
+              }
+           });
+}
+
 function sel_factura(Id,Factura)
 {
   $("#Id").val(Id);
@@ -58,7 +77,7 @@ function Eliminar()
                            timer : 5000
                          });
                          $("#Id").val();
-                         buscar_facturas();
+                         re_load();
                    },
             error:function(req,e,er) {
                       $.niftyNoty({
