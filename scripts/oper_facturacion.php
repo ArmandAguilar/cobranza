@@ -38,7 +38,7 @@ switch ($_GET[o]) {
 
           break;
     case '4':
-              $info->Id; = $_POST[Id];
+              $info->Id = $_POST[Id];
               $objFactura = new facturas();
               echo $objFactura->del_bills($info);
           break;
