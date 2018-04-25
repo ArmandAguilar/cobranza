@@ -5,7 +5,7 @@ include("$path/scripts/CFactura.php");
 switch ($_GET[o]) {
     case '1':
               if ($_POST[txtBusqurdaxOper] == 'Si') {
-                $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where [ImporteOperacion] like '%$_POST[txtSearch]%'";
+                $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where [OperacionAbono] like '%$_POST[txtSearch]%'";
               }
               else {
                     $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where FacturaForta like '%$_POST[txtSearch]%'";
@@ -27,7 +27,7 @@ switch ($_GET[o]) {
                                     </tr>";
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
-               echo $Sql;
+               echo $TFilas;
       break;
       case '2':
                 $Sql="DELETE FROM [SAP].[dbo].[CobrosConsulting] WHERE Id='$_POST[Id]' and FacturaForta = '$_POST[FacturaForta]' and OperacionAbono = '$_POST[OperacionAbono]'";
