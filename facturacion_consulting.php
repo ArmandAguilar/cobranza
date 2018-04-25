@@ -148,16 +148,19 @@ include("$path/libs/conexion.php");
 					<!--===================================================-->
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Facturación Consulting</h3>
+							<h3 class="panel-title">Facturación Consulting (CobrosConsulting)</h3>
 						</div>
 						<div class="panel-body">
                 <div col="row">
                    <div col="col-sm-2">
                        <div class="input-group mar-btm">
-										                  <input type="text" placeholder="Search" class="form-control" id="txtSearch" name="txtSearch">
+										                  <input type="text" placeholder="Buscar por factura" class="form-control" id="txtSearch" name="txtSearch">
 										                  <span class="input-group-btn"><button class="btn btn-primary btn-labeled fa fa-search" type="button" onclick="buscar_facturas();">Search</button></span>
 									       </div>
                    </div>
+                 </div>
+                 <div col="row">
+                      X
                  </div>
          </div>
           <div class="panel-footer text-right">
