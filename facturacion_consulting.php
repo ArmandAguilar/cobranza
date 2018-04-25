@@ -160,7 +160,9 @@ include("$path/libs/conexion.php");
                    </div>
                  </div>
                  <div col="row">
-                      X
+                   <div class="checkbox">
+                     <label class="form-checkbox form-normal form-primary form-text active"><input type="checkbox" value="Si">Activar busqueda por OperacionAbono</label>
+                   </div>
                  </div>
          </div>
           <div class="panel-footer text-right">
