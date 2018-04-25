@@ -96,7 +96,7 @@ session_start();
 						<!--End Navigation toogle button-->
 						<!--Notification dropdown fa-tasks,fa-rotate-right-->
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <?php include(menu.php); ?>
+            <?php include("menu.php"); ?>
 
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<!--End notifications dropdown-->
