@@ -98,33 +98,7 @@ include("$path/libs/conexion.php");
 				<!--================================-->
 				<div class="navbar-content clearfix">
 					<ul class="nav navbar-top-links pull-left">
-            <li class="dropdown">
-              <a href="panel.php">
-								<i class="fa fa-home"></i>
-							</a>
-              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {
-              ?>
-              <a href="relacionar_lider.php">
-								<i class="fa fa-user"></i>
-							</a>
-              <?php
-                  }
-                else{}
-              ?>
-              <a href="relacionar_maestros.php">
-								<i class="fa fa-building fa-lg"></i>
-							</a>
-              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {?>
-                  <a href="operaciones_consulting.php">
-    								<i class="fa fa-search"></i>
-    							</a>
-              <?php } else {} ?>
-              <?php if ($_SESSION[CobranzaPerfil]=="Admin") {?>
-                  <a href="facturacion_consulting.php">
-    								<i class="fa fa-dollar"></i>
-    							</a>
-              <?php } else {} ?>
-						</li>
+            <?php include("menu.php"); ?>
 						<!--End notifications dropdown-->
 					</ul>
 					</ul>
