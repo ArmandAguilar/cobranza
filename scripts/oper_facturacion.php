@@ -27,7 +27,7 @@ switch ($_GET[o]) {
                                     </tr>";
                      }
                $objOperaciones->CerrarSQLSAP($RSet,$con);
-               echo $TFilas;
+               echo $Sql;
       break;
       case '2':
                 $Sql="DELETE FROM [SAP].[dbo].[CobrosConsulting] WHERE Id='$_POST[Id]' and FacturaForta = '$_POST[FacturaForta]' and OperacionAbono = '$_POST[OperacionAbono]'";
