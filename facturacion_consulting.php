@@ -161,7 +161,7 @@ include("$path/libs/conexion.php");
                  </div>
                  <div col="row">
                    <div class="checkbox">
-                     <label class="form-checkbox form-normal form-primary form-text active"><input type="checkbox" value="Si">Activar busqueda por OperacionAbono</label>
+                     <label class="form-checkbox form-normal form-primary form-text active"><input type="checkbox" name="ChKcondiciones" id="ChKcondiciones" value="Si">Activar busqueda por OperacionAbono</label>
                    </div>
                  </div>
          </div>
