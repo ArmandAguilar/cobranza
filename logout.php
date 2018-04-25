@@ -7,7 +7,7 @@ session_destroy();
 </head>
 <body>
 <script>
-window.location.href='http://187.188.109.47:82/administracion/index.php';
+window.location.href='http://187.162.64.252:82/administracion/';
 </script>
 </body>
 </hmtl>
