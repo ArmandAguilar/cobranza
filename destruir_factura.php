@@ -147,7 +147,7 @@ include("$path/libs/conexion.php");
 					<!--===================================================-->
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Buscar Factura</h3>
+							<h3 class="panel-title">Buscar Factura (FacturacionConsulting)</h3>
 						</div>
 						<div class="panel-body">
                 <div col="row">

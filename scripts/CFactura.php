@@ -447,7 +447,7 @@ function searchBills($info)
 {
     $TFilas = "";
     $Factura = $info->Factura;
-    $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta]  like '%$Factura%'";
+    $Sql="SELECT [FacturaForta],[IdFacturacion],[NumProyecto],[Fecha Factura] As FechaFactura,[Monto Antes de IVA] As MontoAIVA,[IVA],[QuienFactura] FROM [SAP].[dbo].[FacturacionConsulting] Where [FacturaForta] Like '%$Factura%'";
     $objSB = new poolConnecion();
     $con=$objSB->ConexionSQLSAP();
     $RSet=$objSB->QuerySQLSAP($Sql ,$con);
