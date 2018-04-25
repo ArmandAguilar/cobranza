@@ -1,7 +1,9 @@
 function buscar_facturas()
 {
+  var txtBusqurdaxOper = 'No';
   $("#CTable").empty();
-   var losdatos = {txtSearch:$('#txtSearch').val()};
+  txtBusqurdaxOper = $('#condiciones:checked').val();
+   var losdatos = {txtSearch:$('#txtSearch').val(),txtBusqurdaxOper:txtBusqurdaxOper};
     $.ajax({
            		url:'./scripts/oper_facturacion.php?o=1',
           		type:'POST',

@@ -4,7 +4,13 @@ include("$path/libs/conexion.php");
 include("$path/scripts/CFactura.php");
 switch ($_GET[o]) {
     case '1':
-              $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where FacturaForta like '%$_POST[txtSearch]%'";
+              if ($_POST[txtBusqurdaxOper] == 'Si') {
+                $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where [ImporteOperacion] like '%$_POST[txtSearch]%'";
+              }
+              else {
+                    $Sql="SELECT [Id],[Id_Cobro],[FacturaForta],[OperacionAbono],[ImporteOperacion] FROM [SAP].[dbo].[CobrosConsulting] Where FacturaForta like '%$_POST[txtSearch]%'";
+              }
+
               $objOperaciones = new poolConnecion();
               $con=$objOperaciones->ConexionSQLSAP();
               $RSet=$objOperaciones->QuerySQLSAP($Sql,$con);
