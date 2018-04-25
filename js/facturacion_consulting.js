@@ -3,7 +3,6 @@ function buscar_facturas()
   var txtBusqurdaxOper = 'No';
   $("#CTable").empty();
   txtBusqurdaxOper = $('#ChKcondiciones:checked').val();
-  alert(txtBusqurdaxOper);
    var losdatos = {txtSearch:$('#txtSearch').val(),txtBusqurdaxOper:txtBusqurdaxOper};
     $.ajax({
            		url:'./scripts/oper_facturacion.php?o=1',
