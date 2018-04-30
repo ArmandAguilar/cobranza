@@ -19,7 +19,7 @@ $RSet=$objCboMaestros->QuerySQLSAP($SqlMaestros,$con);
  $objCboMaestros->CerrarSQLSAP($RSet,$con);
  #Todas los lideres
  $objUsuarios = new poolConnecion();
- $SqlUsuarios="Select Id,Nombre,Apellidos,Acronimo From [Northwind].[dbo].[Usuarios] Where (CobranzaPerfil ='Admin' or CobranzaPerfil='User') and Departamento <> 'Baja' order by Nombre";
+ $SqlUsuarios="Select Id,Nombre,Apellidos,Acronimo From [Northwind].[dbo].[Usuarios] Where (CobranzaPerfil ='Admin' or CobranzaPerfil='User') and (Departamento <> 'Baja') order by Nombre";
  $con=$objUsuarios->ConexionSQLNorthwind();
  $RSet=$objUsuarios->QuerySQLNorthwind($SqlUsuarios,$con);
   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
